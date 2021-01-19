@@ -20,17 +20,18 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。它描述的是在单位时间（空间）内随机事件发生的次数。泊松分布的推导 $\prod {a+b}$ P(X&#x3D;k)&#x3D;\frac{\lambda^k}{k!}e^{-\lambda},k&#x3D;0,1,… f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^\frac{">
+  <meta name="description" content="泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。 它描述的是在单位时间（空间）内随机事件发生的次数。 泊松分布的推导 \(\prod {a+b}\) \(P(X&#x3D;k)&#x3D;\frac{\lambda^k}{k!}e^{-\lambda},k&#x3D;0,1,...\) \(f(x)&#x3D;\frac{1}{\sqrt{2\pi}\si">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Possion_distribution">
 <meta property="og:url" content="http://example.com/2021/01/19/Possion-distribution/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。它描述的是在单位时间（空间）内随机事件发生的次数。泊松分布的推导 $\prod {a+b}$ P(X&#x3D;k)&#x3D;\frac{\lambda^k}{k!}e^{-\lambda},k&#x3D;0,1,… f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^\frac{">
+<meta property="og:description" content="泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。 它描述的是在单位时间（空间）内随机事件发生的次数。 泊松分布的推导 \(\prod {a+b}\) \(P(X&#x3D;k)&#x3D;\frac{\lambda^k}{k!}e^{-\lambda},k&#x3D;0,1,...\) \(f(x)&#x3D;\frac{1}{\sqrt{2\pi}\si">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-19T14:02:56.000Z">
-<meta property="article:modified_time" content="2021-01-19T14:36:28.966Z">
+<meta property="article:modified_time" content="2021-01-19T15:00:47.191Z">
 <meta property="article:author" content="zhusitao">
-<meta property="article:tag" content="deep learning, bioinformatics, biology">
+<meta property="article:tag" content="tag1">
+<meta property="article:tag" content="tag2">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2021/01/19/Possion-distribution/">
@@ -180,7 +181,20 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-19 22:02:56 / Modified: 22:36:28" itemprop="dateCreated datePublished" datetime="2021-01-19T22:02:56+08:00">2021-01-19</time>
+              <time title="Created: 2021-01-19 22:02:56 / Modified: 23:00:47" itemprop="dateCreated datePublished" datetime="2021-01-19T22:02:56+08:00">2021-01-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/parent/" itemprop="url" rel="index"><span itemprop="name">parent</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/parent/child/" itemprop="url" rel="index"><span itemprop="name">child</span></a>
+                </span>
             </span>
 
           
@@ -194,10 +208,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。<br>它描述的是在单位时间（空间）内随机事件发生的次数。<br>泊松分布的推导</p>
-<p>$\prod {a+b}$</p>
-<p>P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,…</p>
-<p>f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}</p>
+        <p>泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。 它描述的是在单位时间（空间）内随机事件发生的次数。 泊松分布的推导</p>
+<p><span class="math inline">\(\prod {a+b}\)</span></p>
+<p><span class="math inline">\(P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,...\)</span></p>
+<p><span class="math inline">\(f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\)</span></p>
 
     </div>
 
@@ -206,6 +220,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/tag1/" rel="tag"># tag1</a>
+              <a href="/tags/tag2/" rel="tag"># tag2</a>
+          </div>
 
         
 
@@ -292,6 +310,14 @@
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
   </nav>
 </div>
 
@@ -375,6 +401,61 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
