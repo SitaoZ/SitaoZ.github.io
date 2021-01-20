@@ -176,7 +176,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-20 10:10:31 / Modified: 10:39:08" itemprop="dateCreated datePublished" datetime="2021-01-20T10:10:31+08:00">2021-01-20</time>
+              <time title="Created: 2021-01-20 10:10:31 / Modified: 10:40:32" itemprop="dateCreated datePublished" datetime="2021-01-20T10:10:31+08:00">2021-01-20</time>
             </span>
 
           
@@ -190,7 +190,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>pytorch，深度学习流行的框架之一，Facebook开发维互。</p>
+          <p>pytorch，深度学习流行的框架之一，Facebook开发维护，社区活跃度高。</p>
 <p>1.tensor 维度转化 1.1 permute vs transpose 词义是重新排列，改变次序的意思，在pytorch中主要用来实现tensor的维度转换。 pytorch官方的解释如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ permute(*dims) → Tensor</span><br><span class="line">$     Returns a view of the original tensor with its dimensions permuted.</span><br><span class="line">$     Parameters</span><br><span class="line">$         *dims (int...) – The desired ordering of dimensions</span><br></pre></td></tr></table></figure>
 <p>Example <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.permute(<span class="number">3</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>).size()</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure> Tensor.permute(a,b,c,d, ...)：permute函数可以对任意高维矩阵进行转置； 但没有 torch.permute() 这个调用方式，只能 Tensor.permute()；</p>
