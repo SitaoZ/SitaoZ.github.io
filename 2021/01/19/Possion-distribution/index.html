@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。它描述的是在单位时间（空间）内随机事件发生的次数。泊松分布的推导 1. 二项分布$ P(X&#x3D;k)&#x3D;C_n^kp^k(1-p)^{n-k} ,n为实验的总次数，k为实验成功的次数，p是成功的概率$ $ P(X&#x3D;k)&#x3D;\inftyC_n^k\times(\lambda\di">
+  <meta name="description" content="泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。 它描述的是在单位时间（空间）内随机事件发生的次数。 泊松分布的推导 ### 1. 二项分布 \(P(X&#x3D;k)&#x3D;C_n^kp^k(1-p)^{n-k} ,n为实验的总次数，k为实验成功的次数，p是成功的概率\) \(P(X&#x3D;k)&#x3D;\infty C_n^k\cdot(\f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Possion_distribution">
 <meta property="og:url" content="http://example.com/2021/01/19/Possion-distribution/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。它描述的是在单位时间（空间）内随机事件发生的次数。泊松分布的推导 1. 二项分布$ P(X&#x3D;k)&#x3D;C_n^kp^k(1-p)^{n-k} ,n为实验的总次数，k为实验成功的次数，p是成功的概率$ $ P(X&#x3D;k)&#x3D;\inftyC_n^k\times(\lambda\di">
+<meta property="og:description" content="泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。 它描述的是在单位时间（空间）内随机事件发生的次数。 泊松分布的推导 ### 1. 二项分布 \(P(X&#x3D;k)&#x3D;C_n^kp^k(1-p)^{n-k} ,n为实验的总次数，k为实验成功的次数，p是成功的概率\) \(P(X&#x3D;k)&#x3D;\infty C_n^k\cdot(\f">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-19T14:02:56.000Z">
-<meta property="article:modified_time" content="2021-01-20T05:15:06.491Z">
+<meta property="article:modified_time" content="2021-01-20T05:20:40.742Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="tag1">
 <meta property="article:tag" content="tag2">
@@ -187,7 +187,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-20 13:15:06" itemprop="dateModified" datetime="2021-01-20T13:15:06+08:00">2021-01-20</time>
+                <time title="Modified: 2021-01-20 13:20:40" itemprop="dateModified" datetime="2021-01-20T13:20:40+08:00">2021-01-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -214,12 +214,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。<br>它描述的是在单位时间（空间）内随机事件发生的次数。<br>泊松分布的推导</p>
-<h3 id="1-二项分布"><a href="#1-二项分布" class="headerlink" title="1. 二项分布"></a>1. 二项分布</h3><p>$ P(X=k)=C_n^kp^k(1-p)^{n-k} ,n为实验的总次数，k为实验成功的次数，p是成功的概率$</p>
-<p>$ P(X=k)=\inftyC_n^k\times(\lambda\divn)^k\cdot(1-\lambda\divn)^(n-k) $</p>
-<p>$\prod {a+b}$</p>
-<p>$P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,…$</p>
-<p>$f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}$</p>
+        <p>泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。 它描述的是在单位时间（空间）内随机事件发生的次数。 泊松分布的推导 ### 1. 二项分布 <span class="math inline">\(P(X=k)=C_n^kp^k(1-p)^{n-k} ,n为实验的总次数，k为实验成功的次数，p是成功的概率\)</span></p>
+<p><span class="math inline">\(P(X=k)=\infty C_n^k\cdot(\frac{\lambda}{n})^k\cdot(1-\frac{\lambda}{n})^{n-k}\)</span></p>
+<p><span class="math inline">\(\prod {a+b}\)</span></p>
+<p><span class="math inline">\(P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,...\)</span></p>
+<p><span class="math inline">\(f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\)</span></p>
 
     </div>
 
@@ -304,7 +303,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83"><span class="nav-number">1.</span> <span class="nav-text">1. 二项分布</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
