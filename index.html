@@ -151,6 +151,71 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/20/Pytorch%E5%AE%9E%E6%93%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/20/Pytorch%E5%AE%9E%E6%93%8D/" class="post-title-link" itemprop="url">Pytorch实操</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-20 10:10:31 / Modified: 10:31:57" itemprop="dateCreated datePublished" datetime="2021-01-20T10:10:31+08:00">2021-01-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>pytorch,深度学习流行的框架之一，Facebook开发维互。</p>
+<p>1.tensor 维度转化<br>1.1 permute vs transpose<br>词义是重新排列，改变次序的意思，在pytorch中主要用来实现tensor的维度转换<br>pytorch官方的解释也是Returns a view of the original tensor with its dimensions permuted.</p>
+<p>permute(<em>dims) → Tensor
+</em>dims (int…) – The desired ordering of dimensions</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.permute(<span class="number">3</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>).size()</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<p>Tensor.permute(a,b,c,d, …)：permute函数可以对任意高维矩阵进行转置；<br>但没有 torch.permute() 这个调用方式，只能 Tensor.permute()；</p>
+<p>torch.transpose(Tensor, a,b)：transpose只能操作2D矩阵的转置<br>多次的2D转换的结果和permute的一致<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>).transpose(<span class="number">2</span>,<span class="number">0</span>).shape</span><br><span class="line">torch.Size([<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>).transpose(<span class="number">2</span>,<span class="number">0</span>).transpose(<span class="number">3</span>,<span class="number">0</span>)</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>).transpose(<span class="number">2</span>,<span class="number">0</span>).transpose(<span class="number">3</span>,<span class="number">0</span>).transpose(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure><br>总结，复杂的转换可以使用permute，简答的2D转换用transpose</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/19/Possion-distribution/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -436,7 +501,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
