@@ -505,7 +505,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-24 21:24:55" itemprop="dateModified" datetime="2021-01-24T21:24:55+08:00">2021-01-24</time>
+                <time title="Modified: 2021-01-24 21:41:20" itemprop="dateModified" datetime="2021-01-24T21:41:20+08:00">2021-01-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -578,7 +578,18 @@ E(\xi)^2 &amp;= \Sigma k^2p_k \\
 &amp;=\lambda^2+\lambda
 \end{aligned}
 \end{equation}\]</span></p>
-<p><span class="math display">\[=\lambda\Sigma_{k=0}^{\infty}(k+1)\frac{\lambda^k}{k!}e^{-\lambda} = \lambda^2 + \lambda \]</span></p>
+<p><span class="math display">\[D\xi = E(\xi^2) - [E(\xi)]^2 = \lambda^2+\Lambda -\Lambda^2 = \lambda\]</span> 附方差恒等式的证明 <span class="math display">\[D\xi = E(\xi^2) - [E(\xi)^2]^2 \]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+D(\xi) &amp;= E[\xi - E(\xi)]^2 \\
+&amp;=E{\xi^2 - 2E(\xi) \cdot \xi +[E(\xi)]^2}
+&amp;=E(\xi^2) - E[2E(\xi) \cdot \xi] + E[E(\xi)]^2
+&amp;=E(\xi^2) - 2E(\xi) \cdot E(\xi) + [E(\xi)]@
+&amp;=E(\xi^2) - [E(\xi)]^2
+
+\end{aligned}
+\end{equation}\]</span></p>
 
       
     </div>
