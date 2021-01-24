@@ -505,7 +505,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-24 22:03:11" itemprop="dateModified" datetime="2021-01-24T22:03:11+08:00">2021-01-24</time>
+                <time title="Modified: 2021-01-24 22:20:48" itemprop="dateModified" datetime="2021-01-24T22:20:48+08:00">2021-01-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -513,11 +513,11 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/parent/" itemprop="url" rel="index"><span itemprop="name">parent</span></a>
+                  <a href="/categories/probability/" itemprop="url" rel="index"><span itemprop="name">probability</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/parent/child/" itemprop="url" rel="index"><span itemprop="name">child</span></a>
+                  <a href="/categories/probability/possion/" itemprop="url" rel="index"><span itemprop="name">possion</span></a>
                 </span>
             </span>
 
@@ -547,6 +547,20 @@
 \end{equation}\]</span></p>
 <h4 id="b.二项分布的方差">b.二项分布的方差</h4>
 <p>随机变量<span class="math inline">\(\xi\)</span>,如果<span class="math inline">\(E(\xi-E\xi)^2\)</span>存在，则称它为随机变量<span class="math inline">\(\xi\)</span>的方差（variance）. 并记为<span class="math inline">\(D\xi\)</span>，而<span class="math inline">\(\square{D\xi}\)</span>称为标准差（standard deviation），描述的是随机变量 对其数学期望的偏离程度（dispersion）。</p>
+<p><span class="math display">\[ E(X) = np\]</span> <span class="math display">\[\begin{equation}
+\begin{aligned}
+
+E(X^2) &amp;= \Sigma_{k=0}^{n} k^2 C_n^kp^kq^(n-k) \\
+&amp;=\Sigma_{k=1}^{n} [k(k-1)+k]\frac{n!}{k!(n-k)!}p^kq^(n-k) \\
+&amp;=\Sigma_{k=2}^{n} \frac{n!}{(k-2)!(n-k)!} + E(X) \\
+&amp;=n(n-1)p^2 \Sigma_{k=2}^{n} \frac{(n-2)!}{(k-2)![(n-2) - (k-2)]!} \cdot p^(k-2)q^{(n-2)-(k-2)} +E(X) \\
+&amp;=n(n-1)p^2 \Sigma_{k&#39;=0}^{n-2} C_(n-2)^k&#39;p^k&#39;q^{(n-2)-k&#39;} + E(X) \\
+&amp;=n(n-1)p^2 + np \\
+&amp;=n^2p^2 + np(1-p) \\
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>由于方差恒等式<span class="math inline">\(D(X) = E(X^2) - [E(X)]^2\)</span>，所以 <span class="math inline">\(D(X) = np(1-p)\)</span></p>
 <h3 id="泊松分布possion-distribution">2.泊松分布(possion distribution)</h3>
 <p>在下面的情形下，<span class="math inline">\(n \to \infty,\,p,\,\lambda &gt; 0,\,\lambda=np,\,p = \frac{\lambda}{n}\)</span> <span class="math display">\[P(X=k)=\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}\]</span> <span class="math display">\[C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{1}{k!} \cdot \frac{n(n-1)...(n-k+1)}{n^k} \cdot \lambda^k \cdot\frac{(1-\frac{\lambda}{n})^n}{(1-\frac{\lambda}{n})^k}\]</span> 因为<span class="math inline">\(n \to \infty\)</span>, k不变，第二个因子</p>
 <p><span class="math display">\[\displaystyle \lim_{n \to \infty} \frac{n(n-1)...(n-k+1)}{n^k}=\frac{n}{n} \cdot \frac{n-1}{n}...\frac{n-(k-1)}{n}=1\]</span></p>
