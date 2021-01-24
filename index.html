@@ -505,7 +505,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-24 20:42:02" itemprop="dateModified" datetime="2021-01-24T20:42:02+08:00">2021-01-24</time>
+                <time title="Modified: 2021-01-24 21:15:16" itemprop="dateModified" datetime="2021-01-24T21:15:16+08:00">2021-01-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -545,6 +545,8 @@
 &amp;=np 
 \end{aligned}
 \end{equation}\]</span></p>
+<h4 id="b.二项分布的方差">b.二项分布的方差</h4>
+<p>随机变量<span class="math inline">\(\xi\)</span>,如果<span class="math inline">\(E(\xi-E\xi)^2\)</span>存在，则称它为随机变量<span class="math inline">\(\xi\)</span>的方差（variance）. 并记为<span class="math inline">\(D\xi\)</span>，而<span class="math inline">\(\square{D\xi}\)</span>称为标准差（standard deviation），描述的是随机变量 对其数学期望的偏离程度（dispersion）。</p>
 <h3 id="泊松分布possion-distribution">2.泊松分布(possion distribution)</h3>
 <p>在下面的情形下，<span class="math inline">\(n \to \infty,\,p,\,\lambda &gt; 0,\,\lambda=np,\,p = \frac{\lambda}{n}\)</span> <span class="math display">\[P(X=k)=\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}\]</span> <span class="math display">\[C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{1}{k!} \cdot \frac{n(n-1)...(n-k+1)}{n^k} \cdot \lambda^k \cdot\frac{(1-\frac{\lambda}{n})^n}{(1-\frac{\lambda}{n})^k}\]</span> 因为<span class="math inline">\(n \to \infty\)</span>, k不变，第二个因子</p>
 <p><span class="math display">\[\displaystyle \lim_{n \to \infty} \frac{n(n-1)...(n-k+1)}{n^k}=\frac{n}{n} \cdot \frac{n-1}{n}...\frac{n-(k-1)}{n}=1\]</span></p>
@@ -564,8 +566,19 @@
 \end{aligned}
 \end{equation}\]</span></p>
 <h3 id="泊松分布方差">4.泊松分布方差</h3>
-<p>方差的推导如下：</p>
-<p><span class="math display">\[E(\xi)^2 &amp;= \Sigma k^2p_k \]</span> <span class="math display">\[=\Sigma_{k=1}^{\infty}k^2 \cdot \frac{\lambda^k}{k!}e^{-\lambda} \]</span> <span class="math display">\[=\Sigma_{k=1}^{\infty}k \frac{\lambda^k}{(k-1)!} e^{-\lambda} \]</span> <span class="math display">\[=\lambda\Sigma_{k=0}^{\infty}(k+1)\frac{\lambda^k} \]</span></p>
+<p>方差的推导如下： 对于泊松分布期望：<span class="math inline">\(E(\xi)=\lambda\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+E(\xi)^2 &amp;= \Sigma k^2p_k \\
+&amp;=\Sigma_{k=1}^{\infty}k^2 \cdot \frac{\lambda^k}{k!}e^{-\lambda} \\
+&amp;=\Sigma_{k=1}^{\infty}k \frac{\lambda^k}{(k-1)!} e^{-\lambda} \\
+&amp;=\Sigma_{k=1}^{\infty} [(k-1)+1] \cdot \frac{\lambda^k}{(k-1)!} e^{-\lambda} \\
+&amp;=\Sigma_{k=2}^{\infty} \frac{\lambda^k}{(k-2)!}e^{-\lambda} + \Sigma_{k=1}^{\infty} \frac{\lambda^k}{(k-1)!}e^{-\lambda} \\
+&amp;=\lambda^2\Sigma_{k^&#39;=0}^{\infty} \frac{\lambda^k^&#39;}{(k^&#39;)!}e^{-\lambda} + \lambda\Sigma_{k^&#39;=0}^{\infty} \frac{\lambda^k^&#39;&#39;}{(k^&#39;&#39;)!}e^{-\lambda} \\
+&amp;=\lambda^2+\lambda
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[=\lambda\Sigma_{k=0}^{\infty}(k+1)\frac{\lambda^k}{k!}e^{-\lambda} = \lambda^2 + \lambda \]</span></p>
 
       
     </div>
