@@ -505,7 +505,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-24 20:27:14" itemprop="dateModified" datetime="2021-01-24T20:27:14+08:00">2021-01-24</time>
+                <time title="Modified: 2021-01-24 20:28:59" itemprop="dateModified" datetime="2021-01-24T20:28:59+08:00">2021-01-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -532,21 +532,47 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。<br>它描述的是在单位时间（空间）内随机事件发生的次数。<br>泊松分布的推导如下：</p>
-<h3 id="1-二项分布-binomial-distribution"><a href="#1-二项分布-binomial-distribution" class="headerlink" title="1.二项分布(binomial distribution)"></a>1.二项分布(binomial distribution)</h3><p>两点分布重复n次，就得到了二项分布，二项分布的概率质量函数(probability mass function, PMF):<br>n为实验的总次数，k为实验成功的次数，p是成功的概率<br>$$ P(X=k)=C_n^kp^k(1-p)^{n-k} $$<br>服从二项分布的随机变量记为 $X \sim B(n,p)$ </p>
-<h4 id="a-二项分布的期望"><a href="#a-二项分布的期望" class="headerlink" title="a.二项分布的期望"></a>a.二项分布的期望</h4><p>二项分布分布，事件发生的概率为p, 不发生的概率为q=1-p,<br>这里的 $C_n^k$ 称为二项系数，根据二项展开式的系数，可以反推二项分布的概率和为1.<br>$$ \Sigma_{k=0}^nP(X=k) = \Sigma_{k=0}^nC_n^kp^k(1-p)^{n-k} = (p+(1-p))^n=1 $$<br>期望是离散型随机变量的特征之一，定义如下：<br>设$\xi$ 为离散型随机变量，它可以取值$x_1,x_2,x_3,…$，对应的概率为$p_1,p_2,p_3,…$<br>如果级数<br>$$\Sigma_{i=1}^{\infty}x_ip_i$$<br>绝对收敛，则把它称为$\xi$的数学期望（mathematical expectation）,简称期望，期望值或均值（mean）,记为$E\xi$<br>当$\Sigma_{i=1}^{\infty}{\vert}x_i{\vert}p_i$ 发散时，则$\xi$的数学期望不存在。</p>
-<p>\begin{equation}<br>\begin{aligned}<br>\Sigma_{k=0}^{n}kp_k &amp;= \Sigma_{k=1}{n}{n \choose k}p^kq^{n-k} \<br>&amp;= np \Sigma_{k=1}^{n}{n-1 \choose k-1}p^{k-1}q^{n-k} \<br>&amp;=np(p+q)^{n-1} \<br>&amp;=np<br>\end{aligned}<br>\end{equation}</p>
-<h3 id="2-泊松分布-possion-distribution"><a href="#2-泊松分布-possion-distribution" class="headerlink" title="2.泊松分布(possion distribution)"></a>2.泊松分布(possion distribution)</h3><p>在下面的情形下，$n \to \infty,,p,,\lambda &gt; 0,,\lambda=np,,p = \frac{\lambda}{n}$<br>$$P(X=k)=\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}$$<br>$$C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{1}{k!} \cdot \frac{n(n-1)…(n-k+1)}{n^k} \cdot \lambda^k \cdot\frac{(1-\frac{\lambda}{n})^n}{(1-\frac{\lambda}{n})^k}$$<br>因为$n \to \infty$, k不变，第二个因子 </p>
-<p>$$\displaystyle \lim_{n \to \infty} \frac{n(n-1)…(n-k+1)}{n^k}=\frac{n}{n} \cdot \frac{n-1}{n}…\frac{n-(k-1)}{n}=1$$</p>
+          <p>泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。 它描述的是在单位时间（空间）内随机事件发生的次数。 泊松分布的推导如下：</p>
+<h3 id="二项分布binomial-distribution">1.二项分布(binomial distribution)</h3>
+<p>两点分布重复n次，就得到了二项分布，二项分布的概率质量函数(probability mass function, PMF): n为实验的总次数，k为实验成功的次数，p是成功的概率 <span class="math display">\[ P(X=k)=C_n^kp^k(1-p)^{n-k} \]</span> 服从二项分布的随机变量记为 <span class="math inline">\(X \sim B(n,p)\)</span></p>
+<h4 id="a.二项分布的期望">a.二项分布的期望</h4>
+<p>二项分布分布，事件发生的概率为p, 不发生的概率为q=1-p, 这里的 <span class="math inline">\(C_n^k\)</span> 称为二项系数，根据二项展开式的系数，可以反推二项分布的概率和为1. <span class="math display">\[ \Sigma_{k=0}^nP(X=k) = \Sigma_{k=0}^nC_n^kp^k(1-p)^{n-k} = (p+(1-p))^n=1 \]</span> 期望是离散型随机变量的特征之一，定义如下： 设<span class="math inline">\(\xi\)</span> 为离散型随机变量，它可以取值<span class="math inline">\(x_1,x_2,x_3,...\)</span>，对应的概率为<span class="math inline">\(p_1,p_2,p_3,...\)</span> 如果级数 <span class="math display">\[\Sigma_{i=1}^{\infty}x_ip_i\]</span> 绝对收敛，则把它称为<span class="math inline">\(\xi\)</span>的数学期望（mathematical expectation）,简称期望，期望值或均值（mean）,记为<span class="math inline">\(E\xi\)</span> 当<span class="math inline">\(\Sigma_{i=1}^{\infty}{\vert}x_i{\vert}p_i\)</span> 发散时，则<span class="math inline">\(\xi\)</span>的数学期望不存在。</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\Sigma_{k=0}^{n}kp_k &amp;= \Sigma_{k=1}{n}{n \choose k}p^kq^{n-k} \\
+&amp;= np \Sigma_{k=1}^{n}{n-1 \choose k-1}p^{k-1}q^{n-k} \\
+&amp;=np(p+q)^{n-1} \\
+&amp;=np 
+\end{aligned}
+\end{equation}\]</span></p>
+<h3 id="泊松分布possion-distribution">2.泊松分布(possion distribution)</h3>
+<p>在下面的情形下，<span class="math inline">\(n \to \infty,\,p,\,\lambda &gt; 0,\,\lambda=np,\,p = \frac{\lambda}{n}\)</span> <span class="math display">\[P(X=k)=\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}\]</span> <span class="math display">\[C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{1}{k!} \cdot \frac{n(n-1)...(n-k+1)}{n^k} \cdot \lambda^k \cdot\frac{(1-\frac{\lambda}{n})^n}{(1-\frac{\lambda}{n})^k}\]</span> 因为<span class="math inline">\(n \to \infty\)</span>, k不变，第二个因子</p>
+<p><span class="math display">\[\displaystyle \lim_{n \to \infty} \frac{n(n-1)...(n-k+1)}{n^k}=\frac{n}{n} \cdot \frac{n-1}{n}...\frac{n-(k-1)}{n}=1\]</span></p>
 <p>第四个因子中的分母</p>
-<p>$$\displaystyle \lim_{n \to \infty}(1-\frac{\lambda}{n})^k = 1$$ </p>
-<p>第四个因子中的分子<br>$$(1-\frac{\lambda}{n})^n = [(1-\frac{\lambda}{n})^{-\frac{n}{\lambda}}]^{-\lambda}$$<br>因为 $\displaystyle \lim_{n \to \infty} (1-\frac{\lambda}{n})^{-\frac{n}{\lambda}} = e$，所以 $(1-\frac{\lambda}{n})^n = e^{-\lambda}$</p>
-<p>因此<br>$$\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{\lambda^k}{k!}e^{-\lambda}$$<br>综上<br>$$P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,2…$$<br>服从泊松分布随机变量记为 $X \sim p(\lambda)$<br>在应用中，当p相当小（p &lt;= 0.1）时，我们用下面的近似公式<br>$b(k;n,p) \sim \frac{(np)^k}{k!}e^{-np}$ </p>
-<h3 id="3-泊松分布期望"><a href="#3-泊松分布期望" class="headerlink" title="3.泊松分布期望"></a>3.泊松分布期望</h3><p>证明泊松分布的概率和为1<br>$$ \Sigma_{k=0}^{\infty}p(k;\lambda) = \Sigma_{k=0}^{\infty} \frac{\lambda^k}{k!}e^{-\lambda}=e^{-\lambda} \cdot e^{\lambda}=1$$<br>$e^{\lambda} = \Sigma_{k=0}^{\infty} \frac{\lambda^k}{k!}$ 为指数函数的泰勒展开式 </p>
-<p>\begin{equation}<br>\begin{aligned}<br>\Sigma_{k=0}^{\infty}kp_k &amp;= \Sigma_{k=1}^{\infty}k \cdot \frac{\lambda^k}{k!}e^{-\lambda} \<br>&amp;=\lambda e^{-\lambda}\Sigma_{k=1}^{\infty}\frac{\lambda^{k-1}}{(k-1)!} \<br>&amp;=\lambda e^{-\lambda} \cdot e^\lambda \<br>&amp;=\lambda</p>
-<p>\end{aligned}<br>\end{equation}</p>
-<h3 id="4-泊松分布方差"><a href="#4-泊松分布方差" class="headerlink" title="4.泊松分布方差"></a>4.泊松分布方差</h3><p>方差的推导如下：</p>
-<p>\begin{equation}<br>\begin{aligned}<br>E(\xi)^2 = \Sigma k^2p_k \<br>&amp;=\Sigma_{k=1}^{\infty}k^2 \cdot \frac{\lambda^k}{k!}e^{-\lambda} \<br>&amp;=\Sigma_{k=1}^{\infty}k \frac{\lambda^k}{(k-1)!} e^{-\lambda} \<br>&amp;=\lambda\Sigma_{k=0}^{\infty}(k+1)\frac{\lambda^k}<br>\end{aligned}<br>\end{equation}</p>
+<p><span class="math display">\[\displaystyle \lim_{n \to \infty}(1-\frac{\lambda}{n})^k = 1\]</span></p>
+<p>第四个因子中的分子 <span class="math display">\[(1-\frac{\lambda}{n})^n = [(1-\frac{\lambda}{n})^{-\frac{n}{\lambda}}]^{-\lambda}\]</span> 因为 <span class="math inline">\(\displaystyle \lim_{n \to \infty} (1-\frac{\lambda}{n})^{-\frac{n}{\lambda}} = e\)</span>，所以 <span class="math inline">\((1-\frac{\lambda}{n})^n = e^{-\lambda}\)</span></p>
+<p>因此 <span class="math display">\[\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{\lambda^k}{k!}e^{-\lambda}\]</span> 综上 <span class="math display">\[P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,2...\]</span> 服从泊松分布随机变量记为 <span class="math inline">\(X \sim p(\lambda)\)</span> 在应用中，当p相当小（p &lt;= 0.1）时，我们用下面的近似公式 <span class="math inline">\(b(k;n,p) \sim \frac{(np)^k}{k!}e^{-np}\)</span></p>
+<h3 id="泊松分布期望">3.泊松分布期望</h3>
+<p>证明泊松分布的概率和为1 <span class="math display">\[ \Sigma_{k=0}^{\infty}p(k;\lambda) = \Sigma_{k=0}^{\infty} \frac{\lambda^k}{k!}e^{-\lambda}=e^{-\lambda} \cdot e^{\lambda}=1\]</span> <span class="math inline">\(e^{\lambda} = \Sigma_{k=0}^{\infty} \frac{\lambda^k}{k!}\)</span> 为指数函数的泰勒展开式</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\Sigma_{k=0}^{\infty}kp_k &amp;= \Sigma_{k=1}^{\infty}k \cdot \frac{\lambda^k}{k!}e^{-\lambda} \\
+&amp;=\lambda e^{-\lambda}\Sigma_{k=1}^{\infty}\frac{\lambda^{k-1}}{(k-1)!} \\
+&amp;=\lambda e^{-\lambda} \cdot e^\lambda \\
+&amp;=\lambda
+
+\end{aligned}
+\end{equation}\]</span></p>
+<h3 id="泊松分布方差">4.泊松分布方差</h3>
+<p>方差的推导如下：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+E(\xi)^2 &amp;= \Sigma k^2p_k \\
+&amp;=\Sigma_{k=1}^{\infty}k^2 \cdot \frac{\lambda^k}{k!}e^{-\lambda} \\
+&amp;=\Sigma_{k=1}^{\infty}k \frac{\lambda^k}{(k-1)!} e^{-\lambda} \\
+&amp;=\lambda\Sigma_{k=0}^{\infty}(k+1)\frac{\lambda^k}
+\end{aligned}
+\end{equation}\]</span></p>
 
       
     </div>
