@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1.伯努利分布（bernoulli distribution） 伯努利分布，又名两点分布或者0-1分布，是一个离散型的随机分布。 如果伯努利试验成功，则伯努利随机变量取值为1，如果失败，伯努利 随机变量取值为0。记其成功概率为p，失败概率为q&#x3D;1-p. 则其概率质量函数为： \[f(x) &#x3D; p^x(1-p)^1-x&#x3D;\] \[f(x) &#x3D; p^x(1-p)^1-x &#x3D; \begin{cases}">
+  <meta name="description" content="1.伯努利分布（bernoulli distribution） 伯努利分布，又名两点分布或者0-1分布，是一个离散型的随机分布。 如果伯努利试验成功，则伯努利随机变量取值为1，如果失败，伯努利 随机变量取值为0。记其成功概率为p，失败概率为q&#x3D;1-p. 则其概率质量函数为： \[f(x) &#x3D; p^x(1-p)^{1-x}&#x3D;\] \[f(x) &#x3D; p^x(1-p)^{1-x} &#x3D; \begin{ca">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bernoulli_distribution">
 <meta property="og:url" content="http://example.com/2021/01/25/bernoulli-distribution/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="1.伯努利分布（bernoulli distribution） 伯努利分布，又名两点分布或者0-1分布，是一个离散型的随机分布。 如果伯努利试验成功，则伯努利随机变量取值为1，如果失败，伯努利 随机变量取值为0。记其成功概率为p，失败概率为q&#x3D;1-p. 则其概率质量函数为： \[f(x) &#x3D; p^x(1-p)^1-x&#x3D;\] \[f(x) &#x3D; p^x(1-p)^1-x &#x3D; \begin{cases}">
+<meta property="og:description" content="1.伯努利分布（bernoulli distribution） 伯努利分布，又名两点分布或者0-1分布，是一个离散型的随机分布。 如果伯努利试验成功，则伯努利随机变量取值为1，如果失败，伯努利 随机变量取值为0。记其成功概率为p，失败概率为q&#x3D;1-p. 则其概率质量函数为： \[f(x) &#x3D; p^x(1-p)^{1-x}&#x3D;\] \[f(x) &#x3D; p^x(1-p)^{1-x} &#x3D; \begin{ca">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-25T04:22:58.000Z">
-<meta property="article:modified_time" content="2021-01-25T04:44:27.791Z">
+<meta property="article:modified_time" content="2021-01-25T04:46:12.754Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="bernoulli distribution">
 <meta name="twitter:card" content="summary">
@@ -180,7 +180,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-25 12:22:58 / Modified: 12:44:27" itemprop="dateCreated datePublished" datetime="2021-01-25T12:22:58+08:00">2021-01-25</time>
+              <time title="Created: 2021-01-25 12:22:58 / Modified: 12:46:12" itemprop="dateCreated datePublished" datetime="2021-01-25T12:22:58+08:00">2021-01-25</time>
             </span>
 
           
@@ -196,8 +196,8 @@
       
         <h3 id="伯努利分布bernoulli-distribution">1.伯努利分布（bernoulli distribution）</h3>
 <p>伯努利分布，又名两点分布或者0-1分布，是一个离散型的随机分布。 如果伯努利试验成功，则伯努利随机变量取值为1，如果失败，伯努利 随机变量取值为0。记其成功概率为p，失败概率为q=1-p.</p>
-<p>则其概率质量函数为： <span class="math display">\[f(x) = p^x(1-p)^1-x=\]</span></p>
-<p><span class="math display">\[f(x) = p^x(1-p)^1-x = \begin{cases}
+<p>则其概率质量函数为： <span class="math display">\[f(x) = p^x(1-p)^{1-x}=\]</span></p>
+<p><span class="math display">\[f(x) = p^x(1-p)^{1-x} = \begin{cases}
 p &amp; if x = 1, \\
 q &amp; if x = 0.
 \end{cases}\]</span></p>
