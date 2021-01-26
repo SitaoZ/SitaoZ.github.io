@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hypergeometric_distribution</title>
+    <url>/2021/01/20/Hypergeometric-distribution/</url>
+    <content><![CDATA[<h3 id="二项分布">1.1 二项分布</h3>
+<h3 id="超几何分布hypergeometric-distribution">1.2 超几何分布（hypergeometric distribution）</h3>
+<p>设有N个产品，其中次品有M个。从中任取n个（n&lt;=N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： <span class="math display">\[P(X=m)=\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m=0,1,2,...min(M,n))\]</span> 则称 X服从参数为n,m和N的超几何分布，记为 <span class="math inline">\(X \sim H(n, m, N)\)</span> $$ =  </p>
+]]></content>
+      <categories>
+        <category>probability</category>
+        <category>hypergeometric</category>
+      </categories>
+      <tags>
+        <tag>二项分布</tag>
+        <tag>超几何分布</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KEGG数据库下载</title>
+    <url>/2021/01/22/KEGG%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8B%E8%BD%BD/</url>
+    <content><![CDATA[<h3 id="kegg-数据库">1.KEGG 数据库</h3>
+<p>KEGG是现在主流的基因注释的数据库之一,KEGG 是一个集成的数据库资源， 主要有18个子库构成，分成四个主要部分，包括： 系统信息（KEGG 代谢通路，简介，模块）； 基因组信息（直系的功能基因，基因组，基因，基因序列相似性）； 化学信息（小分子，聚糖，反应，反应类型，酶命名） 健康信息（疾病和变异相关的网络，人类基因组变异，人类疾病，药物，药物群，健康相关物质）</p>
+<h3 id="生物信息学常用的子库介绍">2.生物信息学常用的子库介绍</h3>
+]]></content>
+      <categories>
+        <category>database</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Possion distribution</title>
+    <url>/2021/01/19/Possion-distribution/</url>
+    <content><![CDATA[<p>泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。 它描述的是在单位时间（空间）内随机事件发生的次数。 泊松分布的推导如下：</p>
+<h3 id="二项分布binomial-distribution">1.二项分布(binomial distribution)</h3>
+<p>两点分布重复n次，就得到了二项分布，二项分布的概率质量函数(probability mass function, PMF): n为实验的总次数，k为实验成功的次数，p是成功的概率 <span class="math display">\[ P(X=k)=C_n^kp^k(1-p)^{n-k} \]</span> 服从二项分布的随机变量记为 <span class="math inline">\(X \sim B(n,p)\)</span></p>
+<h4 id="a.二项分布的期望">a.二项分布的期望</h4>
+<p>二项分布分布，事件发生的概率为p, 不发生的概率为q=1-p, 这里的 <span class="math inline">\(C_n^k\)</span> 称为二项系数，根据二项展开式的系数，可以反推二项分布的概率和为1. <span class="math display">\[ \Sigma_{k=0}^nP(X=k) = \Sigma_{k=0}^nC_n^kp^k(1-p)^{n-k} = (p+(1-p))^n=1 \]</span> 期望是离散型随机变量的特征之一，定义如下： 设<span class="math inline">\(\xi\)</span> 为离散型随机变量，它可以取值<span class="math inline">\(x_1,x_2,x_3,...\)</span>，对应的概率为<span class="math inline">\(p_1,p_2,p_3,...\)</span> 如果级数 <span class="math display">\[\Sigma_{i=1}^{\infty}x_ip_i\]</span> 绝对收敛，则把它称为<span class="math inline">\(\xi\)</span>的数学期望（mathematical expectation）,简称期望，期望值或均值（mean）,记为<span class="math inline">\(E\xi\)</span> 当<span class="math inline">\(\Sigma_{i=1}^{\infty}{\vert}x_i{\vert}p_i\)</span> 发散时，则<span class="math inline">\(\xi\)</span>的数学期望不存在。</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\Sigma_{k=0}^{n}kp_k &amp;= \Sigma_{k=1}{n}{n \choose k}p^kq^{n-k} \\
+&amp;= np \Sigma_{k=1}^{n}{n-1 \choose k-1}p^{k-1}q^{n-k} \\
+&amp;=np(p+q)^{n-1} \\
+&amp;=np 
+\end{aligned}
+\end{equation}\]</span></p>
+<h4 id="b.二项分布的方差">b.二项分布的方差</h4>
+<p>随机变量<span class="math inline">\(\xi\)</span>,如果<span class="math inline">\(E(\xi-E\xi)^2\)</span>存在，则称它为随机变量<span class="math inline">\(\xi\)</span>的方差（variance）. 并记为<span class="math inline">\(D\xi\)</span>，而<span class="math inline">\(\sqrt{D\xi}\)</span>称为标准差（standard deviation），描述的是随机变量 对其数学期望的偏离程度（dispersion）。</p>
+<p><span class="math display">\[ E(X) = np\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+E(X^2) &amp;= \Sigma_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
+&amp;=\Sigma_{k=1}^{n} [k(k-1)+k]\frac{n!}{k!(n-k)!}p^kq^{n-k} \\
+&amp;=\Sigma_{k=2}^{n} \frac{n!}{(k-2)!(n-k)!} + E(X) \\
+&amp;=n(n-1)p^2 \Sigma_{k=2}^{n} \frac{(n-2)!}{(k-2)![(n-2) - (k-2)]!} \cdot p^{k-2}q^{(n-2)-(k-2)} +E(X) \\
+&amp;=n(n-1)p^2 \Sigma_{k{&#39;}=0}^{n-2} C_{n-2}^k{&#39;}p^k{&#39;}q^{(n-2)-k{&#39;}} + E(X) \\
+&amp;=n(n-1)p^2 + np \\
+&amp;=n^2p^2 + np(1-p) \\
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>由于方差恒等式<span class="math inline">\(D(X) = E(X^2) - [E(X)]^2\)</span>，所以 <span class="math inline">\(D(X) = np(1-p)\)</span></p>
+<h3 id="泊松分布possion-distribution">2.泊松分布(possion distribution)</h3>
+<p>在下面的情形下，<span class="math inline">\(n \to \infty,\,p,\,\lambda &gt; 0,\,\lambda=np,\,p = \frac{\lambda}{n}\)</span> <span class="math display">\[P(X=k)=\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}\]</span> <span class="math display">\[C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{1}{k!} \cdot \frac{n(n-1)...(n-k+1)}{n^k} \cdot \lambda^k \cdot\frac{(1-\frac{\lambda}{n})^n}{(1-\frac{\lambda}{n})^k}\]</span> 因为<span class="math inline">\(n \to \infty\)</span>, k不变，第二个因子</p>
+<p><span class="math display">\[\displaystyle \lim_{n \to \infty} \frac{n(n-1)...(n-k+1)}{n^k}=\frac{n}{n} \cdot \frac{n-1}{n}...\frac{n-(k-1)}{n}=1\]</span></p>
+<p>第四个因子中的分母</p>
+<p><span class="math display">\[\displaystyle \lim_{n \to \infty}(1-\frac{\lambda}{n})^k = 1\]</span></p>
+<p>第四个因子中的分子 <span class="math display">\[(1-\frac{\lambda}{n})^n = [(1-\frac{\lambda}{n})^{-\frac{n}{\lambda}}]^{-\lambda}\]</span> 因为 <span class="math inline">\(\displaystyle \lim_{n \to \infty} (1-\frac{\lambda}{n})^{-\frac{n}{\lambda}} = e\)</span>，所以 <span class="math inline">\((1-\frac{\lambda}{n})^n = e^{-\lambda}\)</span></p>
+<p>因此 <span class="math display">\[\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{\lambda^k}{k!}e^{-\lambda}\]</span> 综上 <span class="math display">\[P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,2...\]</span> 服从泊松分布随机变量记为 <span class="math inline">\(X \sim p(\lambda)\)</span> 在应用中，当p相当小（p &lt;= 0.1）时，我们用下面的近似公式 <span class="math inline">\(b(k;n,p) \sim \frac{(np)^k}{k!}e^{-np}\)</span></p>
+<h3 id="泊松分布期望">3.泊松分布期望</h3>
+<p>证明泊松分布的概率和为1 <span class="math display">\[ \Sigma_{k=0}^{\infty}p(k;\lambda) = \Sigma_{k=0}^{\infty} \frac{\lambda^k}{k!}e^{-\lambda}=e^{-\lambda} \cdot e^{\lambda}=1\]</span> <span class="math inline">\(e^{\lambda} = \Sigma_{k=0}^{\infty} \frac{\lambda^k}{k!}\)</span> 为指数函数的泰勒展开式</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\Sigma_{k=0}^{\infty}kp_k &amp;= \Sigma_{k=1}^{\infty}k \cdot \frac{\lambda^k}{k!}e^{-\lambda} \\
+&amp;=\lambda e^{-\lambda}\Sigma_{k=1}^{\infty}\frac{\lambda^{k-1}}{(k-1)!} \\
+&amp;=\lambda e^{-\lambda} \cdot e^\lambda \\
+&amp;=\lambda
+
+\end{aligned}
+\end{equation}\]</span></p>
+<h3 id="泊松分布方差">4.泊松分布方差</h3>
+<p>方差的推导如下： 对于泊松分布期望：<span class="math inline">\(E(\xi)=\lambda\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+E(\xi)^2 &amp;= \Sigma k^2p_k \\
+&amp;=\Sigma_{k=1}^{\infty}k^2 \cdot \frac{\lambda^k}{k!}e^{-\lambda} \\
+&amp;=\Sigma_{k=1}^{\infty}k \frac{\lambda^k}{(k-1)!} e^{-\lambda} \\
+&amp;=\Sigma_{k=1}^{\infty} [(k-1)+1] \cdot \frac{\lambda^k}{(k-1)!} e^{-\lambda} \\
+&amp;=\Sigma_{k=2}^{\infty} \frac{\lambda^k}{(k-2)!}e^{-\lambda} + \Sigma_{k=1}^{\infty} \frac{\lambda^k}{(k-1)!}e^{-\lambda} \\
+&amp;=\lambda^2\Sigma_{k{&#39;}=0}^{\infty} \frac{\lambda^k{&#39;}}{(k{&#39;})!}e^{-\lambda} + \lambda\Sigma_{k{&#39;&#39;}=0}^{\infty} \frac{\lambda^k{&#39;&#39;}}{(k{&#39;&#39;})!}e^{-\lambda} \\
+&amp;=\lambda^2+\lambda
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[D\xi = E(\xi^2) - [E(\xi)]^2 = \lambda^2+\lambda -\lambda^2 = \lambda\]</span> 附方差恒等式的证明 <span class="math display">\[D\xi = E(\xi^2) - [E(\xi)]^2 \]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+D(\xi) &amp;= E[\xi - E(\xi)]^2 \\
+&amp;=E{\xi^2 - 2E(\xi) \cdot \xi +[E(\xi)]^2} \\
+&amp;=E(\xi^2) - E[2E(\xi) \cdot \xi] + E[E(\xi)]^2 \\
+&amp;=E(\xi^2) - 2E(\xi) \cdot E(\xi) + [E(\xi)]^2\\
+&amp;=E(\xi^2) - [E(\xi)]^2
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>方差恒等式证明二： 以<span class="math inline">\(\xi \sim p(\xi)\)</span>为例</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
+&amp;=\int_{-\infty}^{\infty}\{\xi^2 - 2E(\xi) \cdot \xi + [E(\xi)]^2\}p(\xi)d\xi \\
+&amp;=\int_{-\infty}^{\infty}\xi^2p(\xi)d\xi - 2E(\xi)\int_{-\infty}^{\infty}\xi p(\xi)d\xi + [E(\xi)]^2\int_{-\infty}^{\infty}p(\xi)d\xi \\
+&amp;=E(\xi^2) - 2E(\xi) \cdot E(\xi) + [E(\xi)]^2 \cdot 1 \\
+&amp;=E(\xi^2) - [E(\xi)]^2
+
+\end{aligned}
+\end{equation}\]</span></p>
+]]></content>
+      <categories>
+        <category>probability</category>
+        <category>possion</category>
+      </categories>
+      <tags>
+        <tag>二项分布</tag>
+        <tag>泊松分布</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch实操</title>
+    <url>/2021/01/20/Pytorch%E5%AE%9E%E6%93%8D/</url>
+    <content><![CDATA[<p>pytorch，深度学习流行的框架之一，Facebook开发维护，社区活跃度高。</p>
+<h3 id="pytorch维度转化相关">1.pytorch维度转化相关</h3>
+<h4 id="permute-vs-transpose">1.1 permute vs transpose</h4>
+<p>词义是重新排列，改变次序的意思，在pytorch中主要用来实现tensor的维度转换。</p>
+<p>pytorch官方的解释如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ permute(*dims) → Tensor</span><br><span class="line">$     Returns a view of the original tensor with its dimensions permuted.</span><br><span class="line">$     Parameters</span><br><span class="line">$         *dims (int...) – The desired ordering of dimensions</span><br></pre></td></tr></table></figure>
+<p>Example <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.permute(<span class="number">3</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>).size()</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure> Tensor.permute(a,b,c,d, ...)：permute函数可以对任意高维矩阵进行转置； 但没有 torch.permute() 这个调用方式，只能 Tensor.permute()；</p>
+<p>torch.transpose(Tensor, a,b)：transpose只能操作2D矩阵的转置， 但是多次的2D转换的结果和permute的一致。 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>).transpose(<span class="number">2</span>,<span class="number">0</span>).shape</span><br><span class="line">torch.Size([<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>).transpose(<span class="number">2</span>,<span class="number">0</span>).transpose(<span class="number">3</span>,<span class="number">0</span>)</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>).transpose(<span class="number">2</span>,<span class="number">0</span>).transpose(<span class="number">3</span>,<span class="number">0</span>).transpose(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure> 总结，复杂的转换可以使用permute，简答的2D转换用transpose。</p>
+<h4 id="view">1.2 view</h4>
+<p>改变tensor的形状,但是和permute和transpose不同； 参数中的-1就代表这个位置由其他位置的数字来推断；</p>
+<p>pytorch的官方解释如下： Returns a new tensor with the same data as the self tensor but of a different shape.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ view(*shape) → Tensor</span><br><span class="line">$ Parameters</span><br><span class="line">$     shape (torch.Size or int...) – the desired size</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.size()</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = x.view(<span class="number">16</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y.size()</span><br><span class="line">torch.Size([<span class="number">16</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = x.view(-<span class="number">1</span>, <span class="number">8</span>)  <span class="comment"># the size -1 is inferred from other dimensions</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z.size()</span><br><span class="line">torch.Size([<span class="number">2</span>, <span class="number">8</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = a.transpose(<span class="number">1</span>, <span class="number">2</span>)  <span class="comment"># Swaps 2nd and 3rd dimension</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = a.view(<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>)  <span class="comment"># Does not change tensor layout in memory</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.equal(b, c)</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>pytorch</category>
+      </categories>
+      <tags>
+        <tag>tensor</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VGG解析和实现</title>
+    <url>/2021/01/20/VGG%E8%A7%A3%E6%9E%90%E5%92%8C%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<h3 id="vgg16">1. VGG16</h3>
+<p>VGG16是运用高深度的卷积神经网络在图像识别方面的一个重要的应用，并在2014年夺得ImageNet的定位第一和分类第二。 <a href="https://arxiv.org/pdf/1409.1556.pdf">论文PDF</a></p>
+<h3 id="网络结构">2. 网络结构</h3>
+<p>文章中网络结构如下： <img src="/2021/01/20/VGG%E8%A7%A3%E6%9E%90%E5%92%8C%E5%AE%9E%E7%8E%B0/vgg.png" alt="&#39;vgg&#39;"></p>
+<h3 id="代码实现">3. 代码实现</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">def conv_layer(chann_in, chann_out, k_size, p_size):</span><br><span class="line">    layer = tnn.Sequential(</span><br><span class="line">        tnn.Conv2d(chann_in, chann_out, kernel_size=k_size, padding=p_size),</span><br><span class="line">        tnn.BatchNorm2d(chann_out),</span><br><span class="line">        tnn.ReLU()</span><br><span class="line">    )</span><br><span class="line">    <span class="built_in">return</span> layer</span><br><span class="line"></span><br><span class="line">def vgg_conv_block(in_list, out_list, k_list, p_list, pooling_k, pooling_s):</span><br><span class="line"></span><br><span class="line">    layers = [ conv_layer(in_list[i], out_list[i], k_list[i], p_list[i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(in_list)) ]</span><br><span class="line">    layers += [ tnn.MaxPool2d(kernel_size = pooling_k, stride = pooling_s)]</span><br><span class="line">    <span class="built_in">return</span> tnn.Sequential(*layers)</span><br><span class="line"></span><br><span class="line">def vgg_fc_layer(size_in, size_out):</span><br><span class="line">    layer = tnn.Sequential(</span><br><span class="line">        tnn.Linear(size_in, size_out),</span><br><span class="line">        tnn.BatchNorm1d(size_out),</span><br><span class="line">        tnn.ReLU()</span><br><span class="line">    )</span><br><span class="line">    <span class="built_in">return</span> layer</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>bernoulli_distribution</title>
+    <url>/2021/01/25/bernoulli-distribution/</url>
+    <content><![CDATA[<h3 id="伯努利分布bernoulli-distribution">1.伯努利分布（bernoulli distribution）</h3>
+<p>伯努利分布，又名两点分布或者0-1分布，是一个离散型的随机分布。 如果伯努利试验成功，则伯努利随机变量取值为1，如果失败，伯努利 随机变量取值为0。记其成功概率为p，失败概率为q=1-p.</p>
+<p>则其概率质量函数为：</p>
+<p><span class="math display">\[f(x) = p^x(1-p)^{1-x} = \begin{cases}
+p &amp; if x = 1, \\
+q &amp; if x = 0.
+\end{cases}\]</span></p>
+<h3 id="伯努利分布的期望">2.伯努利分布的期望</h3>
+<p><span class="math display">\[E[X] = \Sigma_{i=0}^{1}x_if(x_i)=1 \cdot p+0 \cdot p=p\]</span></p>
+<h3 id="伯努利分布的方差">3.伯努利分布的方差</h3>
+<p><span class="math display">\[var[X] = \Sigma_{i=0}^{1}(x_i-E[X])^2f(xi) = (0-p)^2(1-p)+(1-p)^2p=p(1-p)=pq\]</span></p>
+<p>当<span class="math inline">\(p=q=\frac{1}{2}\)</span>时，方差最大。</p>
+]]></content>
+      <categories>
+        <category>probability</category>
+        <category>bernoulli</category>
+      </categories>
+      <tags>
+        <tag>bernoulli distribution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>binomial_distribution</title>
+    <url>/2021/01/25/binomial-distribution/</url>
+    <content><![CDATA[<h3 id="二项分布binomial-distribution">1.二项分布(binomial distribution)</h3>
+<p>两点分布重复n次，就得到了二项分布，二项分布的概率质量函数(probability mass function, PMF): n为实验的总次数，k为实验成功的次数，p是成功的概率 <span class="math display">\[ P(X=k)=C_n^kp^k(1-p)^{n-k} \]</span> 服从二项分布的随机变量记为 <span class="math inline">\(X \sim B(n,p)\)</span></p>
+<h3 id="二项分布的期望">2.二项分布的期望</h3>
+<p>二项分布分布，事件发生的概率为p, 不发生的概率为q=1-p, 这里的 <span class="math inline">\(C_n^k\)</span> 称为二项系数，根据二项展开式的系数，可以反推二项分布的概率和为1. <span class="math display">\[ \Sigma_{k=0}^nP(X=k) = \Sigma_{k=0}^nC_n^kp^k(1-p)^{n-k} = (p+(1-p))^n=1 \]</span> 期望是离散型随机变量的特征之一，定义如下： 设<span class="math inline">\(\xi\)</span> 为离散型随机变量，它可以取值<span class="math inline">\(x_1,x_2,x_3,...\)</span>，对应的概率为<span class="math inline">\(p_1,p_2,p_3,...\)</span> 如果级数 <span class="math display">\[\Sigma_{i=1}^{\infty}x_ip_i\]</span> 绝对收敛，则把它称为<span class="math inline">\(\xi\)</span>的数学期望（mathematical expectation）,简称期望，期望值或均值（mean）,记为<span class="math inline">\(E\xi\)</span> 当<span class="math inline">\(\Sigma_{i=1}^{\infty}{\vert}x_i{\vert}p_i\)</span> 发散时，则<span class="math inline">\(\xi\)</span>的数学期望不存在。</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\Sigma_{k=0}^{n}kp_k &amp;= \Sigma_{k=1}{n}{n \choose k}p^kq^{n-k} \\
+&amp;= np \Sigma_{k=1}^{n}{n-1 \choose k-1}p^{k-1}q^{n-k} \\
+&amp;=np(p+q)^{n-1} \\
+&amp;=np
+\end{aligned}
+\end{equation}\]</span></p>
+<h3 id="二项分布的方差">3.二项分布的方差</h3>
+<p>随机变量<span class="math inline">\(\xi\)</span>,如果<span class="math inline">\(E(\xi-E\xi)^2\)</span>存在，则称它为随机变量<span class="math inline">\(\xi\)</span>的方差（variance）. 并记为<span class="math inline">\(D\xi\)</span>，而<span class="math inline">\(\sqrt{D\xi}\)</span>称为标准差（standard deviation），描述的是随机变量 对其数学期望的偏离程度（dispersion）。</p>
+<p><span class="math display">\[ E(X) = np\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+E(X^2) &amp;= \Sigma_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
+&amp;=\Sigma_{k=1}^{n} [k(k-1)+k]\frac{n!}{k!(n-k)!}p^kq^{n-k} \\
+&amp;=\Sigma_{k=2}^{n} \frac{n!}{(k-2)!(n-k)!} + E(X) \\
+&amp;=n(n-1)p^2 \Sigma_{k=2}^{n} \frac{(n-2)!}{(k-2)![(n-2) - (k-2)]!} \cdot p^{k-2}q^{(n-2)-(k-2)} +E(X) \\
+&amp;=n(n-1)p^2 \Sigma_{k{&#39;}=0}^{n-2} C_{n-2}^k{&#39;}p^k{&#39;}q^{(n-2)-k{&#39;}} + E(X) \\
+&amp;=n(n-1)p^2 + np \\
+&amp;=n^2p^2 + np(1-p) \\
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>由于方差恒等式<span class="math inline">\(D(X) = E(X^2) - [E(X)]^2\)</span>，所以 <span class="math inline">\(D(X) = np(1-p)\)</span></p>
+]]></content>
+      <categories>
+        <category>probability</category>
+        <category>binomial</category>
+      </categories>
+      <tags>
+        <tag>binomial distribution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/01/15/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>normal_distribution</title>
+    <url>/2021/01/23/normal-distribution/</url>
+    <content><![CDATA[<h3 id="正态分布">1. 正态分布</h3>
+<p><span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\]</span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>github.io 博客搭建指南</title>
+    <url>/2021/01/15/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。</p>
+<h1 id="搭建步骤">搭建步骤</h1>
+<ol type="1">
+<li>获取域名</li>
+<li>建立github仓库</li>
+<li>安装git</li>
+<li>安装Node.js</li>
+<li>安装Hexo</li>
+<li>推送网站</li>
+<li>绑定域名</li>
+<li>更换主题</li>
+</ol>
+<p><span class="math display">\[E[X]=x^4\]</span></p>
+]]></content>
+  </entry>
+</search>
