@@ -110,7 +110,8 @@ E(X^2) &amp;= \Sigma_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
 \end{equation}\]</span></p>
 <p>由于方差恒等式<span class="math inline">\(D(X) = E(X^2) - [E(X)]^2\)</span>，所以 <span class="math inline">\(D(X) = np(1-p)\)</span></p>
 <p>二项分布方差证明二：</p>
-<p>设<span class="math inline">\(\xi\)</span>是伯努利随机变量，以概率<span class="math inline">\(P\{\xi_i=1\} = p\)</span>和<span class="math inline">\(P\{\xi_i=0\} = q,p + q = 1\)</span>, 根据方差的定义: 伯努利期望<span class="math inline">\(E\xi = p\)</span>, <span class="math display">\[ D\xi = E(\xi - E\xi)^2 = E(\xi - p)^2=(1-p)^2p + (0-p)^q = pq \]</span> 由此可见，<span class="math inline">\(\xi_1,\xi_2,...\xi_n\)</span>是独立同分布的伯努利随机变量序列，且<span class="math inline">\(S_n = \xi_1+\xi_2+...+\xi_n\)</span> 则 <span class="math display">\[DS_n = npq\]</span> 这里参考了方差的性质：如果<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>独立，则和<span class="math inline">\(\xi+\eta\)</span>的方差等于方差之和。 <span class="math display">\[D(\xi+\eta) = D\xi + D\eta\]</span></p>
+<p>设<span class="math inline">\(\xi\)</span>是伯努利随机变量，以概率<span class="math inline">\(P\{\xi_i=1\} = p\)</span>和<span class="math inline">\(P\{\xi_i=0\} = q,p + q = 1\)</span>, 根据方差的定义:</p>
+<p>伯努利期望<span class="math inline">\(E\xi = p\)</span>, <span class="math display">\[ D\xi = E(\xi - E\xi)^2 = E(\xi - p)^2=(1-p)^2p + (0-p)^q = pq \]</span> 由此可见，<span class="math inline">\(\xi_1,\xi_2,...\xi_n\)</span>是独立同分布的伯努利随机变量序列，且<span class="math inline">\(S_n = \xi_1+\xi_2+...+\xi_n\)</span> 则 <span class="math display">\[DS_n = npq\]</span> 这里参考了方差的性质：如果<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>独立，则和<span class="math inline">\(\xi+\eta\)</span>的方差等于方差之和。 <span class="math display">\[D(\xi+\eta) = D\xi + D\eta\]</span></p>
 ]]></content>
       <categories>
         <category>probability</category>
