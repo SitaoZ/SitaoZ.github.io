@@ -3,9 +3,8 @@
   <entry>
     <title>KEGG数据库下载</title>
     <url>/2021/01/22/KEGG%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<h3 id="kegg-数据库">1.KEGG 数据库</h3>
-<p>KEGG是现在主流的基因注释的数据库之一,KEGG 是一个集成的数据库资源， 主要有18个子库构成，分成四个主要部分，包括： 系统信息（KEGG 代谢通路，简介，模块）； 基因组信息（直系的功能基因，基因组，基因，基因序列相似性）； 化学信息（小分子，聚糖，反应，反应类型，酶命名） 健康信息（疾病和变异相关的网络，人类基因组变异，人类疾病，药物，药物群，健康相关物质）</p>
-<h3 id="生物信息学常用的子库介绍">2.生物信息学常用的子库介绍</h3>
+    <content><![CDATA[<h3 id="1-KEGG-数据库"><a href="#1-KEGG-数据库" class="headerlink" title="1.KEGG 数据库"></a>1.KEGG 数据库</h3><p>KEGG是现在主流的基因注释的数据库之一,KEGG 是一个集成的数据库资源，<br>主要有18个子库构成，分成四个主要部分，包括：<br>系统信息（KEGG 代谢通路，简介，模块）；<br>基因组信息（直系的功能基因，基因组，基因，基因序列相似性）；<br>化学信息（小分子，聚糖，反应，反应类型，酶命名）<br>健康信息（疾病和变异相关的网络，人类基因组变异，人类疾病，药物，药物群，健康相关物质）</p>
+<h3 id="2-生物信息学常用的子库介绍"><a href="#2-生物信息学常用的子库介绍" class="headerlink" title="2.生物信息学常用的子库介绍"></a>2.生物信息学常用的子库介绍</h3><h4 id="2-1-KEGG-Orthology"><a href="#2-1-KEGG-Orthology" class="headerlink" title="2.1 KEGG Orthology"></a>2.1 KEGG Orthology</h4><p>KEGG Orthology(KO)是用功能直系同源基因表示分子功能的数据库。<br>功能直系同源是手动</p>
 ]]></content>
       <categories>
         <category>database</category>
@@ -93,18 +92,12 @@ E(X^2) &amp;= \Sigma_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
   <entry>
     <title>bernoulli_distribution</title>
     <url>/2021/01/25/bernoulli-distribution/</url>
-    <content><![CDATA[<h3 id="伯努利分布bernoulli-distribution">1.伯努利分布（bernoulli distribution）</h3>
-<p>伯努利分布，又名两点分布或者0-1分布，是一个离散型的随机分布。 如果伯努利试验成功，则伯努利随机变量取值为1，如果失败，伯努利 随机变量取值为0。记其成功概率为p，失败概率为q=1-p.</p>
+    <content><![CDATA[<h3 id="1-伯努利分布（bernoulli-distribution）"><a href="#1-伯努利分布（bernoulli-distribution）" class="headerlink" title="1.伯努利分布（bernoulli distribution）"></a>1.伯努利分布（bernoulli distribution）</h3><p>伯努利分布，又名两点分布或者0-1分布，是一个离散型的随机分布。<br>如果伯努利试验成功，则伯努利随机变量取值为1，如果失败，伯努利<br>随机变量取值为0。记其成功概率为p，失败概率为q=1-p.</p>
 <p>则其概率质量函数为：</p>
-<p><span class="math display">\[f(x) = p^x(1-p)^{1-x} = \begin{cases}
-p &amp; if x = 1, \\
-q &amp; if x = 0.
-\end{cases}\]</span></p>
-<h3 id="伯努利分布的期望">2.伯努利分布的期望</h3>
-<p><span class="math display">\[E[X] = \Sigma_{i=0}^{1}x_if(x_i)=1 \cdot p+0 \cdot p=p\]</span></p>
-<h3 id="伯努利分布的方差">3.伯努利分布的方差</h3>
-<p><span class="math display">\[var[X] = \Sigma_{i=0}^{1}(x_i-E[X])^2f(xi) = (0-p)^2(1-p)+(1-p)^2p=p(1-p)=pq\]</span></p>
-<p>当<span class="math inline">\(p=q=\frac{1}{2}\)</span>时，方差最大。</p>
+<p>$$f(x) = p^x(1-p)^{1-x} = \begin{cases}<br>p &amp; if x = 1, \<br>q &amp; if x = 0.<br>\end{cases}$$</p>
+<h3 id="2-伯努利分布的期望"><a href="#2-伯努利分布的期望" class="headerlink" title="2.伯努利分布的期望"></a>2.伯努利分布的期望</h3><p>$$E[X] = \Sigma_{i=0}^{1}x_if(x_i)=1 \cdot p+0 \cdot p=p$$</p>
+<h3 id="3-伯努利分布的方差"><a href="#3-伯努利分布的方差" class="headerlink" title="3.伯努利分布的方差"></a>3.伯努利分布的方差</h3><p>$$var[X] = \Sigma_{i=0}^{1}(x_i-E[X])^2f(x_i) = (0-p)^2(1-p)+(1-p)^2p=p(1-p)=pq$$</p>
+<p>当$p=q=\frac{1}{2}$时，方差最大。</p>
 ]]></content>
       <categories>
         <category>probability</category>
