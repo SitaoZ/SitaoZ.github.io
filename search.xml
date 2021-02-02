@@ -301,7 +301,7 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
 0,  \omega \in A.
 \end{cases}
 \]</span> 由于伯努利试验只有0，1，所以根据随机变量期望的定义，性质7成立。</p>
-<p>性质2的证明： 设 <span class="math inline">\(\xi=\Sigmax_iI(A_i) \eta=\Sigmay_jI(B_j)\)</span>, <span class="math display">\[
+<p>性质2的证明： 设 <span class="math inline">\(\xi=\Sigma x_iI(A_i) \eta=\Sigma y_jI(B_j)\)</span>, <span class="math display">\[
 a\xi+b\eta &amp;= a\Sigma_{i,j}x_iI(A_i \cap B_j) + b\Sigma_{i,j} y_jI(A_i \cap B_j) \\
 &amp;=\Sigma_{i,j}(ax_i+by_j)I(A_i \cap B_j)
 \]</span> <span class="math display">\[
