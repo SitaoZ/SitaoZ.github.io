@@ -28,7 +28,7 @@
 <meta property="og:description" content="1.期望数学定义及性质证明 在n次独立重复的试验中观察随机变量\(\xi\)的取值，则取\(x_i\)的值大致 应该出现在\(np_i\)次，根据n次试验结果计算该随机变量的平均值大致如下： \[ \frac{1}{n}[np_1x_1+np_2x_2+...+np_kx_k] &#x3D; \sum_{i&#x3D;1}^{k}p_ix_i \] 定义：实数\(E\xi &#x3D; \sum_{i&#x3D;1}^{k}x_iP(A">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-02T05:15:28.000Z">
-<meta property="article:modified_time" content="2021-02-02T14:23:38.391Z">
+<meta property="article:modified_time" content="2021-02-02T14:44:05.903Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="expeactation">
 <meta property="article:tag" content="variance">
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-02-02 13:15:28 / Modified: 22:23:38" itemprop="dateCreated datePublished" datetime="2021-02-02T13:15:28+08:00">2021-02-02</time>
+              <time title="Created: 2021-02-02 13:15:28 / Modified: 22:44:05" itemprop="dateCreated datePublished" datetime="2021-02-02T13:15:28+08:00">2021-02-02</time>
             </span>
 
           
@@ -288,6 +288,14 @@ E\xi\eta &amp;= E(\sum_{i}x_i I(A_i))(\sum_{j}y_j I(B_j)) \\
 \end{equation}\]</span> 证明过程中，对于独立的随机变量<span class="math inline">\(\xi\)</span> ,<span class="math inline">\(\eta\)</span>， 事件 <span class="math inline">\(A_i = {\omega:\xi(\omega)=x_i}\)</span> 和 <span class="math inline">\(B_j={\omega:\eta(\omega)=y_j}\)</span> 事件独立：<span class="math inline">\(P(A_i \cap B_j) = P(A_i)P(B_j)\)</span></p>
 <p>性质6 的证明： 已知 <span class="math display">\[ \xi^2 = \sum_{i=1}^{l}x_i^2 I(A_i), \eta^2 = \sum y_i^2 I(b_j)\]</span> <span class="math display">\[ E\xi^2 = \sum_{i=1}^l x_i^2 P(A_i), E\eta^2 = \sum_{j=1}^k y_i^2P(B_j) \]</span></p>
 <p>设 <span class="math inline">\(E\xi^2 &gt; 0\)</span> ;<span class="math inline">\(E\eta^2 &gt; 0\)</span>, 记 <span class="math inline">\(\widetilde{\xi} = \frac{\xi}{\sqrt{E\xi^2}}\)</span> ,<span class="math inline">\(\widetilde{\eta} = \frac{\eta}{\sqrt{E\eta^2}}\)</span></p>
+<p>由于 <span class="math inline">\(2|\widetilde{\xi} \widetilde{\eta}| \le {\widetilde{\xi}}^2 + {\widetilde{\eta}}^2\)</span> 可得 <span class="math inline">\(2E|\widetilde{\xi} \widetilde{\eta}| \le E{\widetilde{\xi}}^2 + E {\widetilde{\eta}}^2 = 1+1=2\)</span> 所以 <span class="math inline">\(E|\widetilde{\xi} \widetilde{\eta}| \le 1\)</span> <span class="math display">\[\begin{equation}
+\begin{aligned}
+(E|\xi\eta|)^2 = (E|\widetilde{\xi}\sqrt{E\xi^2} \widetilde{\eta}\sqrt{E\eta^2}|)^2 \\ 
+&amp;=(E|\sqrt{E\xi^2E\eta^2}\widetilde{\xi}\widetilde{\eta}|)^2 \\ 
+&amp;=E\xi^2 E\eta^2(E|\widetilde{\xi}\widetilde{\eta}|)^2 \\ 
+\end{aligned}
+\end{equation}\]</span> 由于 $E| | 1 所以 $(E| |)^2 1 因此 $(E||)^2 = E^2 E<sup>2(E||)</sup>2 E^2 E^2 所以性质6 得证。</p>
+<p>因为设 <span class="math inline">\(E\xi &gt; 0\)</span>,所以还有一种特殊情况要证明。 假设 <span class="math inline">\(E\xi^2 = 0\)</span> , <span class="math inline">\(\sum_{i}x_i^2P(A_i) = 0\)</span> 因此0是<span class="math inline">\(\xi\)</span>的可能的值，且 <span class="math inline">\(P{\omega : \xi(\omega) = 0} = 1\)</span> 因为<span class="math inline">\(E\xi^2\)</span> 或者 <span class="math inline">\(E\eta^2=0\)</span> ,显然 <span class="math inline">\(E|\xi\eta| = 0\)</span> ,性质6依然成立。</p>
 
     </div>
 
