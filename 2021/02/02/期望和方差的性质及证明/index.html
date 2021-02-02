@@ -28,7 +28,7 @@
 <meta property="og:description" content="1.期望数学定义及性质证明 在n次独立重复的试验中观察随机变量\(\xi\)的取值，则取\(x_i\)的值大致 应该出现在\(np_i\)次，根据n次试验结果计算该随机变量的平均值大致如下： \[ \frac{1}{n}[np_1x_1+np_2x_2+...+np_kx_k] &#x3D; \Sigma_{i&#x3D;1}^{k}p_ix_i \] 定义：实数\(E\xi &#x3D; \Sigma_{i&#x3D;1}^{k}x_">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-02T05:15:28.000Z">
-<meta property="article:modified_time" content="2021-02-02T13:21:10.868Z">
+<meta property="article:modified_time" content="2021-02-02T13:39:07.004Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="expeactation">
 <meta property="article:tag" content="variance">
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-02-02 13:15:28 / Modified: 21:21:10" itemprop="dateCreated datePublished" datetime="2021-02-02T13:15:28+08:00">2021-02-02</time>
+              <time title="Created: 2021-02-02 13:15:28 / Modified: 21:39:07" itemprop="dateCreated datePublished" datetime="2021-02-02T13:15:28+08:00">2021-02-02</time>
             </span>
 
           
@@ -272,6 +272,19 @@ E(a\xi+b\eta) &amp;= \Sigma_{i,j}(a x_i+b y_i)P(A_i \cap B_j) \\
 &amp;=a\Sigma(\xi) + b\Sigma(\eta) \\
 \end{aligned}
 \end{equation}\]</span></p>
+<p>性质3 的证明： 由性质1，2可以证明3。 性质4的证明： <span class="math display">\[
+|E\xi| = |\Sigma_{i}x_iP(A_i)| \le \Sigma_{i}|x_i|P(B_j)=E|\xi|
+\]</span></p>
+<p>性质5的证明： <span class="math display">\[\begin{equation}
+\begin{aligned}
+\Sigma\xj\eta &amp;= E(\Sigma_{i}x_i I(A_i))(\Sigma_{j}y_j I(B_j)) \\
+&amp;=E\Sigma_{i,j}x_iy_jI(A_i \cap B_j) \\ 
+&amp;=\Sigma_{i,j}x_i y_jP(A_i \cap B_j) \\
+&amp;=\Sigmax_j y_jP(A_i)P(B_j) \\
+&amp;=(\Sigma_{i}x_i P(A_i))(\Sigma_{j}y_i P(B_j)) \\
+&amp;=E\xi \cdot E\eta \\
+\end{aligned}
+\end{equation}\]</span> 证明过程中，对于独立的随机变量<span class="math inline">\(\xi\)</span> ,<span class="math inline">\(\eta\)</span>， 事件 <span class="math inline">\(A_i = {\omega:\xi(\omega)=x_i}\)</span> 和 <span class="math inline">\(B_j={\omega:\eta(\omega)=y_j}\)</span> 事件独立：<span class="math inline">\(P(A_i \cap B_j) = P(A_i)P(B_j)\)</span></p>
 
     </div>
 
