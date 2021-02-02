@@ -282,35 +282,20 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
   <entry>
     <title>期望和方差的性质及证明</title>
     <url>/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/</url>
-    <content><![CDATA[<h3 id="期望数学定义及性质证明">1.期望数学定义及性质证明</h3>
-<p>在n次独立重复的试验中观察随机变量<span class="math inline">\(\xi\)</span>的取值，则取<span class="math inline">\(x_i\)</span>的值大致 应该出现在<span class="math inline">\(np_i\)</span>次，根据n次试验结果计算该随机变量的平均值大致如下： <span class="math display">\[
-\frac{1}{n}[np_1x_1+np_2x_2+...+np_kx_k] = \Sigma_{i=1}^{k}p_ix_i
-\]</span> 定义：实数<span class="math inline">\(E\xi = \Sigma_{i=1}^{k}x_iP(A_i)\)</span>,称作随机变量<span class="math inline">\(\xi=\Sigma_{i=1}^{k}x_iI(A_i)\)</span> 的数学期望或平均值。 数学期望的基本性质</p>
-<ol type="1">
-<li>若<span class="math inline">\(\xi \ge 0\)</span>,则<span class="math inline">\(E\xi \ge 0\)</span>.</li>
-<li><span class="math inline">\(E(a\xi+b\eta) = aE\xi + bE\eta\)</span>,其中a,b为常数.</li>
-<li>若<span class="math inline">\(\xi \ge \eta\)</span>,则<span class="math inline">\(E\xi \ge E\eta\)</span>.</li>
-<li><span class="math inline">\(|E\xi| \le E|\xi|\)</span>.</li>
-<li>若<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>独立,则<span class="math inline">\(E\xi\eta=E\xi \cdot E\eta\)</span>.</li>
-<li><span class="math inline">\((E|\xi|)^2 \le E{\xi}^2 \cdot E{\eta}^2\)</span>,柯西-瓦尔茨不等式.</li>
-<li>若<span class="math inline">\(\xi = I(A)\)</span>,则<span class="math inline">\(E\xi = P(A)\)</span>.</li>
+    <content><![CDATA[<h3 id="1-期望数学定义及性质证明"><a href="#1-期望数学定义及性质证明" class="headerlink" title="1.期望数学定义及性质证明"></a>1.期望数学定义及性质证明</h3><p>在n次独立重复的试验中观察随机变量$\xi$的取值，则取$x_i$的值大致<br>应该出现在$np_i$次，根据n次试验结果计算该随机变量的平均值大致如下：<br>$$<br>\frac{1}{n}[np_1x_1+np_2x_2+…+np_kx_k] = \Sigma_{i=1}^{k}p_ix_i<br>$$<br>定义：实数$E\xi = \Sigma_{i=1}^{k}x_iP(A_i)$,称作随机变量$\xi=\Sigma_{i=1}^{k}x_iI(A_i)$<br>的数学期望或平均值。<br>数学期望的基本性质 </p>
+<ol>
+<li>若$\xi \ge 0$,则$E\xi \ge 0$.</li>
+<li>$E(a\xi+b\eta) = aE\xi + bE\eta$,其中a,b为常数.</li>
+<li>若$\xi \ge \eta$,则$E\xi \ge E\eta$.</li>
+<li>$|E\xi| \le E|\xi|$.</li>
+<li>若$\xi$和$\eta$独立,则$E\xi\eta=E\xi \cdot E\eta$.</li>
+<li>$(E|\xi|)^2 \le E{\xi}^2 \cdot E{\eta}^2$,柯西-瓦尔茨不等式.</li>
+<li>若$\xi = I(A)$,则$E\xi = P(A)$.</li>
 </ol>
-<p>证明： 性质1显然成立 性质7，根据示性函数，由于 <span class="math display">\[
-\xi = I_A(\omega)= \begin{cases}
-1,  \omega \in A, \\
-0,  \omega \in A.
-\end{cases}
-\]</span> 由于伯努利试验只有0，1，所以根据随机变量期望的定义，性质7成立。</p>
-<p>性质2的证明： 设 <span class="math inline">\(\xi=\Sigma x_iI(A_i), \eta=\Sigma y_jI(B_j)\)</span>, <span class="math display">\[
-a\xi+b\eta &amp;= a\Sigma_{i,j}x_i I(A_i \cap B_j) + b\Sigma_{i,j} y_j I(A_i \cap B_j) \\
-&amp;=\Sigma_{i,j}(a x_i+b y_j)I(A_i \cap B_j)
-\]</span></p>
-<p><span class="math display">\[
-E(a\xi+b\eta) &amp;= \Sigma_{i,j}(a x_i+b y_i)P(A_i \cap B_j)\\
-&amp;=\Sigma_{i}a x_iP(A_i) + \Sigma_{j}b y_jP(B_j) \\
-&amp;=a\Sigma_{i}x_iP(A_i) + b\Sigma_{j}y_jP(B_j) \\
-&amp;=a\Sigma(\xi) + b\Sigma(\eta)
-\]</span></p>
+<p>证明：<br>性质1显然成立<br>性质7，根据示性函数，由于<br>$$<br>\xi = I_A(\omega)= \begin{cases}<br>1,  \omega \in A, \<br>0,  \omega \in A.<br>\end{cases}<br>$$<br>由于伯努利试验只有0，1，所以根据随机变量期望的定义，性质7成立。</p>
+<p>性质2的证明：<br>设 $\xi=\Sigma x_iI(A_i), \eta=\Sigma y_jI(B_j)$, </p>
+<p>\begin{equation}<br>\begin{aligned}<br>a\xi+b\eta &amp;= a\Sigma_{i,j}x_i I(A_i \cap B_j) + b\Sigma_{i,j} y_j I(A_i \cap B_j) \<br>&amp;=\Sigma_{i,j}(a x_i+b y_j)I(A_i \cap B_j)<br>\end{aligned}<br>\end{equation}</p>
+<p>\begin{equation}<br>\begin{aligned}<br>E(a\xi+b\eta) &amp;= \Sigma_{i,j}(a x_i+b y_i)P(A_i \cap B_j)\<br>&amp;=\Sigma_{i}a x_iP(A_i) + \Sigma_{j}b y_jP(B_j) \<br>&amp;=a\Sigma_{i}x_iP(A_i) + b\Sigma_{j}y_jP(B_j) \<br>&amp;=a\Sigma(\xi) + b\Sigma(\eta)<br>\end{aligned}<br>\end{equation}</p>
 ]]></content>
       <tags>
         <tag>expeactation</tag>
