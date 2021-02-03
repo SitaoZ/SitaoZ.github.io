@@ -28,7 +28,7 @@
 <meta property="og:description" content="1.期望数学定义及性质证明 在n次独立重复的试验中观察随机变量\(\xi\)的取值，则取\(x_i\)的值大致 应该出现在\(np_i\)次，根据n次试验结果计算该随机变量的平均值大致如下： \[ \frac{1}{n}[np_1x_1+np_2x_2+...+np_kx_k] &#x3D; \sum_{i&#x3D;1}^{k}p_ix_i \] 定义：实数\(E\xi &#x3D; \sum_{i&#x3D;1}^{k}x_iP(A">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-02T05:15:28.000Z">
-<meta property="article:modified_time" content="2021-02-02T14:46:05.236Z">
+<meta property="article:modified_time" content="2021-02-03T01:19:32.983Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="expeactation">
 <meta property="article:tag" content="variance">
@@ -222,10 +222,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-02-02 13:15:28 / Modified: 22:46:05" itemprop="dateCreated datePublished" datetime="2021-02-02T13:15:28+08:00">2021-02-02</time>
+              <time title="Created: 2021-02-02 13:15:28" itemprop="dateCreated datePublished" datetime="2021-02-02T13:15:28+08:00">2021-02-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-03 09:19:32" itemprop="dateModified" datetime="2021-02-03T09:19:32+08:00">2021-02-03</time>
+              </span>
 
           
 
@@ -296,6 +302,13 @@ E\xi\eta &amp;= E(\sum_{i}x_i I(A_i))(\sum_{j}y_j I(B_j)) \\
 \end{aligned}
 \end{equation}\]</span> 由于 <span class="math inline">\(E|\widetilde{\xi} \widetilde{\eta}| \le 1\)</span> 所以 <span class="math inline">\((E|\widetilde{\xi} \widetilde{\eta}|)^2 \le 1\)</span> 因此 <span class="math inline">\((E|\xi\eta|)^2 = E\xi^2 E\eta^2(E|\widetilde{\xi}\widetilde{\eta}|)^2 \le E\xi^2 \times E\eta^2\)</span> 所以性质6 得证。</p>
 <p>因为设 <span class="math inline">\(E\xi &gt; 0\)</span>,所以还有一种特殊情况要证明。 假设 <span class="math inline">\(E\xi^2 = 0\)</span> , <span class="math inline">\(\sum_{i}x_i^2P(A_i) = 0\)</span> 因此0是<span class="math inline">\(\xi\)</span>的可能的值，且 <span class="math inline">\(P{\omega : \xi(\omega) = 0} = 1\)</span> 因为<span class="math inline">\(E\xi^2\)</span> 或者 <span class="math inline">\(E\eta^2=0\)</span> ,显然 <span class="math inline">\(E|\xi\eta| = 0\)</span> ,性质6依然成立。</p>
+<h3 id="方差的定义及性质证明">2.方差的定义及性质证明</h3>
+<p>方差是来描述数据分散程度的指标</p>
+<p><span class="math display">\[D\xi = E(\xi - E\xi)^2\]</span> <span class="math inline">\(D\xi\)</span>记为方差，<span class="math inline">\(\sigma = \sqrt{D\xi}\)</span>记为标准差。</p>
+<p>性质1 由于 <span class="math display">\[
+E(\xi-E\xi)^2 = E[\xi^2 - 2\xiE\xi + (E\xi)^2] = E(\xi^2) - (E\xi)^2
+\]</span> 所以 <span class="math inline">\(D\xi = E\xi^2 - (E\xi)^2\)</span> 根据方差的定义，可知<span class="math inline">\(D\xi\ge0\)</span></p>
+<p>性质2 对于任意常数的a,b <span class="math inline">\(D(a+b\xi) = b^2D\xi\)</span> 当<span class="math inline">\(Da=0\)</span>,<span class="math inline">\(D(b\xi) = b^2D\xi\)</span></p>
 
     </div>
 
@@ -377,7 +390,7 @@ E\xi\eta &amp;= E(\sum_{i}x_i I(A_i))(\sum_{j}y_j I(B_j)) \\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B%E6%95%B0%E5%AD%A6%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%80%A7%E8%B4%A8%E8%AF%81%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">1.期望数学定义及性质证明</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B%E6%95%B0%E5%AD%A6%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%80%A7%E8%B4%A8%E8%AF%81%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">1.期望数学定义及性质证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%B7%AE%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%80%A7%E8%B4%A8%E8%AF%81%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">2.方差的定义及性质证明</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
