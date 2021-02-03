@@ -196,6 +196,64 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/03/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="没有梦想，何必远方">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/03/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86/" class="post-title-link" itemprop="url">伯努利大数定理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-03 09:38:13" itemprop="dateCreated datePublished" datetime="2021-02-03T09:38:13+08:00">2021-02-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,7 +420,7 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-29 14:50:38" itemprop="dateModified" datetime="2021-01-29T14:50:38+08:00">2021-01-29</time>
+                <time title="Modified: 2021-02-03 10:23:55" itemprop="dateModified" datetime="2021-02-03T10:23:55+08:00">2021-02-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -392,11 +450,11 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
           <h3 id="二项分布binomial-distribution">1.二项分布(binomial distribution)</h3>
 <p>两点分布重复n次，就得到了二项分布，二项分布的概率质量函数(probability mass function, PMF): n为实验的总次数，k为实验成功的次数，p是成功的概率 <span class="math display">\[ P(X=k)=C_n^kp^k(1-p)^{n-k} \]</span> 服从二项分布的随机变量记为 <span class="math inline">\(X \sim B(n,p)\)</span></p>
 <h3 id="二项分布的期望">2.二项分布的期望</h3>
-<p>二项分布分布，事件发生的概率为p, 不发生的概率为q=1-p, 这里的 <span class="math inline">\(C_n^k\)</span> 称为二项系数，根据二项展开式的系数，可以反推二项分布的概率和为1. <span class="math display">\[ \Sigma_{k=0}^nP(X=k) = \Sigma_{k=0}^nC_n^kp^k(1-p)^{n-k} = (p+(1-p))^n=1 \]</span> 期望是离散型随机变量的特征之一，定义如下： 设<span class="math inline">\(\xi\)</span> 为离散型随机变量，它可以取值<span class="math inline">\(x_1,x_2,x_3,...\)</span>，对应的概率为<span class="math inline">\(p_1,p_2,p_3,...\)</span> 如果级数 <span class="math display">\[\Sigma_{i=1}^{\infty}x_ip_i\]</span> 绝对收敛，则把它称为<span class="math inline">\(\xi\)</span>的数学期望（mathematical expectation）,简称期望，期望值或均值（mean）,记为<span class="math inline">\(E\xi\)</span> 当<span class="math inline">\(\Sigma_{i=1}^{\infty}{\vert}x_i{\vert}p_i\)</span> 发散时，则<span class="math inline">\(\xi\)</span>的数学期望不存在。</p>
+<p>二项分布分布，事件发生的概率为p, 不发生的概率为q=1-p, 这里的 <span class="math inline">\(C_n^k\)</span> 称为二项系数，根据二项展开式的系数，可以反推二项分布的概率和为1. <span class="math display">\[ \sum_{k=0}^nP(X=k) = \sum_{k=0}^nC_n^kp^k(1-p)^{n-k} = (p+(1-p))^n=1 \]</span> 期望是离散型随机变量的特征之一，定义如下： 设<span class="math inline">\(\xi\)</span> 为离散型随机变量，它可以取值<span class="math inline">\(x_1,x_2,x_3,...\)</span>，对应的概率为<span class="math inline">\(p_1,p_2,p_3,...\)</span> 如果级数 <span class="math display">\[\sum_{i=1}^{\infty}x_ip_i\]</span> 绝对收敛，则把它称为<span class="math inline">\(\xi\)</span>的数学期望（mathematical expectation）,简称期望，期望值或均值（mean）,记为<span class="math inline">\(E\xi\)</span> 当<span class="math inline">\(\sum_{i=1}^{\infty}{\vert}x_i{\vert}p_i\)</span> 发散时，则<span class="math inline">\(\xi\)</span>的数学期望不存在。</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-\Sigma_{k=0}^{n}kp_k &amp;= \Sigma_{k=1}{n}{n \choose k}p^kq^{n-k} \\
-&amp;= np \Sigma_{k=1}^{n}{n-1 \choose k-1}p^{k-1}q^{n-k} \\
+\sum_{k=0}^{n}kp_k &amp;= \sum_{k=1}{n}{n \choose k}p^kq^{n-k} \\
+&amp;= np \sum_{k=1}^{n}{n-1 \choose k-1}p^{k-1}q^{n-k} \\
 &amp;=np(p+q)^{n-1} \\
 &amp;=np
 \end{aligned}
@@ -409,11 +467,11 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-E(X^2) &amp;= \Sigma_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
-&amp;=\Sigma_{k=1}^{n} [k(k-1)+k]\frac{n!}{k!(n-k)!}p^kq^{n-k} \\
-&amp;=\Sigma_{k=2}^{n} \frac{n!}{(k-2)!(n-k)!} + E(X) \\
-&amp;=n(n-1)p^2 \Sigma_{k=2}^{n} \frac{(n-2)!}{(k-2)![(n-2) - (k-2)]!} \cdot p^{k-2}q^{(n-2)-(k-2)} +E(X) \\
-&amp;=n(n-1)p^2 \Sigma_{k{&#39;}=0}^{n-2} C_{n-2}^k{&#39;}p^k{&#39;}q^{(n-2)-k{&#39;}} + E(X) \\
+E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
+&amp;=\sum_{k=1}^{n} [k(k-1)+k]\frac{n!}{k!(n-k)!}p^kq^{n-k} \\
+&amp;=\sum_{k=2}^{n} \frac{n!}{(k-2)!(n-k)!} + E(X) \\
+&amp;=n(n-1)p^2 \sum_{k=2}^{n} \frac{(n-2)!}{(k-2)![(n-2) - (k-2)]!} \cdot p^{k-2}q^{(n-2)-(k-2)} +E(X) \\
+&amp;=n(n-1)p^2 \sum_{k{&#39;}=0}^{n-2} C_{n-2}^k{&#39;}p^k{&#39;}q^{(n-2)-k{&#39;}} + E(X) \\
 &amp;=n(n-1)p^2 + np \\
 &amp;=n^2p^2 + np(1-p) \\
 
@@ -473,7 +531,7 @@ E(X^2) &amp;= \Sigma_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-29 12:57:28" itemprop="dateModified" datetime="2021-01-29T12:57:28+08:00">2021-01-29</time>
+                <time title="Modified: 2021-02-03 10:22:14" itemprop="dateModified" datetime="2021-02-03T10:22:14+08:00">2021-02-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -508,9 +566,9 @@ p &amp; if x = 1, \\
 q &amp; if x = 0.
 \end{cases}\]</span></p>
 <h3 id="伯努利分布的期望">2.伯努利分布的期望</h3>
-<p><span class="math display">\[E[X] = \Sigma_{i=0}^{1}x_if(x_i)=1 \cdot p+0 \cdot p=p\]</span></p>
+<p><span class="math display">\[E[X] = \sum_{i=0}^{1}x_if(x_i)=1 \cdot p+0 \cdot p=p\]</span></p>
 <h3 id="伯努利分布的方差">3.伯努利分布的方差</h3>
-<p><span class="math display">\[var[X] = \Sigma_{i=0}^{1}(x_i-E[X])^2f(x_i) = (0-p)^2(1-p)+(1-p)^2p=p(1-p)=pq\]</span></p>
+<p><span class="math display">\[var[X] = \sum_{i=0}^{1}(x_i-E[X])^2f(x_i) = (0-p)^2(1-p)+(1-p)^2p=p(1-p)=pq\]</span></p>
 <p>当<span class="math inline">\(p=q=\frac{1}{2}\)</span>时，方差最大。</p>
 
       
@@ -1057,83 +1115,6 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/15/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="没有梦想，何必远方">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/15/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">github.io 博客搭建指南</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-15 11:59:32" itemprop="dateCreated datePublished" datetime="2021-01-15T11:59:32+08:00">2021-01-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-16 11:34:54" itemprop="dateModified" datetime="2021-01-16T11:34:54+08:00">2021-01-16</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。</p>
-<h1 id="搭建步骤">搭建步骤</h1>
-<ol type="1">
-<li>获取域名</li>
-<li>建立github仓库</li>
-<li>安装git</li>
-<li>安装Node.js</li>
-<li>安装Hexo</li>
-<li>推送网站</li>
-<li>绑定域名</li>
-<li>更换主题</li>
-</ol>
-<p><span class="math display">\[E[X]=x^4\]</span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1203,7 +1184,7 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
