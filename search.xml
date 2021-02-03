@@ -344,9 +344,16 @@ E\xi\eta &amp;= E(\sum_{i}x_i I(A_i))(\sum_{j}y_j I(B_j)) \\
 <p>方差是来描述数据分散程度的指标</p>
 <p><span class="math display">\[D\xi = E(\xi - E\xi)^2\]</span> <span class="math inline">\(D\xi\)</span>记为方差，<span class="math inline">\(\sigma = \sqrt{D\xi}\)</span>记为标准差。</p>
 <p>性质1 由于 <span class="math display">\[
-E(\xi-E\xi)^2 = E[\xi^2 - 2\xiE\xi + (E\xi)^2] = E(\xi^2) - (E\xi)^2
-\]</span> 所以 <span class="math inline">\(D\xi = E\xi^2 - (E\xi)^2\)</span> 根据方差的定义，可知<span class="math inline">\(D\xi\ge0\)</span></p>
+E(\xi-E\xi)^2 = E[\xi^2 - 2\xi E\xi + (E\xi)^2] = E(\xi^2) - (E\xi)^2
+\]</span> 所以 <span class="math display">\[D\xi = E\xi^2 - (E\xi)^2\]</span></p>
+<p>根据方差的定义，可知<span class="math inline">\(D\xi\ge0\)</span></p>
 <p>性质2 对于任意常数的a,b <span class="math inline">\(D(a+b\xi) = b^2D\xi\)</span> 当<span class="math inline">\(Da=0\)</span>,<span class="math inline">\(D(b\xi) = b^2D\xi\)</span></p>
+<p>性质3 对于二个随机变量<span class="math inline">\(\xi\)</span>,<span class="math inline">\(\eta\)</span></p>
+<p><span class="math display">\[D(\xi+\eta) = E[(\xi-E\xi)+(\eta - E\eta)]^2 = D\xi + D\eta +2E(\xi-E\xi)(\eta-E\eta)\]</span></p>
+<p>记： <span class="math display">\[
+cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
+\]</span> 称作随机变量<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>的协方差，如果<span class="math inline">\(D\xi \ge 0\)</span>, <span class="math inline">\(D\eta \ge 0\)</span>, 则 <span class="math inline">\(\rho(\xi,\eta) = \frac{cov(\xi,\eta)}{\sqrt{D\xi \times D\eta}}\)</span> 称作随机变量。</p>
+<p>$$</p>
 ]]></content>
       <tags>
         <tag>expeactation</tag>
