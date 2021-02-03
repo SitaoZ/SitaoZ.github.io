@@ -122,22 +122,6 @@ E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
       </tags>
   </entry>
   <entry>
-    <title>hypergeometric_distribution</title>
-    <url>/2021/01/20/hypergeometric-distribution/</url>
-    <content><![CDATA[<h3 id="二项分布">1.1 二项分布</h3>
-<h3 id="超几何分布hypergeometric-distribution">1.2 超几何分布（hypergeometric distribution）</h3>
-<p>设有N个产品，其中次品有M个。从中任取n个（n&lt;=N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： <span class="math display">\[P(X=m)=\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m=0,1,2,...min(M,n))\]</span> 则称 X服从参数为n,m和N的超几何分布，记为 <span class="math inline">\(X \sim H(n, m, N)\)</span> $$ =  </p>
-]]></content>
-      <categories>
-        <category>probability</category>
-        <category>hypergeometric</category>
-      </categories>
-      <tags>
-        <tag>二项分布</tag>
-        <tag>超几何分布</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2021/01/15/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -155,6 +139,22 @@ E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>hypergeometric_distribution</title>
+    <url>/2021/01/20/hypergeometric-distribution/</url>
+    <content><![CDATA[<h3 id="二项分布">1.1 二项分布</h3>
+<h3 id="超几何分布hypergeometric-distribution">1.2 超几何分布（hypergeometric distribution）</h3>
+<p>设有N个产品，其中次品有M个。从中任取n个（n&lt;=N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： <span class="math display">\[P(X=m)=\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m=0,1,2,...min(M,n))\]</span> 则称 X服从参数为n,m和N的超几何分布，记为 <span class="math inline">\(X \sim H(n, m, N)\)</span> $$ =  </p>
+]]></content>
+      <categories>
+        <category>probability</category>
+        <category>hypergeometric</category>
+      </categories>
+      <tags>
+        <tag>二项分布</tag>
+        <tag>超几何分布</tag>
+      </tags>
   </entry>
   <entry>
     <title>normal_distribution</title>
@@ -262,6 +262,12 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
       </tags>
   </entry>
   <entry>
+    <title>伯努利大数定理</title>
+    <url>/2021/02/03/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[
+]]></content>
+  </entry>
+  <entry>
     <title>github.io 博客搭建指南</title>
     <url>/2021/01/15/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。</p>
@@ -358,11 +364,5 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
         <tag>expeactation</tag>
         <tag>variance</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>伯努利大数定理</title>
-    <url>/2021/02/03/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[
-]]></content>
   </entry>
 </search>
