@@ -267,8 +267,9 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
     <content><![CDATA[<h1 id="伯努利大数定理law-of-large-numbers">伯努利大数定理(Law of Large Numbers)</h1>
 <p>伯努利分布也称两点分布,相关的描述和证明见<a href="http://www.zhusitao.cn/2021/01/25/bernoulli-distribution/">伯努利分布</a></p>
 <h2 id="伯努利概型">伯努利概型</h2>
-<p><span class="math inline">\(\Omega,\mathcal{A},P\)</span> ,其中 <span class="math inline">\(\Omega=\{\omega:\omega=(a_1,...a_n),a_i=0,1\}\)</span></p>
+<p><span class="math inline">\(\Omega,\mathsrc{A},P\)</span> ,其中 <span class="math inline">\(\Omega=\{\omega:\omega=(a_1,...a_n),a_i=0,1\}\)</span></p>
 <p><span class="math inline">\(\mathscr{A}=\{A:A \sunset \Omega\}\)</span> , <span class="math inline">\(P(\{\omega\})=p^{\sum a_i}(1-p)^{n-\sum a_i}=p(\omega)\)</span></p>
+<p>上面定义的三对象，称作伯努利概型。白话就是“有两种结局的n次独立试验的概率模型”</p>
 ]]></content>
       <tags>
         <tag>大数定理</tag>
