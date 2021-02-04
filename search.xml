@@ -280,8 +280,8 @@ P\{\xi\geq\varepsilon\} \leq \frac{E\xi}{\varepsilon}
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-\xi &amp;=\xiI\(\xi \geq \varepsilon\) + \xiI\(\xi &lt; \varepsilon\) \\
-&amp;\geq \xiI\(\xi \geq \varepsilon\) \\
+\xi &amp;=\xi I\(\xi \geq \varepsilon\) + \xi I\(\xi &lt; \varepsilon\) \\
+&amp;\geq \xi I\(\xi \geq \varepsilon\) \\
 &amp;\geq \varepsilon I\(\xi \geq \varepsilon\)
 
 \end{aligned}
