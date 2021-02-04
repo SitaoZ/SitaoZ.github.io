@@ -264,8 +264,13 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
   <entry>
     <title>伯努利大数定理</title>
     <url>/2021/02/03/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[
+    <content><![CDATA[<h1 id="伯努利大数定理law-of-large-numbers">伯努利大数定理(Law of Large Numbers)</h1>
+<p>伯努利分布也称两点分布,相关的描述和证明见<a href="http://www.zhusitao.cn/2021/01/25/bernoulli-distribution/">伯努利分布</a> ## 伯努利概型 <span class="math inline">\(\Omega,\mathcal{A},P\)</span></p>
 ]]></content>
+      <tags>
+        <tag>大数定理</tag>
+        <tag>Law of Large Numbers</tag>
+      </tags>
   </entry>
   <entry>
     <title>github.io 博客搭建指南</title>
