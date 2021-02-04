@@ -286,7 +286,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-04 22:57:51" itemprop="dateModified" datetime="2021-02-04T22:57:51+08:00">2021-02-04</time>
+                <time title="Modified: 2021-02-04 23:07:01" itemprop="dateModified" datetime="2021-02-04T23:07:01+08:00">2021-02-04</time>
               </span>
 
           
@@ -316,12 +316,18 @@ P\{\xi\geq\varepsilon\} \leq \frac{E\xi}{\varepsilon}
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-\xi &amp;=\xi I\(\xi \geq \varepsilon\) + \xi I\(\xi &lt; \varepsilon\) \\
-&amp;\geq \xi I\(\xi \geq \varepsilon\) \\
-&amp;\geq \varepsilon I\(\xi \geq \varepsilon\)
+\xi &amp;=\xi I(\xi \geq \varepsilon) + \xi I(\xi &lt; \varepsilon) \\
+&amp;\geq \xi I(\xi \geq \varepsilon) \\
+&amp;\geq \varepsilon I(\xi \geq \varepsilon) \\
 
 \end{aligned}
 \end{equation}\]</span></p>
+<p>所以 <span class="math inline">\(\xi \geq \varepsilon I(\xi \geq \varepsilon)\)</span> 根据期望的性质 <span class="math display">\[\begin{equation}
+\begin{aligned}
+E\xi &amp;\geq E\varepsilon I(\xi \geq \varepsilon) \\
+&amp;\geq \varepsilon E I(\xi \geq \varepsilon)i = \varepsilon P{\xi \geq \varepsilon} 
+\end{aligned}
+\end{equation}\]</span> 不等式得证。</p>
 
       
     </div>
