@@ -437,13 +437,12 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
 <span class="math display">\[\begin{array}{|c|c|c|c|}
 \hline
 {A} &amp; {5} &amp; {4} &amp; {3} \\\\
-
+\hline
 {B} &amp; {2} &amp; {1} &amp; {4} \\\\
-
+\hline
 {C} &amp; {3} &amp; {4} &amp; {6} \\\\
-
+\hline
 {D} &amp; {4} &amp; {2} &amp; {8} \\\\
-
 \hline
 \end{array}\]</span>
 ]]></content>
