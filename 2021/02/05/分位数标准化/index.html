@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="分位数标准化 Quantile normalization 分位数标准化就是使得两个分布在统计属性上相同的技术手法。 该方法在基因芯片中经常使用。 例子 如图我们有三个基因芯片的数据，假设有A,B,C,D四个基因 Table1 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 5 | 4 | 3 | | B | 2 | 1 | 4 | |">
+  <meta name="description" content="分位数标准化 Quantile normalization 分位数标准化就是使得两个分布在统计属性上相同的技术手法。 该方法在基因芯片中经常使用。 例子 如图我们有三个基因芯片的数据，假设有A,B,C,D四个基因 表格Table1    Gene Sample1 Sample2 Sample3     A 5 4 3   B 2 1 4   C 3 4 6   D 4 2 8    对每一列进行排">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分位数标准化">
 <meta property="og:url" content="http://example.com/2021/02/05/%E5%88%86%E4%BD%8D%E6%95%B0%E6%A0%87%E5%87%86%E5%8C%96/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="分位数标准化 Quantile normalization 分位数标准化就是使得两个分布在统计属性上相同的技术手法。 该方法在基因芯片中经常使用。 例子 如图我们有三个基因芯片的数据，假设有A,B,C,D四个基因 Table1 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 5 | 4 | 3 | | B | 2 | 1 | 4 | |">
+<meta property="og:description" content="分位数标准化 Quantile normalization 分位数标准化就是使得两个分布在统计属性上相同的技术手法。 该方法在基因芯片中经常使用。 例子 如图我们有三个基因芯片的数据，假设有A,B,C,D四个基因 表格Table1    Gene Sample1 Sample2 Sample3     A 5 4 3   B 2 1 4   C 3 4 6   D 4 2 8    对每一列进行排">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-05T09:42:21.000Z">
-<meta property="article:modified_time" content="2021-02-05T13:09:17.193Z">
+<meta property="article:modified_time" content="2021-02-05T13:12:51.688Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="统计学">
 <meta property="article:tag" content="标准化">
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-02-05 17:42:21 / Modified: 21:09:17" itemprop="dateCreated datePublished" datetime="2021-02-05T17:42:21+08:00">2021-02-05</time>
+              <time title="Created: 2021-02-05 17:42:21 / Modified: 21:12:51" itemprop="dateCreated datePublished" datetime="2021-02-05T17:42:21+08:00">2021-02-05</time>
             </span>
 
           
@@ -242,16 +242,196 @@
 <p>分位数标准化就是使得两个分布在统计属性上相同的技术手法。 该方法在基因芯片中经常使用。</p>
 <h1 id="例子">例子</h1>
 <p>如图我们有三个基因芯片的数据，假设有A,B,C,D四个基因</p>
-<p>Table1 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 5 | 4 | 3 | | B | 2 | 1 | 4 | | C | 3 | 4 | 6 | | D | 4 | 2 | 8 |</p>
-<p>对每一列进行排序，按照从小到大的顺序。 Table2 |Gene|Sample1|Sample2|Sample3| |----|-------|-------|-------| | A | iv |iii|i | | B | i |i |ii | | C | ii |iii|iii| | D | iii|ii |iv |</p>
+<p>表格Table1</p>
+<table>
+<thead>
+<tr class="header">
+<th>Gene</th>
+<th>Sample1</th>
+<th>Sample2</th>
+<th>Sample3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>5</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>3</td>
+<td>4</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>4</td>
+<td>2</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>对每一列进行排序，按照从小到大的顺序。 表格Table2</p>
+<table>
+<thead>
+<tr class="header">
+<th>Gene</th>
+<th>Sample1</th>
+<th>Sample2</th>
+<th>Sample3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>iv</td>
+<td>iii</td>
+<td>i</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>i</td>
+<td>i</td>
+<td>ii</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>ii</td>
+<td>iii</td>
+<td>iii</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>iii</td>
+<td>ii</td>
+<td>iv</td>
+</tr>
+</tbody>
+</table>
 <p>这个排序好的列表(Table2)后续会用到。回到第一个数据表(Table1)，重排每一列的数据，根据从小到大的顺序依次排列。 第一列原始的数据是5,2,3,4 ---&gt; 2,3,4,5 第二列原始的数据是4,1,4,2 ---&gt; 1,2,4,4 第三列原始的数据是3,4,6,8 ---&gt; 3,4,6,8(原始已经是从小大，不变)</p>
-<p>Table3 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 2 | 1 | 3 | | B | 3 | 2 | 4 | | C | 4 | 4 | 6 | | D | 5 | 4 | 8 |</p>
+<p>表格Table3</p>
+<table>
+<thead>
+<tr class="header">
+<th>Gene</th>
+<th>Sample1</th>
+<th>Sample2</th>
+<th>Sample3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>3</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>4</td>
+<td>4</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>5</td>
+<td>4</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
 <p>计算Table3每一行的均值，找到新的排序,</p>
 <p>A (2+1+3)/3 = 2.00 = rank i B (3+2+4)/3 = 3.00 = rank ii C (4+4+6)/3 = 4.67 = rank iii D (5+4+8)/3 = 5.67 = rank iv</p>
 <p>根据原始数据的排序Table2，和上面新排序对应的值， 将原始值根据对应的排序进行值的替换。</p>
-<p>标准化的值 Table4 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 5.67 | 4.67 | 2.00 | | B | 2.00 | 2.00 | 3.00 | | C | 3.00 | 4.67 | 4.67 | | D | 4.67 | 3.00 | 5.67 |</p>
+<p>标准化的值 表格Table4</p>
+<table>
+<thead>
+<tr class="header">
+<th>Gene</th>
+<th>Sample1</th>
+<th>Sample2</th>
+<th>Sample3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>5.67</td>
+<td>4.67</td>
+<td>2.00</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>2.00</td>
+<td>2.00</td>
+<td>3.00</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>3.00</td>
+<td>4.67</td>
+<td>4.67</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>4.67</td>
+<td>3.00</td>
+<td>5.67</td>
+</tr>
+</tbody>
+</table>
 <p>注意，在第二列中有并列的值，这些并列的值应该被平均值替换，于是在这里我们替换第二列中并列的值， 使用4.67和5.67的(4.67+5.67)/2=5.17平均值来替换。</p>
-<p>Table5 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 5.67 | 5.17 | 2.00 | | B | 2.00 | 2.00 | 3.00 | | C | 3.00 | 5.17 | 4.67 | | D | 4.67 | 3.00 | 5.67 |</p>
+<p>表格Table5</p>
+<table>
+<thead>
+<tr class="header">
+<th>Gene</th>
+<th>Sample1</th>
+<th>Sample2</th>
+<th>Sample3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>5.67</td>
+<td>5.17</td>
+<td>2.00</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>2.00</td>
+<td>2.00</td>
+<td>3.00</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>3.00</td>
+<td>5.17</td>
+<td>4.67</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>4.67</td>
+<td>3.00</td>
+<td>5.67</td>
+</tr>
+</tbody>
+</table>
 <p>新的值符合相同的分布，我们现在来看看一些统计量，发现这些值比较相近。</p>
 <p>Min. :2.000 Min. :2.000 Min. :2.000<br>
 1st Qu.:2.750 1st Qu.:2.750 1st Qu.:2.750<br>
