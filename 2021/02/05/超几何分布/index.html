@@ -20,18 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="没有梦想，何必远方">
-<meta property="og:type" content="website">
-<meta property="og:title" content="aibiology">
-<meta property="og:url" content="http://example.com/categories/probability/hypergeometric/index.html">
+  <meta name="description" content="超几何分布（hypergeometric distribution） 设有N个产品，其中次品有M个。从中任取n个（n&lt;&#x3D;N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： \[P(X&#x3D;m)&#x3D;\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m&#x3D;0,1,2,...min(M,n))\] 则称 X服从参数为n,m和N的超几何分布，记为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="超几何分布">
+<meta property="og:url" content="http://example.com/2021/02/05/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="没有梦想，何必远方">
+<meta property="og:description" content="超几何分布（hypergeometric distribution） 设有N个产品，其中次品有M个。从中任取n个（n&lt;&#x3D;N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： \[P(X&#x3D;m)&#x3D;\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m&#x3D;0,1,2,...min(M,n))\] 则称 X服从参数为n,m和N的超几何分布，记为">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-05T03:44:15.000Z">
+<meta property="article:modified_time" content="2021-02-05T03:45:41.337Z">
 <meta property="article:author" content="zhusitao">
-<meta property="article:tag" content="deep learning, bioinformatics, biology">
+<meta property="article:tag" content="超几何分布">
+<meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/probability/hypergeometric/">
+<link rel="canonical" href="http://example.com/2021/02/05/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/">
 
 
 <script id="page-configurations">
@@ -39,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: hypergeometric | aibiology</title>
+  <title>超几何分布 | aibiology</title>
   
 
 
@@ -190,51 +193,82 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">hypergeometric
-          <small>Category</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/05/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="没有梦想，何必远方">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          超几何分布
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-02-05 11:44:15 / Modified: 11:45:41" itemprop="dateCreated datePublished" datetime="2021-02-05T11:44:15+08:00">2021-02-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <h1 id="超几何分布hypergeometric-distribution">超几何分布（hypergeometric distribution）</h1>
+<p>设有N个产品，其中次品有M个。从中任取n个（n&lt;=N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： <span class="math display">\[P(X=m)=\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m=0,1,2,...min(M,n))\]</span> 则称 X服从参数为n,m和N的超几何分布，记为 <span class="math inline">\(X \sim H(n, m, N)\)</span> $$ =  </p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-20T16:54:25+08:00"
-              content="2021-01-20">
-          01-20
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/" rel="tag"># 超几何分布</a>
+              <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag"># 概率论</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/20/hypergeometric-distribution/" itemprop="url">
-            <span itemprop="name">hypergeometric_distribution</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/04/mathematical-symbol/" rel="prev" title="mathematical_symbol">
+      <i class="fa fa-chevron-left"></i> mathematical_symbol
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -287,6 +321,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83hypergeometric-distribution"><span class="nav-number">1.</span> <span class="nav-text">超几何分布（hypergeometric distribution）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -307,13 +342,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -403,6 +438,61 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

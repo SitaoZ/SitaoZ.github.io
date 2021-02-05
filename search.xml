@@ -141,22 +141,6 @@ E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
 ]]></content>
   </entry>
   <entry>
-    <title>hypergeometric_distribution</title>
-    <url>/2021/01/20/hypergeometric-distribution/</url>
-    <content><![CDATA[<h3 id="二项分布">1.1 二项分布</h3>
-<h3 id="超几何分布hypergeometric-distribution">1.2 超几何分布（hypergeometric distribution）</h3>
-<p>设有N个产品，其中次品有M个。从中任取n个（n&lt;=N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： <span class="math display">\[P(X=m)=\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m=0,1,2,...min(M,n))\]</span> 则称 X服从参数为n,m和N的超几何分布，记为 <span class="math inline">\(X \sim H(n, m, N)\)</span> $$ =  </p>
-]]></content>
-      <categories>
-        <category>probability</category>
-        <category>hypergeometric</category>
-      </categories>
-      <tags>
-        <tag>二项分布</tag>
-        <tag>超几何分布</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mathematical_symbol</title>
     <url>/2021/02/04/mathematical-symbol/</url>
     <content><![CDATA[<h1 id="希腊字母">希腊字母</h1>
@@ -430,6 +414,17 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
       <tags>
         <tag>expeactation</tag>
         <tag>variance</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>超几何分布</title>
+    <url>/2021/02/05/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/</url>
+    <content><![CDATA[<h1 id="超几何分布hypergeometric-distribution">超几何分布（hypergeometric distribution）</h1>
+<p>设有N个产品，其中次品有M个。从中任取n个（n&lt;=N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： <span class="math display">\[P(X=m)=\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m=0,1,2,...min(M,n))\]</span> 则称 X服从参数为n,m和N的超几何分布，记为 <span class="math inline">\(X \sim H(n, m, N)\)</span> $$ =  </p>
+]]></content>
+      <tags>
+        <tag>超几何分布</tag>
+        <tag>概率论</tag>
       </tags>
   </entry>
 </search>
