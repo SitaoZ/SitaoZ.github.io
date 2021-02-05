@@ -196,6 +196,80 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/05/%E5%88%86%E4%BD%8D%E6%95%B0%E6%A0%87%E5%87%86%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="没有梦想，何必远方">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/05/%E5%88%86%E4%BD%8D%E6%95%B0%E6%A0%87%E5%87%86%E5%8C%96/" class="post-title-link" itemprop="url">分位数标准化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-02-05 17:42:21 / Modified: 18:02:05" itemprop="dateCreated datePublished" datetime="2021-02-05T17:42:21+08:00">2021-02-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="分位数标准化-quantile-normalization">分位数标准化 Quantile normalization</h1>
+<p>分位数标准化就是使得两个分布在统计属性上相同的技术手法。 该方法在基因芯片中经常使用。</p>
+<h1 id="例子">例子</h1>
+<p>如图我们有三个基因芯片的数据，假设有A,B,C,D四个基因</p>
+<span class="math display">\[\begin{array}{|c|c|c|c|}
+\hline
+{A} &amp; {5} &amp; {4} &amp; {3} \\\\
+
+{B} &amp; {2} &amp; {1} &amp; {4} \\\\
+
+{C} &amp; {3} &amp; {4} &amp; {6} \\\\
+
+{D} &amp; {4} &amp; {2} &amp; {8} \\\\
+
+\hline
+\end{array}\]</span>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/05/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -973,92 +1047,6 @@ q &amp; if x = 0.
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/20/Pytorch%E5%AE%9E%E6%93%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="没有梦想，何必远方">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/20/Pytorch%E5%AE%9E%E6%93%8D/" class="post-title-link" itemprop="url">Pytorch实操</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-20 10:10:31" itemprop="dateCreated datePublished" datetime="2021-01-20T10:10:31+08:00">2021-01-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-26 09:54:27" itemprop="dateModified" datetime="2021-01-26T09:54:27+08:00">2021-01-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/pytorch/" itemprop="url" rel="index"><span itemprop="name">pytorch</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>pytorch，深度学习流行的框架之一，Facebook开发维护，社区活跃度高。</p>
-<h3 id="pytorch维度转化相关">1.pytorch维度转化相关</h3>
-<h4 id="permute-vs-transpose">1.1 permute vs transpose</h4>
-<p>词义是重新排列，改变次序的意思，在pytorch中主要用来实现tensor的维度转换。</p>
-<p>pytorch官方的解释如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ permute(*dims) → Tensor</span><br><span class="line">$     Returns a view of the original tensor with its dimensions permuted.</span><br><span class="line">$     Parameters</span><br><span class="line">$         *dims (int...) – The desired ordering of dimensions</span><br></pre></td></tr></table></figure>
-<p>Example <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.permute(<span class="number">3</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>).size()</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure> Tensor.permute(a,b,c,d, ...)：permute函数可以对任意高维矩阵进行转置； 但没有 torch.permute() 这个调用方式，只能 Tensor.permute()；</p>
-<p>torch.transpose(Tensor, a,b)：transpose只能操作2D矩阵的转置， 但是多次的2D转换的结果和permute的一致。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>).transpose(<span class="number">2</span>,<span class="number">0</span>).shape</span><br><span class="line">torch.Size([<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>).transpose(<span class="number">2</span>,<span class="number">0</span>).transpose(<span class="number">3</span>,<span class="number">0</span>)</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>).transpose(<span class="number">2</span>,<span class="number">0</span>).transpose(<span class="number">3</span>,<span class="number">0</span>).transpose(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">torch.Size([<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure> 总结，复杂的转换可以使用permute，简答的2D转换用transpose。</p>
-<h4 id="view">1.2 view</h4>
-<p>改变tensor的形状,但是和permute和transpose不同； 参数中的-1就代表这个位置由其他位置的数字来推断；</p>
-<p>pytorch的官方解释如下： Returns a new tensor with the same data as the self tensor but of a different shape.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ view(*shape) → Tensor</span><br><span class="line">$ Parameters</span><br><span class="line">$     shape (torch.Size or int...) – the desired size</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.size()</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = x.view(<span class="number">16</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y.size()</span><br><span class="line">torch.Size([<span class="number">16</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = x.view(-<span class="number">1</span>, <span class="number">8</span>)  <span class="comment"># the size -1 is inferred from other dimensions</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z.size()</span><br><span class="line">torch.Size([<span class="number">2</span>, <span class="number">8</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = a.transpose(<span class="number">1</span>, <span class="number">2</span>)  <span class="comment"># Swaps 2nd and 3rd dimension</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = a.view(<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>)  <span class="comment"># Does not change tensor layout in memory</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c.size()</span><br><span class="line">torch.Size([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.equal(b, c)</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1128,7 +1116,7 @@ q &amp; if x = 0.
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1141,7 +1129,7 @@ q &amp; if x = 0.
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

@@ -427,4 +427,29 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
         <tag>概率论</tag>
       </tags>
   </entry>
+  <entry>
+    <title>分位数标准化</title>
+    <url>/2021/02/05/%E5%88%86%E4%BD%8D%E6%95%B0%E6%A0%87%E5%87%86%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="分位数标准化-quantile-normalization">分位数标准化 Quantile normalization</h1>
+<p>分位数标准化就是使得两个分布在统计属性上相同的技术手法。 该方法在基因芯片中经常使用。</p>
+<h1 id="例子">例子</h1>
+<p>如图我们有三个基因芯片的数据，假设有A,B,C,D四个基因</p>
+<span class="math display">\[\begin{array}{|c|c|c|c|}
+\hline
+{A} &amp; {5} &amp; {4} &amp; {3} \\\\
+
+{B} &amp; {2} &amp; {1} &amp; {4} \\\\
+
+{C} &amp; {3} &amp; {4} &amp; {6} \\\\
+
+{D} &amp; {4} &amp; {2} &amp; {8} \\\\
+
+\hline
+\end{array}\]</span>
+]]></content>
+      <tags>
+        <tag>统计学</tag>
+        <tag>标准化</tag>
+      </tags>
+  </entry>
 </search>
