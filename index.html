@@ -221,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-02-05 17:42:21 / Modified: 21:15:43" itemprop="dateCreated datePublished" datetime="2021-02-05T17:42:21+08:00">2021-02-05</time>
+              <time title="Created: 2021-02-05 17:42:21 / Modified: 21:17:08" itemprop="dateCreated datePublished" datetime="2021-02-05T17:42:21+08:00">2021-02-05</time>
             </span>
 
           
@@ -242,16 +242,53 @@
 <p>表格Table1 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 5 | 4 | 3 | | B | 2 | 1 | 4 | | C | 3 | 4 | 6 | | D | 4 | 2 | 8 |</p>
 <p>对每一列进行排序，按照从小到大的顺序。 表格Table2 |Gene|Sample1|Sample2|Sample3| |----|-------|-------|-------| | A | iv |iii|i | | B | i |i |ii | | C | ii |iii|iii| | D | iii|ii |iv | 这个排序好的列表(Table2)后续会用到。回到第一个数据表(Table1)，重排每一列的数据，根据从小到大的顺序依次排列。 第一列原始的数据是5,2,3,4 ---&gt; 2,3,4,5 第二列原始的数据是4,1,4,2 ---&gt; 1,2,4,4 第三列原始的数据是3,4,6,8 ---&gt; 3,4,6,8(原始已经是从小大，不变)</p>
 <p>表格Table3 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 2 | 1 | 3 | | B | 3 | 2 | 4 | | C | 4 | 4 | 6 | | D | 5 | 4 | 8 |</p>
-<p>计算Table3每一行的均值，找到新的排序,</p>
-<p>A (2+1+3)/3 = 2.00 = rank i</p>
-<p>B (3+2+4)/3 = 3.00 = rank ii</p>
-<p>C (4+4+6)/3 = 4.67 = rank iii</p>
-<p>D (5+4+8)/3 = 5.67 = rank iv</p>
+<p>计算Table3每一行的均值，找到新的排序, A (2+1+3)/3 = 2.00 = rank i B (3+2+4)/3 = 3.00 = rank ii C (4+4+6)/3 = 4.67 = rank iii D (5+4+8)/3 = 5.67 = rank iv</p>
 <p>根据原始数据的排序Table2，和上面新排序对应的值， 将原始值根据对应的排序进行值的替换。</p>
 <p>标准化的值 表格Table4 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 5.67 | 4.67 | 2.00 | | B | 2.00 | 2.00 | 3.00 | | C | 3.00 | 4.67 | 4.67 | | D | 4.67 | 3.00 | 5.67 |</p>
 <p>注意，在第二列中有并列的值，这些并列的值应该被平均值替换，于是在这里我们替换第二列中并列的值， 使用4.67和5.67的(4.67+5.67)/2=5.17平均值来替换。</p>
 <p>表格Table5 |Gene|Sample1|Sample2|Sample3| |---|---|---|---| | A | 5.67 | 5.17 | 2.00 | | B | 2.00 | 2.00 | 3.00 | | C | 3.00 | 5.17 | 4.67 | | D | 4.67 | 3.00 | 5.67 |</p>
-<p>新的值符合相同的分布，我们现在来看看一些统计量，发现这些值比较相近。 |Sample1|Sample2|Sample3| |-------|-------|-------| |Min. :2.000 | Min. :2.000 | Min. :2.000 | |1st Qu.:2.750 | 1st Qu.:2.750 | 1st Qu.:2.750 | |Median :3.833 | Median :4.083 | Median :3.833 | |Mean :3.833 | Mean :3.833 | Mean :3.833 | |3rd Qu.:4.917 | 3rd Qu.:5.167 | 3rd Qu.:4.917 | |Max. :5.667 | Max. :5.167 | Max. :5.667 |</p>
+<p>新的值符合相同的分布，我们现在来看看一些统计量，发现这些值比较相近。</p>
+<table>
+<thead>
+<tr class="header">
+<th>Sample1</th>
+<th>Sample2</th>
+<th>Sample3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Min. :2.000</td>
+<td>Min. :2.000</td>
+<td>Min. :2.000</td>
+</tr>
+<tr class="even">
+<td>1st Qu.:2.750</td>
+<td>1st Qu.:2.750</td>
+<td>1st Qu.:2.750</td>
+</tr>
+<tr class="odd">
+<td>Median :3.833</td>
+<td>Median :4.083</td>
+<td>Median :3.833</td>
+</tr>
+<tr class="even">
+<td>Mean :3.833</td>
+<td>Mean :3.833</td>
+<td>Mean :3.833</td>
+</tr>
+<tr class="odd">
+<td>3rd Qu.:4.917</td>
+<td>3rd Qu.:5.167</td>
+<td>3rd Qu.:4.917</td>
+</tr>
+<tr class="even">
+<td>Max. :5.667</td>
+<td>Max. :5.167</td>
+<td>Max. :5.667</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
