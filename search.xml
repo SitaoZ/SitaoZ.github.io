@@ -157,6 +157,42 @@ E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
       </tags>
   </entry>
   <entry>
+    <title>mathematical_symbol</title>
+    <url>/2021/02/04/mathematical-symbol/</url>
+    <content><![CDATA[<h1 id="希腊字母">希腊字母</h1>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+{\alpha} &amp; {\backslash alpha} &amp; {\theta} &amp; {\backslash theta} &amp; {o} &amp; {o} &amp; {\upsilon} &amp; {\backslash upsilon} \\\\
+\hline
+{\beta} &amp; {\backslash beta} &amp; {\vartheta} &amp; {\backslash vartheta} &amp; {\pi} &amp; {\backslash pi} &amp; {\phi} &amp; {\backslash phi} \\\\
+\hline
+{\gamma} &amp; {\backslash gamma} &amp; {\iota} &amp; {\backslash iota} &amp; {\varpi} &amp; {\backslash varpi} &amp; {\varphi} &amp; {\backslash varphi} \\\\
+\hline
+{\delta} &amp; {\backslash delta} &amp; {\kappa} &amp; {\backslash kappa} &amp; {\rho} &amp; {\backslash rho} &amp; {\chi} &amp; {\backslash chi} \\\\
+\hline
+{\epsilon} &amp; {\backslash epsilon} &amp; {\lambda} &amp; {\backslash lambda} &amp; {\varrho} &amp; {\backslash varrho} &amp; {\psi} &amp; {\backslash psi} \\\\
+\hline
+{\varepsilon} &amp; {\backslash varepsilon} &amp; {\mu} &amp; {\backslash mu} &amp; {\sigma} &amp; {\backslash sigma} &amp; {\omega} &amp; {\backslash omega} \\\\
+\hline
+{\zeta} &amp; {\backslash zeta} &amp; {\nu} &amp; {\backslash nu} &amp; {\varsigma} &amp; {\backslash varsigma} &amp; {} &amp; {} \\\\
+\hline
+{\eta} &amp; {\backslash eta} &amp; {\xi} &amp; {\backslash xi} &amp; {\tau} &amp; {\backslash tau} &amp; {} &amp; {} \\\\
+\hline
+{\Gamma} &amp; {\backslash Gamma} &amp; {\Lambda} &amp; {\backslash Lambda} &amp; {\Sigma} &amp; {\backslash Sigma} &amp; {\Psi} &amp; {\backslash Psi} \\\\
+\hline
+{\Delta} &amp; {\backslash Delta} &amp; {\Xi} &amp; {\backslash Xi} &amp; {\Upsilon} &amp; {\backslash Upsilon} &amp; {\Omega} &amp; {\backslash Omega} \\\\
+\hline
+{\Omega} &amp; {\backslash Omega} &amp; {\Pi} &amp; {\backslash Pi} &amp; {\Phi} &amp; {\backslash Phi} &amp; {} &amp; {} \\\\
+\hline
+\end{array}
+\]</span></p>
+]]></content>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>normal_distribution</title>
     <url>/2021/01/23/normal-distribution/</url>
     <content><![CDATA[<h3 id="正态分布">1. 正态分布</h3>
@@ -394,15 +430,6 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
       <tags>
         <tag>expeactation</tag>
         <tag>variance</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mathematical_symbol</title>
-    <url>/2021/02/04/mathematical-symbol/</url>
-    <content><![CDATA[<h1 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h1><p>$$<br>\begin{array}{|c|c|c|c|c|c|c|c|}<br>\hline<br>{\alpha} &amp; {\backslash alpha} &amp; {\theta} &amp; {\backslash theta} &amp; {o} &amp; {o} &amp; {\upsilon} &amp; {\backslash upsilon} \\<br>\hline<br>{\beta} &amp; {\backslash beta} &amp; {\vartheta} &amp; {\backslash vartheta} &amp; {\pi} &amp; {\backslash pi} &amp; {\phi} &amp; {\backslash phi} \\<br>\hline<br>{\gamma} &amp; {\backslash gamma} &amp; {\iota} &amp; {\backslash iota} &amp; {\varpi} &amp; {\backslash varpi} &amp; {\varphi} &amp; {\backslash varphi} \\<br>\hline<br>{\delta} &amp; {\backslash delta} &amp; {\kappa} &amp; {\backslash kappa} &amp; {\rho} &amp; {\backslash rho} &amp; {\chi} &amp; {\backslash chi} \\<br>\hline<br>{\epsilon} &amp; {\backslash epsilon} &amp; {\lambda} &amp; {\backslash lambda} &amp; {\varrho} &amp; {\backslash varrho} &amp; {\psi} &amp; {\backslash psi} \\<br>\hline<br>{\varepsilon} &amp; {\backslash varepsilon} &amp; {\mu} &amp; {\backslash mu} &amp; {\sigma} &amp; {\backslash sigma} &amp; {\omega} &amp; {\backslash omega} \\<br>\hline<br>{\zeta} &amp; {\backslash zeta} &amp; {\nu} &amp; {\backslash nu} &amp; {\varsigma} &amp; {\backslash varsigma} &amp; {} &amp; {} \\<br>\hline<br>{\eta} &amp; {\backslash eta} &amp; {\xi} &amp; {\backslash xi} &amp; {\tau} &amp; {\backslash tau} &amp; {} &amp; {} \\<br>\hline<br>{\Gamma} &amp; {\backslash Gamma} &amp; {\Lambda} &amp; {\backslash Lambda} &amp; {\Sigma} &amp; {\backslash Sigma} &amp; {\Psi} &amp; {\backslash Psi} \\<br>\hline<br>{\Delta} &amp; {\backslash Delta} &amp; {\Xi} &amp; {\backslash Xi} &amp; {\Upsilon} &amp; {\backslash Upsilon} &amp; {\Omega} &amp; {\backslash Omega} \\<br>\hline<br>{\Omega} &amp; {\backslash Omega} &amp; {\Pi} &amp; {\backslash Pi} &amp; {\Phi} &amp; {\backslash Phi} &amp; {} &amp; {} \\<br>\hline<br>\end{array}<br>$$</p>
-]]></content>
-      <tags>
-        <tag>math</tag>
       </tags>
   </entry>
 </search>
