@@ -289,7 +289,7 @@ P\{\xi\geq\varepsilon\} \leq \frac{E\xi}{\varepsilon}
 <p>所以 <span class="math inline">\(\xi \geq \varepsilon I(\xi \geq \varepsilon)\)</span> 根据期望的性质 <span class="math display">\[\begin{equation}
 \begin{aligned}
 E\xi &amp;\geq E\varepsilon I(\xi \geq \varepsilon) \\
-&amp;\geq \varepsilon E I(\xi \geq \varepsilon)i = \varepsilon P{\xi \geq \varepsilon} 
+&amp;\geq \varepsilon E I(\xi \geq \varepsilon) = \varepsilon P\{\xi \geq \varepsilon\} 
 \end{aligned}
 \end{equation}\]</span> 不等式得证。</p>
 ]]></content>
