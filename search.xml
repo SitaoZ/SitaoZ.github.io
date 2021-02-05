@@ -179,7 +179,7 @@ E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
   <entry>
     <title>normal_distribution</title>
     <url>/2021/01/23/normal-distribution/</url>
-    <content><![CDATA[<h3 id="正态分布">1. 正态分布</h3>
+    <content><![CDATA[<h1 id="正态分布">正态分布</h1>
 <p><span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\]</span></p>
 ]]></content>
   </entry>
