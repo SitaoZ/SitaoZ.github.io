@@ -470,6 +470,43 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
 </tr>
 </tbody>
 </table>
+<p>对每一列进行排序，按照从小到大的顺序。</p>
+<table>
+<thead>
+<tr class="header">
+<th>Gene</th>
+<th>Sample1</th>
+<th>Sample2</th>
+<th>Sample3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>iv</td>
+<td>iii</td>
+<td>i</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>i</td>
+<td>i</td>
+<td>ii</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>ii</td>
+<td>iii</td>
+<td>iii</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>iii</td>
+<td>ii</td>
+<td>iv</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       <tags>
         <tag>统计学</tag>
