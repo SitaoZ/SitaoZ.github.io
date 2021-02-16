@@ -196,6 +196,70 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/20/VGG%E8%A7%A3%E6%9E%90%E5%92%8C%E5%AE%9E%E7%8E%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="没有梦想，何必远方">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/20/VGG%E8%A7%A3%E6%9E%90%E5%92%8C%E5%AE%9E%E7%8E%B0/" class="post-title-link" itemprop="url">VGG解析和实现</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-20 20:33:41 / Modified: 21:07:51" itemprop="dateCreated datePublished" datetime="2021-01-20T20:33:41+08:00">2021-01-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="vgg16">1. VGG16</h3>
+<p>VGG16是运用高深度的卷积神经网络在图像识别方面的一个重要的应用，并在2014年夺得ImageNet的定位第一和分类第二。 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1409.1556.pdf">论文PDF</a></p>
+<h3 id="网络结构">2. 网络结构</h3>
+<p>文章中网络结构如下： <img src="/2021/01/20/VGG%E8%A7%A3%E6%9E%90%E5%92%8C%E5%AE%9E%E7%8E%B0/vgg.png" alt="&#39;vgg&#39;"></p>
+<h3 id="代码实现">3. 代码实现</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">def conv_layer(chann_in, chann_out, k_size, p_size):</span><br><span class="line">    layer = tnn.Sequential(</span><br><span class="line">        tnn.Conv2d(chann_in, chann_out, kernel_size=k_size, padding=p_size),</span><br><span class="line">        tnn.BatchNorm2d(chann_out),</span><br><span class="line">        tnn.ReLU()</span><br><span class="line">    )</span><br><span class="line">    <span class="built_in">return</span> layer</span><br><span class="line"></span><br><span class="line">def vgg_conv_block(in_list, out_list, k_list, p_list, pooling_k, pooling_s):</span><br><span class="line"></span><br><span class="line">    layers = [ conv_layer(in_list[i], out_list[i], k_list[i], p_list[i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(in_list)) ]</span><br><span class="line">    layers += [ tnn.MaxPool2d(kernel_size = pooling_k, stride = pooling_s)]</span><br><span class="line">    <span class="built_in">return</span> tnn.Sequential(*layers)</span><br><span class="line"></span><br><span class="line">def vgg_fc_layer(size_in, size_out):</span><br><span class="line">    layer = tnn.Sequential(</span><br><span class="line">        tnn.Linear(size_in, size_out),</span><br><span class="line">        tnn.BatchNorm1d(size_out),</span><br><span class="line">        tnn.ReLU()</span><br><span class="line">    )</span><br><span class="line">    <span class="built_in">return</span> layer</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/20/Pytorch%E5%AE%9E%E6%93%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -657,7 +721,7 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -670,7 +734,7 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
