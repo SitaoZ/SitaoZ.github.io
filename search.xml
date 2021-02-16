@@ -735,6 +735,8 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
 ]]></content>
       <tags>
         <tag>统计量</tag>
+        <tag>估计量</tag>
+        <tag>样本方差</tag>
       </tags>
   </entry>
 </search>
