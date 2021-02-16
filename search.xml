@@ -696,38 +696,38 @@ E(\hat \theta) = \theta, \forall \theta \in \Theta
 <li>样本标准差：$ s = s^2$</li>
 </ul>
 <ol type="1">
-<li>样本均值<span class="math inline">\(\hat x\)</span>总位于数据中部，他是总体均值<span class="math inline">\(\mu\)</span>的无偏估计，即<span class="math inline">\(E(\hat x) = \mu\)</span></li>
-<li><span class="math inline">\(x_i\)</span>对<span class="math inline">\(\hat x\)</span>的偏差<span class="math inline">\(x_i-\hat x\)</span>可正可负，其和恒为零，<span class="math inline">\(\sum_{i=1}^{n}(x_i-\hat x) = 0\)</span> 这个等式表明: n个偏差中只有n-1个是独立的，第n个可以根据其和为0的公式计算得出。 在统计中独立偏差的个数称为自由度，记为<span class="math inline">\(f\)</span>，故n个偏差有n-1个自由度，即<span class="math inline">\(f= n-1\)</span>。</li>
+<li>样本均值<span class="math inline">\(\overline x\)</span>总位于数据中部，他是总体均值<span class="math inline">\(\mu\)</span>的无偏估计，即<span class="math inline">\(E(\overline x) = \mu\)</span></li>
+<li><span class="math inline">\(x_i\)</span>对<span class="math inline">\(\overline x\)</span>的偏差<span class="math inline">\(x_i-\overline x\)</span>可正可负，其和恒为零，<span class="math inline">\(\sum_{i=1}^{n}(x_i-\overline x) = 0\)</span> 这个等式表明: n个偏差中只有n-1个是独立的，第n个可以根据其和为0的公式计算得出。 在统计中独立偏差的个数称为自由度，记为<span class="math inline">\(f\)</span>，故n个偏差有n-1个自由度，即<span class="math inline">\(f= n-1\)</span>。</li>
 <li>全部的偏差之和恒为零，故样本偏差只和不能累加起来，不能直接用来度量样本散布大小，而改为样本偏差平方和<span class="math inline">\(Q\)</span>. <span class="math display">\[
-Q = \sum_{i=1}^{n}(x_i-\hat x)^2
+Q = \sum_{i=1}^{n}(x_i-\overline x)^2
 \]</span></li>
 <li><p>在样本量不同的场合，偏差平方和<span class="math inline">\(Q\)</span>失去了比较样本散布大小的公平性。为了消除样本量大小对偏差平方和的干扰，改用平均偏差平方和<span class="math inline">\(s_n^2\)</span>来度量， <span class="math display">\[
-s_n^2 = \frac{Q}{n} = \frac{1}{n} \sum_{i=1}^{n}(x_i-\hat x)^2
-\]</span> 样本方差<span class="math inline">\(s_n^2\)</span>是总体方差<span class="math inline">\(\simga^2\)</span>的一个估计。</p></li>
-<li><p><span class="math inline">\(s_n^2\)</span>的改进。无论从理论还是实际使用中，用样本方差<span class="math inline">\(s_n^2\)</span>估计总体方差<span class="math inline">\(\simga^2\)</span>多数情况下是偏小的。 证明如下：</p></li>
+s_n^2 = \frac{Q}{n} = \frac{1}{n} \sum_{i=1}^{n}(x_i-\overline x)^2
+\]</span> 样本方差<span class="math inline">\(s_n^2\)</span>是总体方差<span class="math inline">\(\sigma^2\)</span>的一个估计。</p></li>
+<li><p><span class="math inline">\(s_n^2\)</span>的改进。无论从理论还是实际使用中，用样本方差<span class="math inline">\(s_n^2\)</span>估计总体方差<span class="math inline">\(\sigma^2\)</span>多数情况下是偏小的。 证明如下：</p></li>
 </ol>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-s_n^2 &amp; = \frac{1}{n}\sum_{i=1}{n}(x_i-\hat x)^2 \\
-&amp;= \frac{1}{n}\sum_{i=1}^{n}(x_i^2 - 2x_i\hat x + (\hat x)^2) \\
-&amp; = \frac{1}{n}\sum_{i=1}^{n}x_i^2 - 2\frac{1}{n}\sum_{i=1}^{n}x_i \cdot \hat x + (\hat x)^2 \\
-&amp; = frac{1}{n}\sum_{i=1}^{n}x_i^2 - (\hat x)^2 \\
+s_n^2 &amp; = \frac{1}{n}\sum_{i=1}{n}(x_i-\overline x)^2 \\
+&amp;= \frac{1}{n}\sum_{i=1}^{n}(x_i^2 - 2x_i\overline x + (\overline x)^2) \\
+&amp; = \frac{1}{n}\sum_{i=1}^{n}x_i^2 - 2\frac{1}{n}\sum_{i=1}^{n}x_i \cdot \overline x + (\overline x)^2 \\
+&amp; = frac{1}{n}\sum_{i=1}^{n}x_i^2 - (\overline x)^2 \\
 
 \end{aligned}
 \end{equation}\]</span></p>
-<p>为了求<span class="math inline">\(E(s_n^2)\)</span>,先求<span class="math inline">\(E(x_i^2),E((\hat x)^2)\)</span>,</p>
+<p>为了求<span class="math inline">\(E(s_n^2)\)</span>,先求<span class="math inline">\(E(x_i^2),E((\overline x)^2)\)</span>,</p>
 <p>根据方差基本性质<a href="http://www.zhusitao.cn/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/">方差和均值关系证明</a>， 样本均值是总体期望的无偏估计，</p>
 <ul>
 <li><span class="math inline">\(E(x_i^2) = Var(x_i) + (E(x_i))^2=\sigma^2 + \mu^2\)</span></li>
-<li>$E((x)^2) = <span class="math inline">\(Var(\hat x) + (E(\hat x))^2 = Var(\frac{x_i}{n})+\mu^2=\frac{1}{n^2}Var(\sum x_i) + \mu^2 = \frac{n\sigma^2}{n^2} + \mu^2 = \frac{\sigma^2}{n} + \mu^2\)</span></li>
+<li>$E((x)^2) = <span class="math inline">\(Var(\overline x) + (E(\overline x))^2 = Var(\frac{x_i}{n})+\mu^2=\frac{1}{n^2}Var(\sum x_i) + \mu^2 = \frac{n\sigma^2}{n^2} + \mu^2 = \frac{\sigma^2}{n} + \mu^2\)</span></li>
 </ul>
 <p>所以 <span class="math display">\[
 E(s_n^2) = \frac{1}{n}\sum_{i=1}^{n}(\sigma^2+\mu^2) - (\frac{\sigma^2}{n} + \mu^2) = (1-\frac{1}{n})\sigma^2 \le \sigma^2
 \]</span></p>
 <p><span class="math inline">\(s_n^2\)</span>是总体方差<span class="math inline">\(\sigma^2\)</span>的有偏估计。</p>
 <p><span class="math display">\[
-s^2 = \frac{Q}{f} = \frac{1}{n-1}\sum_{i=1}{n}(x_i-\hat x)^2
+s^2 = \frac{Q}{f} = \frac{1}{n-1}\sum_{i=1}{n}(x_i-\overline x)^2
 \]</span> <span class="math inline">\(s^2\)</span>是总体方差的无偏估计,自由度是n-1。</p>
 <p>证明： <span class="math display">\[
 E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
