@@ -221,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-02-16 20:39:00 / Modified: 21:28:20" itemprop="dateCreated datePublished" datetime="2021-02-16T20:39:00+08:00">2021-02-16</time>
+              <time title="Created: 2021-02-16 20:39:00 / Modified: 21:31:14" itemprop="dateCreated datePublished" datetime="2021-02-16T20:39:00+08:00">2021-02-16</time>
             </span>
 
           
@@ -240,10 +240,11 @@
 <p>例如，数据的算数平均数称为样本均值。</p>
 <p><span class="math inline">\(\overline x = \frac{1}{n} \sum_{i=1}^{n}x_i\)</span></p>
 <h1 id="估计量">估计量</h1>
-<p>用于估计未知参数的统计量称为点估计量 参数<span class="math inline">\(\theta\)</span>的估计量常用<span class="math inline">\(\hat \theta=\hat \theta(x_1,x_2,...x_n)\)</span>,表示，参数的可能取值范围是参数空间，记为<span class="math inline">\(\Theta = (\theta)\)</span>。 这里的参数常常只如下几种： 分布中所含有的位置参数； 分布中的期望，方差，标准差，分位数，和特征值； 某事件的概率； 一个参数的估计量通常不止一个，如何判断优劣？常用的标准有多个。如无偏性，有效性，均方误差最小，相合性等等。</p>
+<p>用于估计未知参数的统计量称为点估计量。 参数<span class="math inline">\(\theta\)</span>的估计量常用<span class="math inline">\(\hat \theta=\hat \theta(x_1,x_2,...x_n)\)</span>,表示，参数的可能取值范围是参数空间，记为<span class="math inline">\(\Theta = (\theta)\)</span>。</p>
+<p>这里的参数常常只如下几种： * 分布中所含有的位置参数； * 分布中的期望，方差，标准差，分位数，和特征值； * 某事件的概率； 一个参数的估计量通常不止一个，如何判断优劣？常用的标准有多个。如无偏性，有效性，均方误差最小，相合性等等。</p>
 <p>设<span class="math inline">\(\hat \theta =\hat \theta(x_1,x_2,...x_n)\)</span>是参数<span class="math inline">\(\theta\)</span>的一个估计，对于参数空间<span class="math inline">\(\Theta=\theta\)</span>中任意一个<span class="math inline">\(\theta\)</span> 都有 <span class="math display">\[
 E(\hat \theta) = \theta, \forall \theta \in \Theta
-\]</span> 则称<span class="math inline">\(\hat \theta\)</span>为<span class="math inline">\(\theta\)</span>的无偏估计，否则称为<span class="math inline">\(\theta\)</span>有偏估计</p>
+\]</span> 则称<span class="math inline">\(\hat \theta\)</span>为<span class="math inline">\(\theta\)</span>的无偏估计，否则称为<span class="math inline">\(\theta\)</span>有偏估计。</p>
 <h1 id="样本方差">样本方差</h1>
 <p>统计学中常用的三个统计量是：</p>
 <ul>
@@ -258,7 +259,7 @@ E(\hat \theta) = \theta, \forall \theta \in \Theta
 Q = \sum_{i=1}^{n}(x_i-\hat x)^2
 \]</span></li>
 <li>在样本量不同的场合，偏差平方和<span class="math inline">\(Q\)</span>失去了比较样本散布大小的公平性。为了消除样本量大小对偏差平方和的干扰，改用平均偏差平方和<span class="math inline">\(s_n^2\)</span>来度量， <span class="math display">\[
-s_n^2 = \frac{Q}{n} = \frac_{1}^{n} \sum_{i=1}^{n}(x_i-\hat x)^2
+s_n^2 = \frac{Q}{n} = \frac{1}{n} \sum_{i=1}^{n}(x_i-\hat x)^2
 \]</span></li>
 </ol>
 
