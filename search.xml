@@ -739,4 +739,15 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
         <tag>样本方差</tag>
       </tags>
   </entry>
+  <entry>
+    <title>样本的经验分布函数和样本矩</title>
+    <url>/2021/02/18/%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E6%A0%B7%E6%9C%AC%E7%9F%A9/</url>
+    <content><![CDATA[<h1 id="分布函数">分布函数</h1>
+<p>设总体X的分布函数是<span class="math inline">\(F(x)\)</span>,从中获得的样本观察值为<span class="math inline">\(x_1,x_2,...x_n\)</span>。 将他们从小到大重新排序，重新编号为<span class="math inline">\(x_(1)\)</span>.</p>
+]]></content>
+      <tags>
+        <tag>经验分布函数</tag>
+        <tag>样本矩</tag>
+      </tags>
+  </entry>
 </search>
