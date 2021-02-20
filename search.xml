@@ -758,10 +758,16 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
 <p>但是<span class="math inline">\(0.5!\)</span>怎么计算呢？</p>
 <h1 id="伽玛函数">伽玛函数</h1>
 <p><span class="math display">\[
-\Gamma(s) = \infty
+\Gamma(s) = $\displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}$
 \]</span></p>
-<p><span class="math inline">\(\int^{\infty}_{0}{xdx}\)</span></p>
-<p><span class="math inline">\(\displaystyle \int^{\infty}_{0}{xdx}\)</span></p>
+<p>证明：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+\Gamma(s+1) &amp;= $\displaystyle \int^{+\infty}_{0}{x^{s}e^{-x}dx} \\
+&amp;= -$\displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}d(e^{-x})}$ \\
+\end{aligned}
+\end{equation}\]</span></p>
 ]]></content>
       <tags>
         <tag>伽玛函数</tag>
