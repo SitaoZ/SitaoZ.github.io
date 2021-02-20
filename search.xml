@@ -750,4 +750,16 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
         <tag>样本矩</tag>
       </tags>
   </entry>
+  <entry>
+    <title>伽玛函数</title>
+    <url>/2021/02/20/%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="阶乘">阶乘</h1>
+<p>对于任意自然数，<span class="math inline">\(0,1,2,...,n\)</span>的阶乘的定义为 <span class="math inline">\(n! = 1\times 2 \times 3 ... \times n\)</span></p>
+<p>但是<span class="math inline">\(0.5!\)</span>怎么计算呢？</p>
+]]></content>
+      <tags>
+        <tag>伽玛函数</tag>
+        <tag>阶乘</tag>
+      </tags>
+  </entry>
 </search>
