@@ -766,6 +766,8 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
 
 \Gamma(s+1) &amp;= \displaystyle \int^{+\infty}_{0}{x^{s}e^{-x}dx} \\
 &amp;= -\displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}d(e^{-x})} \\
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{x-1}e^{-x}dx) \\
+&amp;= s\Gamma{s}
 \end{aligned}
 \end{equation}\]</span></p>
 ]]></content>

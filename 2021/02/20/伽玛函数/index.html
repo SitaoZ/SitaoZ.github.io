@@ -28,7 +28,7 @@
 <meta property="og:description" content="阶乘 对于任意自然数，\(0,1,2,...,n\)的阶乘的定义为 \(n! &#x3D; 1\times 2 \times 3 ... \times n\) 但是\(0.5!\)怎么计算呢？ 伽玛函数 \[ \Gamma(s) &#x3D; \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx} \] 证明： \[\begin{equation} \begin{align">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-20T03:58:17.000Z">
-<meta property="article:modified_time" content="2021-02-20T04:21:26.057Z">
+<meta property="article:modified_time" content="2021-02-20T05:15:16.485Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="伽玛函数">
 <meta property="article:tag" content="阶乘">
@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-02-20 11:58:17 / Modified: 12:21:26" itemprop="dateCreated datePublished" datetime="2021-02-20T11:58:17+08:00">2021-02-20</time>
+              <time title="Created: 2021-02-20 11:58:17 / Modified: 13:15:16" itemprop="dateCreated datePublished" datetime="2021-02-20T11:58:17+08:00">2021-02-20</time>
             </span>
 
           
@@ -251,6 +251,8 @@
 
 \Gamma(s+1) &amp;= \displaystyle \int^{+\infty}_{0}{x^{s}e^{-x}dx} \\
 &amp;= -\displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}d(e^{-x})} \\
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{x-1}e^{-x}dx) \\
+&amp;= s\Gamma{s}
 \end{aligned}
 \end{equation}\]</span></p>
 
