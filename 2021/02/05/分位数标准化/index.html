@@ -28,7 +28,7 @@
 <meta property="og:description" content="分位数标准化 Quantile normalization 分位数标准化就是使得两个分布在统计属性上相同的技术手法。 该方法在基因芯片中经常使用。 例子 如图我们有三个基因芯片的数据，假设有A,B,C,D四个基因 表格Table1    Gene Sample1 Sample2 Sample3     A 5 4 3   B 2 1 4   C 3 4 6   D 4 2 8    对每一列进行排">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-05T09:42:21.000Z">
-<meta property="article:modified_time" content="2021-02-05T13:23:25.030Z">
+<meta property="article:modified_time" content="2021-02-22T03:02:28.540Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="统计学">
 <meta property="article:tag" content="标准化">
@@ -222,10 +222,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-02-05 17:42:21 / Modified: 21:23:25" itemprop="dateCreated datePublished" datetime="2021-02-05T17:42:21+08:00">2021-02-05</time>
+              <time title="Created: 2021-02-05 17:42:21" itemprop="dateCreated datePublished" datetime="2021-02-05T17:42:21+08:00">2021-02-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-22 11:02:28" itemprop="dateModified" datetime="2021-02-22T11:02:28+08:00">2021-02-22</time>
+              </span>
 
           
 
@@ -477,6 +483,7 @@
 </tbody>
 </table>
 <h1 id="python实现quantile-normalize">python实现quantile normalize</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quantileNormalize</span>(<span class="params">df_input</span>):</span></span><br><span class="line">    df = df_input.copy()</span><br><span class="line">    <span class="comment">#compute rank</span></span><br><span class="line">    dic = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> df:</span><br><span class="line">        dic.update(&#123;col : <span class="built_in">sorted</span>(df[col])&#125;)</span><br><span class="line">    sorted_df = pd.DataFrame(dic)</span><br><span class="line">    rank = sorted_df.mean(axis = <span class="number">1</span>).tolist()</span><br><span class="line">    <span class="comment">#sort</span></span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> df:</span><br><span class="line">        t = np.searchsorted(np.sort(df[col]), df[col])</span><br><span class="line">        df[col] = [rank[i] <span class="keyword">for</span> i <span class="keyword">in</span> t]</span><br><span class="line">    <span class="keyword">return</span> df</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
