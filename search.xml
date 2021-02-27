@@ -321,7 +321,7 @@ P(|X-E(X)| \leq \varepsilon) \geq 1- \frac{Var(X)}{\varepsilon^2}
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-P(|X-a|\geq\varepsilon) &amp;=\int p(x)dx \\
+P(|X-a|\geq\varepsilon) &amp;=\int_{x:|x-a|\geq\varepsilon} p(x)dx \\
 &amp;= \int \frac{(x-a)^2}{\varepsilon^2}p(x)dx \\
 &amp;= \frac{1}{\varepsilon^2}\int(x-a)^2p(x)dx = \frac{Var(x)}{\varepsilon^2} 
 
