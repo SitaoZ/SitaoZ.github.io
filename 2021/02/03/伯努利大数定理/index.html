@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="伯努利大数定理(Law of Large Numbers)伯努利分布也称两点分布,相关的描述和证明见伯努利分布 伯努利概型$\Omega$,$\mathscr{A}$,$P$ ,其中 $\Omega&#x3D;{\omega:\omega&#x3D;(a_1,…a_n),a_i&#x3D;0,1}$  $\mathscr{A}&#x3D;{A:A \subset \Omega}$ , $P({\omega})&#x3D;p^{\sum a_i}(">
+  <meta name="description" content="伯努利大数定理(Law of Large Numbers) 伯努利分布也称两点分布,相关的描述和证明见伯努利分布 伯努利概型 \(\Omega\),\(\mathscr{A}\),\(P\) ,其中 \(\Omega&#x3D;\{\omega:\omega&#x3D;(a_1,...a_n),a_i&#x3D;0,1\}\) \(\mathscr{A}&#x3D;\{A:A \subset \Omega\}\) , \(P(\{\om">
 <meta property="og:type" content="article">
 <meta property="og:title" content="伯努利大数定理">
 <meta property="og:url" content="http://example.com/2021/02/03/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="伯努利大数定理(Law of Large Numbers)伯努利分布也称两点分布,相关的描述和证明见伯努利分布 伯努利概型$\Omega$,$\mathscr{A}$,$P$ ,其中 $\Omega&#x3D;{\omega:\omega&#x3D;(a_1,…a_n),a_i&#x3D;0,1}$  $\mathscr{A}&#x3D;{A:A \subset \Omega}$ , $P({\omega})&#x3D;p^{\sum a_i}(">
+<meta property="og:description" content="伯努利大数定理(Law of Large Numbers) 伯努利分布也称两点分布,相关的描述和证明见伯努利分布 伯努利概型 \(\Omega\),\(\mathscr{A}\),\(P\) ,其中 \(\Omega&#x3D;\{\omega:\omega&#x3D;(a_1,...a_n),a_i&#x3D;0,1\}\) \(\mathscr{A}&#x3D;\{A:A \subset \Omega\}\) , \(P(\{\om">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-03T01:38:13.000Z">
-<meta property="article:modified_time" content="2021-02-27T06:55:05.723Z">
+<meta property="article:modified_time" content="2021-02-27T07:05:55.643Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="大数定理">
 <meta property="article:tag" content="Law of Large Numbers">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-27 14:55:05" itemprop="dateModified" datetime="2021-02-27T14:55:05+08:00">2021-02-27</time>
+                <time title="Modified: 2021-02-27 15:05:55" itemprop="dateModified" datetime="2021-02-27T15:05:55+08:00">2021-02-27</time>
               </span>
 
           
@@ -244,22 +244,50 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="伯努利大数定理-Law-of-Large-Numbers"><a href="#伯努利大数定理-Law-of-Large-Numbers" class="headerlink" title="伯努利大数定理(Law of Large Numbers)"></a>伯努利大数定理(Law of Large Numbers)</h1><p>伯努利分布也称两点分布,相关的描述和证明见<a target="_blank" rel="noopener" href="http://www.zhusitao.cn/2021/01/25/bernoulli-distribution/">伯努利分布</a></p>
-<h2 id="伯努利概型"><a href="#伯努利概型" class="headerlink" title="伯努利概型"></a>伯努利概型</h2><p>$\Omega$,$\mathscr{A}$,$P$ ,其中 $\Omega={\omega:\omega=(a_1,…a_n),a_i=0,1}$ </p>
-<p>$\mathscr{A}={A:A \subset \Omega}$ , $P({\omega})=p^{\sum a_i}(1-p)^{n-\sum a_i}=p(\omega)$ </p>
+        <h1 id="伯努利大数定理law-of-large-numbers">伯努利大数定理(Law of Large Numbers)</h1>
+<p>伯努利分布也称两点分布,相关的描述和证明见<a target="_blank" rel="noopener" href="http://www.zhusitao.cn/2021/01/25/bernoulli-distribution/">伯努利分布</a></p>
+<h2 id="伯努利概型">伯努利概型</h2>
+<p><span class="math inline">\(\Omega\)</span>,<span class="math inline">\(\mathscr{A}\)</span>,<span class="math inline">\(P\)</span> ,其中 <span class="math inline">\(\Omega=\{\omega:\omega=(a_1,...a_n),a_i=0,1\}\)</span></p>
+<p><span class="math inline">\(\mathscr{A}=\{A:A \subset \Omega\}\)</span> , <span class="math inline">\(P(\{\omega\})=p^{\sum a_i}(1-p)^{n-\sum a_i}=p(\omega)\)</span></p>
 <p>上面定义的三对象，称作伯努利概型。白话就是“有两种结局的n次独立试验的概率模型”</p>
-<p>对于二项分布而言，$ES_n = np$<br>$E\frac{S_n}{n} = p$,即成功的频率$S_n/n$的平均值等于成功的概率。那么成功的频率对成功的概率的偏差如何呢？<br>这里需要借助切比雪夫不等式。</p>
-<h2 id="切比雪夫不等式"><a href="#切比雪夫不等式" class="headerlink" title="切比雪夫不等式"></a>切比雪夫不等式</h2><p>设($\Omega$,$\mathscr{A}$,$P$)是某一概率空间，$\xi=\xi(\omega)$ 是非负随机变量，那么对于任意的$\varepsilon&gt;0$,</p>
-<p>$$<br>P{\xi\geq\varepsilon} \leq \frac{E\xi}{\varepsilon}<br>$$</p>
-<p>切比雪夫不等式证明：<br>根据示性函数的性质，</p>
-<p>\begin{equation}<br>\begin{aligned}</p>
-<p>\xi &amp;=\xi I(\xi \geq \varepsilon) + \xi I(\xi &lt; \varepsilon) \<br>&amp;\geq \xi I(\xi \geq \varepsilon) \<br>&amp;\geq \varepsilon I(\xi \geq \varepsilon) \</p>
-<p>\end{aligned}<br>\end{equation}</p>
-<p>所以 $\xi \geq \varepsilon I(\xi \geq \varepsilon)$<br>根据期望的性质<br>\begin{equation}<br>\begin{aligned}<br>E\xi &amp;\geq E\varepsilon I(\xi \geq \varepsilon) \<br>&amp;\geq \varepsilon E I(\xi \geq \varepsilon) = \varepsilon P{\xi \geq \varepsilon}<br>\end{aligned}<br>\end{equation}<br>不等式得证。</p>
-<h2 id="切比雪夫不等式的另一种表达方式"><a href="#切比雪夫不等式的另一种表达方式" class="headerlink" title="切比雪夫不等式的另一种表达方式"></a>切比雪夫不等式的另一种表达方式</h2><p>设随机变量X的数学期望和方差都存在，对于任意的常数$\varepsilon$有：<br>$$<br>P(|X-E(X)| \geq \varepsilon) \leq \frac{Var(X)}{\varepsilon^2}<br>$$<br>或者<br>$$<br>P(|X-E(X)| \leq \varepsilon) \geq 1- \frac{Var(X)}{\varepsilon^2}<br>$$<br>证明如下：<br>设X是一个连续的随机变量，其密度函数为p(x),记$E(X)=a$</p>
-<p>\begin{equation}<br>\begin{aligned}</p>
-<p>P(|X-a|\geq\varepsilon) &amp;=\int _I(\xi \geq \varepsilon) + \xi I(\xi &lt; \varepsilon) \<br>&amp;\geq \xi I(\xi \geq \varepsilon) \<br>&amp;\geq \varepsilon I(\xi \geq \varepsilon) \</p>
-<p>\end{aligned}<br>\end{equation}</p>
+<p>对于二项分布而言，<span class="math inline">\(ES_n = np\)</span> <span class="math inline">\(E\frac{S_n}{n} = p\)</span>,即成功的频率<span class="math inline">\(S_n/n\)</span>的平均值等于成功的概率。那么成功的频率对成功的概率的偏差如何呢？ 这里需要借助切比雪夫不等式。</p>
+<h2 id="切比雪夫不等式">切比雪夫不等式</h2>
+<p>设(<span class="math inline">\(\Omega\)</span>,<span class="math inline">\(\mathscr{A}\)</span>,<span class="math inline">\(P\)</span>)是某一概率空间，<span class="math inline">\(\xi=\xi(\omega)\)</span> 是非负随机变量，那么对于任意的<span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
+<p><span class="math display">\[
+P\{\xi\geq\varepsilon\} \leq \frac{E\xi}{\varepsilon}
+\]</span></p>
+<p>切比雪夫不等式证明： 根据示性函数的性质，</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+\xi &amp;=\xi I(\xi \geq \varepsilon) + \xi I(\xi &lt; \varepsilon) \\
+&amp;\geq \xi I(\xi \geq \varepsilon) \\
+&amp;\geq \varepsilon I(\xi \geq \varepsilon) \\
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>所以 <span class="math inline">\(\xi \geq \varepsilon I(\xi \geq \varepsilon)\)</span> 根据期望的性质 <span class="math display">\[\begin{equation}
+\begin{aligned}
+E\xi &amp;\geq E\varepsilon I(\xi \geq \varepsilon) \\
+&amp;\geq \varepsilon E I(\xi \geq \varepsilon) = \varepsilon P\{\xi \geq \varepsilon\} 
+\end{aligned}
+\end{equation}\]</span> 不等式得证。</p>
+<h2 id="切比雪夫不等式的另一种表达方式">切比雪夫不等式的另一种表达方式</h2>
+<p>设随机变量<span class="math inline">\(X\)</span>的数学期望和方差都存在，对于任意的常数<span class="math inline">\(\varepsilon\)</span>有： <span class="math display">\[
+P(|X-E(X)| \geq \varepsilon) \leq \frac{Var(X)}{\varepsilon^2}
+\]</span> 或者 <span class="math display">\[
+P(|X-E(X)| \leq \varepsilon) \geq 1- \frac{Var(X)}{\varepsilon^2}
+\]</span> 证明如下： 设<span class="math inline">\(X\)</span>是一个连续的随机变量，其密度函数为<span class="math inline">\(p(x)\)</span>,记<span class="math inline">\(E(X)=a\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+P(|X-a|\geq\varepsilon) &amp;=\int p(x)dx \\
+&amp;\leq \int \frac{(x-a)^2}{\varepsilon^2}p(x)dx \\
+&amp;\leq \frac{1}{\varepsilon^2}\int(x-a)^2p(x)dx = \frac{Var(x)}{\varepsilon^2} 
+
+
+\end{aligned}
+\end{equation}\]</span></p>
 
     </div>
 
@@ -344,7 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86-Law-of-Large-Numbers"><span class="nav-number">1.</span> <span class="nav-text">伯努利大数定理(Law of Large Numbers)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%A6%82%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">伯努利概型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">切比雪夫不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E8%A1%A8%E8%BE%BE%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">切比雪夫不等式的另一种表达方式</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86law-of-large-numbers"><span class="nav-number">1.</span> <span class="nav-text">伯努利大数定理(Law of Large Numbers)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%A6%82%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">伯努利概型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">切比雪夫不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E8%A1%A8%E8%BE%BE%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">切比雪夫不等式的另一种表达方式</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
