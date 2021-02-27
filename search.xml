@@ -318,15 +318,12 @@ P(|X-E(X)| \geq \varepsilon) \leq \frac{Var(X)}{\varepsilon^2}
 \]</span> 或者 <span class="math display">\[
 P(|X-E(X)| \leq \varepsilon) \geq 1- \frac{Var(X)}{\varepsilon^2}
 \]</span> 证明如下： 设<span class="math inline">\(X\)</span>是一个连续的随机变量，其密度函数为<span class="math inline">\(p(x)\)</span>,记<span class="math inline">\(E(X)=a\)</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-
+<p><span class="math display">\[\begin{align*}
 P(|X-a|\geq\varepsilon) &amp;= \int\limits_{\{x:|x-a|\geq\varepsilon\}} \quad p(x)dx \\
 &amp;\leq \int \limits_{\{x:|x-a|\geq\varepsilon\}} \quad \frac{(x-a)^2}{\varepsilon^2}p(x)dx \\
 &amp;\leq \frac{1}{\varepsilon^2}\int_{-\infty}^{+\infty}(x-a)^2p(x)dx = \frac{Var(x)}{\varepsilon^2} 
 
-\end{aligned}
-\end{equation}\]</span></p>
+\end{align*}\]</span></p>
 <p>可以看出</p>
 ]]></content>
       <tags>
