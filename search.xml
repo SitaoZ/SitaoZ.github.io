@@ -332,9 +332,8 @@ P(|X-a|\geq\varepsilon) &amp;= \int\limits_{\{x:|x-a|\geq\varepsilon\}} \quad p(
 <p>证明:</p>
 <p><span class="math display">\[\begin{align*}
 
-1 \geq P(|\frac{S_n}{n}-p| \leq \varepsilon) \\
-&amp;\geq 1 - \frac{Var(\frac{S_n}{n})}{\varepsilon^2} \\
-&amp;= 1- \frac{p(1-p)}{n^2\varepsilon^2}
+1 &amp;\geq P(|\frac{S_n}{n}-p| \leq \varepsilon) \\
+&amp;\geq 1 - \frac{Var(\frac{S_n}{n})}{\varepsilon^2} = 1- \frac{p(1-p)}{n^2\varepsilon^2}
 
 \end{align*}\]</span></p>
 <p>当<span class="math inline">\(n\)</span>趋近与<span class="math inline">\(\infty\)</span>时，上式趋近与1,事件发生的频率趋近与概率。</p>
