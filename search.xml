@@ -819,7 +819,7 @@ g(k,p) = P(\xi=k) = q^{k-1}p, k= 1,2,...
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-P &amp;= \frac{P(\xi=k+m)}{P(\xi=m)} \\
+P &amp;= \frac{P(\xi)}{P(\xi)} \\
 &amp;= \frac{q^{m+k+1}p}{q^m} \\
 &amp;= q^{k-1}p
 
