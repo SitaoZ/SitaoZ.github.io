@@ -196,6 +196,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/bernoulli-distribution/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="没有梦想，何必远方">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/25/bernoulli-distribution/" class="post-title-link" itemprop="url">bernoulli_distribution</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-25 12:22:58" itemprop="dateCreated datePublished" datetime="2021-01-25T12:22:58+08:00">2021-01-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-03 10:22:14" itemprop="dateModified" datetime="2021-02-03T10:22:14+08:00">2021-02-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/probability/" itemprop="url" rel="index"><span itemprop="name">probability</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/probability/bernoulli/" itemprop="url" rel="index"><span itemprop="name">bernoulli</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="伯努利分布bernoulli-distribution">1.伯努利分布（bernoulli distribution）</h3>
+<p>伯努利分布，又名两点分布或者0-1分布，是一个离散型的随机分布。 如果伯努利试验成功，则伯努利随机变量取值为1，如果失败，伯努利 随机变量取值为0。记其成功概率为p，失败概率为q=1-p.</p>
+<p>则其概率质量函数为：</p>
+<p><span class="math display">\[f(x) = p^x(1-p)^{1-x} = \begin{cases}
+p &amp; if x = 1, \\
+q &amp; if x = 0.
+\end{cases}\]</span></p>
+<h3 id="伯努利分布的期望">2.伯努利分布的期望</h3>
+<p><span class="math display">\[E[X] = \sum_{i=0}^{1}x_if(x_i)=1 \cdot p+0 \cdot p=p\]</span></p>
+<h3 id="伯努利分布的方差">3.伯努利分布的方差</h3>
+<p><span class="math display">\[var[X] = \sum_{i=0}^{1}(x_i-E[X])^2f(x_i) = (0-p)^2(1-p)+(1-p)^2p=p(1-p)=pq\]</span></p>
+<p>当<span class="math inline">\(p=q=\frac{1}{2}\)</span>时，方差最大。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/23/normal-distribution/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -865,7 +954,7 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

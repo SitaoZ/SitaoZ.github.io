@@ -806,4 +806,21 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
         <tag>阶乘</tag>
       </tags>
   </entry>
+  <entry>
+    <title>几何分布</title>
+    <url>/2021/03/11/%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/</url>
+    <content><![CDATA[<h1 id="几何分布">几何分布</h1>
+<p>时间A发生的概率为p的伯努利实验中，<span class="math inline">\(\xi\)</span>记为事件A首次出现的 实验次数，则称随机变量<span class="math inline">\(\xi\)</span>服从几何分布， <span class="math display">\[
+g(k,p) = P(\xi=k) = q^{k-1}p, k = 1,2,...
+\]</span></p>
+<h1 id="几何分布的无记忆性">几何分布的无记忆性</h1>
+<p>在伯努利实验中，等待首次成功的时间<span class="math inline">\(\xi\)</span>服从几何分布。假定前m次都没有成功， 那么首次成功等待的时间为<span class="math inline">\(\xi^&#39;\)</span>,也是服从几何分布的。 证明：</p>
+<p><span class="math display">\[
+P(\xi^&#39;) &amp;= p(\xi=k+m|\xi&gt;m) \\
+&amp;= \frac{p(\xi=m+k)}{P(\xi&gt;m))} \\
+&amp;= \frac{q^{m+k+1}p}{q^m} \\
+&amp;=q^{k-1}p
+\]</span></p>
+]]></content>
+  </entry>
 </search>
