@@ -823,7 +823,8 @@ P &amp;= \frac{P(\xi=k+m)}{P(\xi=m)} \\
 &amp;= \frac{q^{m+k+1}p}{q^m} \\
 &amp;= q^{k-1}p
 
-\end{equation}\]</span> \end{aligned}</p>
+\end{aligned}
+\end{equation}\]</span></p>
 ]]></content>
       <tags>
         <tag>geometrix distribution</tag>
