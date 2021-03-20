@@ -828,7 +828,7 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
     <url>/2021/03/12/%E5%B7%B4%E6%96%AF%E5%8D%A1%E5%88%86%E5%B8%83/</url>
     <content><![CDATA[<h1 id="巴斯卡分布">巴斯卡分布</h1>
 <p>伯努利事件中，记<span class="math inline">\(\xi\)</span>为第r次成功出现的实验次数，则<span class="math inline">\(\xi\)</span>是随机变量， 取值为r,r+1,r+2,...,其概率分布为巴斯卡分布 <span class="math display">\[
-P(\xi=k) = {k-1 \choose r-1}p^rq^{k-r}, k=r,r+1,r+2,...
+P(\xi=k) = {k-1 \choose {r-1}}p^rq^{k-r}, k=r,r+1,r+2,...
 \]</span> 显然，单r=1时，即为几何分布</p>
 ]]></content>
       <tags>
