@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="正态分布 \[f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\] 正太分布的推导 这里介绍高斯的推导方法，采用误差 \[\begin{align*} L(\theta) &amp;&#x3D; L(\theta;x_1,\cdots,x_n)&#x3D;f(e_1)\cdots f(e_n) \\ &amp; &#x3D; f(x_1-\theta)\">
+  <meta name="description" content="正态分布$$f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}$$ 正太分布的推导这里介绍高斯的推导方法，采用误差 \begin{align*}L(\theta) &amp;&#x3D; L(\theta;x_1,\cdots,x_n)&#x3D;f(e_1)\cdots f(e_n) \&amp; &#x3D; f(x_1-\theta)\cdots f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="normal_distribution">
 <meta property="og:url" content="http://example.com/2021/01/23/normal-distribution/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="正态分布 \[f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\] 正太分布的推导 这里介绍高斯的推导方法，采用误差 \[\begin{align*} L(\theta) &amp;&#x3D; L(\theta;x_1,\cdots,x_n)&#x3D;f(e_1)\cdots f(e_n) \\ &amp; &#x3D; f(x_1-\theta)\">
+<meta property="og:description" content="正态分布$$f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}$$ 正太分布的推导这里介绍高斯的推导方法，采用误差 \begin{align*}L(\theta) &amp;&#x3D; L(\theta;x_1,\cdots,x_n)&#x3D;f(e_1)\cdots f(e_n) \&amp; &#x3D; f(x_1-\theta)\cdots f">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-23T04:21:13.000Z">
-<meta property="article:modified_time" content="2021-04-25T13:03:50.861Z">
+<meta property="article:modified_time" content="2021-04-25T13:26:58.593Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="deep learning, bioinformatics, biology">
 <meta name="twitter:card" content="summary">
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-25 21:03:50" itemprop="dateModified" datetime="2021-04-25T21:03:50+08:00">2021-04-25</time>
+                <time title="Modified: 2021-04-25 21:26:58" itemprop="dateModified" datetime="2021-04-25T21:26:58+08:00">2021-04-25</time>
               </span>
 
           
@@ -243,14 +243,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="正态分布">正态分布</h1>
-<p><span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\]</span></p>
-<h1 id="正太分布的推导">正太分布的推导</h1>
-<p>这里介绍高斯的推导方法，采用误差</p>
-<p><span class="math display">\[\begin{align*}
-L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \\
-&amp; = f(x_1-\theta)\cdots f(x_n-\theta)
-\end{align*}\]</span></p>
+        <h1 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h1><p>$$f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}$$</p>
+<h1 id="正太分布的推导"><a href="#正太分布的推导" class="headerlink" title="正太分布的推导"></a>正太分布的推导</h1><p>这里介绍高斯的推导方法，采用误差</p>
+<p>\begin{align*}<br>L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \<br>&amp; = f(x_1-\theta)\cdots f(x_n-\theta)<br>\end{align*}</p>
+<p>\frac{d \log L(\theta)}{d \theta} = 0</p>
+<p>\sum_{i=1}^n \frac{f’(x_i-\theta)}{f(x_i-\theta)} = 0</p>
+<p>令 g(x) = \frac{f’(x)}{f(x)}</p>
+<p>\sum_{i=1}^n g(x_i-\theta) = 0</p>
+<p>\begin{equation}<br>\sum_{i=1}^n g(x_i-\bar{x}) = 0 \quad  (1)<br>\end{equation}</p>
+<p>(1) 式中取 n=2, 有</p>
+<p>$g(x_1-\bar{x}) + g(x_2-\bar{x}) = 0$</p>
+<p>由于此时有 $x_1-\bar{x} = -(x_2-\bar{x})$</p>
 
     </div>
 

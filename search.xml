@@ -179,14 +179,17 @@ E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
   <entry>
     <title>normal_distribution</title>
     <url>/2021/01/23/normal-distribution/</url>
-    <content><![CDATA[<h1 id="正态分布">正态分布</h1>
-<p><span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\]</span></p>
-<h1 id="正太分布的推导">正太分布的推导</h1>
-<p>这里介绍高斯的推导方法，采用误差</p>
-<p><span class="math display">\[\begin{align*}
-L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \\
-&amp; = f(x_1-\theta)\cdots f(x_n-\theta)
-\end{align*}\]</span></p>
+    <content><![CDATA[<h1 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h1><p>$$f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}$$</p>
+<h1 id="正太分布的推导"><a href="#正太分布的推导" class="headerlink" title="正太分布的推导"></a>正太分布的推导</h1><p>这里介绍高斯的推导方法，采用误差</p>
+<p>\begin{align*}<br>L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \<br>&amp; = f(x_1-\theta)\cdots f(x_n-\theta)<br>\end{align*}</p>
+<p>\frac{d \log L(\theta)}{d \theta} = 0</p>
+<p>\sum_{i=1}^n \frac{f’(x_i-\theta)}{f(x_i-\theta)} = 0</p>
+<p>令 g(x) = \frac{f’(x)}{f(x)}</p>
+<p>\sum_{i=1}^n g(x_i-\theta) = 0</p>
+<p>\begin{equation}<br>\sum_{i=1}^n g(x_i-\bar{x}) = 0 \quad  (1)<br>\end{equation}</p>
+<p>(1) 式中取 n=2, 有</p>
+<p>$g(x_1-\bar{x}) + g(x_2-\bar{x}) = 0$</p>
+<p>由于此时有 $x_1-\bar{x} = -(x_2-\bar{x})$</p>
 ]]></content>
   </entry>
   <entry>
