@@ -181,6 +181,12 @@ E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
     <url>/2021/01/23/normal-distribution/</url>
     <content><![CDATA[<h1 id="正态分布">正态分布</h1>
 <p><span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\]</span></p>
+<h1 id="正太分布的推导">正太分布的推导</h1>
+<p>这里介绍高斯的推导方法，采用误差</p>
+<p><span class="math display">\[\begin{align*}
+L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \\
+&amp; = f(x_1-\theta)\cdots f(x_n-\theta)
+\end{align*}\]</span></p>
 ]]></content>
   </entry>
   <entry>
