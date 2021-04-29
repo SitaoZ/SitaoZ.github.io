@@ -359,10 +359,16 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-02-20 11:58:17 / Modified: 13:31:20" itemprop="dateCreated datePublished" datetime="2021-02-20T11:58:17+08:00">2021-02-20</time>
+              <time title="Created: 2021-02-20 11:58:17" itemprop="dateCreated datePublished" datetime="2021-02-20T11:58:17+08:00">2021-02-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-29 15:57:50" itemprop="dateModified" datetime="2021-04-29T15:57:50+08:00">2021-04-29</time>
+              </span>
 
           
 
@@ -379,6 +385,12 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
 <p>对于任意自然数，<span class="math inline">\(0,1,2,...,n\)</span>的阶乘的定义为 <span class="math inline">\(n! = 1\times 2 \times 3 ... \times n\)</span></p>
 <p>但是<span class="math inline">\(0.5!\)</span>怎么计算呢？</p>
 <h1 id="伽玛函数">伽玛函数</h1>
+<p>1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点<span class="math inline">\((n，n!)\)</span>画在图形上，好像可以看出大致的趋势，但是无法从数学 的角度严格证明。于是请教同时期的伯努利兄弟。由于欧拉当时还是丹尼尔伯努利 的助手。因此欧拉也得之这个问题，第二年，即1729年，欧拉给出了完美的数据公式， 从此完成了阶乘向实数集的拓展，此时欧拉大神22岁。</p>
+<h2 id="年欧拉定义">1730年欧拉定义</h2>
+<p><span class="math display">\[
+\Gamma(x) = \displaystyle \int^1_0( -log(t))^{x-1}dt
+\]</span></p>
+<p>令 <span class="math inline">\(t=e^{-u}\)</span>,由于<span class="math inline">\(t \in (0,1)\)</span>，所以<span class="math inline">\(u \in (0,\infty)\)</span> $(x) = ^{}_{0}u<sup>{x-1}e</sup>{-u}du $</p>
 <p><span class="math display">\[
 \Gamma(s) = \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}
 \]</span></p>
