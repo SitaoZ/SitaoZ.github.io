@@ -811,8 +811,7 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
 \]</span> 令<span class="math inline">\(u=x, x=s\)</span>，则得到了伽玛函数的一般形式。 <span class="math display">\[\begin{equation}
 \Gamma(s) = \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}
 \end{equation}\]</span></p>
-<h2 id="证明">证明</h2>
-<p>需要使用分部积分法</p>
+<h2 id="证明过程需要使用分部积分法">证明过程需要使用分部积分法</h2>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
