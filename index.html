@@ -367,7 +367,7 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-29 16:05:13" itemprop="dateModified" datetime="2021-04-29T16:05:13+08:00">2021-04-29</time>
+                <time title="Modified: 2021-04-29 16:36:57" itemprop="dateModified" datetime="2021-04-29T16:36:57+08:00">2021-04-29</time>
               </span>
 
           
@@ -385,24 +385,24 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
 <p>对于任意自然数，<span class="math inline">\(0,1,2,...,n\)</span>的阶乘的定义为 <span class="math inline">\(n! = 1\times 2 \times 3 ... \times n\)</span></p>
 <p>但是<span class="math inline">\(0.5!\)</span>怎么计算呢？</p>
 <h1 id="伽玛函数">伽玛函数</h1>
-<p>1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点<span class="math inline">\((n，n!)\)</span>画在图形上，好像可以看出大致的趋势，但是无法从数学 的角度严格证明。于是请教同时期的伯努利兄弟。由于欧拉当时还是丹尼尔伯努利 的助手。因此欧拉也得之这个问题，第二年，即1729年，欧拉给出了完美的数据公式， 从此完成了阶乘向实数集的拓展，此时欧拉大神22岁。</p>
+<p>1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点<span class="math inline">\((n,n!)\)</span>画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。由于欧拉当时还是丹尼尔伯努利的助手。 因此欧拉也得知这个问题，第二年，即1729年，欧拉给出了完美的数据公式， 从此完成了阶乘向实数集的拓展，此时欧拉大神22岁。</p>
 <h2 id="年欧拉定义">1730年欧拉定义</h2>
 <p><span class="math display">\[
 \Gamma(x) = \displaystyle \int^{1}_{0}( -log(t))^{x-1}dt
 \]</span></p>
 <p>令 <span class="math inline">\(t=e^{-u}\)</span>,由于<span class="math inline">\(t \in (0,1)\)</span>，所以<span class="math inline">\(u \in (0,\infty)\)</span> <span class="math display">\[
 \Gamma(x) = \displaystyle \int^{\infty}_{0}u^{x-1}e^{-u}du
-\]</span></p>
-<p><span class="math display">\[
+\]</span> 令<span class="math inline">\(u=x, x=s\)</span>，则得到了伽玛函数的一般形式。 <span class="math display">\[\begin{equation}
 \Gamma(s) = \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}
-\]</span></p>
-<p>证明：</p>
+\end{equation}\]</span></p>
+<p>证明： 分部积分法</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
 \Gamma(s+1) &amp;= \displaystyle \int^{+\infty}_{0}{x^{s}e^{-x}dx} \\
-&amp;= -\displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}d(e^{-x})} \\
-&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{x-1}e^{-x}dx) \\
+&amp;= -\displaystyle \int^{\infty}_{0}{x^{s}d(e^{-x})} \\
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - (\displaystyle \int^{\infty}_{0}e^{-x}d(-x^s))
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{s-1}e^{-x}dx) \\
 &amp;= s\Gamma(s)
 \end{aligned}
 \end{equation}\]</span></p>

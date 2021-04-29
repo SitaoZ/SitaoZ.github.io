@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="阶乘 对于任意自然数，\(0,1,2,...,n\)的阶乘的定义为 \(n! &#x3D; 1\times 2 \times 3 ... \times n\) 但是\(0.5!\)怎么计算呢？ 伽玛函数 1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点\((n，n!)\)画在图形上，好像可以看出大致的趋势，但是无法从数学 的角度严格证明。于是请教同时期的伯努利兄弟。">
+  <meta name="description" content="阶乘 对于任意自然数，\(0,1,2,...,n\)的阶乘的定义为 \(n! &#x3D; 1\times 2 \times 3 ... \times n\) 但是\(0.5!\)怎么计算呢？ 伽玛函数 1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点\((n,n!)\)画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="伽玛函数">
 <meta property="og:url" content="http://example.com/2021/02/20/%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="阶乘 对于任意自然数，\(0,1,2,...,n\)的阶乘的定义为 \(n! &#x3D; 1\times 2 \times 3 ... \times n\) 但是\(0.5!\)怎么计算呢？ 伽玛函数 1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点\((n，n!)\)画在图形上，好像可以看出大致的趋势，但是无法从数学 的角度严格证明。于是请教同时期的伯努利兄弟。">
+<meta property="og:description" content="阶乘 对于任意自然数，\(0,1,2,...,n\)的阶乘的定义为 \(n! &#x3D; 1\times 2 \times 3 ... \times n\) 但是\(0.5!\)怎么计算呢？ 伽玛函数 1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点\((n,n!)\)画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-20T03:58:17.000Z">
-<meta property="article:modified_time" content="2021-04-29T08:05:13.063Z">
+<meta property="article:modified_time" content="2021-04-29T08:36:57.133Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="伽玛函数">
 <meta property="article:tag" content="阶乘">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-29 16:05:13" itemprop="dateModified" datetime="2021-04-29T16:05:13+08:00">2021-04-29</time>
+                <time title="Modified: 2021-04-29 16:36:57" itemprop="dateModified" datetime="2021-04-29T16:36:57+08:00">2021-04-29</time>
               </span>
 
           
@@ -248,24 +248,24 @@
 <p>对于任意自然数，<span class="math inline">\(0,1,2,...,n\)</span>的阶乘的定义为 <span class="math inline">\(n! = 1\times 2 \times 3 ... \times n\)</span></p>
 <p>但是<span class="math inline">\(0.5!\)</span>怎么计算呢？</p>
 <h1 id="伽玛函数">伽玛函数</h1>
-<p>1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点<span class="math inline">\((n，n!)\)</span>画在图形上，好像可以看出大致的趋势，但是无法从数学 的角度严格证明。于是请教同时期的伯努利兄弟。由于欧拉当时还是丹尼尔伯努利 的助手。因此欧拉也得之这个问题，第二年，即1729年，欧拉给出了完美的数据公式， 从此完成了阶乘向实数集的拓展，此时欧拉大神22岁。</p>
+<p>1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点<span class="math inline">\((n,n!)\)</span>画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。由于欧拉当时还是丹尼尔伯努利的助手。 因此欧拉也得知这个问题，第二年，即1729年，欧拉给出了完美的数据公式， 从此完成了阶乘向实数集的拓展，此时欧拉大神22岁。</p>
 <h2 id="年欧拉定义">1730年欧拉定义</h2>
 <p><span class="math display">\[
 \Gamma(x) = \displaystyle \int^{1}_{0}( -log(t))^{x-1}dt
 \]</span></p>
 <p>令 <span class="math inline">\(t=e^{-u}\)</span>,由于<span class="math inline">\(t \in (0,1)\)</span>，所以<span class="math inline">\(u \in (0,\infty)\)</span> <span class="math display">\[
 \Gamma(x) = \displaystyle \int^{\infty}_{0}u^{x-1}e^{-u}du
-\]</span></p>
-<p><span class="math display">\[
+\]</span> 令<span class="math inline">\(u=x, x=s\)</span>，则得到了伽玛函数的一般形式。 <span class="math display">\[\begin{equation}
 \Gamma(s) = \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}
-\]</span></p>
-<p>证明：</p>
+\end{equation}\]</span></p>
+<p>证明： 分部积分法</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
 \Gamma(s+1) &amp;= \displaystyle \int^{+\infty}_{0}{x^{s}e^{-x}dx} \\
-&amp;= -\displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}d(e^{-x})} \\
-&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{x-1}e^{-x}dx) \\
+&amp;= -\displaystyle \int^{\infty}_{0}{x^{s}d(e^{-x})} \\
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - (\displaystyle \int^{\infty}_{0}e^{-x}d(-x^s))
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{s-1}e^{-x}dx) \\
 &amp;= s\Gamma(s)
 \end{aligned}
 \end{equation}\]</span></p>
