@@ -806,7 +806,9 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
 <p><span class="math display">\[
 \Gamma(x) = \displaystyle \int^{1}_{0}( -log(t))^{x-1}dt
 \]</span></p>
-<p>令 <span class="math inline">\(t=e^{-u}\)</span>,由于<span class="math inline">\(t \in (0,1)\)</span>，所以<span class="math inline">\(u \in (0,\infty)\)</span> $(x) = ^{}_{0}u<sup>{x-1}e</sup>{-u}du $</p>
+<p>令 <span class="math inline">\(t=e^{-u}\)</span>,由于<span class="math inline">\(t \in (0,1)\)</span>，所以<span class="math inline">\(u \in (0,\infty)\)</span> <span class="math display">\[
+\Gamma(x) = \displaystyle \int^{\infty}_{0}u^{x-1}e^{-u}du
+\]</span></p>
 <p><span class="math display">\[
 \Gamma(s) = \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}
 \]</span></p>
