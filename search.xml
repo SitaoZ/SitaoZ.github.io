@@ -867,13 +867,15 @@ E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
 \end{aligned}
 \end{equation}\]</span></p>
 <h3 id="方差的证明">方差的证明</h3>
-<p>因为<span class="math inline">\(p(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^(\alpha-1)e^{-\lambda x}\)</span> 所以<span class="math inline">\(E(x^2) = p(x)\cdot x^2\)</span> <span class="math display">\[\begin{equation}
+<p>因为<span class="math inline">\(p(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^(\alpha-1)e^{-\lambda x}\)</span> 所以<span class="math inline">\(E(x^2) = p(x)\cdot x^2\)</span></p>
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}d(x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha+1}e^{-\lambda x}d(x)
 \end{aligned}
 \end{equation}\]</span></p>
-<p>因为<span class="math inline">\(\Gamma(\alpha+1)=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x}d(x)\)</span> <span class="math display">\[\begin{equation}
+<p>因为<span class="math inline">\(\Gamma(\alpha+1)=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x}d(x)\)</span></p>
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 \Gamma(\alpha+2) &amp;= \lambda \displaystyle \int^{+\infty}_{0} \lambda^(\alpha+1) x^{\alpha+1}e^{-\lambda x}d(x) \\
 &amp;= \lambda^2 \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x) 
@@ -881,7 +883,7 @@ E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(
 \end{equation}\]</span></p>
 <p>由上式可知<span class="math inline">\(\displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x} d(x) = \frac{\Gamma(\alpha+2)}{\lambda^2}\)</span> <span class="math display">\[\begin{equation}
 \begin{aligned}
-E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} 
+E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} \\
 &amp;= \frac{\Gamma(\alpha+2)}{\lambda^2\Gamma(\alpha)} \\
 &amp;= \frac{\alpha(\alpha+1)}{\lambda^2}
 \end{aligned}

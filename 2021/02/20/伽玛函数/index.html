@@ -28,7 +28,7 @@
 <meta property="og:description" content="阶乘 对于任意自然数，\(0,1,2,...,n\)的阶乘的定义为 \(n! &#x3D; 1\times 2 \times 3 ... \times n\) 但是\(0.5!\)怎么计算呢？ 伽玛函数 1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点\((n,n!)\)画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-20T03:58:17.000Z">
-<meta property="article:modified_time" content="2021-05-02T12:25:29.423Z">
+<meta property="article:modified_time" content="2021-05-02T12:29:39.753Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="伽玛函数">
 <meta property="article:tag" content="阶乘">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-02 20:25:29" itemprop="dateModified" datetime="2021-05-02T20:25:29+08:00">2021-05-02</time>
+                <time title="Modified: 2021-05-02 20:29:39" itemprop="dateModified" datetime="2021-05-02T20:29:39+08:00">2021-05-02</time>
               </span>
 
           
@@ -314,13 +314,15 @@ E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
 \end{aligned}
 \end{equation}\]</span></p>
 <h3 id="方差的证明">方差的证明</h3>
-<p>因为<span class="math inline">\(p(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^(\alpha-1)e^{-\lambda x}\)</span> 所以<span class="math inline">\(E(x^2) = p(x)\cdot x^2\)</span> <span class="math display">\[\begin{equation}
+<p>因为<span class="math inline">\(p(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^(\alpha-1)e^{-\lambda x}\)</span> 所以<span class="math inline">\(E(x^2) = p(x)\cdot x^2\)</span></p>
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}d(x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha+1}e^{-\lambda x}d(x)
 \end{aligned}
 \end{equation}\]</span></p>
-<p>因为<span class="math inline">\(\Gamma(\alpha+1)=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x}d(x)\)</span> <span class="math display">\[\begin{equation}
+<p>因为<span class="math inline">\(\Gamma(\alpha+1)=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x}d(x)\)</span></p>
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
 \Gamma(\alpha+2) &amp;= \lambda \displaystyle \int^{+\infty}_{0} \lambda^(\alpha+1) x^{\alpha+1}e^{-\lambda x}d(x) \\
 &amp;= \lambda^2 \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x) 
@@ -328,7 +330,7 @@ E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(
 \end{equation}\]</span></p>
 <p>由上式可知<span class="math inline">\(\displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x} d(x) = \frac{\Gamma(\alpha+2)}{\lambda^2}\)</span> <span class="math display">\[\begin{equation}
 \begin{aligned}
-E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} 
+E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} \\
 &amp;= \frac{\Gamma(\alpha+2)}{\lambda^2\Gamma(\alpha)} \\
 &amp;= \frac{\alpha(\alpha+1)}{\lambda^2}
 \end{aligned}
