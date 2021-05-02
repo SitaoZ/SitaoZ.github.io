@@ -831,7 +831,7 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
 <p><span class="math inline">\(1=\displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)\)</span></p>
 <p>令 <span class="math inline">\(x=\lambda x\)</span>，代入上式， 则上式如下： <span class="math display">\[\begin{equation}
 \begin{aligned}
-1 = \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)
+1 &amp;= \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(\lambda x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \cdot \lambda d(x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)}d(x) \\
@@ -841,8 +841,8 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-p(x) = \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
-&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}
+p(x) &amp;= \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x} \\
 \end{aligned}
 \end{equation}\]</span></p>
 <h2 id="伽玛分布的期望和方差">伽玛分布的期望和方差</h2>
@@ -850,21 +850,22 @@ p(x) = \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-E(x) = \sum p(x)\cdot x
-&amp; = \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} \\
+E(x) &amp;= \sum p(x)\cdot xi \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} \\
 
 \end{aligned}
 \end{equation}\]</span></p>
-<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span> 令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span></p>
+<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span>,</p>
+<p>令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span></p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x) \\
-&amp;=\lambda  \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} 
+\Gamma(\alpha+1) &amp;= \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x) \\
+&amp;=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} 
 \end{aligned}
 \end{equation}\]</span></p>
 <p>所以 <span class="math display">\[\begin{equation}
 \begin{aligned}
-E(x) = \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
+E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
 &amp;= \frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}\cdot\frac{1}{\lambda} \\
 &amp;= \frac{\alpha}{\lambda}
 

@@ -28,7 +28,7 @@
 <meta property="og:description" content="阶乘 对于任意自然数，\(0,1,2,...,n\)的阶乘的定义为 \(n! &#x3D; 1\times 2 \times 3 ... \times n\) 但是\(0.5!\)怎么计算呢？ 伽玛函数 1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点\((n,n!)\)画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-20T03:58:17.000Z">
-<meta property="article:modified_time" content="2021-05-02T11:08:06.273Z">
+<meta property="article:modified_time" content="2021-05-02T11:11:45.869Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="伽玛函数">
 <meta property="article:tag" content="阶乘">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-02 19:08:06" itemprop="dateModified" datetime="2021-05-02T19:08:06+08:00">2021-05-02</time>
+                <time title="Modified: 2021-05-02 19:11:45" itemprop="dateModified" datetime="2021-05-02T19:11:45+08:00">2021-05-02</time>
               </span>
 
           
@@ -278,7 +278,7 @@
 <p><span class="math inline">\(1=\displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)\)</span></p>
 <p>令 <span class="math inline">\(x=\lambda x\)</span>，代入上式， 则上式如下： <span class="math display">\[\begin{equation}
 \begin{aligned}
-1 = \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)
+1 &amp;= \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(\lambda x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \cdot \lambda d(x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)}d(x) \\
@@ -288,8 +288,8 @@
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-p(x) = \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
-&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}
+p(x) &amp;= \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x} \\
 \end{aligned}
 \end{equation}\]</span></p>
 <h2 id="伽玛分布的期望和方差">伽玛分布的期望和方差</h2>
@@ -297,21 +297,22 @@ p(x) = \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-E(x) = \sum p(x)\cdot x
-&amp; = \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} \\
+E(x) &amp;= \sum p(x)\cdot xi \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} \\
 
 \end{aligned}
 \end{equation}\]</span></p>
-<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span> 令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span></p>
+<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span>,</p>
+<p>令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span></p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x) \\
-&amp;=\lambda  \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} 
+\Gamma(\alpha+1) &amp;= \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x) \\
+&amp;=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} 
 \end{aligned}
 \end{equation}\]</span></p>
 <p>所以 <span class="math display">\[\begin{equation}
 \begin{aligned}
-E(x) = \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
+E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
 &amp;= \frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}\cdot\frac{1}{\lambda} \\
 &amp;= \frac{\alpha}{\lambda}
 
