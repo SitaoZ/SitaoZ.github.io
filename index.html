@@ -367,7 +367,7 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-02 18:42:33" itemprop="dateModified" datetime="2021-05-02T18:42:33+08:00">2021-05-02</time>
+                <time title="Modified: 2021-05-02 19:05:24" itemprop="dateModified" datetime="2021-05-02T19:05:24+08:00">2021-05-02</time>
               </span>
 
           
@@ -417,8 +417,38 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
 \begin{aligned}
 1 = \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(\lambda x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)} \codt \lambda d(x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \cdot \lambda d(x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)}d(x) \\
+\end{aligned}
+\end{equation}\]</span></p>
+<p>取上式中的的被积函数作为伽马分布的密度函数</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+p(x) = \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}
+\end{aligned}
+\end{equation}\]</span></p>
+<h2 id="伽玛分布的期望和方差">伽玛分布的期望和方差</h2>
+<h3 id="期望的证明">期望的证明</h3>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+E(x) = \sum p(x)\cdot x
+&amp; = \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} \\
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span> 令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span> <span class="math display">\[
+\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x) \\
+&amp;=\lambda  \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} 
+\]</span></p>
+<p>所以 <span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x) = \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
+&amp;= \frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}\cdot\frac{1}{\lambda} \\
+&amp;= \frac{\alpha}{\lambda}
+
 \end{aligned}
 \end{equation}\]</span></p>
 
