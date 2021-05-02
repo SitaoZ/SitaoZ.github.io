@@ -28,7 +28,7 @@
 <meta property="og:description" content="阶乘 对于任意自然数，\(0,1,2,...,n\)的阶乘的定义为 \(n! &#x3D; 1\times 2 \times 3 ... \times n\) 但是\(0.5!\)怎么计算呢？ 伽玛函数 1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点\((n,n!)\)画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-20T03:58:17.000Z">
-<meta property="article:modified_time" content="2021-05-02T11:14:44.427Z">
+<meta property="article:modified_time" content="2021-05-02T12:19:29.881Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="伽玛函数">
 <meta property="article:tag" content="阶乘">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-02 19:14:44" itemprop="dateModified" datetime="2021-05-02T19:14:44+08:00">2021-05-02</time>
+                <time title="Modified: 2021-05-02 20:19:29" itemprop="dateModified" datetime="2021-05-02T20:19:29+08:00">2021-05-02</time>
               </span>
 
           
@@ -300,8 +300,7 @@ E(x) &amp;= \sum p(x_i)\cdot x_i \\
 \end{aligned}
 \end{equation}\]</span></p>
 <p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span>,</p>
-<p>令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span></p>
-<p><span class="math display">\[\begin{equation}
+<p>令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span> <span class="math display">\[\begin{equation}
 \begin{aligned}
 \Gamma(\alpha+1) &amp;= \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x) \\
 &amp;=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} 
@@ -312,6 +311,24 @@ E(x) &amp;= \sum p(x_i)\cdot x_i \\
 E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
 &amp;= \frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}\cdot\frac{1}{\lambda} \\
 &amp;= \frac{\alpha}{\lambda}
+\end{aligned}
+\end{equation}\]</span></p>
+<h3 id="方差的证明">方差的证明</h3>
+<p>因为<span class="math inline">\(p(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^(\alpha-1)e^{-\lambda x}\)</span> 所以<span class="math inline">\(E(x^2) = p(x)\cdot x^2\)</span> <span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x} \\
+&amp;=\displaystyle \int^{+\infty}_{0} \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha+1}e^{-\lambda x} \\
+\end{aligned}
+\end{equation}\]</span></p>
+<p>因为<span class="math inline">\(\Gamma(\alpha+1)=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x}d(x)\)</span> <span class="math display">\[\begin{equation}
+\begin{aligned}
+\Gamma(\alpha+2) &amp;= \lambda \displaystyle \int^{+\infty}_{0} \lambda^(\alpha+1) x^{\alpha+1}e^{-\lambda x}d(x) \\
+&amp;= \lambda^2 \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x) 
+\end{aligned}
+\end{equation}\]</span></p>
+<p>由上式可知^{+}_{0} <sup>x</sup>{+1}e^{-x}d(x) = $ <span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x^2) = \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} = \frac{\Gamma(\alpha+2)}{\lambda^2\Gamma(\alpha)} = \frac{\alpha(\alpha+1)}{\lambda^2}$
 \end{aligned}
 \end{equation}\]</span></p>
 
@@ -398,7 +415,7 @@ E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%B6%E4%B9%98"><span class="nav-number">1.</span> <span class="nav-text">阶乘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">伽玛函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B4%E6%AC%A7%E6%8B%89%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">1730年欧拉定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E8%BF%87%E7%A8%8B%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">证明过程需要使用分部积分法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%BD%E7%8E%9B%E5%88%86%E5%B8%83"><span class="nav-number">3.</span> <span class="nav-text">伽玛分布</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%BD%E7%8E%9B%E5%88%86%E5%B8%83%E7%9A%84%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE"><span class="nav-number">3.1.</span> <span class="nav-text">伽玛分布的期望和方差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">3.1.1.</span> <span class="nav-text">期望的证明</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%B6%E4%B9%98"><span class="nav-number">1.</span> <span class="nav-text">阶乘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">伽玛函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B4%E6%AC%A7%E6%8B%89%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">1730年欧拉定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E8%BF%87%E7%A8%8B%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">证明过程需要使用分部积分法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%BD%E7%8E%9B%E5%88%86%E5%B8%83"><span class="nav-number">3.</span> <span class="nav-text">伽玛分布</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%BD%E7%8E%9B%E5%88%86%E5%B8%83%E7%9A%84%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE"><span class="nav-number">3.1.</span> <span class="nav-text">伽玛分布的期望和方差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">3.1.1.</span> <span class="nav-text">期望的证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%B7%AE%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">3.1.2.</span> <span class="nav-text">方差的证明</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
