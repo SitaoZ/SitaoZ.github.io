@@ -28,7 +28,7 @@
 <meta property="og:description" content="阶乘 对于任意自然数，\(0,1,2,...,n\)的阶乘的定义为 \(n! &#x3D; 1\times 2 \times 3 ... \times n\) 但是\(0.5!\)怎么计算呢？ 伽玛函数 1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点\((n,n!)\)画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-20T03:58:17.000Z">
-<meta property="article:modified_time" content="2021-05-02T10:41:10.999Z">
+<meta property="article:modified_time" content="2021-05-02T10:42:33.979Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="伽玛函数">
 <meta property="article:tag" content="阶乘">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-02 18:41:10" itemprop="dateModified" datetime="2021-05-02T18:41:10+08:00">2021-05-02</time>
+                <time title="Modified: 2021-05-02 18:42:33" itemprop="dateModified" datetime="2021-05-02T18:42:33+08:00">2021-05-02</time>
               </span>
 
           
@@ -276,11 +276,13 @@
 <h1 id="伽玛分布">伽玛分布</h1>
 <p>因为伽玛函数的一般表达式为<span class="math inline">\(\Gamma(\alpha) = \displaystyle \int^{+\infty}_{0}{x^{\alpha-1}e^{-x}dx}\)</span> 等式两边同时除以<span class="math inline">\(\Gamma(\alpha)\)</span>,则得</p>
 <p><span class="math inline">\(1=\displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)\)</span></p>
-<p>令 <span class="math inline">\(x=\lambda x\)</span>，代入上式， 则上式右边如下： <span class="math display">\[\begin{equation}
+<p>令 <span class="math inline">\(x=\lambda x\)</span>，代入上式， 则上式如下： <span class="math display">\[\begin{equation}
+\begin{aligned}
 1 = \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(\lambda x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)} \codt \lambda d(x) \\
 &amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(x) \\
+\end{aligned}
 \end{equation}\]</span></p>
 
     </div>
