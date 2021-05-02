@@ -888,7 +888,7 @@ E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e
 \end{aligned}
 \end{equation}\]</span></p>
 <p>根据方差的性质<span class="math inline">\(Var(x) = E(x^2) - E(x)^2\)</span></p>
-<p>所以伽马分布的方差为： <span class="math inline">\(Var(x) = \frac{\alpha(\alpha+1)}{\lambda^2} - (\frac{\alpha}{\lambda})^2=\frac{\alpha}{\lambda^2}\)</span></p>
+<p>所以伽马分布的方差为： <span class="math inline">\(Var(x) = \frac{\alpha(\alpha+1)}{\lambda^2} - {\frac{\alpha}{\lambda}}^2=\frac{\alpha}{\lambda^2}\)</span></p>
 ]]></content>
       <tags>
         <tag>伽玛函数</tag>
