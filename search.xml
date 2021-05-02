@@ -855,10 +855,13 @@ E(x) = \sum p(x)\cdot x
 
 \end{aligned}
 \end{equation}\]</span></p>
-<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span> 令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span> <span class="math display">\[
+<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span> 令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
 \Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x) \\
 &amp;=\lambda  \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} 
-\]</span></p>
+\end{aligned}
+\end{equation}\]</span></p>
 <p>所以 <span class="math display">\[\begin{equation}
 \begin{aligned}
 E(x) = \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
