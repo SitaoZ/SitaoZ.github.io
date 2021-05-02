@@ -829,6 +829,12 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
 <h1 id="伽玛分布">伽玛分布</h1>
 <p>因为伽玛函数的一般表达式为<span class="math inline">\(\Gamma(\alpha) = \displaystyle \int^{+\infty}_{0}{x^{\alpha-1}e^{-x}dx}\)</span> 等式两边同时除以<span class="math inline">\(\Gamma(\alpha)\)</span>,则得</p>
 <p><span class="math inline">\(1=\displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)\)</span></p>
+<p>令 <span class="math inline">\(x=\lambda x\)</span>，代入上式， 则上式右边如下： <span class="math display">\[\begin{equation}
+1 = \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(\lambda x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)} \codt \lambda d(x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(x) \\
+\end{equation}\]</span></p>
 ]]></content>
       <tags>
         <tag>伽玛函数</tag>
