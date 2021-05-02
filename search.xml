@@ -848,7 +848,7 @@ p(x) &amp;= \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
 <h3 id="期望的证明">期望的证明</h3>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-E(x) &amp;= \sum p(x)\cdot xi \\
+E(x) &amp;= \sum p(x_i)\cdot x_i \\
 &amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x}
 \end{aligned}
 \end{equation}\]</span></p>
