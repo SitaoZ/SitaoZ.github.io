@@ -840,19 +840,16 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
 <p>取上式中的的被积函数作为伽马分布的密度函数</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-
 p(x) &amp;= \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
-&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x} \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}
 \end{aligned}
 \end{equation}\]</span></p>
 <h2 id="伽玛分布的期望和方差">伽玛分布的期望和方差</h2>
 <h3 id="期望的证明">期望的证明</h3>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-
 E(x) &amp;= \sum p(x)\cdot xi \\
-&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} \\
-
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x}
 \end{aligned}
 \end{equation}\]</span></p>
 <p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span>,</p>
@@ -868,7 +865,6 @@ E(x) &amp;= \sum p(x)\cdot xi \\
 E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
 &amp;= \frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}\cdot\frac{1}{\lambda} \\
 &amp;= \frac{\alpha}{\lambda}
-
 \end{aligned}
 \end{equation}\]</span></p>
 ]]></content>
