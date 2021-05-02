@@ -890,8 +890,7 @@ E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e
 <p>根据方差的性质<span class="math inline">\(Var(x) = E(x^2) - E(x)^2\)</span></p>
 <p>所以伽玛分布的方差为： <span class="math display">\[\begin{equation}
 \begin{aligned}
-Var(x) &amp;= E(x^2) - E(x)^2 \\
-&amp;= \frac{\alpha(\alpha+1)}{\lambda^2} - {(\frac{\alpha}{\lambda})}^2 \\
+Var(x) &amp;= \frac{\alpha(\alpha+1)}{\lambda^2} - {(\frac{\alpha}{\lambda})}^2 \\
 &amp;= \frac{\alpha}{\lambda^2}
 \end{aligned}
 \end{equation}\]</span></p>
