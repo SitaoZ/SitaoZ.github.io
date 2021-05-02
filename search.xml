@@ -879,7 +879,7 @@ E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(
 &amp;= \lambda^2 \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x) 
 \end{aligned}
 \end{equation}\]</span></p>
-<p>由上式可知^{+}_{0} <sup>x</sup>{+1}e^{-x}d(x) = $ <span class="math display">\[\begin{equation}
+<p>由上式可知<span class="math inline">\(\displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x) = \frac{\Gamma(\alpha+2)}{\lambda^2}\)</span> <span class="math display">\[\begin{equation}
 \begin{aligned}
 E(x^2) = \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} = \frac{\Gamma(\alpha+2)}{\lambda^2\Gamma(\alpha)} = \frac{\alpha(\alpha+1)}{\lambda^2}$
 \end{aligned}
