@@ -943,7 +943,7 @@ f(x) = \frac{1}{1+e^{-x}}
 \]</span></p>
 <h1 id="求导">求导</h1>
 <p>\begin{equation} \begin{align}</p>
-<p>f(x)^' &amp;= ((1+e<sup>{-x})</sup>{-1})^' \ &amp;= (-1)(1+e<sup>{-x})</sup>{-2} e^{-x} (-1) \ &amp;= (1+e<sup>{-x})</sup>{-2} e^{-x} \ &amp;=  \ &amp;=  \ &amp;=  -  \ &amp;=  -  \ &amp;= (1-)</p>
+<p>f(x)^ &amp;= ((1+e<sup>{-x})</sup>{-1}) \ &amp;= (-1)(1+e<sup>{-x})</sup>{-2} e^{-x} (-1) \ &amp;= (1+e<sup>{-x})</sup>{-2} e^{-x} \ &amp;=  \ &amp;=  \ &amp;=  -  \ &amp;=  -  \ &amp;= (1-)</p>
 ]]></content>
   </entry>
 </search>
