@@ -943,7 +943,7 @@ f(x) = \frac{1}{1+e^{-x}}
 \]</span></p>
 <h1 id="求导">求导</h1>
 <p><span class="math display">\[\begin{equation}
-\begin{align}
+\begin{aligned}
 
 f(x) &amp;= ((1+e^{-x})^{-1}) \\
 &amp;= (-1)\times(1+e^{-x})^{-2} \times e^{-x} \times (-1) \\
@@ -954,7 +954,7 @@ f(x) &amp;= ((1+e^{-x})^{-1}) \\
 &amp;= \frac{1}{1+e^{-x}} - \frac{1}{(1+e^{-x})^2} \\
 &amp;= \frac{1}{1+e^{-x}}(1-\frac{1}{1+e^{-x}})
 
-\end{align}
+\end{aligned}
 \end{equation}\]</span></p>
 ]]></content>
   </entry>
