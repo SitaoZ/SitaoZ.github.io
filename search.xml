@@ -945,7 +945,7 @@ f(x) = \frac{1}{1+e^{-x}}
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 
-f(x)&#39; &amp;= (1+e^{-x})^{-1})&#39; \\
+((f(x))^{\prime} &amp;= ((1+e^{-x})^{-1})^{\prime} \\
 &amp;= (-1)\times(1+e^{-x})^{-2} \times e^{-x} \times (-1) \\
 &amp;= (1+e^{-x})^{-2} \times e^{-x} \\
 &amp;= \frac{e^{-x}}{(1+e^{-x})^2} \\
