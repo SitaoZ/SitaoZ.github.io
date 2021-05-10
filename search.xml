@@ -959,4 +959,28 @@ f(x)^{\prime} &amp;= ((1+e^{-x})^{-1})^{\prime} \\
 \end{equation}\]</span></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>tanh激活函数</title>
+    <url>/2021/05/10/tanh%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="tanh">tanh</h1>
+<p>tanh 函数是机器学习常用的一种激活函数，公式如下： <span class="math display">\[
+f(x) = \frac{e^x-e^{-x}}{e^x+e^{-x}}
+\]</span> tanh 的函数取值为(-1,1)，相比sigmoid的是(0,1). 两函数的图形形状类似。</p>
+<h1 id="求导">求导</h1>
+<p>根据乘法法则 <span class="math display">\[
+(uv)^{\prime} = u^{prime}v + uv^{\prime}
+\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+f(x)^{\prime} &amp;= \frac{d}{dx}\frac{e^x-e^{-x}}{e^x+e{-x}} \\
+&amp;= \frac{1}{e^x+e^{-x}}\frac{d}{dx}(e^x-e^{-x}) + (e^x-e^{-x})\frac{d}{dx}\frac{1}{e^x+e^{-x}} \\
+&amp;= \frac{(e^x+e^{-x})(e^x+e^{-x})}{(e^x+e^{-x})^2} + (e^x-e^{-x}){(e^x+e^{-x})^2}(-1)(e^x-e^{-x}) \\
+&amp;= 1 - (\frac{e^x-e^{-x}}{e^x+e^{-x}})^2\\
+&amp;= 1 - (tanh(x))^2
+
+\end{aligned}
+\end{equation}\]</span></p>
+]]></content>
+  </entry>
 </search>

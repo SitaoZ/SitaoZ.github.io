@@ -196,6 +196,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/03/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="没有梦想，何必远方">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/03/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86/" class="post-title-link" itemprop="url">伯努利大数定理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-03 09:38:13" itemprop="dateCreated datePublished" datetime="2021-02-03T09:38:13+08:00">2021-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-27 16:24:33" itemprop="dateModified" datetime="2021-02-27T16:24:33+08:00">2021-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="伯努利大数定理law-of-large-numbers">伯努利大数定理(Law of Large Numbers)</h1>
+<p>伯努利分布也称两点分布,相关的描述和证明见<a target="_blank" rel="noopener" href="http://www.zhusitao.cn/2021/01/25/bernoulli-distribution/">伯努利分布</a></p>
+<h2 id="伯努利概型">伯努利概型</h2>
+<p><span class="math inline">\(\Omega\)</span>,<span class="math inline">\(\mathscr{A}\)</span>,<span class="math inline">\(P\)</span> ,其中 <span class="math inline">\(\Omega=\{\omega:\omega=(a_1,...a_n),a_i=0,1\}\)</span></p>
+<p><span class="math inline">\(\mathscr{A}=\{A:A \subset \Omega\}\)</span> , <span class="math inline">\(P(\{\omega\})=p^{\sum a_i}(1-p)^{n-\sum a_i}=p(\omega)\)</span></p>
+<p>上面定义的三对象，称作伯努利概型。白话就是“有两种结局的n次独立试验的概率模型”</p>
+<p>对于二项分布而言，<span class="math inline">\(ES_n = np\)</span> <span class="math inline">\(E\frac{S_n}{n} = p\)</span>,即成功的频率<span class="math inline">\(S_n/n\)</span>的平均值等于成功的概率。那么成功的频率对成功的概率的偏差如何呢？ 这里需要借助切比雪夫不等式。</p>
+<h2 id="切比雪夫不等式">切比雪夫不等式</h2>
+<p>设(<span class="math inline">\(\Omega\)</span>,<span class="math inline">\(\mathscr{A}\)</span>,<span class="math inline">\(P\)</span>)是某一概率空间，<span class="math inline">\(\xi=\xi(\omega)\)</span> 是非负随机变量，那么对于任意的<span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
+<p><span class="math display">\[
+P\{\xi\geq\varepsilon\} \leq \frac{E\xi}{\varepsilon}
+\]</span></p>
+<p>切比雪夫不等式证明： 根据示性函数的性质，</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+\xi &amp;=\xi I(\xi \geq \varepsilon) + \xi I(\xi &lt; \varepsilon) \\
+&amp;\geq \xi I(\xi \geq \varepsilon) \\
+&amp;\geq \varepsilon I(\xi \geq \varepsilon) \\
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>所以 <span class="math inline">\(\xi \geq \varepsilon I(\xi \geq \varepsilon)\)</span> 根据期望的性质 <span class="math display">\[\begin{equation}
+\begin{aligned}
+E\xi &amp;\geq E\varepsilon I(\xi \geq \varepsilon) \\
+&amp;\geq \varepsilon E I(\xi \geq \varepsilon) = \varepsilon P\{\xi \geq \varepsilon\} 
+\end{aligned}
+\end{equation}\]</span> 不等式得证。</p>
+<h2 id="切比雪夫不等式的另一种表达方式">切比雪夫不等式的另一种表达方式</h2>
+<p>设随机变量<span class="math inline">\(X\)</span>的数学期望和方差都存在，对于任意的常数<span class="math inline">\(\varepsilon\)</span>有： <span class="math display">\[
+P(|X-E(X)| \geq \varepsilon) \leq \frac{Var(X)}{\varepsilon^2}
+\]</span> 或者 <span class="math display">\[
+P(|X-E(X)| \leq \varepsilon) \geq 1- \frac{Var(X)}{\varepsilon^2}
+\]</span> 证明如下： 设<span class="math inline">\(X\)</span>是一个连续的随机变量，其密度函数为<span class="math inline">\(p(x)\)</span>,记<span class="math inline">\(E(X)=a\)</span></p>
+<p><span class="math display">\[\begin{align*}
+P(|X-a|\geq\varepsilon) &amp;= \int\limits_{\{x:|x-a|\geq\varepsilon\}} \quad p(x)dx \\
+&amp;\leq \int \limits_{\{x:|x-a|\geq\varepsilon\}} \quad \frac{(x-a)^2}{\varepsilon^2}p(x)dx \\
+&amp;\leq \frac{1}{\varepsilon^2}\int_{-\infty}^{+\infty}(x-a)^2p(x)dx = \frac{Var(x)}{\varepsilon^2} 
+
+\end{align*}\]</span></p>
+<p>此证明的第一个不等式，是由于 <span class="math inline">\(|X-E(X)| \geq \varepsilon\)</span>得出，第二个不等式是积分区间的扩大导致的。 该切比雪夫不等式的证明，将<span class="math inline">\(\xi = X-E(X)\)</span>,则就是第一个切比雪夫不等式的证明推导。</p>
+<h1 id="证明伯努利概型大数定理">证明伯努利概型大数定理</h1>
+<p><span class="math display">\[
+\lim_{n \to \infty}P(|\frac{S_n}{n}-p|\le \varepsilon) = 1
+\]</span></p>
+<p>证明:</p>
+<p><span class="math display">\[\begin{align*}
+
+1 &amp;\geq P(|\frac{S_n}{n}-p| \leq \varepsilon) \\
+&amp;\geq 1 - \frac{Var(\frac{S_n}{n})}{\varepsilon^2} = 1- \frac{p(1-p)}{n^2\varepsilon^2}
+
+\end{align*}\]</span></p>
+<p>当<span class="math inline">\(n\)</span>趋近与<span class="math inline">\(\infty\)</span>时，上式趋近与1,事件发生的频率趋近与概率。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1078,81 +1195,10 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/15/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="没有梦想，何必远方">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/15/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-15 11:53:15" itemprop="dateCreated datePublished" datetime="2021-01-15T11:53:15+08:00">2021-01-15</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1218,7 +1264,7 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
