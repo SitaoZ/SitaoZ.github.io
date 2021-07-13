@@ -984,4 +984,19 @@ tanh(x)^{\prime} &amp;= \frac{d}{dx}(\frac{e^x-e^{-x}}{e^x+e{-x}}) \\
 \end{equation}\]</span></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>ANOVA</title>
+    <url>/2021/07/13/ANOVA/</url>
+    <content><![CDATA[<h2 id="anova">ANOVA</h2>
+<p>ANOVA, short for &quot;Analysis of Variance&quot;,方差分析通常用来进行 三组或者三组以上的独立样本的之间的均值检验。</p>
+<h2 id="one-way-anova">one-way ANOVA</h2>
+<p>用来判断单因素如何影响变量。</p>
+<h2 id="two-way-anova">two-way ANOVA</h2>
+<p>用来判断双因素影响变量，以及两个变量之间的是否能相互影响来相应变量。</p>
+]]></content>
+      <tags>
+        <tag>One-Way</tag>
+        <tag>Two-Way</tag>
+      </tags>
+  </entry>
 </search>
