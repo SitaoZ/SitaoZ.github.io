@@ -1034,8 +1034,5 @@ P(y|x_1,x_2,...,x_m) = \prod_{i=1}^{m} P(y|x_i)
 J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 \]</span></p>
 ]]></content>
-      <tags>
-        <tag>logistic</tag>
-      </tags>
   </entry>
 </search>
