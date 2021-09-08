@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 19:46:05" itemprop="dateModified" datetime="2021-09-08T19:46:05+08:00">2021-09-08</time>
+                <time title="Modified: 2021-09-08 21:13:03" itemprop="dateModified" datetime="2021-09-08T21:13:03+08:00">2021-09-08</time>
               </span>
 
           
@@ -242,9 +242,20 @@
 
       
           <h2 id="逻辑回归的前世今生">逻辑回归的前世今生</h2>
-<h2 id="逻辑回归的损失函数---交叉熵">逻辑回归的损失函数---交叉熵</h2>
+<p>与传统的线性回归不同，逻辑回归在传统的线性回归的输出端加上一个logit函数， 使得输出有连续变成离散，每个取值代表不同的类别，从回归任务转成了分类任务， 所以逻辑回归在名字上还保留的回归字眼，但是却成了分类的代表之一。 一句话总结：逻辑回归假设数据分布服从伯努利分布，通过极大似然函数的方法， 运用梯度下降来求解参数，来实现二分类。</p>
+<h3 id="逻辑回归的基本假设">1 逻辑回归的基本假设</h3>
+<p>第一个基本假设就是假设数据分布服从伯努利分布。伯努利分布，对于抛硬币来说， p是硬币为正的概率，1-p为硬币为负的概率；同样，在逻辑回归的模型中，假设<span class="math inline">\(h_\theta(x)\)</span> 为样本正的概率，<span class="math inline">\(1-h_\theta(x)\)</span>为样本为负的概率。整个模型如下： <span class="math display">\[
+h_\theta(x) = p
+\]</span></p>
+<p>第二个假设是假设样本为正的概率为： <span class="math display">\[
+p = \frac{1}{1+e^{\theta^{T}x}}
+\]</span></p>
+<p>所以最终的表达式为： <span class="math display">\[
+h_\theta(x) = \frac{1}{1+e^{\theta^{T}x}}
+\]</span></p>
+<h3 id="逻辑回归的损失函数---交叉熵">2.逻辑回归的损失函数---交叉熵</h3>
 <p>逻辑回归中<span class="math inline">\(y\in {0,1}\)</span>。约定<span class="math inline">\(\hat{y}=P(y=1|x)\)</span>。</p>
-<h3 id="对一个样本">对一个样本</h3>
+<h4 id="对一个样本">对一个样本</h4>
 <p>可知 <span class="math display">\[
 P(y|x) = \begin{cases}
 \hat{y}    ,  y=1, \\
@@ -261,7 +272,7 @@ P(y|x) = \hat{y}^{y}(1-\hat{y})^{1-y}
 <p>使用梯度下降法来求解，因此需要对上式取反，求最大值转化成求最小值。 <span class="math display">\[
 L(w,b) = -[y\log\hat{y} + (1-y)\log{1-\hat{y}}]
 \]</span></p>
-<h3 id="全部样本-training">全部样本 (training)</h3>
+<h4 id="全部样本-training">全部样本 (training)</h4>
 <p>在全部训练集m上训练求得全部的损失函数。假设样本独立同分布，概率分布函数为每个样本的连乘。 <span class="math display">\[
 P(y|x_1,x_2,...,x_m) = \prod_{i=1}^{m} P(y|x_i)
 \]</span> 上式取对数，连成转化成加法，加速计算，使用极大似然法求得概率最大时对应的参数。 采取一个样本的计算处理，最小化函数取反，得:</p>

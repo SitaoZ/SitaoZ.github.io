@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="逻辑回归的前世今生 逻辑回归的损失函数---交叉熵 逻辑回归中\(y\in {0,1}\)。约定\(\hat{y}&#x3D;P(y&#x3D;1|x)\)。 对一个样本 可知 \[ P(y|x) &#x3D; \begin{cases} \hat{y}    ,  y&#x3D;1, \\ 1 - \hat{y},  y&#x3D;0 \end{cases} \] 写成一个函数 \[ P(y|x) &#x3D; \hat{y}^{y}(1-\hat{y}">
+  <meta name="description" content="逻辑回归的前世今生 与传统的线性回归不同，逻辑回归在传统的线性回归的输出端加上一个logit函数， 使得输出有连续变成离散，每个取值代表不同的类别，从回归任务转成了分类任务， 所以逻辑回归在名字上还保留的回归字眼，但是却成了分类的代表之一。 一句话总结：逻辑回归假设数据分布服从伯努利分布，通过极大似然函数的方法， 运用梯度下降来求解参数，来实现二分类。 1 逻辑回归的基本假设 第一个基本假设就是假">
 <meta property="og:type" content="article">
 <meta property="og:title" content="逻辑回归">
 <meta property="og:url" content="http://example.com/2021/09/07/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="逻辑回归的前世今生 逻辑回归的损失函数---交叉熵 逻辑回归中\(y\in {0,1}\)。约定\(\hat{y}&#x3D;P(y&#x3D;1|x)\)。 对一个样本 可知 \[ P(y|x) &#x3D; \begin{cases} \hat{y}    ,  y&#x3D;1, \\ 1 - \hat{y},  y&#x3D;0 \end{cases} \] 写成一个函数 \[ P(y|x) &#x3D; \hat{y}^{y}(1-\hat{y}">
+<meta property="og:description" content="逻辑回归的前世今生 与传统的线性回归不同，逻辑回归在传统的线性回归的输出端加上一个logit函数， 使得输出有连续变成离散，每个取值代表不同的类别，从回归任务转成了分类任务， 所以逻辑回归在名字上还保留的回归字眼，但是却成了分类的代表之一。 一句话总结：逻辑回归假设数据分布服从伯努利分布，通过极大似然函数的方法， 运用梯度下降来求解参数，来实现二分类。 1 逻辑回归的基本假设 第一个基本假设就是假">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-07T12:26:00.000Z">
-<meta property="article:modified_time" content="2021-09-08T11:46:05.289Z">
+<meta property="article:modified_time" content="2021-09-08T13:13:03.845Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="deep learning, bioinformatics, biology">
 <meta name="twitter:card" content="summary">
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 19:46:05" itemprop="dateModified" datetime="2021-09-08T19:46:05+08:00">2021-09-08</time>
+                <time title="Modified: 2021-09-08 21:13:03" itemprop="dateModified" datetime="2021-09-08T21:13:03+08:00">2021-09-08</time>
               </span>
 
           
@@ -244,9 +244,20 @@
 
       
         <h2 id="逻辑回归的前世今生">逻辑回归的前世今生</h2>
-<h2 id="逻辑回归的损失函数---交叉熵">逻辑回归的损失函数---交叉熵</h2>
+<p>与传统的线性回归不同，逻辑回归在传统的线性回归的输出端加上一个logit函数， 使得输出有连续变成离散，每个取值代表不同的类别，从回归任务转成了分类任务， 所以逻辑回归在名字上还保留的回归字眼，但是却成了分类的代表之一。 一句话总结：逻辑回归假设数据分布服从伯努利分布，通过极大似然函数的方法， 运用梯度下降来求解参数，来实现二分类。</p>
+<h3 id="逻辑回归的基本假设">1 逻辑回归的基本假设</h3>
+<p>第一个基本假设就是假设数据分布服从伯努利分布。伯努利分布，对于抛硬币来说， p是硬币为正的概率，1-p为硬币为负的概率；同样，在逻辑回归的模型中，假设<span class="math inline">\(h_\theta(x)\)</span> 为样本正的概率，<span class="math inline">\(1-h_\theta(x)\)</span>为样本为负的概率。整个模型如下： <span class="math display">\[
+h_\theta(x) = p
+\]</span></p>
+<p>第二个假设是假设样本为正的概率为： <span class="math display">\[
+p = \frac{1}{1+e^{\theta^{T}x}}
+\]</span></p>
+<p>所以最终的表达式为： <span class="math display">\[
+h_\theta(x) = \frac{1}{1+e^{\theta^{T}x}}
+\]</span></p>
+<h3 id="逻辑回归的损失函数---交叉熵">2.逻辑回归的损失函数---交叉熵</h3>
 <p>逻辑回归中<span class="math inline">\(y\in {0,1}\)</span>。约定<span class="math inline">\(\hat{y}=P(y=1|x)\)</span>。</p>
-<h3 id="对一个样本">对一个样本</h3>
+<h4 id="对一个样本">对一个样本</h4>
 <p>可知 <span class="math display">\[
 P(y|x) = \begin{cases}
 \hat{y}    ,  y=1, \\
@@ -263,7 +274,7 @@ P(y|x) = \hat{y}^{y}(1-\hat{y})^{1-y}
 <p>使用梯度下降法来求解，因此需要对上式取反，求最大值转化成求最小值。 <span class="math display">\[
 L(w,b) = -[y\log\hat{y} + (1-y)\log{1-\hat{y}}]
 \]</span></p>
-<h3 id="全部样本-training">全部样本 (training)</h3>
+<h4 id="全部样本-training">全部样本 (training)</h4>
 <p>在全部训练集m上训练求得全部的损失函数。假设样本独立同分布，概率分布函数为每个样本的连乘。 <span class="math display">\[
 P(y|x_1,x_2,...,x_m) = \prod_{i=1}^{m} P(y|x_i)
 \]</span> 上式取对数，连成转化成加法，加速计算，使用极大似然法求得概率最大时对应的参数。 采取一个样本的计算处理，最小化函数取反，得:</p>
@@ -347,7 +358,7 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F"><span class="nav-number">1.</span> <span class="nav-text">逻辑回归的前世今生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0---%E4%BA%A4%E5%8F%89%E7%86%B5"><span class="nav-number">2.</span> <span class="nav-text">逻辑回归的损失函数---交叉熵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%B8%80%E4%B8%AA%E6%A0%B7%E6%9C%AC"><span class="nav-number">2.1.</span> <span class="nav-text">对一个样本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E9%83%A8%E6%A0%B7%E6%9C%AC-training"><span class="nav-number">2.2.</span> <span class="nav-text">全部样本 (training)</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F"><span class="nav-number">1.</span> <span class="nav-text">逻辑回归的前世今生</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE"><span class="nav-number">1.1.</span> <span class="nav-text">1 逻辑回归的基本假设</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0---%E4%BA%A4%E5%8F%89%E7%86%B5"><span class="nav-number">1.2.</span> <span class="nav-text">2.逻辑回归的损失函数---交叉熵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E4%B8%80%E4%B8%AA%E6%A0%B7%E6%9C%AC"><span class="nav-number">1.2.1.</span> <span class="nav-text">对一个样本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E9%83%A8%E6%A0%B7%E6%9C%AC-training"><span class="nav-number">1.2.2.</span> <span class="nav-text">全部样本 (training)</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
