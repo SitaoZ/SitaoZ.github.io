@@ -1007,7 +1007,8 @@ tanh(x)^{\prime} &amp;= \frac{d}{dx}(\frac{e^x-e^{-x}}{e^x+e{-x}}) \\
   <entry>
     <title>逻辑回归</title>
     <url>/2021/09/07/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/</url>
-    <content><![CDATA[<h2 id="逻辑回归的损失函数---交叉熵">逻辑回归的损失函数---交叉熵</h2>
+    <content><![CDATA[<h2 id="逻辑回归的前世今生">逻辑回归的前世今生</h2>
+<h2 id="逻辑回归的损失函数---交叉熵">逻辑回归的损失函数---交叉熵</h2>
 <p>逻辑回归中<span class="math inline">\(y\in {0,1}\)</span>。约定<span class="math inline">\(\hat{y}=P(y=1|x)\)</span>。</p>
 <h3 id="对一个样本">对一个样本</h3>
 <p>可知 <span class="math display">\[
