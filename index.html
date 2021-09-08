@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 19:27:52" itemprop="dateModified" datetime="2021-09-08T19:27:52+08:00">2021-09-08</time>
+                <time title="Modified: 2021-09-08 19:46:05" itemprop="dateModified" datetime="2021-09-08T19:46:05+08:00">2021-09-08</time>
               </span>
 
           
@@ -264,7 +264,7 @@ L(w,b) = -[y\log\hat{y} + (1-y)\log{1-\hat{y}}]
 <h3 id="全部样本-training">全部样本 (training)</h3>
 <p>在全部训练集m上训练求得全部的损失函数。假设样本独立同分布，概率分布函数为每个样本的连乘。 <span class="math display">\[
 P(y|x_1,x_2,...,x_m) = \prod_{i=1}^{m} P(y|x_i)
-\]</span> 上式取对数，连成编程加法，加速计算，使用极大似然法求得概率最大时对应的参数。 采取一个样本的计算处理，最小化函数取反，得:</p>
+\]</span> 上式取对数，连成转化成加法，加速计算，使用极大似然法求得概率最大时对应的参数。 采取一个样本的计算处理，最小化函数取反，得:</p>
 <p><span class="math display">\[
 J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 \]</span></p>
