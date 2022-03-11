@@ -990,14 +990,23 @@ tanh(x)^{\prime} &amp;= \frac{d}{dx}(\frac{e^x-e^{-x}}{e^x+e{-x}}) \\
 ]]></content>
   </entry>
   <entry>
-    <title>ANOVA</title>
+    <title>方差分析ANOVA</title>
     <url>/2021/07/13/ANOVA/</url>
     <content><![CDATA[<h2 id="anova">ANOVA</h2>
-<p>ANOVA, short for &quot;Analysis of Variance&quot;,方差分析通常用来进行 三组或者三组以上的独立样本的之间的均值检验。</p>
-<h2 id="one-way-anova">one-way ANOVA</h2>
-<p>用来判断单因素如何影响变量。</p>
-<h2 id="two-way-anova">two-way ANOVA</h2>
-<p>用来判断双因素影响变量，以及两个变量之间的是否能相互影响来相应变量。</p>
+<p>ANOVA, &quot;Analysis of Variance&quot;,方差分析通常用来进行 三组或者三组以上的独立样本的之间的均值检验。</p>
+<h2 id="anova-test">ANOVA test</h2>
+<p>方差分析具备的条件 1. 在每个因子水平的数据中，观察值是独立的，随机的获取的。 2. 每个因子的数据是正态分布的。 3. 这些正太分布的数据有相同的方差。</p>
+<h2 id="one-way-anova-test">One-way ANOVA test</h2>
+<p>One-way ANOVA test是独立两个样本t-test均值比较的拓展， 它常常用来进行多组的比较。在one-way ANOVA中，会用一个变量(factor variable) 将数据分成多个组别，然后在来进行One-way方差分析。</p>
+<h3 id="one-way-的假设">One-way 的假设</h3>
+<ol type="1">
+<li>零假设（Null hypothesis）: 不同组之间的均值无差异。</li>
+<li>备择假设（Alternative hypothesis）：至少有一个样本均值和其他的不相同。</li>
+</ol>
+<h2 id="two-way-anova">Two-way ANOVA</h2>
+<p>用来判断双因素影响变量，以及两个变量之间的是否能相互影响来相应变量。 这时候来分组的因子变量（factor variable）有2个。</p>
+<h3 id="two-way-假设">Two-way 假设</h3>
+<p>零假设： 1. 因子A分成的不同组别之间的均值没有差异 2. 因子B分成的不同组别之间的均值没有差异 3. 因子A和B之间没有相互影响 备择假设： 假设1和2他们的均值不同等。 假设3，A和B之间存在相互作用</p>
 ]]></content>
       <tags>
         <tag>One-Way</tag>
@@ -1048,6 +1057,22 @@ P(y|x_1,x_2,...,x_m) = \prod_{i=1}^{m} P(y|x_i)
 <p><span class="math display">\[
 J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 \]</span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>统计学中的均值比较</title>
+    <url>/2022/03/11/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9D%87%E5%80%BC%E6%AF%94%E8%BE%83/</url>
+    <content><![CDATA[<h2 id="均值比较-compare-means">均值比较 （compare means）</h2>
+<p>在统计学中，我们常常需要比较两组或者多组之间的均值是否存在差异，计算差异的显著性， 同时也要用图形的方式呈现。这里推荐一个比较实用的R包，ggpubr (publication ready plot in ggplot2)。 ggpubr作图上与ggplot2无缝对接，同时也可以添加显著性的P值，对文章发表非常实用。</p>
+<h2 id="ggpubr">ggpubr</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Instrall from CRAN</span></span><br><span class="line">install.packages(<span class="string">&quot;ggpubr&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># or from github </span></span><br><span class="line"><span class="keyword">if</span>(!require(devtools)) install.packages(<span class="string">&quot;devtools&quot;</span>)</span><br><span class="line">devtools::install_github(<span class="string">&quot;kassambara/ggpubr&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="均值比较的方法">均值比较的方法</h2>
+<ol type="1">
+<li>t检验 T-test （需要假设数据分布为正态分布，有参检验）</li>
+<li>Wilcoxon test （无参检验）</li>
+<li>ANOVA test （需要假设数据分布为F分布，有参检验）</li>
+<li>Kruskal-Wallis test （无参检验）</li>
+</ol>
 ]]></content>
   </entry>
 </search>
