@@ -1131,4 +1131,19 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 <p><img src="/2022/03/11/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9D%87%E5%80%BC%E6%AF%94%E8%BE%83/other_bar2.png" alt="&#39;other_bar2&#39;"> <img src="/2022/03/11/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9D%87%E5%80%BC%E6%AF%94%E8%BE%83/other_line2.png" alt="&#39;other_line2&#39;"></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>统计学中的正态性检验</title>
+    <url>/2022/03/22/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B8%AD%E7%9A%84%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="统计学检验的前提条件">统计学检验的前提条件</h2>
+<p>大多数统计学检验（相关性，回归，t-test, ANOVA）都需要数据符合正态分布，这些检验也叫参数检验，因为它们依赖数据分布。 在进行参数检验之前，我们要保证这些数据分布的假设能满足；不能满足的话，就进行非参检验。</p>
+<h2 id="预安装的r包">预安装的R包</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># dplyr</span></span><br><span class="line">install.packages(<span class="string">&#x27;dplyr&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ggpubr</span></span><br><span class="line"><span class="keyword">if</span>(!require(devtools)) install.packages(<span class="string">&quot;devtools&quot;</span>)</span><br><span class="line">devtools::install_github(<span class="string">&quot;kassambara/ggpubr&quot;</span>)</span><br><span class="line"></span><br><span class="line">install.packages(<span class="string">&quot;ggpubr&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="密度图和qq图可视化查看是否满足正态分布">密度图和QQ图，可视化查看是否满足正态分布</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(<span class="string">&quot;dplyr&quot;</span>)</span><br><span class="line">library(<span class="string">&quot;ggpubr&quot;</span>)</span><br><span class="line"></span><br><span class="line">set.seed(<span class="number">1234</span>)</span><br><span class="line">dplyr::sample_n(ToothGrowth, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">library(<span class="string">&quot;ggpubr&quot;</span>)</span><br><span class="line">ggdensity(ToothGrowth$len, </span><br><span class="line">          main = <span class="string">&quot;Density plot of tooth length&quot;</span>,</span><br><span class="line">          xlab = <span class="string">&quot;Tooth length&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(ggpubr)</span><br><span class="line">ggqqplot(ToothGrowth$len)</span><br></pre></td></tr></table></figure>
+<h2 id="正态性检验">正态性检验</h2>
+<p>前面可视化的查看是否符合正态分布通常是不可靠的，需要我们进行显著性检验，比较我们的数据分布和正太数据分布的差异。 有两种正态性检验方法：Kolmogorov-Smirnov(K-S)检验和Shapiro-Wilk's 检验。 零假设是：样本的数据分布是正态分布， 检验如果显著，则数据是非正态分布。 注意：正态性检验对样本数量是非常敏感的，小样本数目容易通过正态检验，因此要结合数据的可视化和检验来确定数据的分布。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">shapiro.test(ToothGrowth$len)</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
 </search>
