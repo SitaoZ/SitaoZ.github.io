@@ -1149,34 +1149,60 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
   <entry>
     <title>ggplot桑基图和冲击图</title>
     <url>/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/</url>
-    <content><![CDATA[<p>桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。 冲击图是一种特殊类型的流图。</p>
-<h2 id="ggsankey">ggsankey</h2>
-<p>ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。</p>
+    <content><![CDATA[<p>桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。<br>冲击图是一种特殊类型的流图。</p>
+<h2 id="ggsankey"><a href="#ggsankey" class="headerlink" title="ggsankey"></a>ggsankey</h2><p>ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># install.packages(&quot;devtools&quot;)</span></span><br><span class="line">devtools::install_github(<span class="string">&quot;davidsjoberg/ggsankey&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="ggsankey-构图元素">ggsankey 构图元素</h2>
-<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png" alt="principal"> - 每一列表示一个stage, 每个stage有若干个node组成 - 相邻两个stage之间的node存在flow流的关系</p>
-<h2 id="图形参数">图形参数</h2>
+<h2 id="ggsankey-构图元素"><a href="#ggsankey-构图元素" class="headerlink" title="ggsankey 构图元素"></a>ggsankey 构图元素</h2><p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png" alt="principal"></p>
 <ul>
+<li>每一列表示一个stage, 每个stage有若干个node组成</li>
+<li>相邻两个stage之间的node存在flow流的关系</li>
+</ul>
+<h2 id="图形参数"><a href="#图形参数" class="headerlink" title="图形参数"></a>图形参数</h2><ul>
 <li>fill设置填充色，分为node.fii和flow.fill</li>
 <li>color设置边框颜色，可分为node.color和flow.color</li>
 <li>width设置node宽度</li>
 <li>flow.alpha设置flow的透明度</li>
-<li>space设置组内node的间距 <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png" alt="parameter"></li>
+<li>space设置组内node的间距<br><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png" alt="parameter"></li>
 </ul>
-<h2 id="测试数据">测试数据</h2>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(ggsankey)</span><br><span class="line">library(dplyr)</span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">df &lt;- mtcars %&gt;%</span><br><span class="line">  make_long(cyl, vs, am, gear, carb)</span><br><span class="line"></span><br><span class="line">ggplot(df, aes(x = x, </span><br><span class="line">               next_x = next_x, </span><br><span class="line">               node = node, </span><br><span class="line">               next_node = next_node,</span><br><span class="line">               fill = factor(node))) +</span><br><span class="line">  geom_sankey()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png" alt="exapmplea1"><figcaption>exapmplea1</figcaption>
-</figure>
+<h2 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(ggsankey)</span><br><span class="line">library(dplyr)</span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">df &lt;- mtcars %&gt;%</span><br><span class="line">  make_long(cyl, vs, am, gear, carb)</span><br><span class="line"></span><br><span class="line">ggplot(df, aes(x = x, </span><br><span class="line">               next_x = next_x, </span><br><span class="line">               node = node, </span><br><span class="line">               next_node = next_node,</span><br><span class="line">               fill = factor(node))) +</span><br><span class="line">  geom_sankey()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png" alt="example1"></p>
 <ul>
-<li>标注node名称</li>
-<li><p>主题设置 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_sankey(flow.alpha = <span class="number">.6</span>,</span><br><span class="line">              node.color = <span class="string">&quot;gray30&quot;</span>) +</span><br><span class="line">  geom_sankey_label(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>, fill = <span class="string">&quot;gray40&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_sankey(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure> <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png" alt="exapmple2"></p></li>
-<li><p>geom_alluvial冲击图 冲积图与桑基图非常相似，但节点之间没有空间，并且以y = 0开始，而不是以x轴为中心。</p></li>
+<li><p>标注node名称</p>
+</li>
+<li><p>主题设置</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_sankey(flow.alpha = <span class="number">.6</span>,</span><br><span class="line">              node.color = <span class="string">&quot;gray30&quot;</span>) +</span><br><span class="line">  geom_sankey_label(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>, fill = <span class="string">&quot;gray40&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_sankey(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png" alt="example2"></p>
+</li>
+<li><p>geom_alluvial冲击图<br>冲积图与桑基图非常相似，但节点之间没有空间，并且以y = 0开始，而不是以x轴为中心。</p>
+</li>
 </ul>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_alluvial(flow.alpha = <span class="number">.6</span>) +</span><br><span class="line">  geom_alluvial_text(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_alluvial(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png" alt="exapmple3"><figcaption>exapmple3</figcaption>
-</figure>
+<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png" alt="example3"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>python函数递归</title>
+    <url>/2023/11/17/python%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<h2 id="python-函数递归-recursion">python 函数递归 (recursion)</h2>
+<p>Python中能使用循环替代递归的尽量使用，但是有时候为了代码的可读性、简洁性必须使用递归。</p>
+<ul>
+<li>例如求一个嵌套列表的和 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,<span class="number">4</span>],<span class="number">5</span>],<span class="number">6</span>,[<span class="number">7</span>,<span class="number">8</span>]] </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sumtree</span>(<span class="params">L: <span class="built_in">list</span></span>) -&gt; int:</span></span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> L:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(x, <span class="built_in">list</span>):</span><br><span class="line">            total += x          <span class="comment"># 对于数字直接求和</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            total += sumtree(x) <span class="comment"># 递归调用自身，循环子列表</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure></li>
+<li>阶乘</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1*2*3*4*5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_factorial</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> (x * calc_factorial(x-<span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="递归的优点">递归的优点</h2>
+<ul>
+<li>代码干净整洁，可读性强</li>
+<li>将复杂的任务分解成简单的子任务</li>
+</ul>
+<h2 id="递归缺点">递归缺点</h2>
+<ul>
+<li>递归占用大量内存和时间</li>
+<li>递归函数调试困难</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
   </entry>
 </search>

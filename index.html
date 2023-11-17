@@ -196,6 +196,81 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/17/python%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="每天进步一点点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/17/python%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92/" class="post-title-link" itemprop="url">python函数递归</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-17 08:54:33 / Modified: 09:10:02" itemprop="dateCreated datePublished" datetime="2023-11-17T08:54:33+08:00">2023-11-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="python-函数递归-recursion">python 函数递归 (recursion)</h2>
+<p>Python中能使用循环替代递归的尽量使用，但是有时候为了代码的可读性、简洁性必须使用递归。</p>
+<ul>
+<li>例如求一个嵌套列表的和 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,<span class="number">4</span>],<span class="number">5</span>],<span class="number">6</span>,[<span class="number">7</span>,<span class="number">8</span>]] </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sumtree</span>(<span class="params">L: <span class="built_in">list</span></span>) -&gt; int:</span></span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> L:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(x, <span class="built_in">list</span>):</span><br><span class="line">            total += x          <span class="comment"># 对于数字直接求和</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            total += sumtree(x) <span class="comment"># 递归调用自身，循环子列表</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure></li>
+<li>阶乘</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1*2*3*4*5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_factorial</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> (x * calc_factorial(x-<span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="递归的优点">递归的优点</h2>
+<ul>
+<li>代码干净整洁，可读性强</li>
+<li>将复杂的任务分解成简单的子任务</li>
+</ul>
+<h2 id="递归缺点">递归缺点</h2>
+<ul>
+<li>递归占用大量内存和时间</li>
+<li>递归函数调试困难</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -221,7 +296,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-11-16 10:41:36 / Modified: 11:32:00" itemprop="dateCreated datePublished" datetime="2023-11-16T10:41:36+08:00">2023-11-16</time>
+              <time title="Created: 2023-11-16 10:41:36 / Modified: 11:35:11" itemprop="dateCreated datePublished" datetime="2023-11-16T10:41:36+08:00">2023-11-16</time>
             </span>
 
           
@@ -235,34 +310,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。 冲击图是一种特殊类型的流图。</p>
-<h2 id="ggsankey">ggsankey</h2>
-<p>ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。</p>
+          <p>桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。<br>冲击图是一种特殊类型的流图。</p>
+<h2 id="ggsankey"><a href="#ggsankey" class="headerlink" title="ggsankey"></a>ggsankey</h2><p>ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install.packages(&quot;devtools&quot;)</span></span><br><span class="line">devtools::install_github(<span class="string">&quot;davidsjoberg/ggsankey&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="ggsankey-构图元素">ggsankey 构图元素</h2>
-<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png" alt="principal"> - 每一列表示一个stage, 每个stage有若干个node组成 - 相邻两个stage之间的node存在flow流的关系</p>
-<h2 id="图形参数">图形参数</h2>
+<h2 id="ggsankey-构图元素"><a href="#ggsankey-构图元素" class="headerlink" title="ggsankey 构图元素"></a>ggsankey 构图元素</h2><p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png" alt="principal"></p>
 <ul>
+<li>每一列表示一个stage, 每个stage有若干个node组成</li>
+<li>相邻两个stage之间的node存在flow流的关系</li>
+</ul>
+<h2 id="图形参数"><a href="#图形参数" class="headerlink" title="图形参数"></a>图形参数</h2><ul>
 <li>fill设置填充色，分为node.fii和flow.fill</li>
 <li>color设置边框颜色，可分为node.color和flow.color</li>
 <li>width设置node宽度</li>
 <li>flow.alpha设置flow的透明度</li>
-<li>space设置组内node的间距 <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png" alt="parameter"></li>
+<li>space设置组内node的间距<br><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png" alt="parameter"></li>
 </ul>
-<h2 id="测试数据">测试数据</h2>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">library(ggsankey)</span><br><span class="line">library(dplyr)</span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">df &lt;- mtcars %&gt;%</span><br><span class="line">  make_long(cyl, vs, am, gear, carb)</span><br><span class="line"></span><br><span class="line">ggplot(df, aes(x = x, </span><br><span class="line">               next_x = next_x, </span><br><span class="line">               node = node, </span><br><span class="line">               next_node = next_node,</span><br><span class="line">               fill = factor(node))) +</span><br><span class="line">  geom_sankey()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png" alt="exapmplea1"><figcaption>exapmplea1</figcaption>
-</figure>
+<h2 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">library(ggsankey)</span><br><span class="line">library(dplyr)</span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">df &lt;- mtcars %&gt;%</span><br><span class="line">  make_long(cyl, vs, am, gear, carb)</span><br><span class="line"></span><br><span class="line">ggplot(df, aes(x = x, </span><br><span class="line">               next_x = next_x, </span><br><span class="line">               node = node, </span><br><span class="line">               next_node = next_node,</span><br><span class="line">               fill = factor(node))) +</span><br><span class="line">  geom_sankey()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png" alt="example1"></p>
 <ul>
-<li>标注node名称</li>
-<li><p>主题设置 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_sankey(flow.alpha = <span class="number">.6</span>,</span><br><span class="line">              node.color = <span class="string">&quot;gray30&quot;</span>) +</span><br><span class="line">  geom_sankey_label(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>, fill = <span class="string">&quot;gray40&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_sankey(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure> <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png" alt="exapmple2"></p></li>
-<li><p>geom_alluvial冲击图 冲积图与桑基图非常相似，但节点之间没有空间，并且以y = 0开始，而不是以x轴为中心。</p></li>
+<li><p>标注node名称</p>
+</li>
+<li><p>主题设置</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_sankey(flow.alpha = <span class="number">.6</span>,</span><br><span class="line">              node.color = <span class="string">&quot;gray30&quot;</span>) +</span><br><span class="line">  geom_sankey_label(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>, fill = <span class="string">&quot;gray40&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_sankey(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png" alt="example2"></p>
+</li>
+<li><p>geom_alluvial冲击图<br>冲积图与桑基图非常相似，但节点之间没有空间，并且以y = 0开始，而不是以x轴为中心。</p>
+</li>
 </ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_alluvial(flow.alpha = <span class="number">.6</span>) +</span><br><span class="line">  geom_alluvial_text(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_alluvial(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png" alt="exapmple3"><figcaption>exapmple3</figcaption>
-</figure>
+<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png" alt="example3"></p>
 
       
     </div>
@@ -963,167 +1039,6 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/20/%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="每天进步一点点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/20/%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">伽玛函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-20 11:58:17" itemprop="dateCreated datePublished" datetime="2021-02-20T11:58:17+08:00">2021-02-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-02 20:49:05" itemprop="dateModified" datetime="2021-05-02T20:49:05+08:00">2021-05-02</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="阶乘">阶乘</h1>
-<p>对于任意自然数，<span class="math inline">\(0,1,2,...,n\)</span>的阶乘的定义为 <span class="math inline">\(n! = 1\times 2 \times 3 ... \times n\)</span></p>
-<p>但是<span class="math inline">\(0.5!\)</span>怎么计算呢？</p>
-<h1 id="伽玛函数">伽玛函数</h1>
-<p>1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点<span class="math inline">\((n,n!)\)</span>画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。由于欧拉当时还是丹尼尔伯努利的助手。 因此欧拉也得知这个问题，第二年，即1729年，欧拉给出了完美的数据公式， 从此完成了阶乘向实数集的拓展，此时欧拉大神22岁。</p>
-<h2 id="年欧拉定义">1730年欧拉定义</h2>
-<p><span class="math display">\[
-\Gamma(x) = \displaystyle \int^{1}_{0}( -log(t))^{x-1}dt
-\]</span></p>
-<p>令 <span class="math inline">\(t=e^{-u}\)</span>,由于<span class="math inline">\(t \in (0,1)\)</span>，所以<span class="math inline">\(u \in (0,\infty)\)</span> <span class="math display">\[
-\Gamma(x) = \displaystyle \int^{\infty}_{0}u^{x-1}e^{-u}du
-\]</span> 令<span class="math inline">\(u=x, x=s\)</span>，则得到了伽玛函数的一般形式。 <span class="math display">\[\begin{equation}
-\Gamma(s) = \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}
-\end{equation}\]</span></p>
-<h2 id="证明过程需要使用分部积分法">证明过程需要使用分部积分法</h2>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-
-\Gamma(s+1) &amp;= \displaystyle \int^{+\infty}_{0}{x^{s}e^{-x}dx} \\
-&amp;= -\displaystyle \int^{\infty}_{0}{x^{s}d(e^{-x})} \\
-&amp;= -((x^s e^{-x}|_{0}^{\infty}) - (\displaystyle \int^{\infty}_{0}e^{-x}d(-x^s))) \\
-&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{s-1}e^{-x}dx) \\
-&amp;= s\Gamma(s)
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math display">\[
-\Gamma(1) = \displaystyle \int^{\infty}_{0}e^{-x}dx = 1
-\]</span> 规定<span class="math inline">\(0!=1\)</span> 由上面的证明可知，伽玛函数具有递归性质，可以用来进行阶乘的计算。 则<span class="math inline">\(\Gamma(n+1)=n!\)</span>，因此对于任意的数都可以进行阶乘计算。 回到上面的<span class="math inline">\(0.5!\)</span>的计算。</p>
-<p><span class="math inline">\(0.5!=\Gamma(0.5+1)=\displaystyle \int^{+\infty}_{0}{x^{0.5}e^{-x}dx}=\frac{1}{2}\sqrt{\pi}\)</span></p>
-<h1 id="伽玛分布">伽玛分布</h1>
-<p>因为伽玛函数的一般表达式为<span class="math inline">\(\Gamma(\alpha) = \displaystyle \int^{+\infty}_{0}{x^{\alpha-1}e^{-x}dx}\)</span> 等式两边同时除以<span class="math inline">\(\Gamma(\alpha)\)</span>,则得</p>
-<p><span class="math inline">\(1=\displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)\)</span></p>
-<p>令 <span class="math inline">\(x=\lambda x\)</span>，代入上式， 则上式如下： <span class="math display">\[\begin{equation}
-\begin{aligned}
-1 &amp;= \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(\lambda x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \cdot \lambda d(x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)}d(x) \\
-\end{aligned}
-\end{equation}\]</span></p>
-<p>取上式中的的被积函数作为伽马分布的密度函数</p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-p(x) &amp;= \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
-&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}
-\end{aligned}
-\end{equation}\]</span></p>
-<h2 id="伽玛分布的期望和方差">伽玛分布的期望和方差</h2>
-<h3 id="期望的证明">期望的证明</h3>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-E(x) &amp;= \sum p(x_i)\cdot x_i \\
-&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} d(x)
-\end{aligned}
-\end{equation}\]</span></p>
-<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span>,</p>
-<p>令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span> <span class="math display">\[\begin{equation}
-\begin{aligned}
-\Gamma(\alpha+1) &amp;= \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x)d(x) \\
-&amp;=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(x)
-\end{aligned}
-\end{equation}\]</span></p>
-<p>所以 <span class="math display">\[\begin{equation}
-\begin{aligned}
-E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
-&amp;= \frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}\cdot\frac{1}{\lambda} \\
-&amp;= \frac{\alpha}{\lambda}
-\end{aligned}
-\end{equation}\]</span></p>
-<h3 id="方差的证明">方差的证明</h3>
-<p>因为<span class="math inline">\(p(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^(\alpha-1)e^{-\lambda x}\)</span>, 所以对于离散型随机变量，<span class="math inline">\(E(x^2) = p(x)\cdot x^2\)</span> 对于连续型随机变量，二阶原点矩如下： <span class="math display">\[\begin{equation}
-\begin{aligned}
-E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}d(x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha+1}e^{-\lambda x}d(x)
-\end{aligned}
-\end{equation}\]</span></p>
-<p>因为<span class="math inline">\(\Gamma(\alpha+1)=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x}d(x)\)</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-\Gamma(\alpha+2) &amp;= \lambda \displaystyle \int^{+\infty}_{0} \lambda^{\alpha+1} x^{\alpha+1}e^{-\lambda x}d(x) \\
-&amp;= \lambda^2 \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x) 
-\end{aligned}
-\end{equation}\]</span></p>
-<p>由上式可知<span class="math inline">\(\displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x} d(x) = \frac{\Gamma(\alpha+2)}{\lambda^2}\)</span> <span class="math display">\[\begin{equation}
-\begin{aligned}
-E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} \\
-&amp;= \frac{\Gamma(\alpha+2)}{\lambda^2\Gamma(\alpha)} \\
-&amp;= \frac{\alpha(\alpha+1)}{\lambda^2}
-\end{aligned}
-\end{equation}\]</span></p>
-<p>根据方差的性质<span class="math inline">\(Var(x) = E(x^2) - E(x)^2\)</span></p>
-<p>所以伽玛分布的方差为： <span class="math display">\[\begin{equation}
-\begin{aligned}
-Var(x) &amp;= \frac{\alpha(\alpha+1)}{\lambda^2} - {(\frac{\alpha}{\lambda})}^2 \\
-&amp;= \frac{\alpha}{\lambda^2}
-\end{aligned}
-\end{equation}\]</span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1193,7 +1108,7 @@ Var(x) &amp;= \frac{\alpha(\alpha+1)}{\lambda^2} - {(\frac{\alpha}{\lambda})}^2 
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1206,7 +1121,7 @@ Var(x) &amp;= \frac{\alpha(\alpha+1)}{\lambda^2} - {(\frac{\alpha}{\lambda})}^2 
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

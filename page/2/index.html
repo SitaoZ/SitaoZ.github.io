@@ -196,6 +196,167 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/20/%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="每天进步一点点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/20/%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">伽玛函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-20 11:58:17" itemprop="dateCreated datePublished" datetime="2021-02-20T11:58:17+08:00">2021-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-02 20:49:05" itemprop="dateModified" datetime="2021-05-02T20:49:05+08:00">2021-05-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="阶乘">阶乘</h1>
+<p>对于任意自然数，<span class="math inline">\(0,1,2,...,n\)</span>的阶乘的定义为 <span class="math inline">\(n! = 1\times 2 \times 3 ... \times n\)</span></p>
+<p>但是<span class="math inline">\(0.5!\)</span>怎么计算呢？</p>
+<h1 id="伽玛函数">伽玛函数</h1>
+<p>1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点<span class="math inline">\((n,n!)\)</span>画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。由于欧拉当时还是丹尼尔伯努利的助手。 因此欧拉也得知这个问题，第二年，即1729年，欧拉给出了完美的数据公式， 从此完成了阶乘向实数集的拓展，此时欧拉大神22岁。</p>
+<h2 id="年欧拉定义">1730年欧拉定义</h2>
+<p><span class="math display">\[
+\Gamma(x) = \displaystyle \int^{1}_{0}( -log(t))^{x-1}dt
+\]</span></p>
+<p>令 <span class="math inline">\(t=e^{-u}\)</span>,由于<span class="math inline">\(t \in (0,1)\)</span>，所以<span class="math inline">\(u \in (0,\infty)\)</span> <span class="math display">\[
+\Gamma(x) = \displaystyle \int^{\infty}_{0}u^{x-1}e^{-u}du
+\]</span> 令<span class="math inline">\(u=x, x=s\)</span>，则得到了伽玛函数的一般形式。 <span class="math display">\[\begin{equation}
+\Gamma(s) = \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}
+\end{equation}\]</span></p>
+<h2 id="证明过程需要使用分部积分法">证明过程需要使用分部积分法</h2>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+\Gamma(s+1) &amp;= \displaystyle \int^{+\infty}_{0}{x^{s}e^{-x}dx} \\
+&amp;= -\displaystyle \int^{\infty}_{0}{x^{s}d(e^{-x})} \\
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - (\displaystyle \int^{\infty}_{0}e^{-x}d(-x^s))) \\
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{s-1}e^{-x}dx) \\
+&amp;= s\Gamma(s)
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[
+\Gamma(1) = \displaystyle \int^{\infty}_{0}e^{-x}dx = 1
+\]</span> 规定<span class="math inline">\(0!=1\)</span> 由上面的证明可知，伽玛函数具有递归性质，可以用来进行阶乘的计算。 则<span class="math inline">\(\Gamma(n+1)=n!\)</span>，因此对于任意的数都可以进行阶乘计算。 回到上面的<span class="math inline">\(0.5!\)</span>的计算。</p>
+<p><span class="math inline">\(0.5!=\Gamma(0.5+1)=\displaystyle \int^{+\infty}_{0}{x^{0.5}e^{-x}dx}=\frac{1}{2}\sqrt{\pi}\)</span></p>
+<h1 id="伽玛分布">伽玛分布</h1>
+<p>因为伽玛函数的一般表达式为<span class="math inline">\(\Gamma(\alpha) = \displaystyle \int^{+\infty}_{0}{x^{\alpha-1}e^{-x}dx}\)</span> 等式两边同时除以<span class="math inline">\(\Gamma(\alpha)\)</span>,则得</p>
+<p><span class="math inline">\(1=\displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)\)</span></p>
+<p>令 <span class="math inline">\(x=\lambda x\)</span>，代入上式， 则上式如下： <span class="math display">\[\begin{equation}
+\begin{aligned}
+1 &amp;= \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(\lambda x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \cdot \lambda d(x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)}d(x) \\
+\end{aligned}
+\end{equation}\]</span></p>
+<p>取上式中的的被积函数作为伽马分布的密度函数</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+p(x) &amp;= \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}
+\end{aligned}
+\end{equation}\]</span></p>
+<h2 id="伽玛分布的期望和方差">伽玛分布的期望和方差</h2>
+<h3 id="期望的证明">期望的证明</h3>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x) &amp;= \sum p(x_i)\cdot x_i \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} d(x)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span>,</p>
+<p>令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span> <span class="math display">\[\begin{equation}
+\begin{aligned}
+\Gamma(\alpha+1) &amp;= \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x)d(x) \\
+&amp;=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(x)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>所以 <span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
+&amp;= \frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}\cdot\frac{1}{\lambda} \\
+&amp;= \frac{\alpha}{\lambda}
+\end{aligned}
+\end{equation}\]</span></p>
+<h3 id="方差的证明">方差的证明</h3>
+<p>因为<span class="math inline">\(p(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^(\alpha-1)e^{-\lambda x}\)</span>, 所以对于离散型随机变量，<span class="math inline">\(E(x^2) = p(x)\cdot x^2\)</span> 对于连续型随机变量，二阶原点矩如下： <span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}d(x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha+1}e^{-\lambda x}d(x)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>因为<span class="math inline">\(\Gamma(\alpha+1)=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x}d(x)\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\Gamma(\alpha+2) &amp;= \lambda \displaystyle \int^{+\infty}_{0} \lambda^{\alpha+1} x^{\alpha+1}e^{-\lambda x}d(x) \\
+&amp;= \lambda^2 \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x) 
+\end{aligned}
+\end{equation}\]</span></p>
+<p>由上式可知<span class="math inline">\(\displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x} d(x) = \frac{\Gamma(\alpha+2)}{\lambda^2}\)</span> <span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} \\
+&amp;= \frac{\Gamma(\alpha+2)}{\lambda^2\Gamma(\alpha)} \\
+&amp;= \frac{\alpha(\alpha+1)}{\lambda^2}
+\end{aligned}
+\end{equation}\]</span></p>
+<p>根据方差的性质<span class="math inline">\(Var(x) = E(x^2) - E(x)^2\)</span></p>
+<p>所以伽玛分布的方差为： <span class="math display">\[\begin{equation}
+\begin{aligned}
+Var(x) &amp;= \frac{\alpha(\alpha+1)}{\lambda^2} - {(\frac{\alpha}{\lambda})}^2 \\
+&amp;= \frac{\alpha}{\lambda^2}
+\end{aligned}
+\end{equation}\]</span></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/18/%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E6%A0%B7%E6%9C%AC%E7%9F%A9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1277,90 +1438,6 @@ q &amp; if x = 0.
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/23/normal-distribution/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="每天进步一点点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/23/normal-distribution/" class="post-title-link" itemprop="url">normal_distribution</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-23 12:21:13" itemprop="dateCreated datePublished" datetime="2021-01-23T12:21:13+08:00">2021-01-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-25 21:28:42" itemprop="dateModified" datetime="2021-04-25T21:28:42+08:00">2021-04-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="正态分布">正态分布</h1>
-<p><span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\]</span></p>
-<h1 id="正太分布的推导">正太分布的推导</h1>
-<p>这里介绍高斯的推导方法，采用误差</p>
-<p><span class="math display">\[\begin{align*}
-L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \\
-&amp; = f(x_1-\theta)\cdots f(x_n-\theta)
-\end{align*}\]</span></p>
-<p><span class="math inline">\(\frac{d \log L(\theta)}{d \theta} = 0\)</span></p>
-<p><span class="math inline">\(\sum_{i=1}^n \frac{f&#39;(x_i-\theta)}{f(x_i-\theta)} = 0\)</span></p>
-<p>令 <span class="math inline">\(g(x) = \frac{f&#39;(x)}{f(x)}\)</span></p>
-<p><span class="math inline">\(\sum_{i=1}^n g(x_i-\theta) = 0\)</span></p>
-<p><span class="math display">\[\begin{equation}
-\sum_{i=1}^n g(x_i-\bar{x}) = 0 \quad  (1)
-\end{equation}\]</span></p>
-<ol type="1">
-<li>式中取 <span class="math inline">\(n=2\)</span>, 有</li>
-</ol>
-<p><span class="math inline">\(g(x_1-\bar{x}) + g(x_2-\bar{x}) = 0\)</span></p>
-<p>由于此时有 <span class="math inline">\(x_1-\bar{x} = -(x_2-\bar{x})\)</span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1430,7 +1507,7 @@ L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1443,7 +1520,7 @@ L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \\
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
