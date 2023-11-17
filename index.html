@@ -221,7 +221,16 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-11-17 08:54:33 / Modified: 09:10:02" itemprop="dateCreated datePublished" datetime="2023-11-17T08:54:33+08:00">2023-11-17</time>
+              <time title="Created: 2023-11-17 08:54:33 / Modified: 10:57:55" itemprop="dateCreated datePublished" datetime="2023-11-17T08:54:33+08:00">2023-11-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
             </span>
 
           
@@ -310,35 +319,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。<br>冲击图是一种特殊类型的流图。</p>
-<h2 id="ggsankey"><a href="#ggsankey" class="headerlink" title="ggsankey"></a>ggsankey</h2><p>ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。</p>
+          <p>桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。 冲击图是一种特殊类型的流图。</p>
+<h2 id="ggsankey">ggsankey</h2>
+<p>ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install.packages(&quot;devtools&quot;)</span></span><br><span class="line">devtools::install_github(<span class="string">&quot;davidsjoberg/ggsankey&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="ggsankey-构图元素"><a href="#ggsankey-构图元素" class="headerlink" title="ggsankey 构图元素"></a>ggsankey 构图元素</h2><p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png" alt="principal"></p>
+<h2 id="ggsankey-构图元素">ggsankey 构图元素</h2>
+<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png" alt="principal"> - 每一列表示一个stage, 每个stage有若干个node组成 - 相邻两个stage之间的node存在flow流的关系</p>
+<h2 id="图形参数">图形参数</h2>
 <ul>
-<li>每一列表示一个stage, 每个stage有若干个node组成</li>
-<li>相邻两个stage之间的node存在flow流的关系</li>
-</ul>
-<h2 id="图形参数"><a href="#图形参数" class="headerlink" title="图形参数"></a>图形参数</h2><ul>
 <li>fill设置填充色，分为node.fii和flow.fill</li>
 <li>color设置边框颜色，可分为node.color和flow.color</li>
 <li>width设置node宽度</li>
 <li>flow.alpha设置flow的透明度</li>
-<li>space设置组内node的间距<br><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png" alt="parameter"></li>
+<li>space设置组内node的间距 <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png" alt="parameter"></li>
 </ul>
-<h2 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">library(ggsankey)</span><br><span class="line">library(dplyr)</span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">df &lt;- mtcars %&gt;%</span><br><span class="line">  make_long(cyl, vs, am, gear, carb)</span><br><span class="line"></span><br><span class="line">ggplot(df, aes(x = x, </span><br><span class="line">               next_x = next_x, </span><br><span class="line">               node = node, </span><br><span class="line">               next_node = next_node,</span><br><span class="line">               fill = factor(node))) +</span><br><span class="line">  geom_sankey()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png" alt="example1"></p>
+<h2 id="测试数据">测试数据</h2>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">library(ggsankey)</span><br><span class="line">library(dplyr)</span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">df &lt;- mtcars %&gt;%</span><br><span class="line">  make_long(cyl, vs, am, gear, carb)</span><br><span class="line"></span><br><span class="line">ggplot(df, aes(x = x, </span><br><span class="line">               next_x = next_x, </span><br><span class="line">               node = node, </span><br><span class="line">               next_node = next_node,</span><br><span class="line">               fill = factor(node))) +</span><br><span class="line">  geom_sankey()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png" alt="example1"><figcaption>example1</figcaption>
+</figure>
 <ul>
-<li><p>标注node名称</p>
-</li>
-<li><p>主题设置</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_sankey(flow.alpha = <span class="number">.6</span>,</span><br><span class="line">              node.color = <span class="string">&quot;gray30&quot;</span>) +</span><br><span class="line">  geom_sankey_label(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>, fill = <span class="string">&quot;gray40&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_sankey(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png" alt="example2"></p>
-</li>
-<li><p>geom_alluvial冲击图<br>冲积图与桑基图非常相似，但节点之间没有空间，并且以y = 0开始，而不是以x轴为中心。</p>
-</li>
+<li>标注node名称</li>
+<li><p>主题设置 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_sankey(flow.alpha = <span class="number">.6</span>,</span><br><span class="line">              node.color = <span class="string">&quot;gray30&quot;</span>) +</span><br><span class="line">  geom_sankey_label(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>, fill = <span class="string">&quot;gray40&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_sankey(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure> <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png" alt="example2"></p></li>
+<li><p>geom_alluvial冲击图 冲积图与桑基图非常相似，但节点之间没有空间，并且以y = 0开始，而不是以x轴为中心。</p></li>
 </ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_alluvial(flow.alpha = <span class="number">.6</span>) +</span><br><span class="line">  geom_alluvial_text(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_alluvial(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png" alt="example3"></p>
+<figure>
+<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png" alt="example3"><figcaption>example3</figcaption>
+</figure>
 
       
     </div>
@@ -1115,13 +1123,13 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

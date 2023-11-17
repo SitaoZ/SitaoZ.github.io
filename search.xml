@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>方差分析ANOVA</title>
+    <url>/2021/07/13/ANOVA/</url>
+    <content><![CDATA[<h2 id="anova">ANOVA</h2>
+<p>ANOVA, &quot;Analysis of Variance&quot;,方差分析通常用来进行 三组或者三组以上的独立样本的之间的均值检验。</p>
+<h2 id="anova-test">ANOVA test</h2>
+<p>方差分析具备的条件 1. 在每个因子水平的数据中，观察值是独立的，随机的获取的。 2. 每个因子的数据是正态分布的。 3. 这些正太分布的数据有相同的方差。</p>
+<h2 id="one-way-anova-test">One-way ANOVA test</h2>
+<p>One-way ANOVA test是独立两个样本t-test均值比较的拓展， 它常常用来进行多组的比较。在one-way ANOVA中，会用一个变量(factor variable) 将数据分成多个组别，然后在来进行One-way方差分析。</p>
+<h3 id="one-way-的假设">One-way 的假设</h3>
+<ol type="1">
+<li>零假设（Null hypothesis）: 不同组之间的均值无差异。</li>
+<li>备择假设（Alternative hypothesis）：至少有一个样本均值和其他的不相同。</li>
+</ol>
+<h2 id="two-way-anova">Two-way ANOVA</h2>
+<p>用来判断双因素影响变量，以及两个变量之间的是否能相互影响来相应变量。 这时候来分组的因子变量（factor variable）有2个。</p>
+<h3 id="two-way-假设">Two-way 假设</h3>
+<p>零假设： 1. 因子A分成的不同组别之间的均值没有差异 2. 因子B分成的不同组别之间的均值没有差异 3. 因子A和B之间没有相互影响 备择假设： 假设1和2他们的均值不同等。 假设3，A和B之间存在相互作用</p>
+]]></content>
+      <tags>
+        <tag>One-Way</tag>
+        <tag>Two-Way</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KEGG数据库下载</title>
     <url>/2021/01/22/KEGG%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8B%E8%BD%BD/</url>
     <content><![CDATA[<h3 id="kegg-数据库">1.KEGG 数据库</h3>
@@ -120,6 +144,39 @@ E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
       <tags>
         <tag>binomial distribution</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>ggplot桑基图和冲击图</title>
+    <url>/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/</url>
+    <content><![CDATA[<p>桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。 冲击图是一种特殊类型的流图。</p>
+<h2 id="ggsankey">ggsankey</h2>
+<p>ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># install.packages(&quot;devtools&quot;)</span></span><br><span class="line">devtools::install_github(<span class="string">&quot;davidsjoberg/ggsankey&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="ggsankey-构图元素">ggsankey 构图元素</h2>
+<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png" alt="principal"> - 每一列表示一个stage, 每个stage有若干个node组成 - 相邻两个stage之间的node存在flow流的关系</p>
+<h2 id="图形参数">图形参数</h2>
+<ul>
+<li>fill设置填充色，分为node.fii和flow.fill</li>
+<li>color设置边框颜色，可分为node.color和flow.color</li>
+<li>width设置node宽度</li>
+<li>flow.alpha设置flow的透明度</li>
+<li>space设置组内node的间距 <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png" alt="parameter"></li>
+</ul>
+<h2 id="测试数据">测试数据</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(ggsankey)</span><br><span class="line">library(dplyr)</span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">df &lt;- mtcars %&gt;%</span><br><span class="line">  make_long(cyl, vs, am, gear, carb)</span><br><span class="line"></span><br><span class="line">ggplot(df, aes(x = x, </span><br><span class="line">               next_x = next_x, </span><br><span class="line">               node = node, </span><br><span class="line">               next_node = next_node,</span><br><span class="line">               fill = factor(node))) +</span><br><span class="line">  geom_sankey()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png" alt="example1"><figcaption>example1</figcaption>
+</figure>
+<ul>
+<li>标注node名称</li>
+<li><p>主题设置 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_sankey(flow.alpha = <span class="number">.6</span>,</span><br><span class="line">              node.color = <span class="string">&quot;gray30&quot;</span>) +</span><br><span class="line">  geom_sankey_label(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>, fill = <span class="string">&quot;gray40&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_sankey(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure> <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png" alt="example2"></p></li>
+<li><p>geom_alluvial冲击图 冲积图与桑基图非常相似，但节点之间没有空间，并且以y = 0开始，而不是以x轴为中心。</p></li>
+</ul>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_alluvial(flow.alpha = <span class="number">.6</span>) +</span><br><span class="line">  geom_alluvial_text(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_alluvial(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png" alt="example3"><figcaption>example3</figcaption>
+</figure>
+]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -300,6 +357,81 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
       </tags>
   </entry>
   <entry>
+    <title>python函数递归</title>
+    <url>/2023/11/17/python%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<h2 id="python-函数递归-recursion">python 函数递归 (recursion)</h2>
+<p>Python中能使用循环替代递归的尽量使用，但是有时候为了代码的可读性、简洁性必须使用递归。</p>
+<ul>
+<li>例如求一个嵌套列表的和 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,<span class="number">4</span>],<span class="number">5</span>],<span class="number">6</span>,[<span class="number">7</span>,<span class="number">8</span>]] </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sumtree</span>(<span class="params">L: <span class="built_in">list</span></span>) -&gt; int:</span></span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> L:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(x, <span class="built_in">list</span>):</span><br><span class="line">            total += x          <span class="comment"># 对于数字直接求和</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            total += sumtree(x) <span class="comment"># 递归调用自身，循环子列表</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure></li>
+<li>阶乘</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1*2*3*4*5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_factorial</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> (x * calc_factorial(x-<span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="递归的优点">递归的优点</h2>
+<ul>
+<li>代码干净整洁，可读性强</li>
+<li>将复杂的任务分解成简单的子任务</li>
+</ul>
+<h2 id="递归缺点">递归缺点</h2>
+<ul>
+<li>递归占用大量内存和时间</li>
+<li>递归函数调试困难</li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>sigmoid求导</title>
+    <url>/2021/05/08/sigmoid%E6%B1%82%E5%AF%BC/</url>
+    <content><![CDATA[<h1 id="sigmoid">sigmoid</h1>
+<p>sigmoid 函数是机器学习常用的一种激活函数，公式如下： <span class="math display">\[
+f(x) = \frac{1}{1+e^{-x}} 
+\]</span></p>
+<h1 id="求导">求导</h1>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+f(x)^{\prime} &amp;= ((1+e^{-x})^{-1})^{\prime} \\
+&amp;= (-1)\times(1+e^{-x})^{-2} \times e^{-x} \times (-1) \\
+&amp;= (1+e^{-x})^{-2} \times e^{-x} \\
+&amp;= \frac{e^{-x}}{(1+e^{-x})^2} \\
+&amp;= \frac{1+e^{-x}-1}{(1+e^{-x})^2} \\
+&amp;= \frac{1+e^{-x}}{(1+e^{-2})^2} - \frac{1}{(1+e^{-x})^2} \\
+&amp;= \frac{1}{1+e^{-x}} - \frac{1}{(1+e^{-x})^2} \\
+&amp;= \frac{1}{1+e^{-x}}(1-\frac{1}{1+e^{-x}}) \\
+&amp;= f(x)(1-f(x))
+
+\end{aligned}
+\end{equation}\]</span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>tanh激活函数</title>
+    <url>/2021/05/10/tanh%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="tanh">tanh</h1>
+<p>tanh 函数是机器学习常用的一种激活函数，公式如下： <span class="math display">\[
+f(x) = \frac{e^x-e^{-x}}{e^x+e^{-x}}
+\]</span> tanh 的函数取值为(-1,1)，相比sigmoid的是(0,1). 两函数的图形形状类似。</p>
+<h1 id="求导">求导</h1>
+<p>根据乘法法则，可知 <span class="math display">\[
+(uv)^{\prime} = u^{\prime}v + uv^{\prime}
+\]</span></p>
+<p>所以对于<span class="math inline">\(tanh(x)\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+tanh(x)^{\prime} &amp;= \frac{d}{dx}(\frac{e^x-e^{-x}}{e^x+e{-x}}) \\
+&amp;= \frac{1}{e^x+e^{-x}}\frac{d}{dx}(e^x-e^{-x}) + (e^x-e^{-x})\frac{d}{dx}(\frac{1}{e^x+e^{-x}}) \\
+&amp;= \frac{e^x+e^{-x}}{e^x+e^{-x}} + (e^x-e^{-x})\frac{1}{(e^x+e^{-x})^2}(-1)(e^x-e^{-x}) \\
+&amp;= 1 - (\frac{e^x-e^{-x}}{e^x+e^{-x}})^2\\
+&amp;= 1 - (tanh(x))^2
+
+\end{aligned}
+\end{equation}\]</span></p>
+]]></content>
+  </entry>
+  <entry>
     <title>伯努利大数定理</title>
     <url>/2021/02/03/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86/</url>
     <content><![CDATA[<h1 id="伯努利大数定理law-of-large-numbers">伯努利大数定理(Law of Large Numbers)</h1>
@@ -362,112 +494,126 @@ P(|X-a|\geq\varepsilon) &amp;= \int\limits_{\{x:|x-a|\geq\varepsilon\}} \quad p(
       </tags>
   </entry>
   <entry>
-    <title>github.io 博客搭建指南</title>
-    <url>/2021/01/15/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。</p>
-<h1 id="搭建步骤">搭建步骤</h1>
-<ol type="1">
-<li>获取域名</li>
-<li>建立github仓库</li>
-<li>安装git</li>
-<li>安装Node.js</li>
-<li>安装Hexo</li>
-<li>推送网站</li>
-<li>绑定域名</li>
-<li>更换主题</li>
-</ol>
-<p><span class="math display">\[E[X]=x^4\]</span></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>期望和方差的性质及证明</title>
-    <url>/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/</url>
-    <content><![CDATA[<h3 id="期望数学定义及性质证明">1.期望数学定义及性质证明</h3>
-<p>在n次独立重复的试验中观察随机变量<span class="math inline">\(\xi\)</span>的取值，则取<span class="math inline">\(x_i\)</span>的值大致 应该出现在<span class="math inline">\(np_i\)</span>次，根据n次试验结果计算该随机变量的平均值大致如下： <span class="math display">\[
-\frac{1}{n}[np_1x_1+np_2x_2+...+np_kx_k] = \sum_{i=1}^{k}p_ix_i
-\]</span> 定义：实数<span class="math inline">\(E\xi = \sum_{i=1}^{k}x_iP(A_i)\)</span>,称作随机变量<span class="math inline">\(\xi=\sum_{i=1}^{k}x_iI(A_i)\)</span> 的数学期望或平均值。 数学期望的基本性质</p>
-<ol type="1">
-<li>若<span class="math inline">\(\xi \ge 0\)</span>,则<span class="math inline">\(E\xi \ge 0\)</span>.</li>
-<li><span class="math inline">\(E(a\xi+b\eta) = aE\xi + bE\eta\)</span>,其中a,b为常数.</li>
-<li>若<span class="math inline">\(\xi \ge \eta\)</span>,则<span class="math inline">\(E\xi \ge E\eta\)</span>.</li>
-<li><span class="math inline">\(|E\xi| \le E|\xi|\)</span>.</li>
-<li>若<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>独立,则<span class="math inline">\(E\xi\eta=E\xi \cdot E\eta\)</span>.</li>
-<li><span class="math inline">\((E|\xi|)^2 \le E{\xi}^2 \cdot E{\eta}^2\)</span>,柯西-瓦尔茨不等式.</li>
-<li>若<span class="math inline">\(\xi = I(A)\)</span>,则<span class="math inline">\(E\xi = P(A)\)</span>.</li>
-</ol>
-<p>证明： 性质1显然成立 性质7，根据示性函数，由于 <span class="math display">\[
-\xi = I_A(\omega)= \begin{cases}
-1,  \omega \in A, \\
-0,  \omega \in A.
-\end{cases}
-\]</span> 由于伯努利试验只有0，1，所以根据随机变量期望的定义，性质7成立。</p>
-<p>性质2的证明： 设 <span class="math inline">\(\xi=\sum x_iI(A_i), \eta=\sum y_jI(B_j)\)</span>,</p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-a\xi+b\eta &amp;= a\sum_{i,j}x_i I(A_i \cap B_j) + b\sum_{i,j} y_j I(A_i \cap B_j) \\ 
-&amp;=\sum_{i,j}(a x_i+b y_j)I(A_i \cap B_j) \\
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-E(a\xi+b\eta) &amp;= \sum_{i,j}(a x_i+b y_i)P(A_i \cap B_j) \\ 
-&amp;=\sum_{i}a x_iP(A_i) + \sum_{j}b y_jP(B_j) \\ 
-&amp;=a\sum_{i}x_iP(A_i) + b\sum_{j}y_jP(B_j) \\ 
-&amp;=a\sum(\xi) + b\sum(\eta) \\
-\end{aligned}
-\end{equation}\]</span></p>
-<p>性质3 的证明： 由性质1，2可以证明3。</p>
-<p>性质4的证明： <span class="math display">\[
-|E\xi| = |\sum_{i}x_iP(A_i)| \le \sum_{i}|x_i|P(B_j)=E|\xi|
+    <title>伽玛函数</title>
+    <url>/2021/02/20/%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="阶乘">阶乘</h1>
+<p>对于任意自然数，<span class="math inline">\(0,1,2,...,n\)</span>的阶乘的定义为 <span class="math inline">\(n! = 1\times 2 \times 3 ... \times n\)</span></p>
+<p>但是<span class="math inline">\(0.5!\)</span>怎么计算呢？</p>
+<h1 id="伽玛函数">伽玛函数</h1>
+<p>1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点<span class="math inline">\((n,n!)\)</span>画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。由于欧拉当时还是丹尼尔伯努利的助手。 因此欧拉也得知这个问题，第二年，即1729年，欧拉给出了完美的数据公式， 从此完成了阶乘向实数集的拓展，此时欧拉大神22岁。</p>
+<h2 id="年欧拉定义">1730年欧拉定义</h2>
+<p><span class="math display">\[
+\Gamma(x) = \displaystyle \int^{1}_{0}( -log(t))^{x-1}dt
 \]</span></p>
-<p>性质5的证明： <span class="math display">\[\begin{equation}
+<p>令 <span class="math inline">\(t=e^{-u}\)</span>,由于<span class="math inline">\(t \in (0,1)\)</span>，所以<span class="math inline">\(u \in (0,\infty)\)</span> <span class="math display">\[
+\Gamma(x) = \displaystyle \int^{\infty}_{0}u^{x-1}e^{-u}du
+\]</span> 令<span class="math inline">\(u=x, x=s\)</span>，则得到了伽玛函数的一般形式。 <span class="math display">\[\begin{equation}
+\Gamma(s) = \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}
+\end{equation}\]</span></p>
+<h2 id="证明过程需要使用分部积分法">证明过程需要使用分部积分法</h2>
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
-E\xi\eta &amp;= E(\sum_{i}x_i I(A_i))(\sum_{j}y_j I(B_j)) \\
-&amp;=E\sum_{i,j}x_iy_jI(A_i \cap B_j) \\ 
-&amp;=\sum_{i,j}x_i y_jP(A_i \cap B_j) \\
-&amp;=\sum x_j y_jP(A_i)P(B_j) \\
-&amp;=(\sum_{i}x_i P(A_i))(\sum_{j}y_i P(B_j)) \\
-&amp;=E\xi \cdot E\eta \\
+
+\Gamma(s+1) &amp;= \displaystyle \int^{+\infty}_{0}{x^{s}e^{-x}dx} \\
+&amp;= -\displaystyle \int^{\infty}_{0}{x^{s}d(e^{-x})} \\
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - (\displaystyle \int^{\infty}_{0}e^{-x}d(-x^s))) \\
+&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{s-1}e^{-x}dx) \\
+&amp;= s\Gamma(s)
 \end{aligned}
-\end{equation}\]</span> 证明过程中，对于独立的随机变量<span class="math inline">\(\xi\)</span> ,<span class="math inline">\(\eta\)</span>， 事件 <span class="math inline">\(A_i = {\omega:\xi(\omega)=x_i}\)</span> 和 <span class="math inline">\(B_j={\omega:\eta(\omega)=y_j}\)</span> 事件独立：<span class="math inline">\(P(A_i \cap B_j) = P(A_i)P(B_j)\)</span></p>
-<p>性质6 的证明： 已知 <span class="math display">\[ \xi^2 = \sum_{i=1}^{l}x_i^2 I(A_i), \eta^2 = \sum y_i^2 I(b_j)\]</span> <span class="math display">\[ E\xi^2 = \sum_{i=1}^l x_i^2 P(A_i), E\eta^2 = \sum_{j=1}^k y_i^2P(B_j) \]</span></p>
-<p>设 <span class="math inline">\(E\xi^2 &gt; 0\)</span> ;<span class="math inline">\(E\eta^2 &gt; 0\)</span>, 记 <span class="math inline">\(\widetilde{\xi} = \frac{\xi}{\sqrt{E\xi^2}}\)</span> ,<span class="math inline">\(\widetilde{\eta} = \frac{\eta}{\sqrt{E\eta^2}}\)</span></p>
-<p>由于 <span class="math inline">\(2|\widetilde{\xi} \widetilde{\eta}| \le {\widetilde{\xi}}^2 + {\widetilde{\eta}}^2\)</span> 可得 <span class="math inline">\(2E|\widetilde{\xi} \widetilde{\eta}| \le E{\widetilde{\xi}}^2 + E {\widetilde{\eta}}^2 = 1+1=2\)</span> 所以 <span class="math inline">\(E|\widetilde{\xi} \widetilde{\eta}| \le 1\)</span> <span class="math display">\[\begin{equation}
+\end{equation}\]</span></p>
+<p><span class="math display">\[
+\Gamma(1) = \displaystyle \int^{\infty}_{0}e^{-x}dx = 1
+\]</span> 规定<span class="math inline">\(0!=1\)</span> 由上面的证明可知，伽玛函数具有递归性质，可以用来进行阶乘的计算。 则<span class="math inline">\(\Gamma(n+1)=n!\)</span>，因此对于任意的数都可以进行阶乘计算。 回到上面的<span class="math inline">\(0.5!\)</span>的计算。</p>
+<p><span class="math inline">\(0.5!=\Gamma(0.5+1)=\displaystyle \int^{+\infty}_{0}{x^{0.5}e^{-x}dx}=\frac{1}{2}\sqrt{\pi}\)</span></p>
+<h1 id="伽玛分布">伽玛分布</h1>
+<p>因为伽玛函数的一般表达式为<span class="math inline">\(\Gamma(\alpha) = \displaystyle \int^{+\infty}_{0}{x^{\alpha-1}e^{-x}dx}\)</span> 等式两边同时除以<span class="math inline">\(\Gamma(\alpha)\)</span>,则得</p>
+<p><span class="math inline">\(1=\displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)\)</span></p>
+<p>令 <span class="math inline">\(x=\lambda x\)</span>，代入上式， 则上式如下： <span class="math display">\[\begin{equation}
 \begin{aligned}
-(E|\xi\eta|)^2 = (E|\widetilde{\xi}\sqrt{E\xi^2} \widetilde{\eta}\sqrt{E\eta^2}|)^2 \\ 
-&amp;=(E|\sqrt{E\xi^2E\eta^2}\widetilde{\xi}\widetilde{\eta}|)^2 \\ 
-&amp;=E\xi^2 E\eta^2(E|\widetilde{\xi}\widetilde{\eta}|)^2 \\ 
+1 &amp;= \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(\lambda x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \cdot \lambda d(x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)}d(x) \\
 \end{aligned}
-\end{equation}\]</span> 由于 <span class="math inline">\(E|\widetilde{\xi} \widetilde{\eta}| \le 1\)</span> 所以 <span class="math inline">\((E|\widetilde{\xi} \widetilde{\eta}|)^2 \le 1\)</span> 因此 <span class="math inline">\((E|\xi\eta|)^2 = E\xi^2 E\eta^2(E|\widetilde{\xi}\widetilde{\eta}|)^2 \le E\xi^2 \times E\eta^2\)</span> 所以性质6 得证。</p>
-<p>因为设 <span class="math inline">\(E\xi &gt; 0\)</span>,所以还有一种特殊情况要证明。 假设 <span class="math inline">\(E\xi^2 = 0\)</span> , <span class="math inline">\(\sum_{i}x_i^2P(A_i) = 0\)</span> 因此0是<span class="math inline">\(\xi\)</span>的可能的值，且 <span class="math inline">\(P{\omega : \xi(\omega) = 0} = 1\)</span> 因为<span class="math inline">\(E\xi^2\)</span> 或者 <span class="math inline">\(E\eta^2=0\)</span> ,显然 <span class="math inline">\(E|\xi\eta| = 0\)</span> ,性质6依然成立。</p>
-<h3 id="方差的定义及性质证明">2.方差的定义及性质证明</h3>
-<p>方差是来描述数据分散程度的指标</p>
-<p><span class="math display">\[D\xi = E(\xi - E\xi)^2\]</span> <span class="math inline">\(D\xi\)</span>记为方差，<span class="math inline">\(\sigma = \sqrt{D\xi}\)</span>记为标准差。</p>
-<p>性质1 由于 <span class="math display">\[
-E(\xi-E\xi)^2 = E[\xi^2 - 2\xi E\xi + (E\xi)^2] = E(\xi^2) - (E\xi)^2
-\]</span> 所以 <span class="math display">\[D\xi = E\xi^2 - (E\xi)^2\]</span></p>
-<p>根据方差的定义，可知<span class="math inline">\(D\xi\ge0\)</span></p>
-<p>性质2 对于任意常数的a,b <span class="math inline">\(D(a+b\xi) = b^2D\xi\)</span> 当<span class="math inline">\(Da=0\)</span>,<span class="math inline">\(D(b\xi) = b^2D\xi\)</span></p>
-<p>性质3 对于二个随机变量<span class="math inline">\(\xi\)</span>,<span class="math inline">\(\eta\)</span></p>
-<p><span class="math display">\[D(\xi+\eta) = E[(\xi-E\xi)+(\eta - E\eta)]^2 = D\xi + D\eta +2E(\xi-E\xi)(\eta-E\eta)\]</span></p>
-<p>记： <span class="math display">\[
-cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
-\]</span> 称作随机变量<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>的协方差，如果<span class="math inline">\(D\xi \ge 0\)</span>, <span class="math inline">\(D\eta \ge 0\)</span>, 则 <span class="math inline">\(\rho(\xi,\eta) = \frac{cov(\xi,\eta)}{\sqrt{D\xi \times D\eta}}\)</span> 称作随机变量<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>的相关系数。</p>
+\end{equation}\]</span></p>
+<p>取上式中的的被积函数作为伽马分布的密度函数</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+p(x) &amp;= \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}
+\end{aligned}
+\end{equation}\]</span></p>
+<h2 id="伽玛分布的期望和方差">伽玛分布的期望和方差</h2>
+<h3 id="期望的证明">期望的证明</h3>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x) &amp;= \sum p(x_i)\cdot x_i \\
+&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} d(x)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span>,</p>
+<p>令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span> <span class="math display">\[\begin{equation}
+\begin{aligned}
+\Gamma(\alpha+1) &amp;= \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x)d(x) \\
+&amp;=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(x)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>所以 <span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
+&amp;= \frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}\cdot\frac{1}{\lambda} \\
+&amp;= \frac{\alpha}{\lambda}
+\end{aligned}
+\end{equation}\]</span></p>
+<h3 id="方差的证明">方差的证明</h3>
+<p>因为<span class="math inline">\(p(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^(\alpha-1)e^{-\lambda x}\)</span>, 所以对于离散型随机变量，<span class="math inline">\(E(x^2) = p(x)\cdot x^2\)</span> 对于连续型随机变量，二阶原点矩如下： <span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}d(x) \\
+&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha+1}e^{-\lambda x}d(x)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>因为<span class="math inline">\(\Gamma(\alpha+1)=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x}d(x)\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\Gamma(\alpha+2) &amp;= \lambda \displaystyle \int^{+\infty}_{0} \lambda^{\alpha+1} x^{\alpha+1}e^{-\lambda x}d(x) \\
+&amp;= \lambda^2 \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x) 
+\end{aligned}
+\end{equation}\]</span></p>
+<p>由上式可知<span class="math inline">\(\displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x} d(x) = \frac{\Gamma(\alpha+2)}{\lambda^2}\)</span> <span class="math display">\[\begin{equation}
+\begin{aligned}
+E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} \\
+&amp;= \frac{\Gamma(\alpha+2)}{\lambda^2\Gamma(\alpha)} \\
+&amp;= \frac{\alpha(\alpha+1)}{\lambda^2}
+\end{aligned}
+\end{equation}\]</span></p>
+<p>根据方差的性质<span class="math inline">\(Var(x) = E(x^2) - E(x)^2\)</span></p>
+<p>所以伽玛分布的方差为： <span class="math display">\[\begin{equation}
+\begin{aligned}
+Var(x) &amp;= \frac{\alpha(\alpha+1)}{\lambda^2} - {(\frac{\alpha}{\lambda})}^2 \\
+&amp;= \frac{\alpha}{\lambda^2}
+\end{aligned}
+\end{equation}\]</span></p>
 ]]></content>
       <tags>
-        <tag>expeactation</tag>
-        <tag>variance</tag>
+        <tag>伽玛函数</tag>
+        <tag>阶乘</tag>
       </tags>
   </entry>
   <entry>
-    <title>超几何分布</title>
-    <url>/2021/02/05/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/</url>
-    <content><![CDATA[<h1 id="超几何分布hypergeometric-distribution">超几何分布（hypergeometric distribution）</h1>
-<p>设有N个产品，其中次品有M个。从中任取n个（n&lt;=N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： <span class="math display">\[P(X=m)=\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m=0,1,2,...min(M,n))\]</span> 则称 X服从参数为n,m和N的超几何分布，记为 <span class="math inline">\(X \sim H(n, m, N)\)</span> $$ =  </p>
+    <title>几何分布</title>
+    <url>/2021/03/11/%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/</url>
+    <content><![CDATA[<h1 id="几何分布">几何分布</h1>
+<p>时间A发生的概率为p的伯努利实验中，<span class="math inline">\(\xi\)</span>记为事件A首次出现的 实验次数，则称随机变量<span class="math inline">\(\xi\)</span>服从几何分布，</p>
+<p><span class="math display">\[
+g(k,p) = P(\xi=k) = q^{k-1}p, k= 1,2,...
+\]</span></p>
+<h1 id="几何分布的无记忆性">几何分布的无记忆性</h1>
+<p>在伯努利实验中，等待首次成功的时间<span class="math inline">\(\xi\)</span>服从几何分布。假定前m次都没有成功， 那么首次成功等待的时间为<span class="math inline">\(\xi^{&#39;}\)</span>,也是服从几何分布的。 证明： 根据条件概率的定义 <span class="math display">\[
+P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
+\]</span></p>
 ]]></content>
       <tags>
-        <tag>超几何分布</tag>
-        <tag>概率论</tag>
+        <tag>geometrix distribution</tag>
       </tags>
   </entry>
   <entry>
@@ -720,70 +866,6 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
       </tags>
   </entry>
   <entry>
-    <title>统计量和样本方差</title>
-    <url>/2021/02/16/%E7%BB%9F%E8%AE%A1%E9%87%8F%E5%92%8C%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/</url>
-    <content><![CDATA[<h1 id="统计量">统计量</h1>
-<p>不含有任何位置参数的样本函数称为统计量。</p>
-<p>例如，数据的算数平均数称为样本均值。</p>
-<p><span class="math inline">\(\overline x = \frac{1}{n} \sum_{i=1}^{n}x_i\)</span></p>
-<h1 id="估计量">估计量</h1>
-<p>用于估计未知参数的统计量称为点估计量。 参数<span class="math inline">\(\theta\)</span>的估计量常用<span class="math inline">\(\hat \theta=\hat \theta(x_1,x_2,...x_n)\)</span>,表示，参数的可能取值范围是参数空间，记为<span class="math inline">\(\Theta = (\theta)\)</span>。</p>
-<p>这里的参数常常只如下几种： * 分布中所含有的位置参数； * 分布中的期望，方差，标准差，分位数，和特征值； * 某事件的概率； 一个参数的估计量通常不止一个，如何判断优劣？常用的标准有多个。如无偏性，有效性，均方误差最小，相合性等等。</p>
-<p>设<span class="math inline">\(\hat \theta =\hat \theta(x_1,x_2,...x_n)\)</span>是参数<span class="math inline">\(\theta\)</span>的一个估计，对于参数空间<span class="math inline">\(\Theta=\theta\)</span>中任意一个<span class="math inline">\(\theta\)</span> 都有 <span class="math display">\[
-E(\hat \theta) = \theta, \forall \theta \in \Theta
-\]</span> 则称<span class="math inline">\(\hat \theta\)</span>为<span class="math inline">\(\theta\)</span>的无偏估计，否则称为<span class="math inline">\(\theta\)</span>有偏估计。</p>
-<h1 id="样本方差">样本方差</h1>
-<p>统计学中常用的三个统计量是：</p>
-<ul>
-<li>样本均值：<span class="math inline">\(\overline x = \frac{1}{n} \sum_{i=1}^{n}x_i\)</span></li>
-<li>样本方差：<span class="math inline">\(s^2 = \frac{1}{n-1} \sum_{i=1}^{n}(x_i-\overline x)\)</span></li>
-<li>样本标准差：<span class="math inline">\(s = \sqrt{s^2}\)</span></li>
-</ul>
-<ol type="1">
-<li>样本均值<span class="math inline">\(\overline x\)</span>总位于数据中部，他是总体均值<span class="math inline">\(\mu\)</span>的无偏估计，即<span class="math inline">\(E(\overline x) = \mu\)</span></li>
-<li><span class="math inline">\(x_i\)</span>对<span class="math inline">\(\overline x\)</span>的偏差<span class="math inline">\(x_i-\overline x\)</span>可正可负，其和恒为零，<span class="math inline">\(\sum_{i=1}^{n}(x_i-\overline x) = 0\)</span> 这个等式表明: n个偏差中只有n-1个是独立的，第n个可以根据其和为0的公式计算得出。 在统计中独立偏差的个数称为自由度，记为<span class="math inline">\(f\)</span>，故n个偏差有n-1个自由度，即<span class="math inline">\(f= n-1\)</span>。</li>
-<li>全部的偏差之和恒为零，故样本偏差只和不能累加起来，不能直接用来度量样本散布大小，而改为样本偏差平方和<span class="math inline">\(Q\)</span>. <span class="math display">\[
-Q = \sum_{i=1}^{n}(x_i-\overline x)^2
-\]</span></li>
-<li><p>在样本量不同的场合，偏差平方和<span class="math inline">\(Q\)</span>失去了比较样本散布大小的公平性。为了消除样本量大小对偏差平方和的干扰，改用平均偏差平方和<span class="math inline">\(s_n^2\)</span>来度量， <span class="math display">\[
-s_n^2 = \frac{Q}{n} = \frac{1}{n} \sum_{i=1}^{n}(x_i-\overline x)^2
-\]</span> 样本方差<span class="math inline">\(s_n^2\)</span>是总体方差<span class="math inline">\(\sigma^2\)</span>的一个估计。</p></li>
-<li><p><span class="math inline">\(s_n^2\)</span>的改进。无论从理论还是实际使用中，用样本方差<span class="math inline">\(s_n^2\)</span>估计总体方差<span class="math inline">\(\sigma^2\)</span>多数情况下是偏小的。 证明如下：</p></li>
-</ol>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-
-s_n^2 &amp; = \frac{1}{n}\sum_{i=1}{n}(x_i-\overline x)^2 \\
-&amp;= \frac{1}{n}\sum_{i=1}^{n}(x_i^2 - 2x_i\overline x + \overline x^2) \\
-&amp; = \frac{1}{n}\sum_{i=1}^{n}x_i^2 - 2\frac{1}{n}\sum_{i=1}^{n}x_i \cdot \overline x + \overline x^2 \\
-&amp; = \frac{1}{n}\sum_{i=1}^{n}x_i^2 - \overline x^2 \\
-
-\end{aligned}
-\end{equation}\]</span></p>
-<p>为了求<span class="math inline">\(E(s_n^2)\)</span>,先求<span class="math inline">\(E(x_i^2),E(\overline x^2)\)</span>,</p>
-<p>根据方差基本性质,<a href="http://www.zhusitao.cn/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/">方差和均值关系证明</a>， 样本均值是总体期望的无偏估计，</p>
-<ul>
-<li><span class="math inline">\(E(x_i^2) = Var(x_i) + (E(x_i))^2=\sigma^2 + \mu^2\)</span></li>
-<li><span class="math inline">\(E(\overline x^2) = Var(\overline x) + (E(\overline x))^2 = Var(\frac{\sum x_i}{n})+\mu^2=\frac{1}{n^2}Var(\sum x_i) + \mu^2 = \frac{n\sigma^2}{n^2} + \mu^2 = \frac{\sigma^2}{n} + \mu^2\)</span></li>
-</ul>
-<p>所以 <span class="math display">\[
-E(s_n^2) = \frac{1}{n}\sum_{i=1}^{n}(\sigma^2+\mu^2) - (\frac{\sigma^2}{n} + \mu^2) = (1-\frac{1}{n})\sigma^2 \le \sigma^2
-\]</span></p>
-<p><span class="math inline">\(s_n^2\)</span>是总体方差<span class="math inline">\(\sigma^2\)</span>的有偏估计。</p>
-<p><span class="math display">\[
-s^2 = \frac{Q}{f} = \frac{1}{n-1}\sum_{i=1}{n}(x_i-\overline x)^2
-\]</span> <span class="math inline">\(s^2\)</span>是总体方差的无偏估计,自由度是n-1。</p>
-<p>证明： <span class="math display">\[
-E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
-\]</span></p>
-]]></content>
-      <tags>
-        <tag>统计量</tag>
-        <tag>估计量</tag>
-        <tag>样本方差</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>样本的经验分布函数和样本矩</title>
     <url>/2021/02/18/%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E6%A0%B7%E6%9C%AC%E7%9F%A9/</url>
     <content><![CDATA[<h1 id="分布函数">分布函数</h1>
@@ -797,129 +879,6 @@ E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
       <tags>
         <tag>经验分布函数</tag>
         <tag>样本矩</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>伽玛函数</title>
-    <url>/2021/02/20/%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="阶乘">阶乘</h1>
-<p>对于任意自然数，<span class="math inline">\(0,1,2,...,n\)</span>的阶乘的定义为 <span class="math inline">\(n! = 1\times 2 \times 3 ... \times n\)</span></p>
-<p>但是<span class="math inline">\(0.5!\)</span>怎么计算呢？</p>
-<h1 id="伽玛函数">伽玛函数</h1>
-<p>1728年，哥德巴赫在考虑数值插值问题时提出的，如何将自然数的阶乘推广到实数集。 将数据点<span class="math inline">\((n,n!)\)</span>画在图形上，好像可以看出大致的趋势，但是无法从数学的角度严 格证明。于是请教同时期的伯努利兄弟。由于欧拉当时还是丹尼尔伯努利的助手。 因此欧拉也得知这个问题，第二年，即1729年，欧拉给出了完美的数据公式， 从此完成了阶乘向实数集的拓展，此时欧拉大神22岁。</p>
-<h2 id="年欧拉定义">1730年欧拉定义</h2>
-<p><span class="math display">\[
-\Gamma(x) = \displaystyle \int^{1}_{0}( -log(t))^{x-1}dt
-\]</span></p>
-<p>令 <span class="math inline">\(t=e^{-u}\)</span>,由于<span class="math inline">\(t \in (0,1)\)</span>，所以<span class="math inline">\(u \in (0,\infty)\)</span> <span class="math display">\[
-\Gamma(x) = \displaystyle \int^{\infty}_{0}u^{x-1}e^{-u}du
-\]</span> 令<span class="math inline">\(u=x, x=s\)</span>，则得到了伽玛函数的一般形式。 <span class="math display">\[\begin{equation}
-\Gamma(s) = \displaystyle \int^{+\infty}_{0}{x^{s-1}e^{-x}dx}
-\end{equation}\]</span></p>
-<h2 id="证明过程需要使用分部积分法">证明过程需要使用分部积分法</h2>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-
-\Gamma(s+1) &amp;= \displaystyle \int^{+\infty}_{0}{x^{s}e^{-x}dx} \\
-&amp;= -\displaystyle \int^{\infty}_{0}{x^{s}d(e^{-x})} \\
-&amp;= -((x^s e^{-x}|_{0}^{\infty}) - (\displaystyle \int^{\infty}_{0}e^{-x}d(-x^s))) \\
-&amp;= -((x^s e^{-x}|_{0}^{\infty}) - \displaystyle \int^{\infty}_{0}s x^{s-1}e^{-x}dx) \\
-&amp;= s\Gamma(s)
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math display">\[
-\Gamma(1) = \displaystyle \int^{\infty}_{0}e^{-x}dx = 1
-\]</span> 规定<span class="math inline">\(0!=1\)</span> 由上面的证明可知，伽玛函数具有递归性质，可以用来进行阶乘的计算。 则<span class="math inline">\(\Gamma(n+1)=n!\)</span>，因此对于任意的数都可以进行阶乘计算。 回到上面的<span class="math inline">\(0.5!\)</span>的计算。</p>
-<p><span class="math inline">\(0.5!=\Gamma(0.5+1)=\displaystyle \int^{+\infty}_{0}{x^{0.5}e^{-x}dx}=\frac{1}{2}\sqrt{\pi}\)</span></p>
-<h1 id="伽玛分布">伽玛分布</h1>
-<p>因为伽玛函数的一般表达式为<span class="math inline">\(\Gamma(\alpha) = \displaystyle \int^{+\infty}_{0}{x^{\alpha-1}e^{-x}dx}\)</span> 等式两边同时除以<span class="math inline">\(\Gamma(\alpha)\)</span>,则得</p>
-<p><span class="math inline">\(1=\displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x)\)</span></p>
-<p>令 <span class="math inline">\(x=\lambda x\)</span>，代入上式， 则上式如下： <span class="math display">\[\begin{equation}
-\begin{aligned}
-1 &amp;= \displaystyle \int^{+\infty}_{0}\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}d(x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-(\lambda x)}}{\Gamma(\alpha)}d(\lambda x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{(\lambda x)^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \cdot \lambda d(x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)}d(x) \\
-\end{aligned}
-\end{equation}\]</span></p>
-<p>取上式中的的被积函数作为伽马分布的密度函数</p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-p(x) &amp;= \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} \\
-&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}
-\end{aligned}
-\end{equation}\]</span></p>
-<h2 id="伽玛分布的期望和方差">伽玛分布的期望和方差</h2>
-<h3 id="期望的证明">期望的证明</h3>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-E(x) &amp;= \sum p(x_i)\cdot x_i \\
-&amp;= \frac{\lambda^\alpha}{\Gamma(\alpha)} \displaystyle \int^{+\infty}_{0} x^{\alpha-1}e^{-\lambda x} d(x)
-\end{aligned}
-\end{equation}\]</span></p>
-<p>因为 <span class="math inline">\(\Gamma(\alpha+1) = \displaystyle \int^{+\infty}_{0} x^{\alpha}e^{-\lambda x}\)</span>,</p>
-<p>令<span class="math inline">\(x=\lambda x\)</span>,则<span class="math inline">\(\Gamma(\alpha+1)\)</span> <span class="math display">\[\begin{equation}
-\begin{aligned}
-\Gamma(\alpha+1) &amp;= \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(\lambda x)d(x) \\
-&amp;=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x} d(x)
-\end{aligned}
-\end{equation}\]</span></p>
-<p>所以 <span class="math display">\[\begin{equation}
-\begin{aligned}
-E(x) &amp;= \frac{\frac{\Gamma(\alpha+1)}{\lambda}}{\Gamma(x)} \\
-&amp;= \frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}\cdot\frac{1}{\lambda} \\
-&amp;= \frac{\alpha}{\lambda}
-\end{aligned}
-\end{equation}\]</span></p>
-<h3 id="方差的证明">方差的证明</h3>
-<p>因为<span class="math inline">\(p(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)}x^(\alpha-1)e^{-\lambda x}\)</span>, 所以对于离散型随机变量，<span class="math inline">\(E(x^2) = p(x)\cdot x^2\)</span> 对于连续型随机变量，二阶原点矩如下： <span class="math display">\[\begin{equation}
-\begin{aligned}
-E(x^2) &amp;= \displaystyle \int^{+\infty}_{0} x^2 \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\lambda x}d(x) \\
-&amp;= \displaystyle \int^{+\infty}_{0}\frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha+1}e^{-\lambda x}d(x)
-\end{aligned}
-\end{equation}\]</span></p>
-<p>因为<span class="math inline">\(\Gamma(\alpha+1)=\lambda \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha}e^{-\lambda x}d(x)\)</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-\Gamma(\alpha+2) &amp;= \lambda \displaystyle \int^{+\infty}_{0} \lambda^{\alpha+1} x^{\alpha+1}e^{-\lambda x}d(x) \\
-&amp;= \lambda^2 \displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x) 
-\end{aligned}
-\end{equation}\]</span></p>
-<p>由上式可知<span class="math inline">\(\displaystyle \int^{+\infty}_{0} \lambda^\alpha x^{\alpha+1}e^{-\lambda x} d(x) = \frac{\Gamma(\alpha+2)}{\lambda^2}\)</span> <span class="math display">\[\begin{equation}
-\begin{aligned}
-E(x^2) &amp;= \frac{\displaystyle \int^{+\infty}_{0}\lambda^\alpha x^{\alpha+1}e^{-\lambda x}d(x)}{\Gamma(\alpha)} \\
-&amp;= \frac{\Gamma(\alpha+2)}{\lambda^2\Gamma(\alpha)} \\
-&amp;= \frac{\alpha(\alpha+1)}{\lambda^2}
-\end{aligned}
-\end{equation}\]</span></p>
-<p>根据方差的性质<span class="math inline">\(Var(x) = E(x^2) - E(x)^2\)</span></p>
-<p>所以伽玛分布的方差为： <span class="math display">\[\begin{equation}
-\begin{aligned}
-Var(x) &amp;= \frac{\alpha(\alpha+1)}{\lambda^2} - {(\frac{\alpha}{\lambda})}^2 \\
-&amp;= \frac{\alpha}{\lambda^2}
-\end{aligned}
-\end{equation}\]</span></p>
-]]></content>
-      <tags>
-        <tag>伽玛函数</tag>
-        <tag>阶乘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>几何分布</title>
-    <url>/2021/03/11/%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/</url>
-    <content><![CDATA[<h1 id="几何分布">几何分布</h1>
-<p>时间A发生的概率为p的伯努利实验中，<span class="math inline">\(\xi\)</span>记为事件A首次出现的 实验次数，则称随机变量<span class="math inline">\(\xi\)</span>服从几何分布，</p>
-<p><span class="math display">\[
-g(k,p) = P(\xi=k) = q^{k-1}p, k= 1,2,...
-\]</span></p>
-<h1 id="几何分布的无记忆性">几何分布的无记忆性</h1>
-<p>在伯努利实验中，等待首次成功的时间<span class="math inline">\(\xi\)</span>服从几何分布。假定前m次都没有成功， 那么首次成功等待的时间为<span class="math inline">\(\xi^{&#39;}\)</span>,也是服从几何分布的。 证明： 根据条件概率的定义 <span class="math display">\[
-P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
-\]</span></p>
-]]></content>
-      <tags>
-        <tag>geometrix distribution</tag>
       </tags>
   </entry>
   <entry>
@@ -940,124 +899,102 @@ f(k;r;p) = {k+r-1 \choose (r-1)}\cdot p^r \cdot (1-p)^k
       </tags>
   </entry>
   <entry>
-    <title>sigmoid求导</title>
-    <url>/2021/05/08/sigmoid%E6%B1%82%E5%AF%BC/</url>
-    <content><![CDATA[<h1 id="sigmoid">sigmoid</h1>
-<p>sigmoid 函数是机器学习常用的一种激活函数，公式如下： <span class="math display">\[
-f(x) = \frac{1}{1+e^{-x}} 
-\]</span></p>
-<h1 id="求导">求导</h1>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-
-f(x)^{\prime} &amp;= ((1+e^{-x})^{-1})^{\prime} \\
-&amp;= (-1)\times(1+e^{-x})^{-2} \times e^{-x} \times (-1) \\
-&amp;= (1+e^{-x})^{-2} \times e^{-x} \\
-&amp;= \frac{e^{-x}}{(1+e^{-x})^2} \\
-&amp;= \frac{1+e^{-x}-1}{(1+e^{-x})^2} \\
-&amp;= \frac{1+e^{-x}}{(1+e^{-2})^2} - \frac{1}{(1+e^{-x})^2} \\
-&amp;= \frac{1}{1+e^{-x}} - \frac{1}{(1+e^{-x})^2} \\
-&amp;= \frac{1}{1+e^{-x}}(1-\frac{1}{1+e^{-x}}) \\
-&amp;= f(x)(1-f(x))
-
-\end{aligned}
-\end{equation}\]</span></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>tanh激活函数</title>
-    <url>/2021/05/10/tanh%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="tanh">tanh</h1>
-<p>tanh 函数是机器学习常用的一种激活函数，公式如下： <span class="math display">\[
-f(x) = \frac{e^x-e^{-x}}{e^x+e^{-x}}
-\]</span> tanh 的函数取值为(-1,1)，相比sigmoid的是(0,1). 两函数的图形形状类似。</p>
-<h1 id="求导">求导</h1>
-<p>根据乘法法则，可知 <span class="math display">\[
-(uv)^{\prime} = u^{\prime}v + uv^{\prime}
-\]</span></p>
-<p>所以对于<span class="math inline">\(tanh(x)\)</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-
-tanh(x)^{\prime} &amp;= \frac{d}{dx}(\frac{e^x-e^{-x}}{e^x+e{-x}}) \\
-&amp;= \frac{1}{e^x+e^{-x}}\frac{d}{dx}(e^x-e^{-x}) + (e^x-e^{-x})\frac{d}{dx}(\frac{1}{e^x+e^{-x}}) \\
-&amp;= \frac{e^x+e^{-x}}{e^x+e^{-x}} + (e^x-e^{-x})\frac{1}{(e^x+e^{-x})^2}(-1)(e^x-e^{-x}) \\
-&amp;= 1 - (\frac{e^x-e^{-x}}{e^x+e^{-x}})^2\\
-&amp;= 1 - (tanh(x))^2
-
-\end{aligned}
-\end{equation}\]</span></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>方差分析ANOVA</title>
-    <url>/2021/07/13/ANOVA/</url>
-    <content><![CDATA[<h2 id="anova">ANOVA</h2>
-<p>ANOVA, &quot;Analysis of Variance&quot;,方差分析通常用来进行 三组或者三组以上的独立样本的之间的均值检验。</p>
-<h2 id="anova-test">ANOVA test</h2>
-<p>方差分析具备的条件 1. 在每个因子水平的数据中，观察值是独立的，随机的获取的。 2. 每个因子的数据是正态分布的。 3. 这些正太分布的数据有相同的方差。</p>
-<h2 id="one-way-anova-test">One-way ANOVA test</h2>
-<p>One-way ANOVA test是独立两个样本t-test均值比较的拓展， 它常常用来进行多组的比较。在one-way ANOVA中，会用一个变量(factor variable) 将数据分成多个组别，然后在来进行One-way方差分析。</p>
-<h3 id="one-way-的假设">One-way 的假设</h3>
+    <title>github.io 博客搭建指南</title>
+    <url>/2021/01/15/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。</p>
+<h1 id="搭建步骤">搭建步骤</h1>
 <ol type="1">
-<li>零假设（Null hypothesis）: 不同组之间的均值无差异。</li>
-<li>备择假设（Alternative hypothesis）：至少有一个样本均值和其他的不相同。</li>
+<li>获取域名</li>
+<li>建立github仓库</li>
+<li>安装git</li>
+<li>安装Node.js</li>
+<li>安装Hexo</li>
+<li>推送网站</li>
+<li>绑定域名</li>
+<li>更换主题</li>
 </ol>
-<h2 id="two-way-anova">Two-way ANOVA</h2>
-<p>用来判断双因素影响变量，以及两个变量之间的是否能相互影响来相应变量。 这时候来分组的因子变量（factor variable）有2个。</p>
-<h3 id="two-way-假设">Two-way 假设</h3>
-<p>零假设： 1. 因子A分成的不同组别之间的均值没有差异 2. 因子B分成的不同组别之间的均值没有差异 3. 因子A和B之间没有相互影响 备择假设： 假设1和2他们的均值不同等。 假设3，A和B之间存在相互作用</p>
+<p><span class="math display">\[E[X]=x^4\]</span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>期望和方差的性质及证明</title>
+    <url>/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/</url>
+    <content><![CDATA[<h3 id="期望数学定义及性质证明">1.期望数学定义及性质证明</h3>
+<p>在n次独立重复的试验中观察随机变量<span class="math inline">\(\xi\)</span>的取值，则取<span class="math inline">\(x_i\)</span>的值大致 应该出现在<span class="math inline">\(np_i\)</span>次，根据n次试验结果计算该随机变量的平均值大致如下： <span class="math display">\[
+\frac{1}{n}[np_1x_1+np_2x_2+...+np_kx_k] = \sum_{i=1}^{k}p_ix_i
+\]</span> 定义：实数<span class="math inline">\(E\xi = \sum_{i=1}^{k}x_iP(A_i)\)</span>,称作随机变量<span class="math inline">\(\xi=\sum_{i=1}^{k}x_iI(A_i)\)</span> 的数学期望或平均值。 数学期望的基本性质</p>
+<ol type="1">
+<li>若<span class="math inline">\(\xi \ge 0\)</span>,则<span class="math inline">\(E\xi \ge 0\)</span>.</li>
+<li><span class="math inline">\(E(a\xi+b\eta) = aE\xi + bE\eta\)</span>,其中a,b为常数.</li>
+<li>若<span class="math inline">\(\xi \ge \eta\)</span>,则<span class="math inline">\(E\xi \ge E\eta\)</span>.</li>
+<li><span class="math inline">\(|E\xi| \le E|\xi|\)</span>.</li>
+<li>若<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>独立,则<span class="math inline">\(E\xi\eta=E\xi \cdot E\eta\)</span>.</li>
+<li><span class="math inline">\((E|\xi|)^2 \le E{\xi}^2 \cdot E{\eta}^2\)</span>,柯西-瓦尔茨不等式.</li>
+<li>若<span class="math inline">\(\xi = I(A)\)</span>,则<span class="math inline">\(E\xi = P(A)\)</span>.</li>
+</ol>
+<p>证明： 性质1显然成立 性质7，根据示性函数，由于 <span class="math display">\[
+\xi = I_A(\omega)= \begin{cases}
+1,  \omega \in A, \\
+0,  \omega \in A.
+\end{cases}
+\]</span> 由于伯努利试验只有0，1，所以根据随机变量期望的定义，性质7成立。</p>
+<p>性质2的证明： 设 <span class="math inline">\(\xi=\sum x_iI(A_i), \eta=\sum y_jI(B_j)\)</span>,</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+a\xi+b\eta &amp;= a\sum_{i,j}x_i I(A_i \cap B_j) + b\sum_{i,j} y_j I(A_i \cap B_j) \\ 
+&amp;=\sum_{i,j}(a x_i+b y_j)I(A_i \cap B_j) \\
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+E(a\xi+b\eta) &amp;= \sum_{i,j}(a x_i+b y_i)P(A_i \cap B_j) \\ 
+&amp;=\sum_{i}a x_iP(A_i) + \sum_{j}b y_jP(B_j) \\ 
+&amp;=a\sum_{i}x_iP(A_i) + b\sum_{j}y_jP(B_j) \\ 
+&amp;=a\sum(\xi) + b\sum(\eta) \\
+\end{aligned}
+\end{equation}\]</span></p>
+<p>性质3 的证明： 由性质1，2可以证明3。</p>
+<p>性质4的证明： <span class="math display">\[
+|E\xi| = |\sum_{i}x_iP(A_i)| \le \sum_{i}|x_i|P(B_j)=E|\xi|
+\]</span></p>
+<p>性质5的证明： <span class="math display">\[\begin{equation}
+\begin{aligned}
+E\xi\eta &amp;= E(\sum_{i}x_i I(A_i))(\sum_{j}y_j I(B_j)) \\
+&amp;=E\sum_{i,j}x_iy_jI(A_i \cap B_j) \\ 
+&amp;=\sum_{i,j}x_i y_jP(A_i \cap B_j) \\
+&amp;=\sum x_j y_jP(A_i)P(B_j) \\
+&amp;=(\sum_{i}x_i P(A_i))(\sum_{j}y_i P(B_j)) \\
+&amp;=E\xi \cdot E\eta \\
+\end{aligned}
+\end{equation}\]</span> 证明过程中，对于独立的随机变量<span class="math inline">\(\xi\)</span> ,<span class="math inline">\(\eta\)</span>， 事件 <span class="math inline">\(A_i = {\omega:\xi(\omega)=x_i}\)</span> 和 <span class="math inline">\(B_j={\omega:\eta(\omega)=y_j}\)</span> 事件独立：<span class="math inline">\(P(A_i \cap B_j) = P(A_i)P(B_j)\)</span></p>
+<p>性质6 的证明： 已知 <span class="math display">\[ \xi^2 = \sum_{i=1}^{l}x_i^2 I(A_i), \eta^2 = \sum y_i^2 I(b_j)\]</span> <span class="math display">\[ E\xi^2 = \sum_{i=1}^l x_i^2 P(A_i), E\eta^2 = \sum_{j=1}^k y_i^2P(B_j) \]</span></p>
+<p>设 <span class="math inline">\(E\xi^2 &gt; 0\)</span> ;<span class="math inline">\(E\eta^2 &gt; 0\)</span>, 记 <span class="math inline">\(\widetilde{\xi} = \frac{\xi}{\sqrt{E\xi^2}}\)</span> ,<span class="math inline">\(\widetilde{\eta} = \frac{\eta}{\sqrt{E\eta^2}}\)</span></p>
+<p>由于 <span class="math inline">\(2|\widetilde{\xi} \widetilde{\eta}| \le {\widetilde{\xi}}^2 + {\widetilde{\eta}}^2\)</span> 可得 <span class="math inline">\(2E|\widetilde{\xi} \widetilde{\eta}| \le E{\widetilde{\xi}}^2 + E {\widetilde{\eta}}^2 = 1+1=2\)</span> 所以 <span class="math inline">\(E|\widetilde{\xi} \widetilde{\eta}| \le 1\)</span> <span class="math display">\[\begin{equation}
+\begin{aligned}
+(E|\xi\eta|)^2 = (E|\widetilde{\xi}\sqrt{E\xi^2} \widetilde{\eta}\sqrt{E\eta^2}|)^2 \\ 
+&amp;=(E|\sqrt{E\xi^2E\eta^2}\widetilde{\xi}\widetilde{\eta}|)^2 \\ 
+&amp;=E\xi^2 E\eta^2(E|\widetilde{\xi}\widetilde{\eta}|)^2 \\ 
+\end{aligned}
+\end{equation}\]</span> 由于 <span class="math inline">\(E|\widetilde{\xi} \widetilde{\eta}| \le 1\)</span> 所以 <span class="math inline">\((E|\widetilde{\xi} \widetilde{\eta}|)^2 \le 1\)</span> 因此 <span class="math inline">\((E|\xi\eta|)^2 = E\xi^2 E\eta^2(E|\widetilde{\xi}\widetilde{\eta}|)^2 \le E\xi^2 \times E\eta^2\)</span> 所以性质6 得证。</p>
+<p>因为设 <span class="math inline">\(E\xi &gt; 0\)</span>,所以还有一种特殊情况要证明。 假设 <span class="math inline">\(E\xi^2 = 0\)</span> , <span class="math inline">\(\sum_{i}x_i^2P(A_i) = 0\)</span> 因此0是<span class="math inline">\(\xi\)</span>的可能的值，且 <span class="math inline">\(P{\omega : \xi(\omega) = 0} = 1\)</span> 因为<span class="math inline">\(E\xi^2\)</span> 或者 <span class="math inline">\(E\eta^2=0\)</span> ,显然 <span class="math inline">\(E|\xi\eta| = 0\)</span> ,性质6依然成立。</p>
+<h3 id="方差的定义及性质证明">2.方差的定义及性质证明</h3>
+<p>方差是来描述数据分散程度的指标</p>
+<p><span class="math display">\[D\xi = E(\xi - E\xi)^2\]</span> <span class="math inline">\(D\xi\)</span>记为方差，<span class="math inline">\(\sigma = \sqrt{D\xi}\)</span>记为标准差。</p>
+<p>性质1 由于 <span class="math display">\[
+E(\xi-E\xi)^2 = E[\xi^2 - 2\xi E\xi + (E\xi)^2] = E(\xi^2) - (E\xi)^2
+\]</span> 所以 <span class="math display">\[D\xi = E\xi^2 - (E\xi)^2\]</span></p>
+<p>根据方差的定义，可知<span class="math inline">\(D\xi\ge0\)</span></p>
+<p>性质2 对于任意常数的a,b <span class="math inline">\(D(a+b\xi) = b^2D\xi\)</span> 当<span class="math inline">\(Da=0\)</span>,<span class="math inline">\(D(b\xi) = b^2D\xi\)</span></p>
+<p>性质3 对于二个随机变量<span class="math inline">\(\xi\)</span>,<span class="math inline">\(\eta\)</span></p>
+<p><span class="math display">\[D(\xi+\eta) = E[(\xi-E\xi)+(\eta - E\eta)]^2 = D\xi + D\eta +2E(\xi-E\xi)(\eta-E\eta)\]</span></p>
+<p>记： <span class="math display">\[
+cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
+\]</span> 称作随机变量<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>的协方差，如果<span class="math inline">\(D\xi \ge 0\)</span>, <span class="math inline">\(D\eta \ge 0\)</span>, 则 <span class="math inline">\(\rho(\xi,\eta) = \frac{cov(\xi,\eta)}{\sqrt{D\xi \times D\eta}}\)</span> 称作随机变量<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>的相关系数。</p>
 ]]></content>
       <tags>
-        <tag>One-Way</tag>
-        <tag>Two-Way</tag>
+        <tag>expeactation</tag>
+        <tag>variance</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>逻辑回归</title>
-    <url>/2021/09/07/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/</url>
-    <content><![CDATA[<h2 id="逻辑回归的前世今生">逻辑回归的前世今生</h2>
-<p>与传统的线性回归不同，逻辑回归在传统的线性回归的输出端加上一个logit函数， 使得输出有连续变成离散，每个取值代表不同的类别，从回归任务转成了分类任务， 所以逻辑回归在名字上还保留的回归字眼，但是却成了分类的代表之一。<br>
-一句话总结：逻辑回归假设数据分布服从伯努利分布，通过极大似然函数的方法， 运用梯度下降来求解参数，来实现二分类。</p>
-<h3 id="逻辑回归的基本假设">1.逻辑回归的基本假设</h3>
-<h4 id="第一个基本假设">第一个基本假设</h4>
-<p>假设数据分布服从伯努利分布。伯努利分布，对于抛硬币来说， <span class="math inline">\(p\)</span>是硬币为正的概率，<span class="math inline">\(1-p\)</span>为硬币为负的概率；同样，在逻辑回归的模型中，假设<span class="math inline">\(h_{\theta}(x)\)</span> 为样本正的概率，<span class="math inline">\(1-h_{\theta}(x)\)</span>为样本为负的概率。整个模型如下： <span class="math display">\[
-h_\theta(x;\theta) = p
-\]</span></p>
-<h4 id="第二个假设">第二个假设</h4>
-<p>假设样本为正的概率为： <span class="math display">\[
-p = \frac{1}{1+e^{-\theta^{T}x}}
-\]</span></p>
-<p>所以最终的表达式为： <span class="math display">\[
-h_\theta(x;\theta) = \frac{1}{1+e^{-\theta^{T}x}}
-\]</span></p>
-<h3 id="逻辑回归的损失函数">2.逻辑回归的损失函数</h3>
-<p>逻辑回归采用最大似然函数作为损失函数。</p>
-<p>逻辑回归中<span class="math inline">\(y\in {0,1}\)</span>。约定<span class="math inline">\(\hat{y}=P(y=1|x)\)</span>。</p>
-<h4 id="对一个样本">对一个样本</h4>
-<p>可知 <span class="math display">\[
-P(y|x) = \begin{cases}
-\hat{y}    ,  y=1, \\
-1 - \hat{y},  y=0
-\end{cases}
-\]</span></p>
-<p>写成一个函数 <span class="math display">\[
-P(y|x) = \hat{y}^{y}(1-\hat{y})^{1-y}
-\]</span></p>
-<p><span class="math inline">\(\log\)</span>变换不改变函数的单调性，同时乘法变成加法简化计算，所以上式换个马甲，整理如下： <span class="math display">\[
-\log(P(y|x)) = y\log(\hat{y}) + (1-y)\log(1-\hat{y})
-\]</span></p>
-<p>我们的目的就是最大化上述函数，使得模型更加拟合我们的数据。使用梯度下降法来求解，因此需要对上式取反，求最大值转化成求最小值。 <span class="math display">\[
-L(w,b) = -[y\log\hat{y} + (1-y)\log(1-\hat{y})]
-\]</span></p>
-<h4 id="全部样本-training">全部样本 (training)</h4>
-<p>在全部训练集m上训练求得全部的损失函数。假设样本独立同分布，概率分布函数为每个样本的连乘。 <span class="math display">\[
-P(y|x_1,x_2,...,x_m) = \prod_{i=1}^{m} P(y|x_i)
-\]</span> 上式取对数，连成转化成加法，加速计算，使用极大似然法求得概率最大时对应的参数。 采取一个样本的计算处理，最小化函数取反，得:</p>
-<p><span class="math display">\[
-J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
-\]</span></p>
-]]></content>
   </entry>
   <entry>
     <title>统计学中的均值比较</title>
@@ -1147,62 +1084,124 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 ]]></content>
   </entry>
   <entry>
-    <title>ggplot桑基图和冲击图</title>
-    <url>/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/</url>
-    <content><![CDATA[<p>桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。<br>冲击图是一种特殊类型的流图。</p>
-<h2 id="ggsankey"><a href="#ggsankey" class="headerlink" title="ggsankey"></a>ggsankey</h2><p>ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># install.packages(&quot;devtools&quot;)</span></span><br><span class="line">devtools::install_github(<span class="string">&quot;davidsjoberg/ggsankey&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="ggsankey-构图元素"><a href="#ggsankey-构图元素" class="headerlink" title="ggsankey 构图元素"></a>ggsankey 构图元素</h2><p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png" alt="principal"></p>
+    <title>统计量和样本方差</title>
+    <url>/2021/02/16/%E7%BB%9F%E8%AE%A1%E9%87%8F%E5%92%8C%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE/</url>
+    <content><![CDATA[<h1 id="统计量">统计量</h1>
+<p>不含有任何位置参数的样本函数称为统计量。</p>
+<p>例如，数据的算数平均数称为样本均值。</p>
+<p><span class="math inline">\(\overline x = \frac{1}{n} \sum_{i=1}^{n}x_i\)</span></p>
+<h1 id="估计量">估计量</h1>
+<p>用于估计未知参数的统计量称为点估计量。 参数<span class="math inline">\(\theta\)</span>的估计量常用<span class="math inline">\(\hat \theta=\hat \theta(x_1,x_2,...x_n)\)</span>,表示，参数的可能取值范围是参数空间，记为<span class="math inline">\(\Theta = (\theta)\)</span>。</p>
+<p>这里的参数常常只如下几种： * 分布中所含有的位置参数； * 分布中的期望，方差，标准差，分位数，和特征值； * 某事件的概率； 一个参数的估计量通常不止一个，如何判断优劣？常用的标准有多个。如无偏性，有效性，均方误差最小，相合性等等。</p>
+<p>设<span class="math inline">\(\hat \theta =\hat \theta(x_1,x_2,...x_n)\)</span>是参数<span class="math inline">\(\theta\)</span>的一个估计，对于参数空间<span class="math inline">\(\Theta=\theta\)</span>中任意一个<span class="math inline">\(\theta\)</span> 都有 <span class="math display">\[
+E(\hat \theta) = \theta, \forall \theta \in \Theta
+\]</span> 则称<span class="math inline">\(\hat \theta\)</span>为<span class="math inline">\(\theta\)</span>的无偏估计，否则称为<span class="math inline">\(\theta\)</span>有偏估计。</p>
+<h1 id="样本方差">样本方差</h1>
+<p>统计学中常用的三个统计量是：</p>
 <ul>
-<li>每一列表示一个stage, 每个stage有若干个node组成</li>
-<li>相邻两个stage之间的node存在flow流的关系</li>
+<li>样本均值：<span class="math inline">\(\overline x = \frac{1}{n} \sum_{i=1}^{n}x_i\)</span></li>
+<li>样本方差：<span class="math inline">\(s^2 = \frac{1}{n-1} \sum_{i=1}^{n}(x_i-\overline x)\)</span></li>
+<li>样本标准差：<span class="math inline">\(s = \sqrt{s^2}\)</span></li>
 </ul>
-<h2 id="图形参数"><a href="#图形参数" class="headerlink" title="图形参数"></a>图形参数</h2><ul>
-<li>fill设置填充色，分为node.fii和flow.fill</li>
-<li>color设置边框颜色，可分为node.color和flow.color</li>
-<li>width设置node宽度</li>
-<li>flow.alpha设置flow的透明度</li>
-<li>space设置组内node的间距<br><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png" alt="parameter"></li>
-</ul>
-<h2 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(ggsankey)</span><br><span class="line">library(dplyr)</span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">df &lt;- mtcars %&gt;%</span><br><span class="line">  make_long(cyl, vs, am, gear, carb)</span><br><span class="line"></span><br><span class="line">ggplot(df, aes(x = x, </span><br><span class="line">               next_x = next_x, </span><br><span class="line">               node = node, </span><br><span class="line">               next_node = next_node,</span><br><span class="line">               fill = factor(node))) +</span><br><span class="line">  geom_sankey()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png" alt="example1"></p>
+<ol type="1">
+<li>样本均值<span class="math inline">\(\overline x\)</span>总位于数据中部，他是总体均值<span class="math inline">\(\mu\)</span>的无偏估计，即<span class="math inline">\(E(\overline x) = \mu\)</span></li>
+<li><span class="math inline">\(x_i\)</span>对<span class="math inline">\(\overline x\)</span>的偏差<span class="math inline">\(x_i-\overline x\)</span>可正可负，其和恒为零，<span class="math inline">\(\sum_{i=1}^{n}(x_i-\overline x) = 0\)</span> 这个等式表明: n个偏差中只有n-1个是独立的，第n个可以根据其和为0的公式计算得出。 在统计中独立偏差的个数称为自由度，记为<span class="math inline">\(f\)</span>，故n个偏差有n-1个自由度，即<span class="math inline">\(f= n-1\)</span>。</li>
+<li>全部的偏差之和恒为零，故样本偏差只和不能累加起来，不能直接用来度量样本散布大小，而改为样本偏差平方和<span class="math inline">\(Q\)</span>. <span class="math display">\[
+Q = \sum_{i=1}^{n}(x_i-\overline x)^2
+\]</span></li>
+<li><p>在样本量不同的场合，偏差平方和<span class="math inline">\(Q\)</span>失去了比较样本散布大小的公平性。为了消除样本量大小对偏差平方和的干扰，改用平均偏差平方和<span class="math inline">\(s_n^2\)</span>来度量， <span class="math display">\[
+s_n^2 = \frac{Q}{n} = \frac{1}{n} \sum_{i=1}^{n}(x_i-\overline x)^2
+\]</span> 样本方差<span class="math inline">\(s_n^2\)</span>是总体方差<span class="math inline">\(\sigma^2\)</span>的一个估计。</p></li>
+<li><p><span class="math inline">\(s_n^2\)</span>的改进。无论从理论还是实际使用中，用样本方差<span class="math inline">\(s_n^2\)</span>估计总体方差<span class="math inline">\(\sigma^2\)</span>多数情况下是偏小的。 证明如下：</p></li>
+</ol>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+s_n^2 &amp; = \frac{1}{n}\sum_{i=1}{n}(x_i-\overline x)^2 \\
+&amp;= \frac{1}{n}\sum_{i=1}^{n}(x_i^2 - 2x_i\overline x + \overline x^2) \\
+&amp; = \frac{1}{n}\sum_{i=1}^{n}x_i^2 - 2\frac{1}{n}\sum_{i=1}^{n}x_i \cdot \overline x + \overline x^2 \\
+&amp; = \frac{1}{n}\sum_{i=1}^{n}x_i^2 - \overline x^2 \\
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>为了求<span class="math inline">\(E(s_n^2)\)</span>,先求<span class="math inline">\(E(x_i^2),E(\overline x^2)\)</span>,</p>
+<p>根据方差基本性质,<a href="http://www.zhusitao.cn/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/">方差和均值关系证明</a>， 样本均值是总体期望的无偏估计，</p>
 <ul>
-<li><p>标注node名称</p>
-</li>
-<li><p>主题设置</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_sankey(flow.alpha = <span class="number">.6</span>,</span><br><span class="line">              node.color = <span class="string">&quot;gray30&quot;</span>) +</span><br><span class="line">  geom_sankey_label(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>, fill = <span class="string">&quot;gray40&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_sankey(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png" alt="example2"></p>
-</li>
-<li><p>geom_alluvial冲击图<br>冲积图与桑基图非常相似，但节点之间没有空间，并且以y = 0开始，而不是以x轴为中心。</p>
-</li>
+<li><span class="math inline">\(E(x_i^2) = Var(x_i) + (E(x_i))^2=\sigma^2 + \mu^2\)</span></li>
+<li><span class="math inline">\(E(\overline x^2) = Var(\overline x) + (E(\overline x))^2 = Var(\frac{\sum x_i}{n})+\mu^2=\frac{1}{n^2}Var(\sum x_i) + \mu^2 = \frac{n\sigma^2}{n^2} + \mu^2 = \frac{\sigma^2}{n} + \mu^2\)</span></li>
 </ul>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_alluvial(flow.alpha = <span class="number">.6</span>) +</span><br><span class="line">  geom_alluvial_text(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_alluvial(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png" alt="example3"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>python函数递归</title>
-    <url>/2023/11/17/python%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92/</url>
-    <content><![CDATA[<h2 id="python-函数递归-recursion">python 函数递归 (recursion)</h2>
-<p>Python中能使用循环替代递归的尽量使用，但是有时候为了代码的可读性、简洁性必须使用递归。</p>
-<ul>
-<li>例如求一个嵌套列表的和 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,<span class="number">4</span>],<span class="number">5</span>],<span class="number">6</span>,[<span class="number">7</span>,<span class="number">8</span>]] </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sumtree</span>(<span class="params">L: <span class="built_in">list</span></span>) -&gt; int:</span></span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> L:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(x, <span class="built_in">list</span>):</span><br><span class="line">            total += x          <span class="comment"># 对于数字直接求和</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            total += sumtree(x) <span class="comment"># 递归调用自身，循环子列表</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure></li>
-<li>阶乘</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1*2*3*4*5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_factorial</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> (x * calc_factorial(x-<span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="递归的优点">递归的优点</h2>
-<ul>
-<li>代码干净整洁，可读性强</li>
-<li>将复杂的任务分解成简单的子任务</li>
-</ul>
-<h2 id="递归缺点">递归缺点</h2>
-<ul>
-<li>递归占用大量内存和时间</li>
-<li>递归函数调试困难</li>
-</ul>
+<p>所以 <span class="math display">\[
+E(s_n^2) = \frac{1}{n}\sum_{i=1}^{n}(\sigma^2+\mu^2) - (\frac{\sigma^2}{n} + \mu^2) = (1-\frac{1}{n})\sigma^2 \le \sigma^2
+\]</span></p>
+<p><span class="math inline">\(s_n^2\)</span>是总体方差<span class="math inline">\(\sigma^2\)</span>的有偏估计。</p>
+<p><span class="math display">\[
+s^2 = \frac{Q}{f} = \frac{1}{n-1}\sum_{i=1}{n}(x_i-\overline x)^2
+\]</span> <span class="math inline">\(s^2\)</span>是总体方差的无偏估计,自由度是n-1。</p>
+<p>证明： <span class="math display">\[
+E(s^2) = E(\frac{n}{n-1}s_n^2) = \frac{n}{n-1}(1-\frac{1}{n})\sigma^2 = \sigma^2
+\]</span></p>
 ]]></content>
       <tags>
-        <tag>python</tag>
+        <tag>统计量</tag>
+        <tag>估计量</tag>
+        <tag>样本方差</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>超几何分布</title>
+    <url>/2021/02/05/%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/</url>
+    <content><![CDATA[<h1 id="超几何分布hypergeometric-distribution">超几何分布（hypergeometric distribution）</h1>
+<p>设有N个产品，其中次品有M个。从中任取n个（n&lt;=N-M） 则，n个抽取的产品中次品数目X是离散型随机变量， 概率质量函数如下： <span class="math display">\[P(X=m)=\frac{C_M^m \cdot C_{N-M}^{n-m}}{C_N^n}, (m=0,1,2,...min(M,n))\]</span> 则称 X服从参数为n,m和N的超几何分布，记为 <span class="math inline">\(X \sim H(n, m, N)\)</span> $$ =  </p>
+]]></content>
+      <tags>
+        <tag>概率论</tag>
+        <tag>超几何分布</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>逻辑回归</title>
+    <url>/2021/09/07/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/</url>
+    <content><![CDATA[<h2 id="逻辑回归的前世今生">逻辑回归的前世今生</h2>
+<p>与传统的线性回归不同，逻辑回归在传统的线性回归的输出端加上一个logit函数， 使得输出有连续变成离散，每个取值代表不同的类别，从回归任务转成了分类任务， 所以逻辑回归在名字上还保留的回归字眼，但是却成了分类的代表之一。<br>
+一句话总结：逻辑回归假设数据分布服从伯努利分布，通过极大似然函数的方法， 运用梯度下降来求解参数，来实现二分类。</p>
+<h3 id="逻辑回归的基本假设">1.逻辑回归的基本假设</h3>
+<h4 id="第一个基本假设">第一个基本假设</h4>
+<p>假设数据分布服从伯努利分布。伯努利分布，对于抛硬币来说， <span class="math inline">\(p\)</span>是硬币为正的概率，<span class="math inline">\(1-p\)</span>为硬币为负的概率；同样，在逻辑回归的模型中，假设<span class="math inline">\(h_{\theta}(x)\)</span> 为样本正的概率，<span class="math inline">\(1-h_{\theta}(x)\)</span>为样本为负的概率。整个模型如下： <span class="math display">\[
+h_\theta(x;\theta) = p
+\]</span></p>
+<h4 id="第二个假设">第二个假设</h4>
+<p>假设样本为正的概率为： <span class="math display">\[
+p = \frac{1}{1+e^{-\theta^{T}x}}
+\]</span></p>
+<p>所以最终的表达式为： <span class="math display">\[
+h_\theta(x;\theta) = \frac{1}{1+e^{-\theta^{T}x}}
+\]</span></p>
+<h3 id="逻辑回归的损失函数">2.逻辑回归的损失函数</h3>
+<p>逻辑回归采用最大似然函数作为损失函数。</p>
+<p>逻辑回归中<span class="math inline">\(y\in {0,1}\)</span>。约定<span class="math inline">\(\hat{y}=P(y=1|x)\)</span>。</p>
+<h4 id="对一个样本">对一个样本</h4>
+<p>可知 <span class="math display">\[
+P(y|x) = \begin{cases}
+\hat{y}    ,  y=1, \\
+1 - \hat{y},  y=0
+\end{cases}
+\]</span></p>
+<p>写成一个函数 <span class="math display">\[
+P(y|x) = \hat{y}^{y}(1-\hat{y})^{1-y}
+\]</span></p>
+<p><span class="math inline">\(\log\)</span>变换不改变函数的单调性，同时乘法变成加法简化计算，所以上式换个马甲，整理如下： <span class="math display">\[
+\log(P(y|x)) = y\log(\hat{y}) + (1-y)\log(1-\hat{y})
+\]</span></p>
+<p>我们的目的就是最大化上述函数，使得模型更加拟合我们的数据。使用梯度下降法来求解，因此需要对上式取反，求最大值转化成求最小值。 <span class="math display">\[
+L(w,b) = -[y\log\hat{y} + (1-y)\log(1-\hat{y})]
+\]</span></p>
+<h4 id="全部样本-training">全部样本 (training)</h4>
+<p>在全部训练集m上训练求得全部的损失函数。假设样本独立同分布，概率分布函数为每个样本的连乘。 <span class="math display">\[
+P(y|x_1,x_2,...,x_m) = \prod_{i=1}^{m} P(y|x_i)
+\]</span> 上式取对数，连成转化成加法，加速计算，使用极大似然法求得概率最大时对应的参数。 采取一个样本的计算处理，最小化函数取反，得:</p>
+<p><span class="math display">\[
+J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
+\]</span></p>
+]]></content>
   </entry>
 </search>
