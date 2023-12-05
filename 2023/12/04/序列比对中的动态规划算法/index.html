@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="动态规划 动态规划(dynamic programming), 是一种求解多阶段决策过程最优化问题的算法。 核心思想就是: (1),将一个大问题拆解成一堆子问题，(2),求解出子问题的解，存储起来当再次需要求解此问题时候可以被重复利用，避免重复的计算过程。 1 算法解释 对于序列比对问题，我们想知道两个序列之间的存在的差异，首先我们想了解全局比对的差异。 对于全局比对，前人开发出Needleman">
+  <meta name="description" content="动态规划 动态规划(dynamic programming), 是一种求解多阶段决策过程最优化问题的算法。 核心思想就是: (1),将一个大问题拆解成一堆子问题，(2),求解出子问题的解，存储起来当再次需要求解此问题时候可以被重复利用，避免重复的计算过程。 能够使用DP必须满足下面三个特征: (1), 最优子结构性质。一个问题的最优解包含其子问题的最优解。 (2), 重叠子问题性质。在求解子问题的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="序列比对中的动态规划算法">
 <meta property="og:url" content="http://example.com/2023/12/04/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E4%B8%AD%E7%9A%84%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="动态规划 动态规划(dynamic programming), 是一种求解多阶段决策过程最优化问题的算法。 核心思想就是: (1),将一个大问题拆解成一堆子问题，(2),求解出子问题的解，存储起来当再次需要求解此问题时候可以被重复利用，避免重复的计算过程。 1 算法解释 对于序列比对问题，我们想知道两个序列之间的存在的差异，首先我们想了解全局比对的差异。 对于全局比对，前人开发出Needleman">
+<meta property="og:description" content="动态规划 动态规划(dynamic programming), 是一种求解多阶段决策过程最优化问题的算法。 核心思想就是: (1),将一个大问题拆解成一堆子问题，(2),求解出子问题的解，存储起来当再次需要求解此问题时候可以被重复利用，避免重复的计算过程。 能够使用DP必须满足下面三个特征: (1), 最优子结构性质。一个问题的最优解包含其子问题的最优解。 (2), 重叠子问题性质。在求解子问题的">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-12-04T12:30:59.000Z">
-<meta property="article:modified_time" content="2023-12-05T03:29:31.094Z">
+<meta property="article:modified_time" content="2023-12-05T07:35:20.217Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="deep learning, bioinformatics, biology">
 <meta name="twitter:card" content="summary">
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-12-05 11:29:31" itemprop="dateModified" datetime="2023-12-05T11:29:31+08:00">2023-12-05</time>
+                <time title="Modified: 2023-12-05 15:35:20" itemprop="dateModified" datetime="2023-12-05T15:35:20+08:00">2023-12-05</time>
               </span>
 
           
@@ -244,10 +244,12 @@
 
       
         <h2 id="动态规划">动态规划</h2>
-<p>动态规划(dynamic programming), 是一种求解多阶段决策过程最优化问题的算法。 核心思想就是: (1),将一个大问题拆解成一堆子问题，(2),求解出子问题的解，存储起来当再次需要求解此问题时候可以被重复利用，避免重复的计算过程。</p>
+<p>动态规划(dynamic programming), 是一种求解多阶段决策过程最优化问题的算法。 核心思想就是: (1),将一个大问题拆解成一堆子问题，(2),求解出子问题的解，存储起来当再次需要求解此问题时候可以被重复利用，避免重复的计算过程。 能够使用DP必须满足下面三个特征:<br>
+(1), 最优子结构性质。一个问题的最优解包含其子问题的最优解。<br>
+(2), 重叠子问题性质。在求解子问题的过程中，会有大量的子问题的是重复的，可以将子问题的结果存储，后续直接查询，避免重复计算。 (3), 无后效性。子问题的解只与之前的阶段有关，与后面的阶段无关。</p>
 <h3 id="算法解释">1 算法解释</h3>
 <p>对于序列比对问题，我们想知道两个序列之间的存在的差异，首先我们想了解全局比对的差异。 对于全局比对，前人开发出Needleman-Wunsch算法，该算法是基于动态规划的全局比对算法。</p>
-<p><span class="math display">\[ F(i, j)= max \left\{
+<p><span class="math display">\[ F(i, j)=max \left\{
 \begin{aligned}
 F(i-1, j-1) + s(x_i, y_j) \\
 F(i-1, j) + s(x_i, -) \\

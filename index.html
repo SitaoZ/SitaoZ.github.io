@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-12-05 11:29:31" itemprop="dateModified" datetime="2023-12-05T11:29:31+08:00">2023-12-05</time>
+                <time title="Modified: 2023-12-05 15:35:20" itemprop="dateModified" datetime="2023-12-05T15:35:20+08:00">2023-12-05</time>
               </span>
 
           
@@ -242,10 +242,12 @@
 
       
           <h2 id="动态规划">动态规划</h2>
-<p>动态规划(dynamic programming), 是一种求解多阶段决策过程最优化问题的算法。 核心思想就是: (1),将一个大问题拆解成一堆子问题，(2),求解出子问题的解，存储起来当再次需要求解此问题时候可以被重复利用，避免重复的计算过程。</p>
+<p>动态规划(dynamic programming), 是一种求解多阶段决策过程最优化问题的算法。 核心思想就是: (1),将一个大问题拆解成一堆子问题，(2),求解出子问题的解，存储起来当再次需要求解此问题时候可以被重复利用，避免重复的计算过程。 能够使用DP必须满足下面三个特征:<br>
+(1), 最优子结构性质。一个问题的最优解包含其子问题的最优解。<br>
+(2), 重叠子问题性质。在求解子问题的过程中，会有大量的子问题的是重复的，可以将子问题的结果存储，后续直接查询，避免重复计算。 (3), 无后效性。子问题的解只与之前的阶段有关，与后面的阶段无关。</p>
 <h3 id="算法解释">1 算法解释</h3>
 <p>对于序列比对问题，我们想知道两个序列之间的存在的差异，首先我们想了解全局比对的差异。 对于全局比对，前人开发出Needleman-Wunsch算法，该算法是基于动态规划的全局比对算法。</p>
-<p><span class="math display">\[ F(i, j)= max \left\{
+<p><span class="math display">\[ F(i, j)=max \left\{
 \begin{aligned}
 F(i-1, j-1) + s(x_i, y_j) \\
 F(i-1, j) + s(x_i, -) \\
