@@ -196,6 +196,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/07/%E6%B5%8B%E5%BA%8F%E7%A2%B1%E5%9F%BA%E8%B4%A8%E9%87%8F%E5%80%BC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="每天进步一点点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/07/%E6%B5%8B%E5%BA%8F%E7%A2%B1%E5%9F%BA%E8%B4%A8%E9%87%8F%E5%80%BC/" class="post-title-link" itemprop="url">测序碱基质量值</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-12-07 19:59:11" itemprop="dateCreated datePublished" datetime="2023-12-07T19:59:11+08:00">2023-12-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-12-08 14:39:23" itemprop="dateModified" datetime="2023-12-08T14:39:23+08:00">2023-12-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="测序碱基质量值">测序碱基质量值</h2>
+<p>对于高通量测序来说，碱基质量值是衡量测序数据的重要指标。碱基质量值常用Phred Quality Score 表示，简写Q。 p值表示碱基被测错误的概率, p越小，Q越大。</p>
+<p><span class="math display">\[
+Q=-10log_{10}p
+\]</span></p>
+<ul>
+<li>Q&amp;p转换</li>
+</ul>
+<p><span class="math display">\[
+p = 10^{Q \over -10}
+\]</span></p>
+<h2 id="python-q-p转换实现">python Q-p转换实现</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">error_prob</span>(<span class="params">quality</span>):</span></span><br><span class="line">    qval = quality </span><br><span class="line">    <span class="keyword">return</span> <span class="number">10</span>**(qval/-<span class="number">10.0</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&quot;&#123;0:^5&#125; &#123;1:^10&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;Phred&quot;</span>, <span class="string">&quot;Prob of&quot;</span>))</span><br><span class="line">print(<span class="string">&quot;&#123;0:^5&#125; &#123;1:^10&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;score&quot;</span>, <span class="string">&quot;error&quot;</span>))</span><br><span class="line"><span class="keyword">for</span> phred <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">42</span>):</span><br><span class="line">    print(<span class="string">&quot;&#123;0:^5&#125; &#123;1:03.5f&#125;&quot;</span>.<span class="built_in">format</span>(phred, error_prob(phred)))</span><br><span class="line"></span><br><span class="line">Phred  Prob of  </span><br><span class="line">score   error   </span><br><span class="line">  <span class="number">0</span>   <span class="number">1.00000</span></span><br><span class="line">  <span class="number">1</span>   <span class="number">0.79433</span></span><br><span class="line">  <span class="number">2</span>   <span class="number">0.63096</span></span><br><span class="line">  <span class="number">3</span>   <span class="number">0.50119</span></span><br><span class="line">  <span class="number">4</span>   <span class="number">0.39811</span></span><br><span class="line">  <span class="number">5</span>   <span class="number">0.31623</span></span><br><span class="line">  <span class="number">6</span>   <span class="number">0.25119</span></span><br><span class="line">  <span class="number">7</span>   <span class="number">0.19953</span></span><br><span class="line">  <span class="number">8</span>   <span class="number">0.15849</span></span><br><span class="line">  <span class="number">9</span>   <span class="number">0.12589</span></span><br><span class="line"> <span class="number">10</span>   <span class="number">0.10000</span></span><br><span class="line"> <span class="number">11</span>   <span class="number">0.07943</span></span><br><span class="line"> <span class="number">12</span>   <span class="number">0.06310</span></span><br><span class="line"> <span class="number">13</span>   <span class="number">0.05012</span></span><br><span class="line"> <span class="number">14</span>   <span class="number">0.03981</span></span><br><span class="line"> <span class="number">15</span>   <span class="number">0.03162</span></span><br><span class="line"> <span class="number">16</span>   <span class="number">0.02512</span></span><br><span class="line"> <span class="number">17</span>   <span class="number">0.01995</span></span><br><span class="line"> <span class="number">18</span>   <span class="number">0.01585</span></span><br><span class="line"> <span class="number">19</span>   <span class="number">0.01259</span></span><br><span class="line"> <span class="number">20</span>   <span class="number">0.01000</span></span><br><span class="line"> <span class="number">21</span>   <span class="number">0.00794</span></span><br><span class="line"> <span class="number">22</span>   <span class="number">0.00631</span></span><br><span class="line"> <span class="number">23</span>   <span class="number">0.00501</span></span><br><span class="line"> <span class="number">24</span>   <span class="number">0.00398</span></span><br><span class="line"> <span class="number">25</span>   <span class="number">0.00316</span></span><br><span class="line"> <span class="number">26</span>   <span class="number">0.00251</span></span><br><span class="line"> <span class="number">27</span>   <span class="number">0.00200</span></span><br><span class="line"> <span class="number">28</span>   <span class="number">0.00158</span></span><br><span class="line"> <span class="number">29</span>   <span class="number">0.00126</span></span><br><span class="line"> <span class="number">30</span>   <span class="number">0.00100</span></span><br><span class="line"> <span class="number">31</span>   <span class="number">0.00079</span></span><br><span class="line"> <span class="number">32</span>   <span class="number">0.00063</span></span><br><span class="line"> <span class="number">33</span>   <span class="number">0.00050</span></span><br><span class="line"> <span class="number">34</span>   <span class="number">0.00040</span></span><br><span class="line"> <span class="number">35</span>   <span class="number">0.00032</span></span><br><span class="line"> <span class="number">36</span>   <span class="number">0.00025</span></span><br><span class="line"> <span class="number">37</span>   <span class="number">0.00020</span></span><br><span class="line"> <span class="number">38</span>   <span class="number">0.00016</span></span><br><span class="line"> <span class="number">39</span>   <span class="number">0.00013</span></span><br><span class="line"> <span class="number">40</span>   <span class="number">0.00010</span></span><br><span class="line"> <span class="number">41</span>   <span class="number">0.00008</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="ascii-codes">Ascii Codes</h2>
+<p>测序文件中使用的是Ascii Codes字符，每个字符代表一个phred值。 Ascii Codes字符在计算机中和整型数字一一对应。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> (<span class="string">&quot;&#123;0:^8&#125;  &#123;1:^8&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;Character&quot;</span>, <span class="string">&quot;ASCII #&quot;</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">33</span>,<span class="number">90</span>):</span><br><span class="line">    print(<span class="string">&quot;&#123;0:^8&#125;  &#123;1:^8&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">chr</span>(i),i))</span><br><span class="line">Character  ASCII <span class="comment">#</span></span><br><span class="line">   !         <span class="number">33</span>   </span><br><span class="line">   <span class="string">&quot;         34   </span></span><br><span class="line"><span class="string">   #         35   </span></span><br><span class="line"><span class="string">   $         36   </span></span><br><span class="line"><span class="string">   %         37   </span></span><br><span class="line"><span class="string">   &amp;         38   </span></span><br><span class="line"><span class="string">   &#x27;         39   </span></span><br><span class="line"><span class="string">   (         40   </span></span><br><span class="line"><span class="string">   )         41   </span></span><br><span class="line"><span class="string">   *         42   </span></span><br><span class="line"><span class="string">   +         43   </span></span><br><span class="line"><span class="string">   ,         44   </span></span><br><span class="line"><span class="string">   -         45   </span></span><br><span class="line"><span class="string">   .         46   </span></span><br><span class="line"><span class="string">   /         47   </span></span><br><span class="line"><span class="string">   0         48   </span></span><br><span class="line"><span class="string">   1         49   </span></span><br><span class="line"><span class="string">   2         50   </span></span><br><span class="line"><span class="string">   3         51   </span></span><br><span class="line"><span class="string">   4         52   </span></span><br><span class="line"><span class="string">   5         53   </span></span><br><span class="line"><span class="string">   6         54   </span></span><br><span class="line"><span class="string">   7         55   </span></span><br><span class="line"><span class="string">   8         56   </span></span><br><span class="line"><span class="string">   9         57   </span></span><br><span class="line"><span class="string">   :         58   </span></span><br><span class="line"><span class="string">   ;         59   </span></span><br><span class="line"><span class="string">   &lt;         60   </span></span><br><span class="line"><span class="string">   =         61   </span></span><br><span class="line"><span class="string">   &gt;         62   </span></span><br><span class="line"><span class="string">   ?         63   </span></span><br><span class="line"><span class="string">   @         64   </span></span><br><span class="line"><span class="string">   A         65   </span></span><br><span class="line"><span class="string">   B         66   </span></span><br><span class="line"><span class="string">   C         67   </span></span><br><span class="line"><span class="string">   D         68   </span></span><br><span class="line"><span class="string">   E         69   </span></span><br><span class="line"><span class="string">   F         70   </span></span><br><span class="line"><span class="string">   G         71   </span></span><br><span class="line"><span class="string">   H         72   </span></span><br><span class="line"><span class="string">   I         73   </span></span><br><span class="line"><span class="string">   J         74   </span></span><br><span class="line"><span class="string">   K         75   </span></span><br><span class="line"><span class="string">   L         76   </span></span><br><span class="line"><span class="string">   M         77   </span></span><br><span class="line"><span class="string">   N         78   </span></span><br><span class="line"><span class="string">   O         79   </span></span><br><span class="line"><span class="string">   P         80   </span></span><br><span class="line"><span class="string">   Q         81   </span></span><br><span class="line"><span class="string">   R         82   </span></span><br><span class="line"><span class="string">   S         83   </span></span><br><span class="line"><span class="string">   T         84   </span></span><br><span class="line"><span class="string">   U         85   </span></span><br><span class="line"><span class="string">   V         86   </span></span><br><span class="line"><span class="string">   W         87   </span></span><br><span class="line"><span class="string">   X         88   </span></span><br><span class="line"><span class="string">   Y         89   </span></span><br></pre></td></tr></table></figure>
+<h2 id="phred-编码">Phred 编码</h2>
+<ul>
+<li>Phred+33<br>
+phred+33编码，就是使用phred 值 + 33,求和之后对应的ascii字符就是该碱基的字符编码。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ Phred    Sum        Ascii </span><br><span class="line">$  30      63(30+33)    ?</span><br></pre></td></tr></table></figure></li>
+<li>Phred+64 phred+64定义类似，就是使用phred 值 + 64,求和之后对应的ascii字符就是该碱基的字符编码。 比较老的测序数据采用该编码方式。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ Phred    Sum        Ascii</span><br><span class="line">$  30      94(30+64)    ^</span><br></pre></td></tr></table></figure> Phred、Error、Phred+33和Phred+64</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> (<span class="string">&quot;&#123;0:^5&#125;  &#123;1:^8&#125;  &#123;2:^8&#125;  &#123;3:^8&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;Phred&quot;</span>,  <span class="string">&quot;Prob of&quot;</span>, <span class="string">&quot;Phred+33&quot;</span>, <span class="string">&quot;Phred+64&quot;</span>))</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;&#123;0:^5&#125;  &#123;1:^8&#125;  &#123;2:^8&#125;  &#123;3:^8&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;score&quot;</span>,  <span class="string">&quot;Error&quot;</span>, <span class="string">&quot;Ascii&quot;</span>, <span class="string">&quot;Ascii&quot;</span>))</span><br><span class="line"><span class="keyword">for</span> phred <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">42</span>):</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">&quot;&#123;0:^5&#125;  &#123;1:03.5f&#125;  &#123;2:^8&#125;  &#123;3:^8&#125;&quot;</span>.<span class="built_in">format</span>(phred, error_prob(phred), <span class="built_in">chr</span>(phred+<span class="number">33</span>), <span class="built_in">chr</span>(phred+<span class="number">64</span>)))</span><br><span class="line"></span><br><span class="line">Phred  Prob of   Phred+<span class="number">33</span>  Phred+<span class="number">64</span></span><br><span class="line">score   Error     Ascii     Ascii</span><br><span class="line">  <span class="number">0</span>    <span class="number">1.00000</span>     !         @</span><br><span class="line">  <span class="number">1</span>    <span class="number">0.79433</span>     <span class="string">&quot;         A</span></span><br><span class="line"><span class="string">  2    0.63096     #         B</span></span><br><span class="line"><span class="string">  3    0.50119     $         C</span></span><br><span class="line"><span class="string">  4    0.39811     %         D</span></span><br><span class="line"><span class="string">  5    0.31623     &amp;         E</span></span><br><span class="line"><span class="string">  6    0.25119     &#x27;         F</span></span><br><span class="line"><span class="string">  7    0.19953     (         G</span></span><br><span class="line"><span class="string">  8    0.15849     )         H</span></span><br><span class="line"><span class="string">  9    0.12589     *         I</span></span><br><span class="line"><span class="string"> 10    0.10000     +         J</span></span><br><span class="line"><span class="string"> 11    0.07943     ,         K</span></span><br><span class="line"><span class="string"> 12    0.06310     -         L</span></span><br><span class="line"><span class="string"> 13    0.05012     .         M</span></span><br><span class="line"><span class="string"> 14    0.03981     /         N</span></span><br><span class="line"><span class="string"> 15    0.03162     0         O</span></span><br><span class="line"><span class="string"> 16    0.02512     1         P</span></span><br><span class="line"><span class="string"> 17    0.01995     2         Q</span></span><br><span class="line"><span class="string"> 18    0.01585     3         R</span></span><br><span class="line"><span class="string"> 19    0.01259     4         S</span></span><br><span class="line"><span class="string"> 20    0.01000     5         T</span></span><br><span class="line"><span class="string"> 21    0.00794     6         U</span></span><br><span class="line"><span class="string"> 22    0.00631     7         V</span></span><br><span class="line"><span class="string"> 23    0.00501     8         W</span></span><br><span class="line"><span class="string"> 24    0.00398     9         X</span></span><br><span class="line"><span class="string"> 25    0.00316     :         Y</span></span><br><span class="line"><span class="string"> 26    0.00251     ;         Z</span></span><br><span class="line"><span class="string"> 27    0.00200     &lt;         [</span></span><br><span class="line"><span class="string"> 28    0.00158     =         \</span></span><br><span class="line"><span class="string"> 29    0.00126     &gt;         ]</span></span><br><span class="line"><span class="string"> 30    0.00100     ?         ^</span></span><br><span class="line"><span class="string"> 31    0.00079     @         _</span></span><br><span class="line"><span class="string"> 32    0.00063     A         `</span></span><br><span class="line"><span class="string"> 33    0.00050     B         a</span></span><br><span class="line"><span class="string"> 34    0.00040     C         b</span></span><br><span class="line"><span class="string"> 35    0.00032     D         c</span></span><br><span class="line"><span class="string"> 36    0.00025     E         d</span></span><br><span class="line"><span class="string"> 37    0.00020     F         e</span></span><br><span class="line"><span class="string"> 38    0.00016     G         f</span></span><br><span class="line"><span class="string"> 39    0.00013     H         g</span></span><br><span class="line"><span class="string"> 40    0.00010     I         h</span></span><br><span class="line"><span class="string"> 41    0.00008     J         i</span></span><br></pre></td></tr></table></figure>
+<h2 id="为什么是33">为什么是+33</h2>
+<p>因为在计算机中，0-32整型对应的字符有很多是空白和非打印的字符，肉眼不可见，所以才在33位开始编码。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> (<span class="string">&quot;&#123;0:^8&#125;  &#123;1:^8&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;Character&quot;</span>, <span class="string">&quot;ASCII #&quot;</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">40</span>):</span><br><span class="line">    print(<span class="string">&quot;&#123;0:^8&#125;  &#123;1:^8&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">chr</span>(i),i))</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/04/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E4%B8%AD%E7%9A%84%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1005,88 +1094,10 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/10/tanh%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="每天进步一点点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/10/tanh%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">tanh激活函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-05-10 22:04:02 / Modified: 22:59:24" itemprop="dateCreated datePublished" datetime="2021-05-10T22:04:02+08:00">2021-05-10</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="tanh">tanh</h1>
-<p>tanh 函数是机器学习常用的一种激活函数，公式如下： <span class="math display">\[
-f(x) = \frac{e^x-e^{-x}}{e^x+e^{-x}}
-\]</span> tanh 的函数取值为(-1,1)，相比sigmoid的是(0,1). 两函数的图形形状类似。</p>
-<h1 id="求导">求导</h1>
-<p>根据乘法法则，可知 <span class="math display">\[
-(uv)^{\prime} = u^{\prime}v + uv^{\prime}
-\]</span></p>
-<p>所以对于<span class="math inline">\(tanh(x)\)</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-
-tanh(x)^{\prime} &amp;= \frac{d}{dx}(\frac{e^x-e^{-x}}{e^x+e{-x}}) \\
-&amp;= \frac{1}{e^x+e^{-x}}\frac{d}{dx}(e^x-e^{-x}) + (e^x-e^{-x})\frac{d}{dx}(\frac{1}{e^x+e^{-x}}) \\
-&amp;= \frac{e^x+e^{-x}}{e^x+e^{-x}} + (e^x-e^{-x})\frac{1}{(e^x+e^{-x})^2}(-1)(e^x-e^{-x}) \\
-&amp;= 1 - (\frac{e^x-e^{-x}}{e^x+e^{-x}})^2\\
-&amp;= 1 - (tanh(x))^2
-
-\end{aligned}
-\end{equation}\]</span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1152,7 +1163,7 @@ tanh(x)^{\prime} &amp;= \frac{d}{dx}(\frac{e^x-e^{-x}}{e^x+e{-x}}) \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
