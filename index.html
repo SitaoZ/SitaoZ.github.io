@@ -196,6 +196,72 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="每天进步一点点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">字符串匹配算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-12 19:17:14 / Modified: 19:43:53" itemprop="dateCreated datePublished" datetime="2023-12-12T19:17:14+08:00">2023-12-12</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="字符串匹配算法"><a href="#字符串匹配算法" class="headerlink" title="字符串匹配算法"></a>字符串匹配算法</h1><p>字符串匹配算法在生物信息学中应用广泛，在各种比对算法高频出现。<br>字符串匹配算法的使用场景一般是:<br>文本(Text)是一个长度为$n$的数组$T[1..n]$,<br>模式(Pattern)是一个长度为$m$且$m&lt;=n$的数组$P[1..m]$,</p>
+<h2 id="1-Naive-String-Match"><a href="#1-Naive-String-Match" class="headerlink" title="1. Naive String Match"></a>1. Naive String Match</h2><p>朴素的字符串匹配算法，也称为暴力匹配算法。</p>
+<ul>
+<li>没有预处理  </li>
+<li>滑动窗口为1  </li>
+<li>时间复杂度$O((n-m+1)m)$  </li>
+<li>模式中的字符串比较顺序不限  </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">naive_match</span>(<span class="params">partten, text</span>):</span></span><br><span class="line">    occurrences = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(text) - <span class="built_in">len</span>(partten) +<span class="number">1</span>):</span><br><span class="line">        match = <span class="literal">True</span> </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(pattern)):</span><br><span class="line">            <span class="keyword">if</span> text[i+j] != pattern[j]:</span><br><span class="line">                match = <span class="literal">False</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> match:</span><br><span class="line">            occurrences.append(i)</span><br><span class="line">    <span class="keyword">return</span> occurrences</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/08/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -227,7 +293,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-12-10 19:09:24" itemprop="dateModified" datetime="2023-12-10T19:09:24+08:00">2023-12-10</time>
+                <time title="Modified: 2023-12-12 15:47:13" itemprop="dateModified" datetime="2023-12-12T15:47:13+08:00">2023-12-12</time>
               </span>
 
           
@@ -241,20 +307,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="排序算法">排序算法</h2>
-<p>排序算法就是将一组数据中的每个元素按照特定的顺序排序。 常见的排序算法很多，死记硬背不可取，熟悉原理吾所取。</p>
-<h3 id="冒泡算法-bubble-sort">1. 冒泡算法 bubble sort</h3>
-<p>循环数组每次选两个数比较，将较小的放置到前面，慢慢地将小的&quot;浮出水面&quot;。 冒泡排序的时间复杂度最差为<span class="math inline">\(O(n^2)\)</span>，最好为<span class="math inline">\(O(n)\)</span>；空间复杂度为<span class="math inline">\(O(1)\)</span>。</p>
+          <h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><p>排序算法就是将一组数据中的每个元素按照特定的顺序排序。<br>常见的排序算法很多，死记硬背不可取，熟悉原理吾所取。</p>
+<h3 id="1-冒泡算法-bubble-sort"><a href="#1-冒泡算法-bubble-sort" class="headerlink" title="1. 冒泡算法 bubble sort"></a>1. 冒泡算法 bubble sort</h3><p>循环数组每次选两个数比较，将较小的放置到前面，慢慢地将小的”浮出水面”。<br>冒泡排序的时间复杂度最差为$O(n^2)$，最好为$O(n)$；空间复杂度为$O(1)$。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span>(<span class="params">arr: <span class="built_in">list</span></span>) -&gt; list:</span></span><br><span class="line">    <span class="comment"># 注意循环的起始和终止位置</span></span><br><span class="line">    <span class="comment"># 如果i=0, 会导致j+1超过数组元素长度</span></span><br><span class="line">    <span class="comment"># 保证 j 和 j+1 能正常索引</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(arr)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(arr)-i):</span><br><span class="line">            <span class="comment"># 比较大小</span></span><br><span class="line">            <span class="keyword">if</span> arr[j] &gt; arr[j+<span class="number">1</span>]:</span><br><span class="line">                <span class="comment"># 浮出水面操作</span></span><br><span class="line">                arr[j], arr[j+<span class="number">1</span>] = arr[j+<span class="number">1</span>], arr[j]</span><br><span class="line">    <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure>
-<h3 id="选择排序-selection-sort">2. 选择排序 selection sort</h3>
-<p>选择排序, 最直观，直接在数组中找。 - 第一步，在数组中选择最小的元素放置到排序的起始位置， - 第二步，在剩余的元素中继续寻找最小元素，然后放置到已经排序的序列末尾 - 第三步，重复第二步</p>
-<p>选择排序的时间复杂度最差<span class="math inline">\(O(n^2)\)</span>，最好为<span class="math inline">\(O(n^2)\)</span>；空间复杂度为<span class="math inline">\(O(1)\)</span></p>
+<h3 id="2-选择排序-selection-sort"><a href="#2-选择排序-selection-sort" class="headerlink" title="2. 选择排序 selection sort"></a>2. 选择排序 selection sort</h3><p>选择排序, 最直观，直接在数组中找。</p>
+<ul>
+<li>第一步，在数组中选择最小的元素放置到排序的起始位置，</li>
+<li>第二步，在剩余的元素中继续寻找最小元素，然后放置到已经排序的序列末尾</li>
+<li>第三步，重复第二步</li>
+</ul>
+<p>选择排序的时间复杂度最差$O(n^2)$，最好为$O(n^2)$；空间复杂度为$O(1)$</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_sort</span>(<span class="params">arr: <span class="built_in">list</span></span>) -&gt; list:</span></span><br><span class="line">    <span class="comment"># 首先循环数组，指定第一个为最小索引</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(arr) - <span class="number">1</span>):</span><br><span class="line">        <span class="comment"># 记录最小索引</span></span><br><span class="line">        minIndex = i</span><br><span class="line">        <span class="comment"># 遍历剩下的元素</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i, <span class="built_in">len</span>(arr)):</span><br><span class="line">            <span class="keyword">if</span> arr[j] &lt; arr[minIndex]:</span><br><span class="line">                minIndex = j</span><br><span class="line">        <span class="comment"># 如果i 不是最小值的索引，交换i和minIndex交换</span></span><br><span class="line">        <span class="keyword">if</span> i != minIndex:</span><br><span class="line">            arr[i], arr[minIndex] = arr[minIndex], arr[i]</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="插入排序-insertion-sort">3. 插入排序 insertion sort</h3>
-<p>与打扑克牌的原理类似，它的工作原理为将待排列元素划分为「已排序」和「未排序」两部分， 每次从「未排序的」元素中选择一个插入到「已排序的」元素中的正确位置。 插入排序的时间复杂度最高为<span class="math inline">\(O(n^2)\)</span>，即原始数组倒序排列。 时间复杂度最好为<span class="math inline">\(O(n)\)</span>， 即原始素组为顺序排列；</p>
-<p>空间复杂度为<span class="math inline">\(O(1)\)</span>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_sort</span>(<span class="params">arr: <span class="built_in">list</span></span>) -&gt; list:</span></span><br><span class="line">    <span class="comment"># 循环数组</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(arr)):</span><br><span class="line">        preIndex = i - <span class="number">1</span> <span class="comment"># 前一个索引</span></span><br><span class="line">        current = arr[i] <span class="comment"># 保存当前值</span></span><br><span class="line">        <span class="keyword">while</span> preIndex &gt;= <span class="number">0</span> <span class="keyword">and</span> arr[preIndex] &gt; current:</span><br><span class="line">            arr[preIndex+<span class="number">1</span>] = arr[preIndex] <span class="comment"># 交换，将前一位的值换到后一位</span></span><br><span class="line">            preIndex -= <span class="number">1</span>                   <span class="comment"># 索引-1，继续交换；直到换到最前面，preIndex&lt;0停止操作</span></span><br><span class="line">        arr[preIndex+<span class="number">1</span>] = current           <span class="comment"># 当前值的位置</span></span><br><span class="line">        print(i, arr)</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line"><span class="comment"># 当i=0时，数组保持原样</span></span><br><span class="line"><span class="comment"># 当i=1时，preIndex = 0, 如果arr[0] &gt; arr[1], 值交换位置, arr[1] = arr[0], arr[0] = curent</span></span><br><span class="line"><span class="comment"># 当i=2时，preIndex = 1, 如果arr[1] &gt; current, 值交换位置, arr[2] = arr[1], preIndex=0;</span></span><br><span class="line"><span class="comment">#                        如果arr[0] &gt; current, arr[1] = arr[0], preIndex=-1;</span></span><br><span class="line"><span class="comment">#                        退出循环，arr[0] = current</span></span><br><span class="line"><span class="comment"># 注意：current 是传递的中间值；传递是在相邻元素之间交替进行的。</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="3-插入排序-insertion-sort"><a href="#3-插入排序-insertion-sort" class="headerlink" title="3. 插入排序 insertion sort"></a>3. 插入排序 insertion sort</h3><p>与打扑克牌的原理类似，它的工作原理为将待排列元素划分为「已排序」和「未排序」两部分，<br>每次从「未排序的」元素中选择一个插入到「已排序的」元素中的正确位置。<br>插入排序的时间复杂度最高为$O(n^2)$，即原始数组倒序排列。<br>时间复杂度最好为$O(n)$， 即原始素组为顺序排列；</p>
+<p>空间复杂度为$O(1)$。</p>
+<ul>
+<li>算法稳定性<br>假设在数列中存在a[i]=a[j]，若在排序之前，a[i]在a[j]前面；并且排序之后，a[i]仍然在a[j]前面。则这个排序算法是稳定的！<br>插入排序是稳定的。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_sort</span>(<span class="params">arr: <span class="built_in">list</span></span>) -&gt; list:</span></span><br><span class="line">    <span class="comment"># 循环数组</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(arr)):</span><br><span class="line">        preIndex = i - <span class="number">1</span> <span class="comment"># 前一个索引</span></span><br><span class="line">        current = arr[i] <span class="comment"># 保存当前值</span></span><br><span class="line">        <span class="keyword">while</span> preIndex &gt;= <span class="number">0</span> <span class="keyword">and</span> arr[preIndex] &gt; current:</span><br><span class="line">            arr[preIndex+<span class="number">1</span>] = arr[preIndex] <span class="comment"># 交换，将前一位的值换到后一位</span></span><br><span class="line">            preIndex -= <span class="number">1</span>                   <span class="comment"># 索引-1，继续交换；直到换到最前面，preIndex&lt;0停止操作</span></span><br><span class="line">        arr[preIndex+<span class="number">1</span>] = current           <span class="comment"># 当前值的位置</span></span><br><span class="line">        print(i, arr)</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line"><span class="comment"># 当i=0时，数组保持原样</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 当i=1时，current = arr[1]</span></span><br><span class="line"><span class="comment">#          preIndex = 0,  如果arr[0] &gt; current, arr[1] = arr[0], preIndex=-1;</span></span><br><span class="line"><span class="comment"># 退出循环,preIndex = -1, arr[0] = curent</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 当i=2时，current = arr[2]</span></span><br><span class="line"><span class="comment">#          preIndex = 1,  如果arr[1] &gt; current, arr[2] = arr[1], preIndex=0; 值交换位置</span></span><br><span class="line"><span class="comment">#          preIndex = 0,  如果arr[0] &gt; current, arr[1] = arr[0], preIndex=-1;</span></span><br><span class="line"><span class="comment"># 退出循环,preIndex = -1, arr[0] = current</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 当i=3时，current = arr[3]</span></span><br><span class="line"><span class="comment">#          preIndex = 2,  如果arr[2] &gt; current, arr[3] = arr[2], preIndex=1;</span></span><br><span class="line"><span class="comment">#          preIndex = 1,  如果arr[1] &gt; current, arr[2] = arr[1], preIndex=0;</span></span><br><span class="line"><span class="comment">#          preIndex = 0,  如果arr[1] &gt; current, arr[1] = arr[0], preIndex=-1;</span></span><br><span class="line"><span class="comment"># 退出循环,preIndex = -1, arr[0] = current     </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意：current 是传递的中间值；传递是在相邻元素之间交替进行的。</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-希尔排序-shell-sort"><a href="#4-希尔排序-shell-sort" class="headerlink" title="4. 希尔排序 shell sort"></a>4. 希尔排序 shell sort</h3><p>希尔排序 是对插入排序的一种优化，插入排序的原理可知，每次只能移动一个位置。<br>shell sort采用步长分割后再进行排序，本质是分组插入排序。</p>
+<p>具体实现是：</p>
+<ul>
+<li>首先步长(gap)为数组长度除以2，后续步长再除以2，直到以1为步长排序。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shell_sort</span>(<span class="params">arr: <span class="built_in">list</span></span>) -&gt; list:</span></span><br><span class="line">    <span class="keyword">import</span> math </span><br><span class="line">    <span class="comment"># 指定步长的长度</span></span><br><span class="line">    gap = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> (gap &lt; <span class="built_in">len</span>(arr)/<span class="number">3</span>):</span><br><span class="line">        gap = gap*<span class="number">3</span> + <span class="number">1</span></span><br><span class="line">        print(<span class="string">&#x27;gap=&#x27;</span>,gap)</span><br><span class="line">    <span class="comment"># 步长长度随着数组的长度而改变，</span></span><br><span class="line">    <span class="comment"># 但是进入排序之前会是一个定值</span></span><br><span class="line">    <span class="keyword">while</span> gap &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="comment">#使用直接的插入排序</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(gap, <span class="built_in">len</span>(arr)):</span><br><span class="line">            temp = arr[i]</span><br><span class="line">            j = i - gap </span><br><span class="line">            <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> arr[j] &gt; temp:</span><br><span class="line">                arr[j+gap] = arr[j]</span><br><span class="line">                j -= gap </span><br><span class="line">            arr[j+gap] = temp</span><br><span class="line">        <span class="comment"># 减小gap</span></span><br><span class="line">        gap = math.floor(gap/<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -987,111 +1062,6 @@ F(i, j-1) + s(-, y_j) \\
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/07/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="每天进步一点点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/07/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" class="post-title-link" itemprop="url">逻辑回归</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-07 20:26:00" itemprop="dateCreated datePublished" datetime="2021-09-07T20:26:00+08:00">2021-09-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 22:09:00" itemprop="dateModified" datetime="2021-09-08T22:09:00+08:00">2021-09-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="逻辑回归的前世今生">逻辑回归的前世今生</h2>
-<p>与传统的线性回归不同，逻辑回归在传统的线性回归的输出端加上一个logit函数， 使得输出有连续变成离散，每个取值代表不同的类别，从回归任务转成了分类任务， 所以逻辑回归在名字上还保留的回归字眼，但是却成了分类的代表之一。<br>
-一句话总结：逻辑回归假设数据分布服从伯努利分布，通过极大似然函数的方法， 运用梯度下降来求解参数，来实现二分类。</p>
-<h3 id="逻辑回归的基本假设">1.逻辑回归的基本假设</h3>
-<h4 id="第一个基本假设">第一个基本假设</h4>
-<p>假设数据分布服从伯努利分布。伯努利分布，对于抛硬币来说， <span class="math inline">\(p\)</span>是硬币为正的概率，<span class="math inline">\(1-p\)</span>为硬币为负的概率；同样，在逻辑回归的模型中，假设<span class="math inline">\(h_{\theta}(x)\)</span> 为样本正的概率，<span class="math inline">\(1-h_{\theta}(x)\)</span>为样本为负的概率。整个模型如下： <span class="math display">\[
-h_\theta(x;\theta) = p
-\]</span></p>
-<h4 id="第二个假设">第二个假设</h4>
-<p>假设样本为正的概率为： <span class="math display">\[
-p = \frac{1}{1+e^{-\theta^{T}x}}
-\]</span></p>
-<p>所以最终的表达式为： <span class="math display">\[
-h_\theta(x;\theta) = \frac{1}{1+e^{-\theta^{T}x}}
-\]</span></p>
-<h3 id="逻辑回归的损失函数">2.逻辑回归的损失函数</h3>
-<p>逻辑回归采用最大似然函数作为损失函数。</p>
-<p>逻辑回归中<span class="math inline">\(y\in {0,1}\)</span>。约定<span class="math inline">\(\hat{y}=P(y=1|x)\)</span>。</p>
-<h4 id="对一个样本">对一个样本</h4>
-<p>可知 <span class="math display">\[
-P(y|x) = \begin{cases}
-\hat{y}    ,  y=1, \\
-1 - \hat{y},  y=0
-\end{cases}
-\]</span></p>
-<p>写成一个函数 <span class="math display">\[
-P(y|x) = \hat{y}^{y}(1-\hat{y})^{1-y}
-\]</span></p>
-<p><span class="math inline">\(\log\)</span>变换不改变函数的单调性，同时乘法变成加法简化计算，所以上式换个马甲，整理如下： <span class="math display">\[
-\log(P(y|x)) = y\log(\hat{y}) + (1-y)\log(1-\hat{y})
-\]</span></p>
-<p>我们的目的就是最大化上述函数，使得模型更加拟合我们的数据。使用梯度下降法来求解，因此需要对上式取反，求最大值转化成求最小值。 <span class="math display">\[
-L(w,b) = -[y\log\hat{y} + (1-y)\log(1-\hat{y})]
-\]</span></p>
-<h4 id="全部样本-training">全部样本 (training)</h4>
-<p>在全部训练集m上训练求得全部的损失函数。假设样本独立同分布，概率分布函数为每个样本的连乘。 <span class="math display">\[
-P(y|x_1,x_2,...,x_m) = \prod_{i=1}^{m} P(y|x_i)
-\]</span> 上式取对数，连成转化成加法，加速计算，使用极大似然法求得概率最大时对应的参数。 采取一个样本的计算处理，最小化函数取反，得:</p>
-<p><span class="math display">\[
-J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
-\]</span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1161,7 +1131,7 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1264,61 +1234,6 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-          load: ['[tex]/mhchem'],
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
