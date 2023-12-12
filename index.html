@@ -221,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-12-12 19:17:14 / Modified: 19:43:53" itemprop="dateCreated datePublished" datetime="2023-12-12T19:17:14+08:00">2023-12-12</time>
+              <time title="Created: 2023-12-12 19:17:14 / Modified: 19:54:51" itemprop="dateCreated datePublished" datetime="2023-12-12T19:17:14+08:00">2023-12-12</time>
             </span>
 
           
@@ -235,12 +235,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="字符串匹配算法"><a href="#字符串匹配算法" class="headerlink" title="字符串匹配算法"></a>字符串匹配算法</h1><p>字符串匹配算法在生物信息学中应用广泛，在各种比对算法高频出现。<br>字符串匹配算法的使用场景一般是:<br>文本(Text)是一个长度为$n$的数组$T[1..n]$,<br>模式(Pattern)是一个长度为$m$且$m&lt;=n$的数组$P[1..m]$,</p>
+          <h1 id="字符串匹配算法"><a href="#字符串匹配算法" class="headerlink" title="字符串匹配算法"></a>字符串匹配算法</h1><p>字符串匹配算法在生物信息学中应用广泛，在各种比对算法高频出现。<br>字符串匹配算法的使用场景一般是:<br>文本(Text)是一个长度为$n$的数组$$T[1..n]$$,<br>模式(Pattern)是一个长度为$m$且$m&lt;=n$的数组$$P[1..m]$$。</p>
 <h2 id="1-Naive-String-Match"><a href="#1-Naive-String-Match" class="headerlink" title="1. Naive String Match"></a>1. Naive String Match</h2><p>朴素的字符串匹配算法，也称为暴力匹配算法。</p>
 <ul>
 <li>没有预处理  </li>
 <li>滑动窗口为1  </li>
-<li>时间复杂度$O((n-m+1)m)$  </li>
+<li>时间复杂度$$O((n-m+1)m)$$  </li>
 <li>模式中的字符串比较顺序不限  </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">naive_match</span>(<span class="params">partten, text</span>):</span></span><br><span class="line">    occurrences = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(text) - <span class="built_in">len</span>(partten) +<span class="number">1</span>):</span><br><span class="line">        match = <span class="literal">True</span> </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(pattern)):</span><br><span class="line">            <span class="keyword">if</span> text[i+j] != pattern[j]:</span><br><span class="line">                match = <span class="literal">False</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> match:</span><br><span class="line">            occurrences.append(i)</span><br><span class="line">    <span class="keyword">return</span> occurrences</span><br></pre></td></tr></table></figure>
