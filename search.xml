@@ -1398,4 +1398,27 @@ phred+33编码，就是使用phred 值 + 33,求和之后对应的ascii字符就�
         <tag>string match</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基因组坐标系统0-based和1-based</title>
+    <url>/2023/12/26/%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F0-based%E5%92%8C1-based/</url>
+    <content><![CDATA[<h2 id="基因组坐标系统"><a href="#基因组坐标系统" class="headerlink" title="基因组坐标系统"></a>基因组坐标系统</h2><p>基因组文件各式各样，但是主要呈现的还是序列的相关信息；但是各类注释文件采用的坐标系统却存在差异，<br>0-based和1-based坐标均被使用。在计算机中，不同计算机语言对字符串索引采用的规则也存在0-based和1-based，<br>因此，选择正确的索引规则会影响着序列处理的准确性。<br>常用的基因组文件格式如下: <a href="https://genome.ucsc.edu/FAQ/FAQformat.html">file format</a></p>
+<ul>
+<li><p>0-based: 0 1 2 3 4 (UCSC, BED, bedGraph, narrowPeak)</p>
+</li>
+<li><p>1-based:  1 2 3 4  (NCBI, Ensembl, GFF, GTF, VCF, SAM, BAM, wiggle)</p>
+</li>
+<li><p>sequence: A T C G</p>
+</li>
+</ul>
+<p>0-based文件第一个碱基前面的间隔为0，第二个间隔为1，依次类推，数字记录的是碱基之间的间隔的顺序。<br>1-based文件第一个碱基为1， 第二个碱基为1，依次类推，数字记录的碱基本身的顺序。</p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>序列$ATCG$中$TC$的索引坐标分别为</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="comment"># 索引坐标</span></span><br><span class="line">$ 0-based: [1, 3) <span class="comment"># 左闭右开</span></span><br><span class="line">$ 1-based: [2, 3] <span class="comment"># 左闭右闭</span></span><br><span class="line">$ </span><br><span class="line">$ <span class="comment"># 长度计算</span></span><br><span class="line">$ 0-based: 3 - 1     = 2 <span class="comment"># stop - start</span></span><br><span class="line">$ 1-based: 3 - 2 + 1 = 2 <span class="comment"># stop - start + 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="计算机语言"><a href="#计算机语言" class="headerlink" title="计算机语言"></a>计算机语言</h2><p>不同的计算机语言对字符串的索引不同。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="comment"># C C++ Python Java 等语言字符串/数组索引采用0-based</span></span><br><span class="line">$ string = <span class="string">&#x27;ATCG&#x27;</span></span><br><span class="line">$ s1 = string[1:3] <span class="comment"># TC </span></span><br><span class="line">$ s2 = string[0:2] <span class="comment"># AT </span></span><br><span class="line">$ <span class="comment"># length </span></span><br><span class="line">$ len(s1) == 3 - 1 <span class="comment"># True</span></span><br><span class="line">$ len(s2) == 2 - 0 <span class="comment"># True </span></span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">$ <span class="comment"># R Matlab Julia COBOL等语言字符串/数组索引采用1-based</span></span><br><span class="line">$ string &lt;- <span class="string">&#x27;ATCG&#x27;</span></span><br><span class="line">$ <span class="comment"># substr(string, start, end)</span></span><br><span class="line">$ substr(string, <span class="number">1</span>, <span class="number">3</span>)   <span class="comment"># ATC</span></span><br><span class="line">$ nchar(s3) == <span class="number">3</span> - <span class="number">1</span> + <span class="number">1</span> <span class="comment"># TRUE</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="0-based-1-based-转化"><a href="#0-based-1-based-转化" class="headerlink" title="0-based/1-based 转化"></a>0-based/1-based 转化</h2><p>0-based –&gt; 1-based, start+1, stop保持不变  </p>
+<p>1-based –&gt; 0-based, start-1, stop保持不变</p>
+<p><a href="https://genome-blog.gi.ucsc.edu/blog/2016/12/12/the-ucsc-genome-browser-coordinate-counting-systems/">UCSC</a></p>
+]]></content>
+  </entry>
 </search>
