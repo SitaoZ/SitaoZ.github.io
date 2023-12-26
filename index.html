@@ -641,7 +641,7 @@ phred+33编码，就是使用phred 值 + 33,求和之后对应的ascii字符就�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-12-13 08:45:11" itemprop="dateModified" datetime="2023-12-13T08:45:11+08:00">2023-12-13</time>
+                <time title="Modified: 2023-12-26 17:43:03" itemprop="dateModified" datetime="2023-12-26T17:43:03+08:00">2023-12-26</time>
               </span>
 
           
@@ -674,7 +674,15 @@ F(i, j-1) + s(-, y_j)
 <p><span class="math inline">\(F(i, j-1) + s(-, y_j)\)</span> 前半部分<span class="math inline">\(F(i, j-1)\)</span>表示前面<span class="math inline">\(i\)</span>和<span class="math inline">\(j-1\)</span>比对计算完成的情况下，<br>
 比对<span class="math inline">\(y\)</span>序列的当前碱基<span class="math inline">\(y_j\)</span>和<span class="math inline">\(x\)</span>序列空白<span class="math inline">\(-\)</span>, <span class="math inline">\(s(-, y_j)\)</span>表示<span class="math inline">\(y\)</span>序列当前碱基和gap的替换分数。</p>
 <h3 id="罚分矩阵">2 罚分矩阵</h3>
-<p>常见的罚分矩阵有几种： - 等价矩阵：碱基相同为1，不同为0 - 转换-颠换矩阵：嘌呤(AG)之间为转换，嘧啶(TC)之间为转换，嘧啶和嘌呤之间为颠换 - BLAST矩阵：碱基相同为5，碱基不同为-4</p>
+<p>常见的罚分矩阵有几种：</p>
+<ul>
+<li>等价矩阵：碱基相同为1，不同为0<br>
+</li>
+<li>转换-颠换矩阵：嘌呤(AG)之间为转换，嘧啶(TC)之间为转换，嘧啶和嘌呤之间为颠换<br>
+</li>
+<li>BLAST矩阵：碱基相同为5，碱基不同为-4</li>
+</ul>
+<p><a href="ftp://ftp.ncbi.nlm.nih.gov/blast/matrices">NCBI Blast matrices</a></p>
 <p>这里实现的代码采用自定的一个矩阵，具体如下：<br>
 对角线为自身比对上的分数0，即match。<br>
 嘌呤A/G之间比对分数为2，即mismatch。<br>
