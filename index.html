@@ -221,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-12-27 09:16:29 / Modified: 12:05:56" itemprop="dateCreated datePublished" datetime="2023-12-27T09:16:29+08:00">2023-12-27</time>
+              <time title="Created: 2023-12-27 09:16:29 / Modified: 16:38:44" itemprop="dateCreated datePublished" datetime="2023-12-27T09:16:29+08:00">2023-12-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,83 +244,89 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="链的方向性"><a href="#链的方向性" class="headerlink" title="链的方向性"></a>链的方向性</h2><ul>
-<li><p>正链和负链<br>基因组中的正链(forward strand)和负链(reverse strand)是有区别的，正链是参考基因组序列，负链是其反向互补序列。</p>
-</li>
-<li><p>正义链和反义链<br>正义链(sense strand)和反义链(antisense strand)是针对基因转录和翻译过程来定义的；正义链是DNA<br>双链中携带编码蛋白信息的链，也称为编码链，序列与mRNA序列相同；反义链是与正义链互补的一条链，<br>与mRNA序列反向互补，但是反义链是转录中给mRNA当做模板的链，因此反义链也是模板链。</p>
-</li>
-</ul>
-<p>在基因组中，有的基因的正义链是正链，有的基因的正义链是负链。因此，在测序文库构建中，双链DNA中<br>的一条链对某些基因来说是正义链，对另外一些基因来说是反义链。</p>
-<p>总结：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ 正义链(sense strand)     == 编码链(coding strand)       == 非模板链(non template strand)</span><br><span class="line">$ 反义链(antisense strand) == 非编码链(non coding strand) == 模板链(template strand)</span><br><span class="line"></span><br><span class="line">$ 正链上可以同时存在正义链(sense strand)和反义链(antisense strand), 负链亦然。</span><br></pre></td></tr></table></figure>
-<p>图片来源于北大生科院PPT<img src="/strand-lib" alt="strand-info"></p>
-<h2 id="链特异性文库"><a href="#链特异性文库" class="headerlink" title="链特异性文库"></a>链特异性文库</h2><p><img src="/2023/12/27/%E9%93%BE%E7%89%B9%E5%BC%82%E6%80%A7%E6%96%87%E5%BA%93/strand.png" alt="strand"></p>
+          <h2 id="链的方向性">链的方向性</h2>
 <ul>
-<li><p><code>普通的RNA-Seq建库方式</code>：<br>第一步，进行RNA到cDNA的反转录，第二步，在反转录以后，普通的RNA-Seq就直接使用random primer进行第2条链合成，随后加adapter，扩增成文库。<br>这样构建出来的RNA-Seq库进行测序以后是分不清这个序列是来自于genome的那条链的，因为被测序的有可能是gene的foward strand，也有可能是reverse strand。</p>
-</li>
-<li><p><code>链特异性RNA-Seq建库方式</code>：<br>链特异性建库(以图中间的dUTP方法为例)，首先利用随机引物合成RNA的一条cDNA链(反义链，RNA为正义链)，在合成第二条链的时候用dUTP代替dTTP(正义链)，<br>加adaptor后用UDGase处理，将有U的第二条cDNA降解掉。降解发生之后，双链的文库就只剩下了一条链（反义链）。而这条链的两头是接的不同序列的接头。<br>通过PCR扩增，最终只保留了第一条cDNA（反义链）上机测序。这样最后的insert DNA fragment都是来自于第一条cDNA（反义链），也就是dUTP叫fr-firststrand的原因(测第一条链的fr)。<br>dUTP测序中的pair-read中的read1(R1)和基因的方向相反，read2(R2)和基因的方向相同。测序是5’-&gt;3’进行的。因为read1测的是第一链5’端(反义链)，所以read1和基因的方向相反(反义链)。因为read2测的是第一链的3’端(反义链)，所以，read2和insert序列反向互补(正义链)，和基因的方向相同。因此，dUTP方法是RF。<br><img src="/2023/12/27/%E9%93%BE%E7%89%B9%E5%BC%82%E6%80%A7%E6%96%87%E5%BA%93/FR.jpeg" alt="FR"></p>
-</li>
+<li><p>正链和负链 基因组中的正链(forward strand)和负链(reverse strand)是有区别的，正链是参考基因组序列，负链是其反向互补序列。</p></li>
+<li><p>正义链和反义链 正义链(sense strand)和反义链(antisense strand)是针对基因转录和翻译过程来定义的；正义链是DNA 双链中携带编码蛋白信息的链，也称为编码链，序列与mRNA序列相同；反义链是与正义链互补的一条链， 与mRNA序列反向互补，但是反义链是转录中给mRNA当做模板的链，因此反义链也是模板链。</p></li>
+</ul>
+<p>在基因组中，有的基因的正义链是正链，有的基因的正义链是负链。因此，在测序文库构建中，双链DNA中 的一条链对某些基因来说是正义链，对另外一些基因来说是反义链。</p>
+<p>总结： 图片来源于北大生科院PPT<img src="/2023/12/27/%E9%93%BE%E7%89%B9%E5%BC%82%E6%80%A7%E6%96%87%E5%BA%93/strand-lib.png" alt="strand-info"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ 正义链(sense strand)     == 编码链(coding strand)       == 非模板链(non template strand)</span><br><span class="line">$ 反义链(antisense strand) == 非编码链(non coding strand) == 模板链(template strand)</span><br><span class="line"></span><br><span class="line">$ 正链上可以同时存在正义链(sense strand)和反义链(antisense strand), 负链亦然。</span><br></pre></td></tr></table></figure>
+<h2 id="链特异性文库">链特异性文库</h2>
+<p><img src="/2023/12/27/%E9%93%BE%E7%89%B9%E5%BC%82%E6%80%A7%E6%96%87%E5%BA%93/strand.png" alt="strand"> * <code>普通的RNA-Seq建库方式</code>： 第一步，进行RNA到cDNA的反转录，第二步，在反转录以后，普通的RNA-Seq就直接使用random primer进行第2条链合成，随后加adapter，扩增成文库。 这样构建出来的RNA-Seq库进行测序以后是分不清这个序列是来自于genome的那条链的，因为被测序的有可能是gene的foward strand，也有可能是reverse strand。</p>
+<ul>
+<li><code>链特异性RNA-Seq建库方式</code>： 链特异性建库(以图中间的dUTP方法为例)，首先利用随机引物合成RNA的一条cDNA链(反义链，RNA为正义链)，在合成第二条链的时候用dUTP代替dTTP(正义链)， 加adaptor后用UDGase处理，将有U的第二条cDNA降解掉。降解发生之后，双链的文库就只剩下了一条链（反义链）。而这条链的两头是接的不同序列的接头。 通过PCR扩增，最终只保留了第一条cDNA（反义链）上机测序。这样最后的insert DNA fragment都是来自于第一条cDNA（反义链），也就是dUTP叫fr-firststrand的原因(测第一条链的fr)。 dUTP测序中的pair-read中的read1(R1)和基因的方向相反，read2(R2)和基因的方向相同。测序是5'-&gt;3'进行的。因为read1测的是第一链5'端(反义链)，所以read1和基因的方向相反(反义链)。因为read2测的是第一链的3'端(反义链)，所以，read2和insert序列反向互补(正义链)，和基因的方向相同。因此，dUTP方法是RF。 <img src="/2023/12/27/%E9%93%BE%E7%89%B9%E5%BC%82%E6%80%A7%E6%96%87%E5%BA%93/FR.jpeg" alt="FR"></li>
 </ul>
 <p>在reads比对到参考基因组时，那些比对到基因方向（正义链方向）的正链reads就是正义链reads，但是那些比对到基因方向反方向（反义链方向）的正链reads就是反义链reads。那么同样，比对到基因方向的负链reads就是正义链reads，而比对到基因方向反方向（反义链方向）的负链reads就是反义链reads。从而最终将所有正义链reads和反义链reads区分开来。因此在确定基因表达水平时，可以避免基因反义链上的reads匹配的干扰，从而更加准确的检测基因转录表达水平。而且LncRNA的测序也离不开链特异性建库技术。</p>
 <ul>
 <li><code>链特异性文库的优点</code>：1、明确reads链信息的来源，便于基因结构注释；2、更加准确地基因定量</li>
 </ul>
-<h2 id="针对链特异性文库的软件设置"><a href="#针对链特异性文库的软件设置" class="headerlink" title="针对链特异性文库的软件设置"></a>针对链特异性文库的软件设置</h2><h1 id="RNA-Seq-Strand"><a href="#RNA-Seq-Strand" class="headerlink" title="RNA-Seq Strand"></a>RNA-Seq Strand</h1><table>
+<h2 id="针对链特异性文库的软件设置">针对链特异性文库的软件设置</h2>
+<h1 id="rna-seq-strand">RNA-Seq Strand</h1>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
-<tr>
-<th align="left"></th>
-<th align="left">forward (transcript)</th>
-<th align="left">reverse (rev comp of transcript)</th>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">forward (transcript)</th>
+<th style="text-align: left;">reverse (rev comp of transcript)</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">TopHat/Cufflinks <code>--library-type</code></td>
-<td align="left"><code>fr-secondstrand</code></td>
-<td align="left"><code>fr-firststrand</code></td>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TopHat/Cufflinks <code>--library-type</code></td>
+<td style="text-align: left;"><code>fr-secondstrand</code></td>
+<td style="text-align: left;"><code>fr-firststrand</code></td>
 </tr>
-<tr>
-<td align="left">STAR</td>
-<td align="left">1st read strand</td>
-<td align="left">2nd read strand</td>
+<tr class="even">
+<td style="text-align: left;">STAR</td>
+<td style="text-align: left;">1st read strand</td>
+<td style="text-align: left;">2nd read strand</td>
 </tr>
-<tr>
-<td align="left">Picard CollectRnaSeqMetrics <code>STRAND_SPECIFICITY</code></td>
-<td align="left"><code>FIRST_READ_TRANSCRIPTION_STRAND</code></td>
-<td align="left"><code>SECOND_READ_TRANSCRIPTION_STRAND</code></td>
+<tr class="odd">
+<td style="text-align: left;">Picard CollectRnaSeqMetrics <code>STRAND_SPECIFICITY</code></td>
+<td style="text-align: left;"><code>FIRST_READ_TRANSCRIPTION_STRAND</code></td>
+<td style="text-align: left;"><code>SECOND_READ_TRANSCRIPTION_STRAND</code></td>
 </tr>
-<tr>
-<td align="left">htseq-count <code>-s/--stranded</code></td>
-<td align="left"><code>yes</code></td>
-<td align="left"><code>reverse</code></td>
+<tr class="even">
+<td style="text-align: left;">htseq-count <code>-s/--stranded</code></td>
+<td style="text-align: left;"><code>yes</code></td>
+<td style="text-align: left;"><code>reverse</code></td>
 </tr>
-<tr>
-<td align="left">subread featureCounts <code>-s</code></td>
-<td align="left"><code>1</code></td>
-<td align="left"><code>2</code></td>
+<tr class="odd">
+<td style="text-align: left;">subread featureCounts <code>-s</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>2</code></td>
 </tr>
-<tr>
-<td align="left">RSEM <code>--forward-prob</code></td>
-<td align="left"><code>1</code></td>
-<td align="left"><code>0</code></td>
+<tr class="even">
+<td style="text-align: left;">RSEM <code>--forward-prob</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>0</code></td>
 </tr>
-<tr>
-<td align="left">Salmon/Sailfish <code>--libType</code></td>
-<td align="left"><code>SF</code>/<code>ISF</code></td>
-<td align="left"><code>SR</code>/<code>ISR</code></td>
+<tr class="odd">
+<td style="text-align: left;">Salmon/Sailfish <code>--libType</code></td>
+<td style="text-align: left;"><code>SF</code>/<code>ISF</code></td>
+<td style="text-align: left;"><code>SR</code>/<code>ISR</code></td>
 </tr>
-<tr>
-<td align="left">HISAT2 <code>--rna-strandness</code></td>
-<td align="left"><code>FR</code> (<code>F</code> for single-end)</td>
-<td align="left"><code>RF</code> (<code>R</code> for single-end)</td>
+<tr class="even">
+<td style="text-align: left;">HISAT2 <code>--rna-strandness</code></td>
+<td style="text-align: left;"><code>FR</code> (<code>F</code> for single-end)</td>
+<td style="text-align: left;"><code>RF</code> (<code>R</code> for single-end)</td>
 </tr>
-<tr>
-<td align="left">Library Kit</td>
-<td align="left">Illumina ScriptSeq</td>
-<td align="left">Illumina TruSeq Stranded Total RNA</td>
+<tr class="odd">
+<td style="text-align: left;">Library Kit</td>
+<td style="text-align: left;">Illumina ScriptSeq</td>
+<td style="text-align: left;">Illumina TruSeq Stranded Total RNA</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://databeauty.com/blog/opinion/2016/09/21/RNA-seq-strand-issues.html">参考1</a></li>
+<li><a target="_blank" rel="noopener" href="https://rnabio.org/module-09-appendix/0009/12/01/StrandSettings/">参考2</a></li>
 </ul>
 
       
