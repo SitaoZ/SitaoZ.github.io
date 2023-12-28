@@ -1528,7 +1528,7 @@ phred+33编码，就是使用phred 值 + 33,求和之后对应的ascii字符就�
 <p>常说人类基因组大小是<code>3G</code>，指得是<code>3G</code>个碱基。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ 3G bp = 10^9 bp</span><br><span class="line">$ <span class="comment"># 人是二倍体，所以基因组大小为 3G * 2 = 6G</span></span><br></pre></td></tr></table></figure>
 <h2 id="测序数据量">测序数据量</h2>
-<p>常说的测序数据量是多少<code>M</code>reads, 多少<code>G</code>碱基数目。 M：用于描述测序reads数，G：用于描述测序获得的碱基总数。 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ base number = reads number * <span class="built_in">read</span> length</span><br><span class="line">$ 3G bp = 3*10^9/(150*2) = 10M reads <span class="comment"># PE150 测序</span></span><br></pre></td></tr></table></figure></p>
+<p>常说的测序数据量是多少<code>M</code>reads, 多少<code>G</code>碱基数目。 M：用于描述测序reads数，G：用于描述测序获得的碱基总数。 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ base number = reads number * <span class="built_in">read</span> length</span><br><span class="line">$ 3G bp = 3*10^9/(150*2) = 10M reads <span class="comment"># PE150 测序</span></span><br></pre></td></tr></table></figure> <a href="https://en.wikipedia.org/wiki/Unit_prefix">单位换算</a></p>
 ]]></content>
       <tags>
         <tag>sequencing</tag>
