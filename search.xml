@@ -1411,9 +1411,9 @@ phred+33编码，就是使用phred 值 + 33,求和之后对应的ascii字符就�
     <url>/2023/12/26/%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F0-based%E5%92%8C1-based/</url>
     <content><![CDATA[<h2 id="基因组坐标系统"><a href="#基因组坐标系统" class="headerlink" title="基因组坐标系统"></a>基因组坐标系统</h2><p>基因组文件各式各样，但是主要呈现的还是序列的相关信息；但是各类注释文件采用的坐标系统却存在差异，<br>0-based和1-based坐标均被使用。在计算机中，不同计算机语言对字符串索引采用的规则也存在0-based和1-based，<br>因此，选择正确的索引规则会影响着序列处理的准确性。<br>常用的基因组文件格式如下: <a href="https://genome.ucsc.edu/FAQ/FAQformat.html">file format</a></p>
 <ul>
-<li><p>0-based: 0 1 2 3 4 (UCSC, BED, bedGraph, narrowPeak)</p>
+<li><p>0-based: 0 1 2 3 4 (UCSC, BED, bedGraph, narrowPeak, BAM)</p>
 </li>
-<li><p>1-based:  1 2 3 4  (NCBI, Ensembl, GFF, GTF, VCF, SAM, BAM, wiggle)</p>
+<li><p>1-based:  1 2 3 4  (NCBI, Ensembl, GFF, GTF, VCF, SAM, wiggle)</p>
 </li>
 <li><p>sequence: A T C G</p>
 </li>
