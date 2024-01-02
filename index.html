@@ -196,6 +196,76 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/02/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D-Z%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="每天进步一点点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/01/02/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D-Z%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">字符串匹配-Z算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-01-02 09:10:14 / Modified: 10:41:57" itemprop="dateCreated datePublished" datetime="2024-01-02T09:10:14+08:00">2024-01-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="z-算法">Z 算法</h2>
+<p>对于长度为<code>n</code>的字符串<code>s</code>，定义函数<code>z[i]</code>表示字符串本身<code>s</code>和其后缀<code>s[i, n-1]</code>的最长公共前缀长度(LCP, longest common prefix)。 <code>z</code>被称为<code>s</code>的<code>z</code>函数。<code>z[0]=0</code>。计算z数组的方法一般被称为Z-Algorithm，也称为扩增KMP算法。</p>
+<ul>
+<li>Z函数的朴素实现方式 朴素实现方式的复杂度为<code>O(n^2)</code>， <code>for</code>循环和<code>while</code>循环两层， 举一个最极端的例子，<code>s='aaaaa'</code>， 很明显每次while循环在每一个i时都会遍历全部的<code>z</code>，长度也为<code>n</code>，故朴素算法的时间复杂度为<code>O(n^2)</code>。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">z_function_trivial</span>(<span class="params">s</span>):</span></span><br><span class="line">    n = <span class="built_in">len</span>(s)</span><br><span class="line">    z = [<span class="number">0</span>] * n <span class="comment"># 最长公共前缀的长度(s和其后缀)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">        <span class="comment"># 索引正常 同时 *s前缀*和*s后缀的前缀*相同</span></span><br><span class="line">        <span class="keyword">while</span> i + z[i] &lt; n <span class="keyword">and</span> s[z[i]] == s[i+z[i]]:</span><br><span class="line">            <span class="comment"># 在i位置，s和s[i, n-1]的最长公共前缀的长度，相同+1</span></span><br><span class="line">            z[i] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> z</span><br><span class="line"></span><br><span class="line"><span class="comment"># 举例子</span></span><br><span class="line"><span class="comment"># s = &#x27;abaab&#x27;</span></span><br><span class="line"><span class="comment"># n = 5</span></span><br><span class="line"><span class="comment">#                                                           z[0] = 0</span></span><br><span class="line"><span class="comment"># i = 1, s = &#x27;abaab&#x27;, s的后缀s[1:4] = &#x27;baab&#x27;, 两者的LCP为0, z[1] = 0</span></span><br><span class="line"><span class="comment"># i = 2, s = &#x27;abaab&#x27;, s的后缀s[2:4] = &#x27;aab&#x27; , 两者的LCP为1, z[2] = 1</span></span><br><span class="line"><span class="comment"># i = 3, s = &#x27;abaab&#x27;, s的后缀s[3:4] = &#x27;ab&#x27;  , 两者的LCP为2, z[3] = 2</span></span><br><span class="line"><span class="comment"># i = 4, s = &#x27;abaab&#x27;, s的后缀s[4] = b       , 两者的LCP为3, z[4] = 0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Z函数线性算法</li>
+</ul>
+<p>对于字符串匹配，要想提速匹配过程，必须利用前面匹配好的数组，不然达不到加速的目的。 对于特定的i, 我们称区间<code>[i, i + z[i]]</code>是<code>i</code>的匹配段，称为<code>Z-box</code>。 算法中，我们维护右端点最靠右的匹配端。记作<code>[l, r]</code>。根据定义，<code>s[l, r]</code>是<code>s</code>的前缀。在计算<code>z[i]</code>，我们保证<code>l&lt;=i</code>。 初始化时，l=r=0。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">z_function</span>(<span class="params">s</span>):</span></span><br><span class="line">    n = <span class="built_in">len</span>(s)</span><br><span class="line">    z = [<span class="number">0</span>] * n </span><br><span class="line">    l, r = <span class="number">0</span>, <span class="number">0</span> </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">        <span class="keyword">if</span> i &lt;= r <span class="keyword">and</span> z[i -l] &lt; r -l + <span class="number">1</span>:</span><br><span class="line">            z[i] = z[i - l]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            z[i] = <span class="built_in">max</span>(<span class="number">0</span>, r - i + <span class="number">1</span>) <span class="comment"># 关键加速步骤</span></span><br><span class="line">            <span class="comment"># 朴素算法</span></span><br><span class="line">            <span class="keyword">while</span> i + z[i] &lt; n <span class="keyword">and</span> s[z[i]] == s[i + z[i]]:</span><br><span class="line">                z[i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> i + z[i] - <span class="number">1</span> &gt; r:</span><br><span class="line">            l = i</span><br><span class="line">            r = i + z[i] - <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> z</span><br></pre></td></tr></table></figure>
+<p>复杂度分析: 对于内层的<code>while</code>循环，每次执行都会使得<code>r</code>向后移动至少<code>1</code>位，由于<code>r&lt;n-1</code>所以总共会执行<code>n</code>次。 对于外层循环，只有一次线性遍历。总复杂度为<code>O(n)</code>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/28/%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%92%8C%E6%B5%8B%E5%BA%8F%E6%95%B0%E6%8D%AE%E9%87%8F%E5%A4%A7%E5%B0%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1007,87 +1077,6 @@ F(i, j-1) + s(-, y_j) \\
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/01/GFF%E5%92%8CGTF%E4%B8%ADframe%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="每天进步一点点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/12/01/GFF%E5%92%8CGTF%E4%B8%ADframe%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B/" class="post-title-link" itemprop="url">GFF和GTF中frame计算过程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-12-01 08:49:39 / Modified: 09:41:36" itemprop="dateCreated datePublished" datetime="2023-12-01T08:49:39+08:00">2023-12-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/file-format/" itemprop="url" rel="index"><span itemprop="name">file format</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>GFF/GTF是基因组注释中常用的文件格式，两者的主要差别在最后一列。 第八列中的frame，用来表示当前特征在CDS编码中的相关信息。</p>
-<h2 id="frame-可选值">1. frame 可选值</h2>
-<ul>
-<li>0, 0表示当前编码的CDS是从当前特征的第一个碱基开始解码，即该CDS的第一个碱基是完整密码子的第一个碱基。</li>
-<li>1, 1表示当前编码的CDS是从第二个碱基开始解码，即该CDS的第二个碱基是完整密码子的第一个碱基。</li>
-<li>2, 2表示当前编码的CDS是从第三个碱基开始解码，即该CDS的第三个碱基是完整密码子的第一个碱基。</li>
-</ul>
-<h2 id="frame-计算">2. frame 计算</h2>
-<h3 id="定义函数">定义函数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">b</span>(<span class="params">length, frame</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;frame calculate formula</span></span><br><span class="line"><span class="string">    length - frame: 前面的CDS特征长度减去它自己的frame值，表示在前面CDS特征上的第一个完整的密码子开始的长度。</span></span><br><span class="line"><span class="string">    ((length-frame) % 3): 前面CDS特征3&#x27;端最后一个完整密码子之后剩下的碱基数。</span></span><br><span class="line"><span class="string">    (3- ((length-frame) % 3)): 是除去特征的3&#x27;端所代表的碱基后，密码子中剩余的碱基数目。</span></span><br><span class="line"><span class="string">    (3- ((length-frame) % 3)) % 3: 把3变成0，因为三个碱基组成一个完整的密码子，1和2保持不变。</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    params: </span></span><br><span class="line"><span class="string">      length: previous feature length (5&#x27;-&gt;3&#x27;)</span></span><br><span class="line"><span class="string">      frame: previous feature frame (5&#x27;-&gt;3&#x27;)</span></span><br><span class="line"><span class="string">    return: </span></span><br><span class="line"><span class="string">       next feature frame</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="number">3</span>- ((length-frame) % <span class="number">3</span>)) % <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cal_frame</span>(<span class="params">lengths, strand</span>):</span></span><br><span class="line">    <span class="keyword">if</span> strand == <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">        lengths = lengths[::-<span class="number">1</span>]</span><br><span class="line">    frames = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(lengths)):</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">            frames.append(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            frame = b(lengths[i-<span class="number">1</span>], frames[i-<span class="number">1</span>])</span><br><span class="line">            frames.append(frame)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> frames</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># + example</span></span><br><span class="line">    <span class="comment"># length_list = [169,101,123,186,222,154,150,89,204,108,135,132,133,93,126,126,144,129,161]</span></span><br><span class="line">    <span class="comment"># strand = &quot;+&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># - example</span></span><br><span class="line">    length_list = [<span class="number">278</span>,<span class="number">778</span>,<span class="number">231</span>]</span><br><span class="line">    strand = <span class="string">&#x27;-&#x27;</span></span><br><span class="line">    print(cal_frame(length_list, strand))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="对于正链">对于正链 +</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ cat Araport11_GFF3_genes_transposons.Mar92021.correct.gff | grep AT1G01950.1 | awk <span class="string">&#x27;$3~/CDS/&#x27;</span></span><br><span class="line">Chr1	Araport11	CDS	325473	325641	.	+	0	ID=AT1G01950:CDS:1;Parent=AT1G01950.1;Name=ARK2:CDS:1</span><br><span class="line">Chr1	Araport11	CDS	325913	326013	.	+	2	ID=AT1G01950:CDS:2;Parent=AT1G01950.1;Name=ARK2:CDS:2</span><br><span class="line">Chr1	Araport11	CDS	326106	326228	.	+	0	ID=AT1G01950:CDS:3;Parent=AT1G01950.1;Name=ARK2:CDS:3</span><br><span class="line">Chr1	Araport11	CDS	326332	326517	.	+	0	ID=AT1G01950:CDS:4;Parent=AT1G01950.1;Name=ARK2:CDS:4</span><br><span class="line">Chr1	Araport11	CDS	326594	326815	.	+	0	ID=AT1G01950:CDS:6;Parent=AT1G01950.1;Name=ARK2:CDS:6</span><br><span class="line">Chr1	Araport11	CDS	326931	327084	.	+	0	ID=AT1G01950:CDS:7;Parent=AT1G01950.1;Name=ARK2:CDS:7</span><br><span class="line">Chr1	Araport11	CDS	327237	327386	.	+	2	ID=AT1G01950:CDS:8;Parent=AT1G01950.1;Name=ARK2:CDS:8</span><br><span class="line">Chr1	Araport11	CDS	327488	327576	.	+	2	ID=AT1G01950:CDS:9;Parent=AT1G01950.1;Name=ARK2:CDS:9</span><br><span class="line">Chr1	Araport11	CDS	327663	327866	.	+	0	ID=AT1G01950:CDS:10;Parent=AT1G01950.1;Name=ARK2:CDS:10</span><br><span class="line">Chr1	Araport11	CDS	328000	328107	.	+	0	ID=AT1G01950:CDS:11;Parent=AT1G01950.1;Name=ARK2:CDS:11</span><br><span class="line">Chr1	Araport11	CDS	328188	328322	.	+	0	ID=AT1G01950:CDS:12;Parent=AT1G01950.1;Name=ARK2:CDS:12</span><br><span class="line">Chr1	Araport11	CDS	328424	328555	.	+	0	ID=AT1G01950:CDS:14;Parent=AT1G01950.1;Name=ARK2:CDS:14</span><br><span class="line">Chr1	Araport11	CDS	328898	329030	.	+	0	ID=AT1G01950:CDS:17;Parent=AT1G01950.1;Name=ARK2:CDS:17</span><br><span class="line">Chr1	Araport11	CDS	329119	329211	.	+	2	ID=AT1G01950:CDS:18;Parent=AT1G01950.1;Name=ARK2:CDS:18</span><br><span class="line">Chr1	Araport11	CDS	329311	329436	.	+	2	ID=AT1G01950:CDS:19;Parent=AT1G01950.1;Name=ARK2:CDS:19</span><br><span class="line">Chr1	Araport11	CDS	329573	329698	.	+	2	ID=AT1G01950:CDS:20;Parent=AT1G01950.1;Name=ARK2:CDS:20</span><br><span class="line">Chr1	Araport11	CDS	329781	329924	.	+	2	ID=AT1G01950:CDS:21;Parent=AT1G01950.1;Name=ARK2:CDS:21</span><br><span class="line">Chr1	Araport11	CDS	330027	330155	.	+	2	ID=AT1G01950:CDS:22;Parent=AT1G01950.1;Name=ARK2:CDS:22</span><br><span class="line">Chr1	Araport11	CDS	330243	330403	.	+	2	ID=AT1G01950:CDS:23;Parent=AT1G01950.1;Name=ARK2:CDS:23</span><br><span class="line"></span><br><span class="line">$ cat Araport11_GFF3_genes_transposons.Mar92021.correct.gff | grep AT1G01950.1 | awk <span class="string">&#x27;$3~/CDS/&#x27;</span> | awk <span class="string">&#x27;&#123;print$5-$4+1&#125;&#x27;</span> | xargs | sed <span class="string">&#x27;s/ /,/g&#x27;</span></span><br><span class="line"></span><br><span class="line">$ <span class="comment"># 169,101,123,186,222,154,150,89,204,108,135,132,133,93,126,126,144,129,161</span></span><br><span class="line">$ <span class="comment"># [0, 2, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2]</span></span><br></pre></td></tr></table></figure>
-<h3 id="对于负链--">对于负链 -</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ cat Araport11_GFF3_genes_transposons.Mar92021.correct.gff  | grep AT1G01090.1 | awk <span class="string">&#x27;$3~/CDS/&#x27;</span></span><br><span class="line">Chr1	Araport11	CDS	47705	47982	.	-	2	ID=AT1G01090:CDS:3;Parent=AT1G01090.1;Name=PDH-E1 ALPHA:CDS:3</span><br><span class="line">Chr1	Araport11	CDS	48075	48852	.	-	0	ID=AT1G01090:CDS:2;Parent=AT1G01090.1;Name=PDH-E1 ALPHA:CDS:2</span><br><span class="line">Chr1	Araport11	CDS	48936	49166	.	-	0	ID=AT1G01090:CDS:1;Parent=AT1G01090.1;Name=PDH-E1 ALPHA:CDS:1</span><br><span class="line"></span><br><span class="line">$ cat Araport11_GFF3_genes_transposons.Mar92021.correct.gff  | grep AT1G01090.1 | awk <span class="string">&#x27;$3~/CDS/&#x27;</span> | awk <span class="string">&#x27;&#123;print$5-$4+1&#125;&#x27;</span> | xargs | sed <span class="string">&#x27;s/ /,/g&#x27;</span></span><br><span class="line"></span><br><span class="line">$ <span class="comment"># 278,778,231</span></span><br><span class="line">$ <span class="comment"># [0, 0, 2]</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1157,7 +1146,7 @@ F(i, j-1) + s(-, y_j) \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1197,7 +1186,7 @@ F(i, j-1) + s(-, y_j) \\
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
