@@ -259,53 +259,6 @@ L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \\
 ]]></content>
   </entry>
   <entry>
-    <title>Possion distribution</title>
-    <url>/2021/01/19/possion-distribution/</url>
-    <content><![CDATA[<p>泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。<br>它描述的是在单位时间（空间）内随机事件发生的次数。<br>泊松分布的推导如下：</p>
-<h1 id="二项分布-binomial-distribution"><a href="#二项分布-binomial-distribution" class="headerlink" title="二项分布(binomial distribution)"></a>二项分布(binomial distribution)</h1><p>两点分布重复n次，就得到了二项分布，二项分布的概率质量函数(probability mass function, PMF):<br>n为实验的总次数，k为实验成功的次数，p是成功的概率</p>
-<script type="math/tex; mode=display">P(X=k)=C_n^kp^k(1-p)^{n-k}</script><p>服从二项分布的随机变量记为 $X \sim B(n,p)$ </p>
-<h2 id="二项分布的期望"><a href="#二项分布的期望" class="headerlink" title="二项分布的期望"></a>二项分布的期望</h2><p>二项分布分布，事件发生的概率为p, 不发生的概率为q=1-p,<br>这里的 $C_n^k$ 称为二项系数，根据二项展开式的系数，可以反推二项分布的概率和为1.</p>
-<script type="math/tex; mode=display">\sum_{k=0}^nP(X=k) = \sum_{k=0}^nC_n^kp^k(1-p)^{n-k} = (p+(1-p))^n=1</script><p>期望是离散型随机变量的特征之一，定义如下：<br>设$\xi$ 为离散型随机变量，它可以取值$x_1,x_2,x_3,…$，对应的概率为$p_1,p_2,p_3,…$<br>如果级数</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{\infty}x_ip_i</script><p>绝对收敛，则把它称为$\xi$的数学期望（mathematical expectation）,简称期望，期望值或均值（mean）,记为$E\xi$<br>当$\sum_{i=1}^{\infty}{\vert}x_i{\vert}p_i$ 发散时，则$\xi$的数学期望不存在。</p>
-<p>\begin{equation}<br>\begin{aligned}<br>\sum<em>{k=0}^{n}kp_k &amp;= \sum</em>{k=1}{n}{n \choose k}p^kq^{n-k} \<br>&amp;= np \sum_{k=1}^{n}{n-1 \choose k-1}p^{k-1}q^{n-k} \<br>&amp;=np(p+q)^{n-1} \<br>&amp;=np<br>\end{aligned}<br>\end{equation}</p>
-<h2 id="二项分布的方差"><a href="#二项分布的方差" class="headerlink" title="二项分布的方差"></a>二项分布的方差</h2><p>随机变量$\xi$,如果$E(\xi-E\xi)^2$存在，则称它为随机变量$\xi$的方差（variance）.<br>并记为$D\xi$，而$\sqrt{D\xi}$称为标准差（standard deviation），描述的是随机变量<br>对其数学期望的偏离程度（dispersion）。</p>
-<script type="math/tex; mode=display">E(X) = np</script><p>\begin{equation}<br>\begin{aligned}</p>
-<p>E(X^2) &amp;= \sum<em>{k=0}^{n} k^2 C_n^kp^kq^{n-k} \<br>&amp;=\sum</em>{k=1}^{n} [k(k-1)+k]\frac{n!}{k!(n-k)!}p^kq^{n-k} \<br>&amp;=\sum<em>{k=2}^{n} \frac{n!}{(k-2)!(n-k)!} + E(X) \<br>&amp;=n(n-1)p^2 \sum</em>{k=2}^{n} \frac{(n-2)!}{(k-2)![(n-2) - (k-2)]!} \cdot p^{k-2}q^{(n-2)-(k-2)} +E(X) \<br>&amp;=n(n-1)p^2 \sum<em>{k{‘}=0}^{n-2} C</em>{n-2}^k{‘}p^k{‘}q^{(n-2)-k{‘}} + E(X) \<br>&amp;=n(n-1)p^2 + np \<br>&amp;=n^2p^2 + np(1-p) \</p>
-<p>\end{aligned}<br>\end{equation}</p>
-<p>由于方差恒等式$D(X) = E(X^2) - [E(X)]^2$，所以 $D(X) = np(1-p)$</p>
-<h1 id="泊松分布-possion-distribution"><a href="#泊松分布-possion-distribution" class="headerlink" title="泊松分布(possion distribution)"></a>泊松分布(possion distribution)</h1><p>在下面的情形下，$n \to \infty,\,p,\,\lambda &gt; 0,\,\lambda=np,\,p = \frac{\lambda}{n}$</p>
-<script type="math/tex; mode=display">P(X=k)=\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}</script><script type="math/tex; mode=display">C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{1}{k!} \cdot \frac{n(n-1)...(n-k+1)}{n^k} \cdot \lambda^k \cdot\frac{(1-\frac{\lambda}{n})^n}{(1-\frac{\lambda}{n})^k}</script><p>因为$n \to \infty$, k不变，第二个因子 </p>
-<script type="math/tex; mode=display">\displaystyle \lim_{n \to \infty} \frac{n(n-1)...(n-k+1)}{n^k}=\frac{n}{n} \cdot \frac{n-1}{n}...\frac{n-(k-1)}{n}=1</script><p>第四个因子中的分母</p>
-<script type="math/tex; mode=display">\displaystyle \lim_{n \to \infty}(1-\frac{\lambda}{n})^k = 1</script><p>第四个因子中的分子</p>
-<script type="math/tex; mode=display">(1-\frac{\lambda}{n})^n = [(1-\frac{\lambda}{n})^{-\frac{n}{\lambda}}]^{-\lambda}</script><p>因为 $\displaystyle \lim_{n \to \infty} (1-\frac{\lambda}{n})^{-\frac{n}{\lambda}} = e$，所以 $(1-\frac{\lambda}{n})^n = e^{-\lambda}$</p>
-<p>因此 </p>
-<script type="math/tex; mode=display">\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{\lambda^k}{k!}e^{-\lambda}</script><p>综上</p>
-<script type="math/tex; mode=display">P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,2...</script><p>服从泊松分布随机变量记为 $X \sim p(\lambda)$<br>在应用中，当p相当小（p &lt;= 0.1）时，我们用下面的近似公式<br>$b(k;n,p) \sim \frac{(np)^k}{k!}e^{-np}$ </p>
-<h2 id="泊松分布期望"><a href="#泊松分布期望" class="headerlink" title="泊松分布期望"></a>泊松分布期望</h2><p>证明泊松分布的概率和为1</p>
-<script type="math/tex; mode=display">\sum_{k=0}^{\infty}p(k;\lambda) = \sum_{k=0}^{\infty} \frac{\lambda^k}{k!}e^{-\lambda}=e^{-\lambda} \cdot e^{\lambda}=1</script><p>$e^{\lambda} = \sum_{k=0}^{\infty} \frac{\lambda^k}{k!}$ 为指数函数的泰勒展开式 </p>
-<p>\begin{equation}<br>\begin{aligned}<br>\sum<em>{k=0}^{\infty}kp_k &amp;= \sum</em>{k=1}^{\infty}k \cdot \frac{\lambda^k}{k!}e^{-\lambda} \<br>&amp;=\lambda e^{-\lambda}\sum_{k=1}^{\infty}\frac{\lambda^{k-1}}{(k-1)!} \<br>&amp;=\lambda e^{-\lambda} \cdot e^\lambda \<br>&amp;=\lambda</p>
-<p>\end{aligned}<br>\end{equation}</p>
-<h2 id="泊松分布方差"><a href="#泊松分布方差" class="headerlink" title="泊松分布方差"></a>泊松分布方差</h2><p>方差的推导如下：<br>对于泊松分布期望：$E(\xi)=\lambda$</p>
-<p>\begin{equation}<br>\begin{aligned}<br>E(\xi)^2 &amp;= \sum k^2p<em>k \<br>&amp;=\sum</em>{k=1}^{\infty}k^2 \cdot \frac{\lambda^k}{k!}e^{-\lambda} \<br>&amp;=\sum<em>{k=1}^{\infty}k \frac{\lambda^k}{(k-1)!} e^{-\lambda} \<br>&amp;=\sum</em>{k=1}^{\infty} [(k-1)+1] \cdot \frac{\lambda^k}{(k-1)!} e^{-\lambda} \<br>&amp;=\sum<em>{k=2}^{\infty} \frac{\lambda^k}{(k-2)!}e^{-\lambda} + \sum</em>{k=1}^{\infty} \frac{\lambda^k}{(k-1)!}e^{-\lambda} \<br>&amp;=\lambda^2\sum<em>{k{‘}=0}^{\infty} \frac{\lambda^k{‘}}{(k{‘})!}e^{-\lambda} + \lambda\sum</em>{k{‘’}=0}^{\infty} \frac{\lambda^k{‘’}}{(k{‘’})!}e^{-\lambda} \<br>&amp;=\lambda^2+\lambda<br>\end{aligned}<br>\end{equation}</p>
-<script type="math/tex; mode=display">D\xi = E(\xi^2) - [E(\xi)]^2 = \lambda^2+\lambda -\lambda^2 = \lambda</script><p>附方差恒等式的证明</p>
-<script type="math/tex; mode=display">D\xi = E(\xi^2) - [E(\xi)]^2</script><p>\begin{equation}<br>\begin{aligned}</p>
-<p>D(\xi) &amp;= E[\xi - E(\xi)]^2 \<br>&amp;=E{\xi^2 - 2E(\xi) \cdot \xi +[E(\xi)]^2} \<br>&amp;=E(\xi^2) - E[2E(\xi) \cdot \xi] + E[E(\xi)]^2 \<br>&amp;=E(\xi^2) - 2E(\xi) \cdot E(\xi) + [E(\xi)]^2\<br>&amp;=E(\xi^2) - [E(\xi)]^2</p>
-<p>\end{aligned}<br>\end{equation}</p>
-<p>方差恒等式证明二：<br>以$\xi \sim p(\xi)$为例</p>
-<p>\begin{equation}<br>\begin{aligned}</p>
-<p>D(\xi) &amp;= \int<em>{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \<br>&amp;=\int</em>{-\infty}^{\infty}{\xi^2 - 2E(\xi) \cdot \xi + [E(\xi)]^2}p(\xi)d\xi \<br>&amp;=\int<em>{-\infty}^{\infty}\xi^2p(\xi)d\xi - 2E(\xi)\int</em>{-\infty}^{\infty}\xi p(\xi)d\xi + [E(\xi)]^2\int_{-\infty}^{\infty}p(\xi)d\xi \<br>&amp;=E(\xi^2) - 2E(\xi) \cdot E(\xi) + [E(\xi)]^2 \cdot 1 \<br>&amp;=E(\xi^2) - [E(\xi)]^2</p>
-<p>\end{aligned}<br>\end{equation}</p>
-]]></content>
-      <categories>
-        <category>probability</category>
-        <category>possion</category>
-      </categories>
-      <tags>
-        <tag>二项分布</tag>
-        <tag>泊松分布</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>python函数递归</title>
     <url>/2023/11/17/python%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92/</url>
     <content><![CDATA[<h2 id="python-函数递归-recursion">python 函数递归 (recursion)</h2>
@@ -1512,5 +1465,103 @@ phred+33编码，就是使用phred 值 + 33,求和之后对应的ascii字符就�
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># The Lander/Waterman formula用来计算覆盖度。</span></span><br><span class="line"><span class="comment"># 公式的一般形式:</span></span><br><span class="line">    C = LN / G</span><br><span class="line"><span class="comment"># C 覆盖度(coverage)</span></span><br><span class="line"><span class="comment"># G 单倍型基因组长度(haploid genome length)</span></span><br><span class="line"><span class="comment"># L 读段长度(read length)</span></span><br><span class="line"><span class="comment"># N 读段总数(number of reads)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://cs.brown.edu/courses/csci1820/notes/CH2_Notes.pdf">computational biology in Brown university</a><br><a href="https://dornsife.usc.edu/msw/">Micheal Waterman web</a><br><a href="https://mathweb.ucsd.edu/~gptesler/283/slides/shotgun_w19-handout.pdf">UCSD shortgun</a><br><a href="https://www.illumina.com/documents/products/technotes/technote_coverage_calculation.pdf">Illumina coverage</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Possion distribution</title>
+    <url>/2021/01/19/Possion-Distribution-0/</url>
+    <content><![CDATA[<p>泊松分布，二项分布的极限形式，广泛应用于管理科学，运筹学，自然科学中。生活中某个十字路口在一定时间内经过的车辆数，就服从泊松分布。 它描述的是在单位时间（空间）内随机事件发生的次数。 泊松分布的推导如下：</p>
+<h1 id="二项分布binomial-distribution">二项分布(binomial distribution)</h1>
+<p>两点分布重复n次，就得到了二项分布，二项分布的概率质量函数(probability mass function, PMF): n为实验的总次数，k为实验成功的次数，p是成功的概率 <span class="math display">\[ P(X=k)=C_n^kp^k(1-p)^{n-k} \]</span> 服从二项分布的随机变量记为 <span class="math inline">\(X \sim B(n,p)\)</span></p>
+<h2 id="二项分布的期望">二项分布的期望</h2>
+<p>二项分布分布，事件发生的概率为p, 不发生的概率为q=1-p, 这里的 <span class="math inline">\(C_n^k\)</span> 称为二项系数，根据二项展开式的系数，可以反推二项分布的概率和为1. <span class="math display">\[ \sum_{k=0}^nP(X=k) = \sum_{k=0}^nC_n^kp^k(1-p)^{n-k} = (p+(1-p))^n=1 \]</span> 期望是离散型随机变量的特征之一，定义如下： 设<span class="math inline">\(\xi\)</span> 为离散型随机变量，它可以取值<span class="math inline">\(x_1,x_2,x_3,...\)</span>，对应的概率为<span class="math inline">\(p_1,p_2,p_3,...\)</span> 如果级数 <span class="math display">\[\sum_{i=1}^{\infty}x_ip_i\]</span> 绝对收敛，则把它称为<span class="math inline">\(\xi\)</span>的数学期望（mathematical expectation）,简称期望，期望值或均值（mean）,记为<span class="math inline">\(E\xi\)</span> 当<span class="math inline">\(\sum_{i=1}^{\infty}{\vert}x_i{\vert}p_i\)</span> 发散时，则<span class="math inline">\(\xi\)</span>的数学期望不存在。</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\sum_{k=0}^{n}kp_k &amp;= \sum_{k=1}{n}{n \choose k}p^kq^{n-k} \\
+&amp;= np \sum_{k=1}^{n}{n-1 \choose k-1}p^{k-1}q^{n-k} \\
+&amp;=np(p+q)^{n-1} \\
+&amp;=np 
+\end{aligned}
+\end{equation}\]</span></p>
+<h2 id="二项分布的方差">二项分布的方差</h2>
+<p>随机变量<span class="math inline">\(\xi\)</span>,如果<span class="math inline">\(E(\xi-E\xi)^2\)</span>存在，则称它为随机变量<span class="math inline">\(\xi\)</span>的方差（variance）. 并记为<span class="math inline">\(D\xi\)</span>，而<span class="math inline">\(\sqrt{D\xi}\)</span>称为标准差（standard deviation），描述的是随机变量 对其数学期望的偏离程度（dispersion）。</p>
+<p><span class="math display">\[ E(X) = np\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
+&amp;=\sum_{k=1}^{n} [k(k-1)+k]\frac{n!}{k!(n-k)!}p^kq^{n-k} \\
+&amp;=\sum_{k=2}^{n} \frac{n!}{(k-2)!(n-k)!} + E(X) \\
+&amp;=n(n-1)p^2 \sum_{k=2}^{n} \frac{(n-2)!}{(k-2)![(n-2) - (k-2)]!} \cdot p^{k-2}q^{(n-2)-(k-2)} +E(X) \\
+&amp;=n(n-1)p^2 \sum_{k{&#39;}=0}^{n-2} C_{n-2}^k{&#39;}p^k{&#39;}q^{(n-2)-k{&#39;}} + E(X) \\
+&amp;=n(n-1)p^2 + np \\
+&amp;=n^2p^2 + np(1-p) \\
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>由于方差恒等式<span class="math inline">\(D(X) = E(X^2) - [E(X)]^2\)</span>，所以 <span class="math inline">\(D(X) = np(1-p)\)</span></p>
+<h1 id="泊松分布possion-distribution">泊松分布(possion distribution)</h1>
+<p>在下面的情形下，<span class="math inline">\(n \to \infty,\,p,\,\lambda &gt; 0,\,\lambda=np,\,p = \frac{\lambda}{n}\)</span> <span class="math display">\[P(X=k)=\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}\]</span> <span class="math display">\[C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{1}{k!} \cdot \frac{n(n-1)...(n-k+1)}{n^k} \cdot \lambda^k \cdot\frac{(1-\frac{\lambda}{n})^n}{(1-\frac{\lambda}{n})^k}\]</span> 因为<span class="math inline">\(n \to \infty\)</span>, k不变，第二个因子</p>
+<p><span class="math display">\[\displaystyle \lim_{n \to \infty} \frac{n(n-1)...(n-k+1)}{n^k}=\frac{n}{n} \cdot \frac{n-1}{n}...\frac{n-(k-1)}{n}=1\]</span></p>
+<p>第四个因子中的分母</p>
+<p><span class="math display">\[\displaystyle \lim_{n \to \infty}(1-\frac{\lambda}{n})^k = 1\]</span></p>
+<p>第四个因子中的分子 <span class="math display">\[(1-\frac{\lambda}{n})^n = [(1-\frac{\lambda}{n})^{-\frac{n}{\lambda}}]^{-\lambda}\]</span> 因为 <span class="math inline">\(\displaystyle \lim_{n \to \infty} (1-\frac{\lambda}{n})^{-\frac{n}{\lambda}} = e\)</span>，所以 <span class="math inline">\((1-\frac{\lambda}{n})^n = e^{-\lambda}\)</span></p>
+<p>因此 <span class="math display">\[\displaystyle \lim_{n \to \infty} C_n^k \cdot (\frac{\lambda}{n})^k \cdot (1-\frac{\lambda}{n})^{n-k}=\frac{\lambda^k}{k!}e^{-\lambda}\]</span> 综上 <span class="math display">\[P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda},k=0,1,2...\]</span> 服从泊松分布随机变量记为 <span class="math inline">\(X \sim p(\lambda)\)</span> 在应用中，当p相当小（p &lt;= 0.1）时，我们用下面的近似公式 <span class="math inline">\(b(k;n,p) \sim \frac{(np)^k}{k!}e^{-np}\)</span></p>
+<h2 id="泊松分布期望">泊松分布期望</h2>
+<p>证明泊松分布的概率和为1 <span class="math display">\[ \sum_{k=0}^{\infty}p(k;\lambda) = \sum_{k=0}^{\infty} \frac{\lambda^k}{k!}e^{-\lambda}=e^{-\lambda} \cdot e^{\lambda}=1\]</span> <span class="math inline">\(e^{\lambda} = \sum_{k=0}^{\infty} \frac{\lambda^k}{k!}\)</span> 为指数函数的泰勒展开式</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\sum_{k=0}^{\infty}kp_k &amp;= \sum_{k=1}^{\infty}k \cdot \frac{\lambda^k}{k!}e^{-\lambda} \\
+&amp;=\lambda e^{-\lambda}\sum_{k=1}^{\infty}\frac{\lambda^{k-1}}{(k-1)!} \\
+&amp;=\lambda e^{-\lambda} \cdot e^\lambda \\
+&amp;=\lambda
+
+\end{aligned}
+\end{equation}\]</span></p>
+<h2 id="泊松分布方差">泊松分布方差</h2>
+<p>方差的推导如下： 对于泊松分布期望：<span class="math inline">\(E(\xi)=\lambda\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+E(\xi)^2 &amp;= \sum k^2p_k \\
+&amp;=\sum_{k=1}^{\infty}k^2 \cdot \frac{\lambda^k}{k!}e^{-\lambda} \\
+&amp;=\sum_{k=1}^{\infty}k \frac{\lambda^k}{(k-1)!} e^{-\lambda} \\
+&amp;=\sum_{k=1}^{\infty} [(k-1)+1] \cdot \frac{\lambda^k}{(k-1)!} e^{-\lambda} \\
+&amp;=\sum_{k=2}^{\infty} \frac{\lambda^k}{(k-2)!}e^{-\lambda} + \sum_{k=1}^{\infty} \frac{\lambda^k}{(k-1)!}e^{-\lambda} \\
+&amp;=\lambda^2\sum_{k{&#39;}=0}^{\infty} \frac{\lambda^k{&#39;}}{(k{&#39;})!}e^{-\lambda} + \lambda\sum_{k{&#39;&#39;}=0}^{\infty} \frac{\lambda^k{&#39;&#39;}}{(k{&#39;&#39;})!}e^{-\lambda} \\
+&amp;=\lambda^2+\lambda
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[D\xi = E(\xi^2) - [E(\xi)]^2 = \lambda^2+\lambda -\lambda^2 = \lambda\]</span> 附方差恒等式的证明 <span class="math display">\[D\xi = E(\xi^2) - [E(\xi)]^2 \]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+D(\xi) &amp;= E[\xi - E(\xi)]^2 \\
+&amp;=E{\xi^2 - 2E(\xi) \cdot \xi +[E(\xi)]^2} \\
+&amp;=E(\xi^2) - E[2E(\xi) \cdot \xi] + E[E(\xi)]^2 \\
+&amp;=E(\xi^2) - 2E(\xi) \cdot E(\xi) + [E(\xi)]^2\\
+&amp;=E(\xi^2) - [E(\xi)]^2
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>方差恒等式证明二： 以<span class="math inline">\(\xi \sim p(\xi)\)</span>为例</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
+&amp;=\int_{-\infty}^{\infty}\{\xi^2 - 2E(\xi) \cdot \xi + [E(\xi)]^2\}p(\xi)d\xi \\
+&amp;=\int_{-\infty}^{\infty}\xi^2p(\xi)d\xi - 2E(\xi)\int_{-\infty}^{\infty}\xi p(\xi)d\xi + [E(\xi)]^2\int_{-\infty}^{\infty}p(\xi)d\xi \\
+&amp;=E(\xi^2) - 2E(\xi) \cdot E(\xi) + [E(\xi)]^2 \cdot 1 \\
+&amp;=E(\xi^2) - [E(\xi)]^2
+
+\end{aligned}
+\end{equation}\]</span></p>
+]]></content>
+      <categories>
+        <category>probability</category>
+        <category>possion</category>
+      </categories>
+      <tags>
+        <tag>二项分布</tag>
+        <tag>泊松分布</tag>
+      </tags>
   </entry>
 </search>
