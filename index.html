@@ -221,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2024-01-09 17:11:06 / Modified: 19:06:06" itemprop="dateCreated datePublished" datetime="2024-01-09T17:11:06+08:00">2024-01-09</time>
+              <time title="Created: 2024-01-09 17:11:06 / Modified: 20:55:22" itemprop="dateCreated datePublished" datetime="2024-01-09T17:11:06+08:00">2024-01-09</time>
             </span>
 
           
@@ -235,21 +235,83 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="boyer-moore算法">Boyer-Moore算法</h2>
-<p>Boyer-Moore算法是由德克萨斯大学的Robert S. Boyer教授和J Strother Moore教授与1977年发明的。 算法的主要思想包括以下两点：</p>
+          <h2 id="Boyer-Moore算法"><a href="#Boyer-Moore算法" class="headerlink" title="Boyer-Moore算法"></a>Boyer-Moore算法</h2><p>Boyer-Moore算法是由德克萨斯大学的Robert S. Boyer教授和J Strother Moore教授与1977年发明的。<br>算法的主要思想包括以下两点：  </p>
 <ul>
-<li><p>坏字符规则 bad character</p></li>
-<li><p>好后缀规则 good suffix</p></li>
+<li><p>坏字符规则 bad character</p>
+</li>
+<li><p>好后缀规则 good suffix</p>
+</li>
 </ul>
 <p>下面采用一个例子进行解释:</p>
 <ul>
-<li>1<br>
+<li><p>1  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;字符串&quot;</span> HERE IS A SIMPLE EXAMPLE  </span><br><span class="line"><span class="string">&quot;模式串&quot;</span> EXAMPLE</span><br></pre></td></tr></table></figure></li>
-<li><p>2 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HERE I`S` A SIMPLE EXAMPLE  </span><br><span class="line">EXAMPL`E`</span><br></pre></td></tr></table></figure> 可以发现头部对齐时， 从尾部开始比较，发现尾部的字符不匹配，那么只要比较一次，就知道字符串的前七个字符不是我们要找的。 <code>S</code>和<code>E</code>不匹配，此时，<code>S</code>就被成为<em>坏字符</em>(bad character)。同时我们发现，<code>S</code>不在模式串<code>EXAMPLE</code>中，因此可以直接将模式串移动到<code>S</code>的后一位。 只需比较一次就可以跳7个字符，也是该算法加速的原因之一。</p></li>
-<li><p>3 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;字符串&quot;</span> HERE IS A SIM`P`LE EXAMPLE</span><br><span class="line"><span class="string">&quot;模式串&quot;</span>        EXAMPL`E`</span><br></pre></td></tr></table></figure> 依然从尾部开始比较，发现<code>P</code>与<code>E</code>不匹配，所以<code>P</code>是<em>坏字符</em>。但是， <code>P</code>包含在搜索词<code>EXAMPLE</code>之中。所以，将搜索词后移两位，两个<code>P</code>对齐。</p></li>
+<li><p>2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HERE I`S` A SIMPLE EXAMPLE  </span><br><span class="line">EXAMPL`E`</span><br></pre></td></tr></table></figure>
+<p>可以发现头部对齐时， 从尾部开始比较，发现尾部的字符不匹配，那么只要比较一次，就知道字符串的前七个字符不是我们要找的。<br><code>S</code>和<code>E</code>不匹配，此时，<code>S</code>就被成为<em>坏字符</em>(bad character)。同时我们发现，<code>S</code>不在模式串<code>EXAMPLE</code>中，因此可以直接将模式串移动到<code>S</code>的后一位。<br>只需比较一次就可以跳7个字符，也是该算法加速的原因之一。</p>
+</li>
+<li><p>3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;字符串&quot;</span> HERE IS A SIM`P`LE EXAMPLE</span><br><span class="line"><span class="string">&quot;模式串&quot;</span>        EXAMPL`E`</span><br></pre></td></tr></table></figure>
+<p>依然从尾部开始比较，发现<code>P</code>与<code>E</code>不匹配，所以<code>P</code>是<em>坏字符</em>。但是，<br><code>P</code>包含在搜索词<code>EXAMPLE</code>之中。所以，将搜索词后移两位，两个<code>P</code>对齐。</p>
+</li>
+<li><p>4  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SIM`P`LE EXAMPLE</span><br><span class="line">         EXAM`P`LE</span><br></pre></td></tr></table></figure>
+<p>因此，我们可以总结出<em>坏字符规则</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">后移动的位数 = 坏字符在模式串中的位置 - 模式串中的坏字符上一次出现的位置</span><br></pre></td></tr></table></figure>
+<p>如果坏字符在模式串中不出现，则上一次的位置为<code>-1</code>, 取值<code>-1</code>是因为字符串索引是<code>0-based</code>。</p>
+</li>
 </ul>
-<h2 id="python-实现">Python 实现</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bad_character</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">good_suffix</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">boyer_moore</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>以<code>3</code>中的匹配为例，<em>P</em>是坏字符，出现在模式串的第6位(0-based), 由于模式串中存在该坏字符，且出现的位置为4，<br>所以，后移动的位数为<code>6-4 = 2位</code>。<br>再以<code>2</code>中出现的S为例，该坏字符出现的位置是<code>6</code>位置，但是在模式串中上一次没有出现，因此，上一次出现的位置为<code>-1</code>,<br>则整个模式串后移的位数<code>6 - (-1) = 7位</code>。</p>
+<ul>
+<li>5   </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SIMPL`E` EXAMPLE</span><br><span class="line">         EXAMPL`E`</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>依然从尾部开始比较，<code>E</code>与<code>E</code>匹配</p>
+<ul>
+<li>6  </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SIMP`L`E EXAMPLE</span><br><span class="line">         EXAMP`L`E</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>LE</code>与<code>LE</code>匹配</p>
+<ul>
+<li><p>7  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SIM`PLE` EXAMPLE</span><br><span class="line">         EXAM`PLE`</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>PLE</code>与<code>PLE</code>匹配</p>
+</li>
+<li><p>8  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SI`MPLE` EXAMPLE</span><br><span class="line">         EXA`MPLE`</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>MPLE</code>与<code>MPLE</code>匹配.<br>我们把<code>E</code>, <code>LE</code>, <code>PLE</code>, <code>MPLE</code>中出现的字符称为<em>好后缀</em>(good suffix)。</p>
+</li>
+<li><p>9  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A S`I`MPLE EXAMPLE</span><br><span class="line">         EX`A`MPLE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>比较前一位，发现<code>I</code>和<code>A</code>不匹配，所以<code>I</code>是坏字符。</p>
+</li>
+<li><p>10   </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SI`M`PLE EXAMPLE</span><br><span class="line">            `E`XAMPLE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>根据坏字符规则，后移的位数<code>2-(-1) = 3位</code>i, <code>M</code>与<code>E</code>对齐，但是此时，会有一个疑问，有没有更好的移法呢？比<code>3</code>更多呢？</p>
+</li>
+<li><p>11  </p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SI`MPLE` EXAMPLE</span><br><span class="line">         EXA`MPLE`</span><br></pre></td></tr></table></figure>
+<p>此时，存在好后缀<code>MPLE</code>，采用好后缀规则，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">后移的位数 = 好后缀的位置 - 模式串中好后缀上一次出现的位置</span><br></pre></td></tr></table></figure>
+<p>好后缀规则的注意点:</p>
+<ul>
+<li>12   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SIMPLE EXAMPLE</span><br><span class="line">               EXAMPLE</span><br></pre></td></tr></table></figure>
+此时的好后缀有<code>E</code>, <code>LE</code>, <code>PLE</code>, <code>MPLE</code>，在四个中间只有<code>E</code>出现，在模式串<code>EXAMPLE</code>中，且出现在头部，<br>所以后移的位数<code>6 - 0 = 6位</code>， 可以看到使用<em>好后缀规则</em>移动的更多，比<em>坏字符</em>多出3位。因此Boyer-Moore算法的<br>思想就是每次后移选取两个规则中移动位数最多的。由于，两个规则只和模式串有关，与原字符串无关，因此可以预先制定</li>
+</ul>
+<p><em>坏字符规则表</em>和<em>好后缀规则表</em>，使用时，查表即可。</p>
+<ul>
+<li><p>13 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SIMPLE EXAM`P`LE</span><br><span class="line">               EXAMPL`E`</span><br></pre></td></tr></table></figure>
+<p>继续从尾部比较，<code>P</code>与<code>E</code>不匹配，因此<code>P</code>是坏字符，根据坏字符规则，后移的位数<code>6 - 4 = 2位</code>，<br>此时没有好后缀。</p>
+</li>
+<li><p>14  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HERE IS A SIMPLE EXAMPLE</span><br><span class="line">                 EXAMPLE</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>继续从尾部开始比较，发现完全匹配上了，搜索结束。若还要继续匹配，则使用好后缀规则，使用的是好后缀<code>E</code>, 后移<code>6 - 0 = 6位</code>，继续匹配。</p>
+</li>
+</ul>
+<h2 id="Python-实现"><a href="#Python-实现" class="headerlink" title="Python 实现"></a>Python 实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bad_character</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">good_suffix</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">boyer_moore</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html">reference</a></p>
 
       
