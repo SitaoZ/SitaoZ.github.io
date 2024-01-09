@@ -20,26 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。 冲击图是一种特殊类型的流图。 ggsankey ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。 12# install.packages(&quot;devtools&quot;)devtools::install_github(&quot;davidsjoberg&#x2F;ggsankey&quot;)">
+  <meta name="description" content="人类血液 blood  血浆 Plasma 血浆(plasma)占据总血液(blood)容量的~55%，是血液中防止凝结的液体部分，更能反映血液在体内的循环情况。 当血液细胞和蛋白去除后，血浆主要是水和溶解在其中的蛋白质、激素、矿物质和二氧化碳。 血清 Serum 血清和血浆都是血液的重要组成部分，血液由血浆、血清、血小板、白细胞和红细胞组成。血浆和血清的主要区别在于它们的凝血因子不同。  12血">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ggplot桑基图和冲击图">
-<meta property="og:url" content="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/index.html">
+<meta property="og:title" content="human-wet-lab扫盲">
+<meta property="og:url" content="http://example.com/2024/01/09/human-wet-lab%E6%89%AB%E7%9B%B2/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。 冲击图是一种特殊类型的流图。 ggsankey ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。 12# install.packages(&quot;devtools&quot;)devtools::install_github(&quot;davidsjoberg&#x2F;ggsankey&quot;)">
+<meta property="og:description" content="人类血液 blood  血浆 Plasma 血浆(plasma)占据总血液(blood)容量的~55%，是血液中防止凝结的液体部分，更能反映血液在体内的循环情况。 当血液细胞和蛋白去除后，血浆主要是水和溶解在其中的蛋白质、激素、矿物质和二氧化碳。 血清 Serum 血清和血浆都是血液的重要组成部分，血液由血浆、血清、血小板、白细胞和红细胞组成。血浆和血清的主要区别在于它们的凝血因子不同。  12血">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png">
-<meta property="og:image" content="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png">
-<meta property="og:image" content="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png">
-<meta property="og:image" content="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png">
-<meta property="og:image" content="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png">
-<meta property="article:published_time" content="2023-11-16T02:41:36.000Z">
-<meta property="article:modified_time" content="2023-11-16T03:35:11.619Z">
+<meta property="article:published_time" content="2024-01-09T01:17:04.000Z">
+<meta property="article:modified_time" content="2024-01-09T01:34:52.482Z">
 <meta property="article:author" content="zhusitao">
-<meta property="article:tag" content="deep learning, bioinformatics, biology">
+<meta property="article:tag" content="human">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png">
 
-<link rel="canonical" href="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/">
+<link rel="canonical" href="http://example.com/2024/01/09/human-wet-lab%E6%89%AB%E7%9B%B2/">
 
 
 <script id="page-configurations">
@@ -52,7 +46,7 @@
   };
 </script>
 
-  <title>ggplot桑基图和冲击图 | aibiology</title>
+  <title>human-wet-lab扫盲 | aibiology</title>
   
 
 
@@ -205,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/09/human-wet-lab%E6%89%AB%E7%9B%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -218,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ggplot桑基图和冲击图
+          human-wet-lab扫盲
         </h1>
 
         <div class="post-meta">
@@ -229,7 +223,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-11-16 10:41:36 / Modified: 11:35:11" itemprop="dateCreated datePublished" datetime="2023-11-16T10:41:36+08:00">2023-11-16</time>
+              <time title="Created: 2024-01-09 09:17:04 / Modified: 09:34:52" itemprop="dateCreated datePublished" datetime="2024-01-09T09:17:04+08:00">2024-01-09</time>
             </span>
 
           
@@ -243,34 +237,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>桑基图是描述一组数据到另一组数据的流向图，可以观察数据流向的比例关系。 冲击图是一种特殊类型的流图。</p>
-<h2 id="ggsankey">ggsankey</h2>
-<p>ggsankey是基于ggplot2开发的一个包，用于可视化桑基图和冲击图。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install.packages(&quot;devtools&quot;)</span></span><br><span class="line">devtools::install_github(<span class="string">&quot;davidsjoberg/ggsankey&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="ggsankey-构图元素">ggsankey 构图元素</h2>
-<p><img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/ggsankey_principal_aesthetics.png" alt="principal"> - 每一列表示一个stage, 每个stage有若干个node组成 - 相邻两个stage之间的node存在flow流的关系</p>
-<h2 id="图形参数">图形参数</h2>
+        <h2 id="人类血液-blood">人类血液 blood</h2>
 <ul>
-<li>fill设置填充色，分为node.fii和flow.fill</li>
-<li>color设置边框颜色，可分为node.color和flow.color</li>
-<li>width设置node宽度</li>
-<li>flow.alpha设置flow的透明度</li>
-<li>space设置组内node的间距 <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-unnamed-chunk-4-1.png" alt="parameter"></li>
+<li><p>血浆 Plasma 血浆(plasma)占据总血液(blood)容量的<code>~55%</code>，是血液中防止凝结的液体部分，更能反映血液在体内的循环情况。 当血液细胞和蛋白去除后，血浆主要是水和溶解在其中的蛋白质、激素、矿物质和二氧化碳。</p></li>
+<li><p>血清 Serum 血清和血浆都是血液的重要组成部分，血液由血浆、血清、血小板、白细胞和红细胞组成。血浆和血清的主要区别在于它们的凝血因子不同。</p></li>
 </ul>
-<h2 id="测试数据">测试数据</h2>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">library(ggsankey)</span><br><span class="line">library(dplyr)</span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">df &lt;- mtcars %&gt;%</span><br><span class="line">  make_long(cyl, vs, am, gear, carb)</span><br><span class="line"></span><br><span class="line">ggplot(df, aes(x = x, </span><br><span class="line">               next_x = next_x, </span><br><span class="line">               node = node, </span><br><span class="line">               next_node = next_node,</span><br><span class="line">               fill = factor(node))) +</span><br><span class="line">  geom_sankey()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-example-1.png" alt="example1"><figcaption>example1</figcaption>
-</figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">血浆 = 血清 + 纤维蛋白原 + 凝血因子</span><br><span class="line">Plasma = Serum + fibrinogen + clotting factors</span><br></pre></td></tr></table></figure>
 <ul>
-<li>标注node名称</li>
-<li><p>主题设置 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_sankey(flow.alpha = <span class="number">.6</span>,</span><br><span class="line">              node.color = <span class="string">&quot;gray30&quot;</span>) +</span><br><span class="line">  geom_sankey_label(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>, fill = <span class="string">&quot;gray40&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_sankey(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure> <img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-sankey-1.png" alt="example2"></p></li>
-<li><p>geom_alluvial冲击图 冲积图与桑基图非常相似，但节点之间没有空间，并且以y = 0开始，而不是以x轴为中心。</p></li>
+<li><p>血小板 Platelet 血小板是血液的一个组成部分，其功能是对血管损伤出血作出反应，形成凝块，从而形成血块。血小板没有细胞核:它们是来自骨髓巨核细胞的细胞质碎片，然后进入循环系统。</p></li>
+<li><p>人外周血单核细胞 Human Peripheral Blood Mononuclear Cells 人外周血单核细胞(pbmc)是具有单个圆形细胞核的血细胞。这些细胞包括淋巴细胞(T、B和NK细胞)、单核细胞和树突状细胞。pbmc是免疫系统的一部分，对细胞介导和体液免疫至关重要。我们的人pbmc是从正常健康供体白细胞中分离出来的，用酸-柠檬酸-葡萄糖配方A (ACDA)作为抗凝剂收集。所有献血者必须在HBV、HCV和HIV检测中呈阴性，并得到IRB的同意。</p></li>
 </ul>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ggplot(df, aes(x = x, next_x = next_x, node = node, next_node = next_node, fill = factor(node), label = node)) +</span><br><span class="line">  geom_alluvial(flow.alpha = <span class="number">.6</span>) +</span><br><span class="line">  geom_alluvial_text(size = <span class="number">3</span>, color = <span class="string">&quot;white&quot;</span>) +</span><br><span class="line">  scale_fill_viridis_d() +</span><br><span class="line">  theme_alluvial(base_size = <span class="number">18</span>) +</span><br><span class="line">  labs(x = <span class="literal">NULL</span>) +</span><br><span class="line">  theme(legend.position = <span class="string">&quot;none&quot;</span>,</span><br><span class="line">        plot.title = element_text(hjust = <span class="number">.5</span>)) +</span><br><span class="line">  ggtitle(<span class="string">&quot;Car features&quot;</span>)</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2023/11/16/ggplot%E6%A1%91%E5%9F%BA%E5%9B%BE%E5%92%8C%E5%86%B2%E5%87%BB%E5%9B%BE/README-alluvial-1.png" alt="example3"><figcaption>example3</figcaption>
-</figure>
 
     </div>
 
@@ -279,6 +255,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/human/" rel="tag"># human</a>
+          </div>
 
         
 
@@ -286,13 +265,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/22/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B8%AD%E7%9A%84%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C/" rel="prev" title="统计学中的正态性检验">
-      <i class="fa fa-chevron-left"></i> 统计学中的正态性检验
+    <a href="/2024/01/02/Lander-Waterman%E5%85%AC%E5%BC%8F/" rel="prev" title="Lander-Waterman公式">
+      <i class="fa fa-chevron-left"></i> Lander-Waterman公式
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/11/17/python%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92/" rel="next" title="python函数递归">
-      python函数递归 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -351,7 +327,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ggsankey"><span class="nav-number">1.</span> <span class="nav-text">ggsankey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ggsankey-%E6%9E%84%E5%9B%BE%E5%85%83%E7%B4%A0"><span class="nav-number">2.</span> <span class="nav-text">ggsankey 构图元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E5%8F%82%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">图形参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE"><span class="nav-number">4.</span> <span class="nav-text">测试数据</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E7%B1%BB%E8%A1%80%E6%B6%B2-blood"><span class="nav-number">1.</span> <span class="nav-text">人类血液 blood</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
