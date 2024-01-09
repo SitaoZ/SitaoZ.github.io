@@ -221,7 +221,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2024-01-09 17:11:06 / Modified: 19:00:24" itemprop="dateCreated datePublished" datetime="2024-01-09T17:11:06+08:00">2024-01-09</time>
+              <time title="Created: 2024-01-09 17:11:06 / Modified: 19:03:38" itemprop="dateCreated datePublished" datetime="2024-01-09T17:11:06+08:00">2024-01-09</time>
             </span>
 
           
@@ -235,27 +235,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="boyer-moore算法">Boyer-Moore算法</h2>
-<p>Boyer-Moore算法是由德克萨斯大学的Robert S. Boyer教授和J Strother Moore教授与1977年发明的。 算法的主要思想包括以下两点：</p>
+          <h2 id="Boyer-Moore算法"><a href="#Boyer-Moore算法" class="headerlink" title="Boyer-Moore算法"></a>Boyer-Moore算法</h2><p>Boyer-Moore算法是由德克萨斯大学的Robert S. Boyer教授和J Strother Moore教授与1977年发明的。<br>算法的主要思想包括以下两点：  </p>
 <ul>
-<li><p>坏字符规则 bad character</p></li>
-<li><p>好后缀规则 good suffix</p></li>
+<li><p>坏字符规则 bad character</p>
+</li>
+<li><p>好后缀规则 good suffix</p>
+</li>
 </ul>
 <p>下面采用一个例子进行解释:</p>
 <ul>
-<li><p>1<br>
-&quot;字符串&quot; HERE IS A SIMPLE EXAMPLE<br>
-&quot;模式串&quot; EXAMPLE</p></li>
-<li><p>2<br>
-HERE I<code>S</code> A SIMPLE EXAMPLE<br>
-EXAMPL<code>E</code><br>
-可以发现头部对齐时， 从尾部开始比较，发现尾部的字符不匹配，那么只要比较一次，就知道字符串的前七个字符不是我们要找的。 <code>S</code>和<code>E</code>不匹配，此时，<code>S</code>就被成为<em>坏字符</em>(bad character)。同时我们发现，<code>S</code>不在模式串<code>EXAMPLE</code>中，因此可以直接将模式串移动到<code>S</code>的后一位。 只需比较一次就可以跳7个字符，也是该算法加速的原因之一。</p></li>
-<li><p>3<br>
-&quot;字符串&quot; HERE IS A SIM<code>P</code>LE EXAMPLE &quot;模式串&quot; EXAMPL<code>E</code></p></li>
+<li>1  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;字符串&quot;</span> HERE IS A SIMPLE EXAMPLE  </span><br><span class="line"><span class="string">&quot;模式串&quot;</span> EXAMPLE</span><br></pre></td></tr></table></figure></li>
+<li>2<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">HERE I`S` A SIMPLE EXAMPLE  </span><br><span class="line">EXAMPL`E`</span><br><span class="line">```  </span><br><span class="line">可以发现头部对齐时， 从尾部开始比较，发现尾部的字符不匹配，那么只要比较一次，就知道字符串的前七个字符不是我们要找的。</span><br><span class="line">`S`和`E`不匹配，此时，`S`就被成为*坏字符*(bad character)。同时我们发现，`S`不在模式串`EXAMPLE`中，因此可以直接将模式串移动到`S`的后一位。</span><br><span class="line">只需比较一次就可以跳7个字符，也是该算法加速的原因之一。</span><br><span class="line"></span><br><span class="line">- 3</span><br><span class="line">```bash  </span><br><span class="line"><span class="string">&quot;字符串&quot;</span> HERE IS A SIM`P`LE EXAMPLE</span><br><span class="line"><span class="string">&quot;模式串&quot;</span>        EXAMPL`E`</span><br></pre></td></tr></table></figure>
+依然从尾部开始比较，发现<code>P</code>与<code>E</code>不匹配，所以<code>P</code>是<em>坏字符</em>。但是，<br><code>P</code>包含在搜索词<code>EXAMPLE</code>之中。所以，将搜索词后移两位，两个<code>P</code>对齐。</li>
 </ul>
-<p>依然从尾部开始比较，发现<code>P</code>与<code>E</code>不匹配，所以<code>P</code>是<em>坏字符</em>。但是， <code>P</code>包含在搜索词<code>EXAMPLE</code>之中。所以，将搜索词后移两位，两个<code>P</code>对齐。</p>
-<h2 id="python-实现">Python 实现</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bad_character</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">good_suffix</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">boyer_moore</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h2 id="Python-实现"><a href="#Python-实现" class="headerlink" title="Python 实现"></a>Python 实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bad_character</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">good_suffix</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">boyer_moore</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html">reference</a></p>
 
       
