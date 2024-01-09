@@ -1568,4 +1568,17 @@ tRNA, Y RNA, snRNA, snoRNA, srp RNA等</p></li>
         <tag>human</tag>
       </tags>
   </entry>
+  <entry>
+    <title>字符串匹配-Boyer-Moore算法</title>
+    <url>/2024/01/09/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D-Boyer-Moore%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="boyer-moore算法">Boyer-Moore算法</h2>
+<p>Boyer-Moore算法是由德克萨斯大学的Robert S. Boyer教授和J Strother Moore教授与1977年发明的。 算法的主要思想包括一下两点：</p>
+<ul>
+<li><p>坏字符规则 bad character</p></li>
+<li><p>好后缀规则 good suffix</p></li>
+</ul>
+<p>下面采用一个例子进行解释:</p>
+<p><a href="https://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html">reference</a></p>
+]]></content>
+  </entry>
 </search>
