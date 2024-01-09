@@ -1554,10 +1554,14 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
 <p>1.两次离心: 800Xg + 16,000Xg 用于血浆纯化(Shulin et al., Gut, 2019)。<br>
 2.两次离心: 1,600Xg + 13,000Xg, 用于一个队列收集; 2,500rpm (978Xg), 用于另外的队列收集。(Mira et al., Nature, 2022)</p>
 <h2 id="胞外rnaexrna">胞外RNA(exRNA)</h2>
-<p>细胞外的RNA(exRNA, extra-celluar RNA)包括长链和短链RNA，主要是来至血浆和血清中的RNA(cf-RNA, cell-free RNA)和富集在外泌体(exosomes)、血浆囊泡(extracellular vesicles)和血清的RNA(exoRNA)。 - long RNA (&gt; 200 nt) mRNA, lncRNA, rRNA</p>
+<p>细胞外的RNA(exRNA, extra-celluar RNA)包括长链和短链RNA，主要是来至血浆和血清中的RNA(cf-RNA, cell-free RNA)和富集在外泌体(exosomes)、血浆囊泡(extracellular vesicles)和血清的RNA(exoRNA)。</p>
 <ul>
-<li><p>small nocoding RNA (ncRNA 20-30 nt) miRNA, piRNA, siRNA</p></li>
-<li><p>other nocoding RNA tRNA, Y RNA, snRNA, snoRNA, srp RNA等</p></li>
+<li><p>long RNA (&gt; 200 nt)<br>
+mRNA, lncRNA, rRNA</p></li>
+<li><p>small nocoding RNA (ncRNA 20-30 nt)<br>
+miRNA, piRNA, siRNA</p></li>
+<li><p>other nocoding RNA<br>
+tRNA, Y RNA, snRNA, snoRNA, srp RNA等</p></li>
 </ul>
 ]]></content>
       <tags>
