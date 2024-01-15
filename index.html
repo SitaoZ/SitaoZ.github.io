@@ -196,6 +196,68 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/15/BWT%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="每天进步一点点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/01/15/BWT%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">BWT数据变换算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-01-15 16:27:00 / Modified: 16:54:04" itemprop="dateCreated datePublished" datetime="2024-01-15T16:27:00+08:00">2024-01-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="burrows-wheeler-transform-bwt">Burrows-Wheeler Transform (BWT)</h2>
+<p>Burrows-Wheeler Transform (BWT)算法是一种数据变换算法，通过BWT变换可以将相同的字符聚集到一块，以简化索引，提升压缩效果。 BWT算法可以作为统计压缩（如VLC）和字典压缩（如LZ78）的补充使用。BWT算法分为正向数据变换运算和逆向数据恢复运算。</p>
+<h2 id="python-实现">python 实现</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotations</span>(<span class="params">t</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;循环字符串t，返回列表&quot;&quot;&quot;</span></span><br><span class="line">    tt = t * <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> [tt[i:i+<span class="built_in">len</span>(t)] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(t))]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bwt</span>(<span class="params">t</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;返回t的rotations排序的列表&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sorted</span>(rotations(t))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bwtViaBwm</span>(<span class="params">t</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot; 返回字符串t的BWT变换的字符&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x[-<span class="number">1</span>], bwt(t)))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/15/%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%B4%A2%E5%BC%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -976,85 +1038,6 @@ tRNA, Y RNA, snRNA, snoRNA, srp RNA等</p></li>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D-Naive%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="每天进步一点点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/12/12/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D-Naive%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">字符串匹配-Naive算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-12-12 19:17:14" itemprop="dateCreated datePublished" datetime="2023-12-12T19:17:14+08:00">2023-12-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-12-13 17:05:45" itemprop="dateModified" datetime="2023-12-13T17:05:45+08:00">2023-12-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="字符串匹配算法">字符串匹配算法</h2>
-<p>字符串匹配算法在生物信息学中应用广泛，在各种比对算法高频出现。<br>
-字符串<span class="math inline">\(S\)</span>是将<span class="math inline">\(n\)</span>个字符顺序排列而成的序列，<span class="math inline">\(n\)</span>为其长度。 - 如果字符串的下标是<span class="math inline">\(1\)</span>开始，S的第i个字符是<span class="math inline">\(S[i]\)</span> - 如果字符串的下标从<span class="math inline">\(0\)</span>开始，S的第i个字符是<span class="math inline">\(S[i-1]\)</span></p>
-<p>字符串匹配就是给定文本字符串(String)是一个长度为<span class="math inline">\(n\)</span>的数组<span class="math inline">\(S[1..n]\)</span>, 模式(Pattern)是一个长度为<span class="math inline">\(m\)</span>且<span class="math inline">\(m&lt;=n\)</span>的数组<span class="math inline">\(P[1..m]\)</span>，在string中寻找 pattern的过程。</p>
-<h3 id="naive-string-match">Naive String Match</h3>
-<p>朴素的字符串匹配算法，也称为暴力匹配算法。</p>
-<ul>
-<li>没有预处理<br>
-</li>
-<li>滑动窗口为1<br>
-</li>
-<li>时间复杂度<span class="math inline">\(O((n-m+1)m)\)</span></li>
-<li>模式中的字符串比较顺序不限</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">naive_match</span>(<span class="params">partten, text</span>):</span></span><br><span class="line">    occurrences = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(text) - <span class="built_in">len</span>(partten) +<span class="number">1</span>):</span><br><span class="line">        match = <span class="literal">True</span> </span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(pattern)):</span><br><span class="line">            <span class="keyword">if</span> text[i+j] != pattern[j]:</span><br><span class="line">                match = <span class="literal">False</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> match:</span><br><span class="line">            occurrences.append(i)</span><br><span class="line">    <span class="keyword">return</span> occurrences</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1124,7 +1107,7 @@ tRNA, Y RNA, snRNA, snoRNA, srp RNA等</p></li>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
