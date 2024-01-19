@@ -1663,7 +1663,7 @@ tRNA, Y RNA, snRNA, snoRNA, srp RNA等</p></li>
     <title>Motif搜索算法</title>
     <url>/2024/01/19/Motif%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="motif">Motif</h2>
-<p>Motif是DNA或RNA中存在的长度较短(6-8 bp)，有特定模式的序列。该序列一般具有一定的生物学功能，转录因子结合位点，RBP结合位点均憨厚特定的motif。Motif的鉴定方法有EM算法、Gibbs-sample算法和Greedy算法。 <embed src="https://stellar.mit.edu/S/course/6/fa12/6.047/courseMaterial/topics/topic2/lectureNotes/Lecture11_MotifDiscovery_6up/L12.pdf"></p>
+<p>Motif是DNA或RNA中存在的长度较短(6-8 bp)，有特定模式的序列。该序列一般具有一定的生物学功能，转录因子结合位点，RBP结合位点均憨厚特定的motif。Motif的鉴定方法有EM算法、Gibbs-sample算法和Greedy算法。 <a href="https://stellar.mit.edu/S/course/6/fa12/6.047/courseMaterial/topics/topic2/lectureNotes/Lecture11_MotifDiscovery_6up/L12.pdf">mit-motif-course</a></p>
 <h2 id="em-算法">EM 算法</h2>
 ]]></content>
   </entry>
