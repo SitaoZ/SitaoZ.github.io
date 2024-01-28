@@ -1732,7 +1732,7 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
   <entry>
     <title>CRISPR编辑</title>
     <url>/2024/01/28/CRISPR%E7%BC%96%E8%BE%91/</url>
-    <content><![CDATA[<h2 id="CRISPR"><a href="#CRISPR" class="headerlink" title="CRISPR"></a>CRISPR</h2><p>CRIPSR(Clustered Regularly Interspaced Short Palindromic Repeats)<br>成簇规律间隔短回文重复序列，作为最新的基因组编辑工具，在生物学领域大放异彩。</p>
+    <content><![CDATA[<h2 id="CRISPR"><a href="#CRISPR" class="headerlink" title="CRISPR"></a>CRISPR</h2><p>CRIPSR (Clustered Regularly Interspaced Short Palindromic Repeats)<br>成簇规律间隔短回文重复序列，作为最新的基因组编辑工具，在生物学领域大放异彩。</p>
 <p>常见的几种Cas蛋白Cas9、Cas12、Cas13和Cas14等，用于不同场景的CRISPR。</p>
 <table>
 <thead>
@@ -1818,30 +1818,26 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
   <entry>
     <title>lncRNA来源和功能</title>
     <url>/2024/01/28/lncRNA%E6%9D%A5%E6%BA%90%E5%92%8C%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<h2 id="long-non-coding-rna-lncrna">long non-coding RNA (lncRNA)</h2>
-<p>长链非编码RNA，&gt;200-nt， 是生物体内广泛存在的RNA，来源方式多样，具有重要的调节功能。 - 基因间区 intergenic<br>
-- 基因内部 intragenic<br>
-- 内含子 intronic<br>
-- 外显子 exonic<br>
-- 重叠区 overlapping<br>
-- 正向 sense<br>
-- 返现 antisense</p>
-<figure>
-<img src="/2024/01/28/lncRNA%E6%9D%A5%E6%BA%90%E5%92%8C%E5%8A%9F%E8%83%BD/lncRNA.png" alt="lncRNA"><figcaption>lncRNA</figcaption>
-</figure>
-<h2 id="激活lncrna的表达">激活lncRNA的表达</h2>
-<p>使用基因编辑技术可以增强lncRNA的表达。可以使用锌指蛋白、TALE蛋白和CRISPR蛋白等实现lncRNA的敲除或者激活表达。</p>
-<figure>
-<img src="/2024/01/28/lncRNA%E6%9D%A5%E6%BA%90%E5%92%8C%E5%8A%9F%E8%83%BD/genome_edit.png" alt="genome edit"><figcaption>genome edit</figcaption>
-</figure>
+    <content><![CDATA[<h2 id="long-non-coding-RNA-lncRNA"><a href="#long-non-coding-RNA-lncRNA" class="headerlink" title="long non-coding RNA (lncRNA)"></a>long non-coding RNA (lncRNA)</h2><p>长链非编码RNA，&gt;200-nt， 是生物体内广泛存在的RNA，来源方式多样，具有重要的调节功能。</p>
+<ul>
+<li>基因间区 intergenic   </li>
+<li>基因内部 intragenic   <ul>
+<li>内含子 intronic   </li>
+<li>外显子 exonic   </li>
+<li>重叠区 overlapping   </li>
+</ul>
+</li>
+<li>正义链 sense   </li>
+<li>反义链 antisense   </li>
+</ul>
+<p><img src="/2024/01/28/lncRNA%E6%9D%A5%E6%BA%90%E5%92%8C%E5%8A%9F%E8%83%BD/lncRNA.png" alt="lncRNA"></p>
+<h2 id="激活lncRNA的表达"><a href="#激活lncRNA的表达" class="headerlink" title="激活lncRNA的表达"></a>激活lncRNA的表达</h2><p>使用基因编辑技术可以增强lncRNA的表达。可以使用锌指蛋白、TALE蛋白和CRISPR蛋白等实现lncRNA的敲除或者激活表达。</p>
+<p><img src="/2024/01/28/lncRNA%E6%9D%A5%E6%BA%90%E5%92%8C%E5%8A%9F%E8%83%BD/genome_edit.png" alt="genome edit"></p>
 <ul>
 <li>使用CRIPSR技术时，针对lncRNA的来源不同，应该采用不同的策略</li>
 </ul>
-<figure>
-<img src="/2024/01/28/lncRNA%E6%9D%A5%E6%BA%90%E5%92%8C%E5%8A%9F%E8%83%BD/genome_edit2.png" alt="genome edit2"><figcaption>genome edit2</figcaption>
-</figure>
-<h2 id="lncrna-数据库">lncRNA 数据库</h2>
-<p>目前该数据库收录了66个RNA，来自 10 物种。最短 61 nt, 最长 32,753 nt，平均长度3,086 nt。 <a href="https://rnacentral.org/expert-database/lncrnadb">lncRNAdb</a> <a href="https://www.nature.com/articles/s41380-023-02377-5">Paper</a></p>
+<p><img src="/2024/01/28/lncRNA%E6%9D%A5%E6%BA%90%E5%92%8C%E5%8A%9F%E8%83%BD/genome_edit2.png" alt="genome edit2"></p>
+<h2 id="lncRNA-数据库"><a href="#lncRNA-数据库" class="headerlink" title="lncRNA 数据库"></a>lncRNA 数据库</h2><p>目前该数据库收录了66个RNA，来自 10 物种。最短 61 nt, 最长 32,753 nt，平均长度3,086 nt。<br><a href="https://rnacentral.org/expert-database/lncrnadb">lncRNAdb</a><br><a href="https://www.nature.com/articles/s41380-023-02377-5">Paper</a></p>
 ]]></content>
   </entry>
 </search>
