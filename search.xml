@@ -1840,4 +1840,17 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 <h2 id="lncRNA-数据库"><a href="#lncRNA-数据库" class="headerlink" title="lncRNA 数据库"></a>lncRNA 数据库</h2><p>目前该数据库收录了66个RNA，来自 10 物种。最短 61 nt, 最长 32,753 nt，平均长度3,086 nt。<br><a href="https://rnacentral.org/expert-database/lncrnadb">lncRNAdb</a><br><a href="https://www.nature.com/articles/s41380-023-02377-5">Paper</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Western免疫印迹</title>
+    <url>/2024/01/28/Western%E5%85%8D%E7%96%AB%E5%8D%B0%E8%BF%B9/</url>
+    <content><![CDATA[<h2 id="western-blot">Western Blot</h2>
+<p>Western免疫印迹（Western Blot）是将蛋白质转移到膜上，然后利用抗体进行检测。对已知表达蛋白，可用相应抗体作为一抗进行检测，对新基因的表达产物，可通过融合部分的抗体检测。</p>
+<ul>
+<li>原理<br>
+与 Southern或Northern杂交方法类似，但Western Blot采用的是聚丙烯酰胺凝胶电泳，被检测物是蛋白质，“探针”是抗体，“显色”用标记的二抗。经过PAGE分离的蛋白质样品，转移到固相载体（例如硝 酸纤维素薄膜）上，固相载体以非共价键形式吸附蛋白质，且能保持电泳分离的多肽类型及其生物学活性不变。<br>
+以固相载体上的蛋白质或多肽作为抗原，与对应的抗 体起免疫反应，再与酶或同位素标记的第二抗体起反应，经过底物显色或放射自显影以检测电泳分离的特异性目的基因表达的蛋白成分</li>
+</ul>
+<p><a href="https://www.biomart.cn/experiment/430/465/473/2712774.htm">refer</a> 抗体技术实验指南</p>
+]]></content>
+  </entry>
 </search>
