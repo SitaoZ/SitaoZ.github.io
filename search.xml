@@ -1812,7 +1812,7 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 <li>筛选</li>
 </ul>
 <p>筛选可以快速调查大量候选基因或基因组位点，以参与您的途径或感兴趣的表型。池化寡核苷酸生产和大数据处理的改进，加上慢病毒递送的效率，使研究人员能够同时考虑数千个候选基因，无论是作为文库还是更为集中的子集（panel）。通常，子集（panel）和文库可以以两种形式组装：池化（在一个管中有数千个gRNA）或排列（在96孔板中每个孔一个gRNA）。</p>
-<p><a href="https://www.nature.com/articles/s41380-023-02377-5">Summary of CRISPR/Cas tools</a></p>
+<p><a href="https://www.nature.com/articles/s41380-023-02377-5">Summary of CRISPR/Cas tools</a> <a href="https://www.sigmaaldrich.cn/CN/zh/technical-documents/protocol/genomics/advanced-gene-editing/crispr-cas9-genome-editing">Cas9</a></p>
 ]]></content>
       <tags>
         <tag>biotech</tag>
