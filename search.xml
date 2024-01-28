@@ -1714,4 +1714,19 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
         <category>sequencing</category>
       </categories>
   </entry>
+  <entry>
+    <title>CpG位点</title>
+    <url>/2024/01/28/CpG%E4%BD%8D%E7%82%B9/</url>
+    <content><![CDATA[<h2 id="cpg-cpg-sites">CpG (CpG sites)</h2>
+<p>CpG是基因组中的碱基序列以胞嘧啶(C)和鸟嘌呤(G)出现，p表示磷酸基团。 CpG中的C可以被甲基化为5-甲基化胞嘧啶，改变染色质结构，引起DNA 构象、稳定性及其与蛋白质互作方式，进而控制基因表达。</p>
+<ul>
+<li><p>哺乳动物中，70%到80%的CpG位点的胞嘧啶是甲基化的。</p></li>
+<li><p>在脊椎动物基因组中的出现频率</p></li>
+</ul>
+<p>一个被发现已久的现象：相对于正常的随机概率期望，CpG位点在脊椎动物基因组中出现的概率非常低。以人类基因组为例（GC含量约为42%），CpG位点的出现概率应为0.21<code>*</code>0.21 = 4.41%；而人类基因组中CpG的实际含量约为1% -- 这尚未达到随机概率的四分之一。根据E Scarano等的论文[3]，这一现象发生的原因是脊椎动物基因组中CpG的胞嘧啶被甲基化为5-甲基胞嘧啶后再发生脱氨作用变成胸腺嘧啶，从而形成了从C到T的突变，致使CpG位点的出现概率降低。这种现象被称为CG抑制（CG suppression）。</p>
+<h2 id="cpg岛">CpG岛</h2>
+<p>CpG岛是一个富含CpG位点的区域，但客观精确描述所谓“富含”的定义尚不明确。通常对于CpG岛的正式定义为：一个长度至少为200bp的片段，其GC含量高于50%，且“观察期望比”（observed-to-expexted）高于60%。</p>
+<p><a href="https://zh.wikipedia.org/wiki/CpG%E4%BD%8D%E7%82%B9">CpG wiki</a></p>
+]]></content>
+  </entry>
 </search>
