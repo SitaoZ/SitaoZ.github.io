@@ -1791,8 +1791,10 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 </table>
 <p>crRNA: CRISPR RNAs，特异靶向DNA的RNA序列，自然界中存在， sgRNA: single guideRNA 是人工制造的，自然界不存在。使用 CRISPR-Cas9 系统敲除基因表达或敲入特定突变时， 高质量的向导 RNAs (gRNAs) 的设计、产生和递送是成功的关键。 HEPN: Higher Eukaryotes and Prokaryotes Nucleotide-binding domain <img src="/2024/01/28/CRISPR%E7%BC%96%E8%BE%91/CRISPR.png" alt="CRISPR"></p>
 <ul>
-<li>Cas9的工作原理 内源CRISPR途径被简化为两个主要组分：Cas9核酸酶和指导RNA（gRNA）。导向RNA是由crRNA和tracrRNA组成的双组分系统。crRNA靶向待切割的双链DNA，并且具有短的同源区域，允许其结合tracrRNA。 tracrRNA提供与Cas9蛋白结合的茎环结构。crRNA:tracrRNA双链体被称为gRNA。 Cas9核酸酶和gRNA形成Cas9核糖核蛋白（RNP），可以在整个基因组环境中结合并切割特定的DNA靶标。为了被RNP切割，靶必须具有两个特定序列。首先，gRNA需要17-21个碱基的RNA至DNA同源性，这被称为前间隔序列。 其次，Cas9蛋白需要有一个短的前间隔序列邻近基序（PAM），以结合靶DNA。如果存在连接tracrRNA，并且在gRNA和基因组靶标之间存在足够的同源性，则RNP切割靶DNA的两条链，在基因组中的该精确位置处产生DSB。 虽然细胞核中的功能性CRISPR是RNP形式，但作为分子工具的CRISPR的组件适合于各种递送方法。 早期实验成功地创建了嵌合单指导RNA或sgRNA，其将crRNA和tracrRNA组合成单个RNA链而不是天然存在的双链体。 该sgRNA和Cas9 mRNA可以从单个质粒表达，用于直接转染或包装成用于慢病毒转导的颗粒。 也可将重组Cas9蛋白与合成产生的crRNA和tracrRNA组合，以生成RNP转染或显微注射给胚胎。</li>
+<li>Cas9的工作原理</li>
 </ul>
+<p>内源CRISPR途径被简化为两个主要组分：Cas9核酸酶和指导RNA（gRNA）。导向RNA是由crRNA和tracrRNA组成的双组分系统。crRNA靶向待切割的双链DNA，并且具有短的同源区域，允许其结合tracrRNA。 tracrRNA提供与Cas9蛋白结合的茎环结构。crRNA:tracrRNA双链体被称为gRNA。 Cas9核酸酶和gRNA形成Cas9核糖核蛋白（RNP），可以在整个基因组环境中结合并切割特定的DNA靶标。为了被RNP切割，靶必须具有两个特定序列。首先，gRNA需要17-21个碱基的RNA至DNA同源性，这被称为前间隔序列。 其次，Cas9蛋白需要有一个短的前间隔序列邻近基序（PAM），以结合靶DNA。如果存在连接tracrRNA，并且在gRNA和基因组靶标之间存在足够的同源性，则RNP切割靶DNA的两条链，在基因组中的该精确位置处产生DSB。<br>
+虽然细胞核中的功能性CRISPR是RNP形式，但作为分子工具的CRISPR的组件适合于各种递送方法。 早期实验成功地创建了嵌合单指导RNA或sgRNA，其将crRNA和tracrRNA组合成单个RNA链而不是天然存在的双链体。 该sgRNA和Cas9 mRNA可以从单个质粒表达，用于直接转染或包装成用于慢病毒转导的颗粒。 也可将重组Cas9蛋白与合成产生的crRNA和tracrRNA组合，以生成RNP转染或显微注射给胚胎。</p>
 <p>靶向DSB形成后，细胞通常使用两种DNA修复途径中的一种来存活：非同源末端连接（NHEJ）或同源依赖性修复（HDR）。这些修复机制经常会出错，导致在靶位置诱变，或者通过破坏编码序列来功能性地失活或敲除基因（NHEJ），或者通过添加新的DNA序列来敲入特定的序列变化（HDR）。通过这种方式，CRISPR / Cas9系统能够对染色体DNA进行永久的、可遗传的修饰。此外，当Cas9核酸内切酶结构域失活并附着于其他效应分子以作用于基因组中的gRNA指定位点时，CRISPR系统可用作靶向递送系统。 这将CRISPR系统功能扩展到基因激活和抑制。最后，CRISPR系统可用于筛选</p>
 <ul>
 <li><p>基因敲除 共表达的适当设计的gRNA指导Cas9切割靶序列，并在目的基因中产生DSB。然后可以通过三种方式中的任何一种实现基因敲除：1）细胞通过NHEJ修复断裂，导致切割基因的开放阅读框（ORF）内的随机插入或缺失（“插入缺失”）；2）细胞通过HDR从用户提供的模板修复断裂，将特定的破坏性序列插入ORF中；3）一对gRNA产生两个DSB，其位于基本编码序列的侧翼，导致其切除。</p></li>
