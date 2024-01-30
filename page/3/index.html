@@ -196,6 +196,76 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/03/SAM%E6%96%87%E4%BB%B6flags%E8%A7%A3%E9%87%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="每天进步一点点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/03/SAM%E6%96%87%E4%BB%B6flags%E8%A7%A3%E9%87%8A/" class="post-title-link" itemprop="url">SAM文件flags解释</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-12-03 20:01:28" itemprop="dateCreated datePublished" datetime="2023-12-03T20:01:28+08:00">2023-12-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-01-07 20:05:48" itemprop="dateModified" datetime="2024-01-07T20:05:48+08:00">2024-01-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="sam-flag">SAM flag</h2>
+<p>SAM文件是二进制比对文件，其中FLAG值记录了该read的比对信息。 FLAG巧妙地采用二进制来存储信息，解读FLAG即可确定read属性，所以samtools常常依据FLAG来过滤处理SAM/BAM。</p>
+<h2 id="python-code">Python code</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_args</span>():</span></span><br><span class="line">    parser = argparse.ArgumentParser()</span><br><span class="line">    parser.add_argument(<span class="string">&#x27;-i&#x27;</span>, <span class="string">&#x27;--input&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, required=<span class="literal">True</span>,</span><br><span class="line">                           <span class="built_in">help</span>=<span class="string">&#x27;flags in SAM&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> parser.parse_args()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">flags_cal</span>(<span class="params">flag: <span class="built_in">int</span></span>):</span></span><br><span class="line">    falgs = [<span class="number">0x1</span>, <span class="number">0x2</span>, <span class="number">0x4</span>, <span class="number">0x8</span>, <span class="number">0x10</span>, <span class="number">0x20</span>, <span class="number">0x40</span>, <span class="number">0x80</span>, <span class="number">0x100</span>, <span class="number">0x200</span>, <span class="number">0x400</span>, <span class="number">0x800</span>]</span><br><span class="line">    flags_dict = &#123;</span><br><span class="line">        <span class="number">0x1</span>: [<span class="string">&#x27;PAIRED&#x27;</span>, <span class="string">&#x27;..paired-end (or multiple-segment) sequencing technology&#x27;</span>],</span><br><span class="line">        <span class="number">0x2</span>: [<span class="string">&#x27;PROPER_PAIR&#x27;</span>, <span class="string">&#x27;..each segment properly aligned according to the aligner&#x27;</span>],</span><br><span class="line">        <span class="number">0x4</span>: [<span class="string">&#x27;UNMAP&#x27;</span>, <span class="string">&#x27;..segment unmapped&#x27;</span>],</span><br><span class="line">        <span class="number">0x8</span>: [<span class="string">&#x27;MUNMAP&#x27;</span>, <span class="string">&#x27;..next segment in the template unmapped&#x27;</span>],</span><br><span class="line">        <span class="number">0x10</span>: [<span class="string">&#x27;REVERSE&#x27;</span>, <span class="string">&#x27;..SEQ is reverse complemented&#x27;</span>],</span><br><span class="line">        <span class="number">0x20</span>: [<span class="string">&#x27;MREVERSE&#x27;</span>, <span class="string">&#x27;..SEQ of the next segment in the template is reversed&#x27;</span>],</span><br><span class="line">        <span class="number">0x40</span>: [<span class="string">&#x27;READ1&#x27;</span>, <span class="string">&#x27;..the first segment in the template&#x27;</span>],</span><br><span class="line">        <span class="number">0x80</span>: [<span class="string">&#x27;READ2&#x27;</span>, <span class="string">&#x27;..the last segment in the template&#x27;</span>],</span><br><span class="line">        <span class="number">0x100</span>: [<span class="string">&#x27;SECONDARY&#x27;</span>, <span class="string">&#x27;..secondary alignment&#x27;</span>],</span><br><span class="line">        <span class="number">0x200</span>: [<span class="string">&#x27;QCFAIL&#x27;</span>, <span class="string">&#x27;..not passing quality controls&#x27;</span>],</span><br><span class="line">        <span class="number">0x400</span>: [<span class="string">&#x27;DUPLICATE&#x27;</span>, <span class="string">&#x27;..PCR or optical duplicate&#x27;</span>],</span><br><span class="line">        <span class="number">0x800</span>: [<span class="string">&#x27;SUPPLEMENTARY&#x27;</span>, <span class="string">&#x27;..supplementary alignment&#x27;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    binary = <span class="built_in">bin</span>(flag)</span><br><span class="line">    index_falgs = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">list</span>(binary[<span class="number">2</span>:][::-<span class="number">1</span>])))</span><br><span class="line">    index_list = []</span><br><span class="line">    hex_list = []</span><br><span class="line">    print()</span><br><span class="line">    print(<span class="string">f&#x27;Flags: <span class="subst">&#123;flag&#125;</span>&#x27;</span>)</span><br><span class="line">    print()</span><br><span class="line">    print(<span class="string">&quot;Hex\tDec\tProperty\tInformation&quot;</span>) </span><br><span class="line">    Props = []</span><br><span class="line">    <span class="keyword">for</span> index,i <span class="keyword">in</span> <span class="built_in">enumerate</span>(index_falgs):</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">            index_list.append(index_list)</span><br><span class="line">            hexs = falgs[index]</span><br><span class="line">            ints = <span class="built_in">int</span>(hexs)</span><br><span class="line">            info = flags_dict[hexs]</span><br><span class="line">            Props.append(info[<span class="number">0</span>])</span><br><span class="line">            print(<span class="string">&quot;&#123;:&lt;#x&#125;\t&#123;:&lt;5d&#125;\t&#123;:&lt;11s&#125;\t&#123;:&lt;50s&#125;&quot;</span>.<span class="built_in">format</span>(hexs, ints, info[<span class="number">0</span>], info[<span class="number">1</span>]))</span><br><span class="line">            <span class="comment"># print(&quot;%#x %s %s %s &quot;%(hexs, hexs, info[0], info[1]))</span></span><br><span class="line">    print()</span><br><span class="line">    print(<span class="string">&quot;&#123;&#125;\t&#123;:&lt;5d&#125;\t&#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">hex</span>(flag), flag, <span class="string">&quot;,&quot;</span>.join(Props)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    args = parse_args()</span><br><span class="line">    flags_cal(args.<span class="built_in">input</span>)</span><br></pre></td></tr></table></figure>
+<p>执行程序即可解析 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ python flags_explain.py -i 1294 </span><br><span class="line">Flags: 1294</span><br><span class="line"></span><br><span class="line">Hex	Dec	Property	Information</span><br><span class="line">0x2	2    	PROPER_PAIR	..each segment properly aligned according to the aligner</span><br><span class="line">0x4	4    	UNMAP      	..segment unmapped                                </span><br><span class="line">0x8	8    	MUNMAP     	..next segment <span class="keyword">in</span> the template unmapped           </span><br><span class="line">0x100	256  	SECONDARY  	..secondary alignment                             </span><br><span class="line">0x400	1024 	DUPLICATE  	..PCR or optical duplicate                        </span><br><span class="line"></span><br><span class="line">0x50e	1294 	PROPER_PAIR,UNMAP,MUNMAP,SECONDARY,DUPLICATE</span><br><span class="line"></span><br></pre></td></tr></table></figure> ## htslib</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/samtools/htslib/blob/develop/htslib/sam.h">htslib</a> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*! @abstract the read is paired in sequencing, no matter whether it is mapped in a pair */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FPAIRED        1</span></span><br><span class="line"><span class="comment">/*! @abstract the read is mapped in a proper pair */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FPROPER_PAIR   2</span></span><br><span class="line"><span class="comment">/*! @abstract the read itself is unmapped; conflictive with BAM_FPROPER_PAIR */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FUNMAP         4</span></span><br><span class="line"><span class="comment">/*! @abstract the mate is unmapped */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FMUNMAP        8</span></span><br><span class="line"><span class="comment">/*! @abstract the read is mapped to the reverse strand */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FREVERSE      16</span></span><br><span class="line"><span class="comment">/*! @abstract the mate is mapped to the reverse strand */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FMREVERSE     32</span></span><br><span class="line"><span class="comment">/*! @abstract this is read1 */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FREAD1        64</span></span><br><span class="line"><span class="comment">/*! @abstract this is read2 */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FREAD2       128</span></span><br><span class="line"><span class="comment">/*! @abstract not primary alignment */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FSECONDARY   256</span></span><br><span class="line"><span class="comment">/*! @abstract QC failure */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FQCFAIL      512</span></span><br><span class="line"><span class="comment">/*! @abstract optical or PCR duplicate */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FDUP        1024</span></span><br><span class="line"><span class="comment">/*! @abstract supplementary alignment */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BAM_FSUPPLEMENTARY 2048</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/01/GFF%E5%92%8CGTF%E4%B8%ADframe%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -988,79 +1058,6 @@ f(x)^{\prime} &amp;= ((1+e^{-x})^{-1})^{\prime} \\
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/12/%E5%B7%B4%E6%96%AF%E5%8D%A1%E5%88%86%E5%B8%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="每天进步一点点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/12/%E5%B7%B4%E6%96%AF%E5%8D%A1%E5%88%86%E5%B8%83/" class="post-title-link" itemprop="url">巴斯卡分布</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-12 20:51:12" itemprop="dateCreated datePublished" datetime="2021-03-12T20:51:12+08:00">2021-03-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-20 11:39:28" itemprop="dateModified" datetime="2021-03-20T11:39:28+08:00">2021-03-20</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="巴斯卡分布">巴斯卡分布</h1>
-<p>伯努利事件中，记<span class="math inline">\(\xi\)</span>为第r次成功出现的实验次数，则<span class="math inline">\(\xi\)</span>是随机变量， 取值为r,r+1,r+2,...,其概率分布为巴斯卡分布 <span class="math display">\[
-P(\xi=k) = {k-1 \choose (r-1)}p^rq^{k-r}, k=r,r+1,r+2,...
-\]</span> 显然，单r=1时，即为几何分布</p>
-<h1 id="负二项分布">负二项分布</h1>
-<p>巴斯卡分布规定事件发生的次数为正整数r&gt;=0，当除掉这个限制后，巴斯卡分布就拓展为负二项分布。 现在规定，伯努利事件发生的概率为p，伯努利试验发生的总次数为r+k,事件刚好在r+k次发生第r次的 概率为<span class="math inline">\(f(k;r;p)\)</span></p>
-<p><span class="math display">\[
-f(k;r;p) = {k+r-1 \choose (r-1)}\cdot p^r \cdot (1-p)^k
-\]</span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1130,14 +1127,14 @@ f(k;r;p) = {k+r-1 \choose (r-1)}\cdot p^r \cdot (1-p)^k
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
