@@ -112,9 +112,14 @@
 - Greedy算法<br>
 <a href="https://stellar.mit.edu/S/course/6/fa12/6.047/courseMaterial/topics/topic2/lectureNotes/Lecture11_MotifDiscovery_6up/L12.pdf">mit-motif-course</a></p>
 <h2 id="expectation-maximization-for-motif-finding-算法">Expectation Maximization for Motif Finding 算法</h2>
-<p>对象： - seq: 用于motif搜索的序列 - <span class="math inline">\(`θ_0`\)</span>: 没有motif存在的概率（基因组背景） - <code>θ</code>: motif概率矩阵参数 - <code>π</code>: motif存在的位置</p>
-<p>问题： P(θ, π|seq, <span class="math inline">\(`θ_0`\)</span>)最优化问题</p>
-<p>方法： - π by P(π|θ, seq, <span class="math inline">\(`θ_0`\)</span>) - θ by P(θ|π, seq, <span class="math inline">\(`θ_0`\)</span>) - EM 和 Gibbs在估计的方法上存在差异</p>
+<p>对象： - seq: 用于motif搜索的序列<br>
+- <span class="math inline">\(θ_0\)</span>: 没有motif存在的概率（基因组背景）<br>
+- <code>θ</code>: motif概率矩阵参数<br>
+- <code>π</code>: motif出现的位置</p>
+<p>问题： P(<code>θ</code>, <code>π</code> | seq, <span class="math inline">\(θ_0\)</span>)最优化问题</p>
+<p>方法： - <code>π</code> by P(π | θ, seq, <span class="math inline">\(θ_0\)</span>)<br>
+- <code>θ</code> by P(θ | π, seq, <span class="math inline">\(θ_0\)</span>)<br>
+- EM 和 Gibbs在估计的方法上存在差异</p>
 ]]></content>
   </entry>
   <entry>
