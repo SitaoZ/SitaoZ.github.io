@@ -130,7 +130,13 @@
 <li><code>θ</code> by P(θ | π, seq, $θ_0$)  </li>
 <li>EM 和 Gibbs在估计的方法上存在差异  </li>
 </ul>
-<p>不同的初始化motif矩阵得到的结果不一样，所以<code>MEME</code>采用不同的kmer矩阵作为motif矩阵，计算每一个kmer，选出得分最高top100。<br><img src="/2024/01/19/Motif%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/EM_algorithm.png" alt="EM"></p>
+<p>不同的初始化motif矩阵得到的结果不一样，所以<code>MEME</code>采用不同的kmer矩阵作为motif矩阵，计算每一个kmer，选出得分最高top100。</p>
+<p><code>伪代码</code><a href="https://www.biostat.wisc.edu/~craven/776/lecture9.pdf">code</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Basic EM Approach</span></span><br><span class="line">given: length parameter W, training <span class="built_in">set</span> of sequences</span><br><span class="line">  <span class="built_in">set</span> initial values <span class="keyword">for</span> p</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    re-estimate Z from p (E –step)</span><br><span class="line">    re-estimate p from Z (M-step)</span><br><span class="line">  until change <span class="keyword">in</span> p &lt; ε</span><br><span class="line"><span class="built_in">return</span>: p, Z </span><br></pre></td></tr></table></figure>
+<p><img src="/2024/01/19/Motif%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/EM_algorithm.png" alt="EM"></p>
+<ul>
+<li>Gibbs sampling<br><a href="https://www.biostat.wisc.edu/~craven/776/lecture9.pdf">Gibbs</a><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">    Gibbs Sampling Approach</span><br><span class="line">given: length parameter W, training <span class="built_in">set</span> of sequences</span><br><span class="line">  choose random positions <span class="keyword">for</span> a</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    pick a sequence $X_i$</span><br><span class="line">    estimate p given current motif positions a (update step)</span><br><span class="line">    (using all sequences but $X_i$)</span><br><span class="line">    sample a new motif position $a_i$ <span class="keyword">for</span> $X_i$ (sampling step)</span><br><span class="line">  until convergence</span><br><span class="line"><span class="built_in">return</span>: p, a</span><br></pre></td></tr></table></figure></li>
+</ul>
 ]]></content>
   </entry>
   <entry>

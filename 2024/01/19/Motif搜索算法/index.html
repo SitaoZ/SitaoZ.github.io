@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2024/01/19/Motif%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/EM_algorithm.png">
 <meta property="article:published_time" content="2024-01-19T01:59:09.000Z">
-<meta property="article:modified_time" content="2024-01-30T08:47:53.713Z">
+<meta property="article:modified_time" content="2024-01-30T09:14:38.614Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="deep learning, bioinformatics, biology">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-01-30 16:47:53" itemprop="dateModified" datetime="2024-01-30T16:47:53+08:00">2024-01-30</time>
+                <time title="Modified: 2024-01-30 17:14:38" itemprop="dateModified" datetime="2024-01-30T17:14:38+08:00">2024-01-30</time>
               </span>
 
           
@@ -273,7 +273,13 @@
 <li><code>θ</code> by P(θ | π, seq, $θ_0$)  </li>
 <li>EM 和 Gibbs在估计的方法上存在差异  </li>
 </ul>
-<p>不同的初始化motif矩阵得到的结果不一样，所以<code>MEME</code>采用不同的kmer矩阵作为motif矩阵，计算每一个kmer，选出得分最高top100。<br><img src="/2024/01/19/Motif%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/EM_algorithm.png" alt="EM"></p>
+<p>不同的初始化motif矩阵得到的结果不一样，所以<code>MEME</code>采用不同的kmer矩阵作为motif矩阵，计算每一个kmer，选出得分最高top100。</p>
+<p><code>伪代码</code><a target="_blank" rel="noopener" href="https://www.biostat.wisc.edu/~craven/776/lecture9.pdf">code</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Basic EM Approach</span></span><br><span class="line">given: length parameter W, training <span class="built_in">set</span> of sequences</span><br><span class="line">  <span class="built_in">set</span> initial values <span class="keyword">for</span> p</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    re-estimate Z from p (E –step)</span><br><span class="line">    re-estimate p from Z (M-step)</span><br><span class="line">  until change <span class="keyword">in</span> p &lt; ε</span><br><span class="line"><span class="built_in">return</span>: p, Z </span><br></pre></td></tr></table></figure>
+<p><img src="/2024/01/19/Motif%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/EM_algorithm.png" alt="EM"></p>
+<ul>
+<li>Gibbs sampling<br><a target="_blank" rel="noopener" href="https://www.biostat.wisc.edu/~craven/776/lecture9.pdf">Gibbs</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    Gibbs Sampling Approach</span><br><span class="line">given: length parameter W, training <span class="built_in">set</span> of sequences</span><br><span class="line">  choose random positions <span class="keyword">for</span> a</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    pick a sequence $X_i$</span><br><span class="line">    estimate p given current motif positions a (update step)</span><br><span class="line">    (using all sequences but $X_i$)</span><br><span class="line">    sample a new motif position $a_i$ <span class="keyword">for</span> $X_i$ (sampling step)</span><br><span class="line">  until convergence</span><br><span class="line"><span class="built_in">return</span>: p, a</span><br></pre></td></tr></table></figure></li>
+</ul>
 
     </div>
 
