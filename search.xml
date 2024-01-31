@@ -2154,12 +2154,11 @@ H3K4me2/3在细胞内是通过维持暂停Pol II（paused Pol II）在近端启�
   <entry>
     <title>Circular-RNA</title>
     <url>/2024/01/31/Circular-RNA/</url>
-    <content><![CDATA[<h2 id="环状rna">环状RNA</h2>
-<p>外显子的环化依赖侧翼的内含子互补序列。 <img src="/2024/01/31/Circular-RNA/circularRNA.jpg" alt="circularRNA"></p>
-<h2 id="环状rna注释流程">环状RNA注释流程</h2>
-<p><img src="/2024/01/31/Circular-RNA/circle_pipeline.png" alt="pipeline"> A computational pipeline for back-spliced junction read calling to accurately annotate circular RNAs</p>
-<ol type="1">
+    <content><![CDATA[<h2 id="环状RNA"><a href="#环状RNA" class="headerlink" title="环状RNA"></a>环状RNA</h2><p>外显子的环化依赖侧翼的内含子互补序列。<br><img src="/2024/01/31/Circular-RNA/circularRNA.jpg" alt="circularRNA"></p>
+<h2 id="环状RNA注释流程"><a href="#环状RNA注释流程" class="headerlink" title="环状RNA注释流程"></a>环状RNA注释流程</h2><p><img src="/2024/01/31/Circular-RNA/circle_pipeline.png" alt="pipeline"><br>A computational pipeline for back-spliced junction read calling to accurately annotate circular RNAs</p>
+<h2 id="环状RNA功能"><a href="#环状RNA功能" class="headerlink" title="环状RNA功能"></a>环状RNA功能</h2><ol>
 <li><a href="https://doi.org/10.1016/j.cell.2014.09.001">Complementary Sequence-Mediated Exon Circularization</a></li>
+<li><a href="https://doi.org/10.1016/j.cell.2022.04.021">Circular RNAs: characterization, cellular roles, and applications.</a></li>
 </ol>
 ]]></content>
   </entry>
