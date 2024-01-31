@@ -20,22 +20,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="CRISPRCRIPSR (Clustered Regularly Interspaced Short Palindromic Repeats)成簇规律间隔短回文重复序列，作为最新的基因组编辑工具，在生物学领域大放异彩。 常见的几种Cas蛋白Cas9、Cas12、Cas13和Cas14等，用于不同场景的CRISPR。    CRIPSR蛋白 向导RNA PAM 靶标 酶结构域 切割机制    Ca">
+  <meta name="description" content="环状RNA 外显子的环化依赖侧翼的内含子互补序列。  环状RNA注释流程  A computational pipeline for back-spliced junction read calling to accurately annotate circular RNAs  Complementary Sequence-Mediated Exon Circularization">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CRISPR编辑">
-<meta property="og:url" content="http://example.com/2024/01/28/CRISPR%E7%BC%96%E8%BE%91/index.html">
+<meta property="og:title" content="Circular-RNA">
+<meta property="og:url" content="http://example.com/2024/01/31/Circular-RNA/index.html">
 <meta property="og:site_name" content="aibiology">
-<meta property="og:description" content="CRISPRCRIPSR (Clustered Regularly Interspaced Short Palindromic Repeats)成簇规律间隔短回文重复序列，作为最新的基因组编辑工具，在生物学领域大放异彩。 常见的几种Cas蛋白Cas9、Cas12、Cas13和Cas14等，用于不同场景的CRISPR。    CRIPSR蛋白 向导RNA PAM 靶标 酶结构域 切割机制    Ca">
+<meta property="og:description" content="环状RNA 外显子的环化依赖侧翼的内含子互补序列。  环状RNA注释流程  A computational pipeline for back-spliced junction read calling to accurately annotate circular RNAs  Complementary Sequence-Mediated Exon Circularization">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2024/01/28/CRISPR%E7%BC%96%E8%BE%91/CRISPR.png">
-<meta property="article:published_time" content="2024-01-28T07:05:24.000Z">
-<meta property="article:modified_time" content="2024-01-28T09:38:53.843Z">
+<meta property="og:image" content="http://example.com/2024/01/31/Circular-RNA/circularRNA.jpg">
+<meta property="og:image" content="http://example.com/2024/01/31/Circular-RNA/circle_pipeline.png">
+<meta property="article:published_time" content="2024-01-31T12:31:40.000Z">
+<meta property="article:modified_time" content="2024-01-31T12:45:51.072Z">
 <meta property="article:author" content="zhusitao">
-<meta property="article:tag" content="biotech">
+<meta property="article:tag" content="deep learning, bioinformatics, biology">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2024/01/28/CRISPR%E7%BC%96%E8%BE%91/CRISPR.png">
+<meta name="twitter:image" content="http://example.com/2024/01/31/Circular-RNA/circularRNA.jpg">
 
-<link rel="canonical" href="http://example.com/2024/01/28/CRISPR%E7%BC%96%E8%BE%91/">
+<link rel="canonical" href="http://example.com/2024/01/31/Circular-RNA/">
 
 
 <script id="page-configurations">
@@ -48,7 +49,7 @@
   };
 </script>
 
-  <title>CRISPR编辑 | aibiology</title>
+  <title>Circular-RNA | aibiology</title>
   
 
 
@@ -201,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/28/CRISPR%E7%BC%96%E8%BE%91/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/31/Circular-RNA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CRISPR编辑
+          Circular-RNA
         </h1>
 
         <div class="post-meta">
@@ -225,7 +226,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2024-01-28 15:05:24 / Modified: 17:38:53" itemprop="dateCreated datePublished" datetime="2024-01-28T15:05:24+08:00">2024-01-28</time>
+              <time title="Created: 2024-01-31 20:31:40 / Modified: 20:45:51" itemprop="dateCreated datePublished" datetime="2024-01-31T20:31:40+08:00">2024-01-31</time>
             </span>
 
           
@@ -239,84 +240,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="CRISPR"><a href="#CRISPR" class="headerlink" title="CRISPR"></a>CRISPR</h2><p>CRIPSR (Clustered Regularly Interspaced Short Palindromic Repeats)<br>成簇规律间隔短回文重复序列，作为最新的基因组编辑工具，在生物学领域大放异彩。</p>
-<p>常见的几种Cas蛋白Cas9、Cas12、Cas13和Cas14等，用于不同场景的CRISPR。</p>
-<table>
-<thead>
-<tr>
-<th align="left">CRIPSR蛋白</th>
-<th align="center">向导RNA</th>
-<th align="center">PAM</th>
-<th align="center">靶标</th>
-<th align="center">酶结构域</th>
-<th align="right">切割机制</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Cas9</td>
-<td align="center">sgRNA</td>
-<td align="center">5’NGG</td>
-<td align="center">DNA</td>
-<td align="center">HNH,RuvC</td>
-<td align="right">靶DNA中的特异性钝端双链断裂DSB</td>
-</tr>
-<tr>
-<td align="left">Cas12</td>
-<td align="center">crRNA</td>
-<td align="center">5’TTN</td>
-<td align="center">DNA</td>
-<td align="center">RuvC-like</td>
-<td align="right">在有5’overhangs的靶DNA中特异性DSB</td>
-</tr>
-<tr>
-<td align="left">Cas13a</td>
-<td align="center">crRNA</td>
-<td align="center">3’A、U、C</td>
-<td align="center">RNA</td>
-<td align="center">2X HEPN</td>
-<td align="right">特异性RNA切割</td>
-</tr>
-<tr>
-<td align="left">Cas13b</td>
-<td align="center">crRNA</td>
-<td align="center">/</td>
-<td align="center">RNA</td>
-<td align="center">2X HEPN</td>
-<td align="right">特异性RNA切割</td>
-</tr>
-<tr>
-<td align="left">Cas14a</td>
-<td align="center">sgRNA</td>
-<td align="center">/</td>
-<td align="center">ssDNA</td>
-<td align="center">RuvC-like</td>
-<td align="right">在有5’overhangs的靶DNA中特异性DSB</td>
-</tr>
-</tbody></table>
-<p>crRNA: CRISPR-derived RNAs，特异靶向DNA的RNA序列，自然界中存在。<br>tracrRNA: trans-activating RNA， 一般crRNA和tracrRNA互补配对形成双链，指导Cas9蛋白切割双链DNA。<br>sgRNA: single guideRNA 是人工制造的，自然界不存在。使用 CRISPR-Cas9 系统敲除基因表达或敲入特定突变时，<br>高质量的向导 RNAs (gRNAs) 的设计、产生和递送是成功的关键。<br>DSB: double-stranded DNA break 双链断裂。<br>RuvC: Cas9的两个结构域之一，RuvC结构域剪切非互补链。<br>HNH:  Cas9的两个结构域之一，HNH核酸酶结构域剪切互补链。<br>HEPN: Higher Eukaryotes and Prokaryotes Nucleotide-binding domain, Cas13a含有两个HEPN结构域。</p>
-<p><img src="/2024/01/28/CRISPR%E7%BC%96%E8%BE%91/CRISPR.png" alt="CRISPR"></p>
-<ul>
-<li>Cas9的工作原理</li>
-</ul>
-<p>内源CRISPR途径被简化为两个主要组分：Cas9核酸酶和指导RNA（gRNA）。导向RNA是由crRNA和tracrRNA组成的双组分系统。crRNA靶向待切割的双链DNA，并且具有短的同源区域，允许其结合tracrRNA。  tracrRNA提供与Cas9蛋白结合的茎环结构。crRNA:tracrRNA双链体被称为gRNA。  Cas9核酸酶和gRNA形成Cas9核糖核蛋白（RNP），可以在整个基因组环境中结合并切割特定的DNA靶标。为了被RNP切割，靶必须具有两个特定序列。首先，gRNA需要17-21个碱基的RNA至DNA同源性，这被称为前间隔序列。 其次，Cas9蛋白需要有一个短的前间隔序列邻近基序（PAM），以结合靶DNA。如果存在连接tracrRNA，并且在gRNA和基因组靶标之间存在足够的同源性，则RNP切割靶DNA的两条链，在基因组中的该精确位置处产生DSB。<br>虽然细胞核中的功能性CRISPR是RNP形式，但作为分子工具的CRISPR的组件适合于各种递送方法。  早期实验成功地创建了嵌合单指导RNA或sgRNA，其将crRNA和tracrRNA组合成单个RNA链而不是天然存在的双链体。  该sgRNA和Cas9 mRNA可以从单个质粒表达，用于直接转染或包装成用于慢病毒转导的颗粒。  也可将重组Cas9蛋白与合成产生的crRNA和tracrRNA组合，以生成RNP转染或显微注射给胚胎。   </p>
-<p>靶向DSB形成后，细胞通常使用两种DNA修复途径中的一种来存活：非同源末端连接（NHEJ）或同源依赖性修复（HDR）。这些修复机制经常会出错，导致在靶位置诱变，或者通过破坏编码序列来功能性地失活或敲除基因（NHEJ），或者通过添加新的DNA序列来敲入特定的序列变化（HDR）。通过这种方式，CRISPR / Cas9系统能够对染色体DNA进行永久的、可遗传的修饰。此外，当Cas9核酸内切酶结构域失活并附着于其他效应分子以作用于基因组中的gRNA指定位点时，CRISPR系统可用作靶向递送系统。  这将CRISPR系统功能扩展到基因激活和抑制。最后，CRISPR系统可用于筛选</p>
-<ul>
-<li>基因敲除</li>
-</ul>
-<p>共表达的适当设计的gRNA指导Cas9切割靶序列，并在目的基因中产生DSB。然后可以通过三种方式中的任何一种实现基因敲除：1）细胞通过NHEJ修复断裂，导致切割基因的开放阅读框（ORF）内的随机插入或缺失（“插入缺失”）；2）细胞通过HDR从用户提供的模板修复断裂，将特定的破坏性序列插入ORF中；3）一对gRNA产生两个DSB，其位于基本编码序列的侧翼，导致其切除。</p>
-<ul>
-<li>基因敲入</li>
-</ul>
-<p>靶向整合（基因敲入）通过HDR发生。为了通过HDR进行基因编辑，必须将含有所需序列的DNA “供体” 或修复模板与gRNA和Cas9一起递送至细胞，通常在供体质粒或寡核苷酸上。基因敲入的效率通常低于敲除（&lt;10％的修饰等位基因），但可用于产生范围从单核苷酸变化至大插入物的特定修饰。</p>
-<ul>
-<li>dCas9 基因激活和抑制</li>
-</ul>
-<p>Cas9的一个独特特征是它能够独立于DNA切割而结合靶DNA，因为这是Cas9机制的两个独立步骤。野生型Cas9具有两个核酸酶结构域：RuvC和HNH。为了在没有切割的情况下实现结合，通过诱导点突变（SpCas9中的D10A和H840A）使两个核酸酶结构域失活，导致核酸酶死亡的Cas9（dCas9）。当与靶向转录起始位点的gRNA组合时，发现单独的dCas9足以通过阻断转录起始来降低或抑制转录。在这一发展之后，科学家开始尝试将转录抑制因子和激活因子与dCas9联系起来。</p>
-<ul>
-<li>筛选</li>
-</ul>
-<p>筛选可以快速调查大量候选基因或基因组位点，以参与您的途径或感兴趣的表型。池化寡核苷酸生产和大数据处理的改进，加上慢病毒递送的效率，使研究人员能够同时考虑数千个候选基因，无论是作为文库还是更为集中的子集（panel）。通常，子集（panel）和文库可以以两种形式组装：池化（在一个管中有数千个gRNA）或排列（在96孔板中每个孔一个gRNA）。</p>
-<p><a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41380-023-02377-5">Summary of CRISPR/Cas tools</a><br><a target="_blank" rel="noopener" href="https://www.sigmaaldrich.cn/CN/zh/technical-documents/protocol/genomics/advanced-gene-editing/crispr-cas9-genome-editing">Cas9</a></p>
+        <h2 id="环状rna">环状RNA</h2>
+<p>外显子的环化依赖侧翼的内含子互补序列。 <img src="/2024/01/31/Circular-RNA/circularRNA.jpg" alt="circularRNA"></p>
+<h2 id="环状rna注释流程">环状RNA注释流程</h2>
+<p><img src="/2024/01/31/Circular-RNA/circle_pipeline.png" alt="pipeline"> A computational pipeline for back-spliced junction read calling to accurately annotate circular RNAs</p>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cell.2014.09.001">Complementary Sequence-Mediated Exon Circularization</a></li>
+</ol>
 
     </div>
 
@@ -325,9 +255,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/biotech/" rel="tag"># biotech</a>
-          </div>
 
         
 
@@ -335,13 +262,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/01/28/lncRNA%E6%9D%A5%E6%BA%90%E5%92%8C%E5%8A%9F%E8%83%BD/" rel="prev" title="lncRNA来源和功能">
-      <i class="fa fa-chevron-left"></i> lncRNA来源和功能
+    <a href="/2024/01/31/Immunology/" rel="prev" title="Immunology">
+      <i class="fa fa-chevron-left"></i> Immunology
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2024/01/28/Western%E5%85%8D%E7%96%AB%E5%8D%B0%E8%BF%B9/" rel="next" title="Western免疫印迹">
-      Western免疫印迹 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -400,7 +324,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CRISPR"><span class="nav-number">1.</span> <span class="nav-text">CRISPR</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E7%8A%B6rna"><span class="nav-number">1.</span> <span class="nav-text">环状RNA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E7%8A%B6rna%E6%B3%A8%E9%87%8A%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">环状RNA注释流程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
