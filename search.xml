@@ -2032,4 +2032,54 @@ H3K4me2/3在细胞内是通过维持暂停Pol II（paused Pol II）在近端启�
         <category>biotech</category>
       </categories>
   </entry>
+  <entry>
+    <title>Immunology</title>
+    <url>/2024/01/31/Immunology/</url>
+    <content><![CDATA[<h2 id="免疫-immunity">免疫 immunity</h2>
+<ul>
+<li>先天免疫innate immunity<br>
+</li>
+<li>后天适应性免疫adaptive immunity</li>
+</ul>
+<h2 id="免疫系统组成">免疫系统组成</h2>
+<p>免疫系统由免疫器官、免疫细胞以及免疫分子组成。<br>
+- 免疫器官<br>
+- 脾脏、骨髓、胸腺、淋巴结、扁桃体等<br>
+- 免疫细胞<br>
+- 淋巴细胞，吞噬细胞等<br>
+- 免疫因子<br>
+- 淋巴因子、免疫球蛋白、溶菌酶等</p>
+<h2 id="病原体-pathogen">病原体 pathogen</h2>
+<ul>
+<li>病毒 virus<br>
+</li>
+<li>细菌 bacteria<br>
+</li>
+<li>真菌 fungi<br>
+</li>
+<li>单细胞生物 unicellular eukaryotic<br>
+</li>
+<li>多细胞虫子 multicellular worm</li>
+</ul>
+<h2 id="病原菌识别">病原菌识别</h2>
+<ul>
+<li>先天免疫<br>
+模式识别受体pattern recognition receptors, 具有广谱性</li>
+<li>适应性免疫
+<ul>
+<li>重组DNA并选用合适的过程来产生免疫反应<br>
+</li>
+<li>抗体、T-cell、B-cell<br>
+</li>
+<li>记忆性免疫反应</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%85%8D%E7%96%AB%E7%B3%BB%E7%BB%9F">免疫系统</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>immunology</category>
+      </categories>
+  </entry>
 </search>
