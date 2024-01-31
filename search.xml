@@ -1960,14 +1960,94 @@ E.coli</p>
   <entry>
     <title>Ribo-Seq核糖体印迹</title>
     <url>/2024/01/31/Ribo-Seq%E6%A0%B8%E7%B3%96%E4%BD%93%E5%8D%B0%E8%BF%B9/</url>
-    <content><![CDATA[<h2 id="Ribo-Seq"><a href="#Ribo-Seq" class="headerlink" title="Ribo-Seq"></a>Ribo-Seq</h2><p>核糖体印迹测序，Ribo-Seq或Ribosome profiling，是一种可以实时检测细胞内转录本翻译的测序技术。<br>可以检测coding 和 non-coding的RNA的翻译实况。  </p>
-<ul>
-<li>large intergenic ncRNAs (lincRNAs)<br>lincRNAs被核糖体覆盖，但是却不具有翻译成蛋白质的能力。因为lincRNAs和经典的noncoding RNAs and 5′-UTRs具有相同的ribosome覆盖, 表明ribosome occupancy 单独不足以判断转录本具有蛋白编码能力。<br><img src="/2024/01/31/Ribo-Seq%E6%A0%B8%E7%B3%96%E4%BD%93%E5%8D%B0%E8%BF%B9/coding-non-coding.png" alt="ribo"></li>
-</ul>
-<p><a href="https://www.science.org/doi/10.1126/science.1168978">Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling</a><br><a href="https://www.cell.com/cell/fulltext/S0092-8674(13">Ribosome Profiling Provides Evidence that Large Noncoding RNAs Do Not Encode Proteins</a>00711-3?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867413007113%3Fshowall%3Dtrue)</p>
+    <content><![CDATA[<h2 id="ribo-seq">Ribo-Seq</h2>
+<p>核糖体印迹测序，Ribo-Seq或Ribosome profiling，是一种可以实时检测细胞内转录本翻译的测序技术。 可以检测coding 和 non-coding的RNA的翻译实况。<br>
+- large intergenic ncRNAs (lincRNAs)<br>
+lincRNAs被核糖体覆盖，但是却不具有翻译成蛋白质的能力。因为lincRNAs和经典的noncoding RNAs and 5′-UTRs具有相同的ribosome覆盖, 表明ribosome occupancy 单独不足以判断转录本具有蛋白编码能力。 <img src="/2024/01/31/Ribo-Seq%E6%A0%B8%E7%B3%96%E4%BD%93%E5%8D%B0%E8%BF%B9/coding-non-coding.png" alt="ribo"></p>
+<ol type="1">
+<li><a href="https://www.science.org/doi/10.1126/science.1168978">Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling</a></li>
+<li><a href="https://doi.org/10.1016/j.cell.2013.06.009">Ribosome Profiling Provides Evidence that Large Noncoding RNAs Do Not Encode Proteins</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>sequencing</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>表观修饰</title>
+    <url>/2024/01/31/%E8%A1%A8%E8%A7%82%E4%BF%AE%E9%A5%B0/</url>
+    <content><![CDATA[<h2 id="表观修饰-epigenetic-modification"><a href="#表观修饰-epigenetic-modification" class="headerlink" title="表观修饰 epigenetic modification"></a>表观修饰 epigenetic modification</h2><ul>
+<li>DNA甲基化  </li>
+<li>组蛋白甲基化  </li>
+<li>组蛋白乙酰化  </li>
+<li>RNA修饰  </li>
+<li>非编码RNA修饰</li>
+</ul>
+<h2 id="组蛋白修饰"><a href="#组蛋白修饰" class="headerlink" title="组蛋白修饰"></a>组蛋白修饰</h2><ul>
+<li>H3K27me3<br>H3K27me3表示组蛋白H3亚基上赖氨酸27的三甲基化</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Abbr.</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">H3</td>
+<td align="left">H3 family of histones</td>
+</tr>
+<tr>
+<td align="left">K</td>
+<td align="left">standard abbreviation for lysine</td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left">position of amino acid residue (counting from N-terminus)</td>
+</tr>
+<tr>
+<td align="left">me</td>
+<td align="left">methyl group</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">number of methyl groups added</td>
+</tr>
+</tbody></table>
+<ul>
+<li>H3K4me3<br>H3K4me3表示组蛋白H3亚基上赖氨酸4的三甲基化</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Abbr.</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">H3</td>
+<td align="left">H3 family of histones</td>
+</tr>
+<tr>
+<td align="left">K</td>
+<td align="left">standard abbreviation for lysine</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">position of amino acid residue(counting from N-terminus)</td>
+</tr>
+<tr>
+<td align="left">me</td>
+<td align="left">methyl group</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">number of methyl groups added</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>biotech</category>
       </categories>
   </entry>
 </search>
