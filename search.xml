@@ -1976,75 +1976,89 @@ lincRNAs被核糖体覆盖，但是却不具有翻译成蛋白质的能力。因
   <entry>
     <title>表观修饰</title>
     <url>/2024/01/31/%E8%A1%A8%E8%A7%82%E4%BF%AE%E9%A5%B0/</url>
-    <content><![CDATA[<h2 id="表观修饰-epigenetic-modification"><a href="#表观修饰-epigenetic-modification" class="headerlink" title="表观修饰 epigenetic modification"></a>表观修饰 epigenetic modification</h2><ul>
-<li>DNA甲基化  </li>
-<li>组蛋白甲基化  </li>
-<li>组蛋白乙酰化  </li>
-<li>RNA修饰  </li>
+    <content><![CDATA[<h2 id="表观修饰-epigenetic-modification">表观修饰 epigenetic modification</h2>
+<ul>
+<li>DNA甲基化<br>
+</li>
+<li>组蛋白甲基化<br>
+</li>
+<li>组蛋白乙酰化<br>
+</li>
+<li>RNA修饰<br>
+</li>
 <li>非编码RNA修饰</li>
 </ul>
-<h2 id="组蛋白修饰"><a href="#组蛋白修饰" class="headerlink" title="组蛋白修饰"></a>组蛋白修饰</h2><ul>
-<li>H3K27me3<br>H3K27me3表示组蛋白H3亚基上赖氨酸27的三甲基化</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="left">Abbr.</th>
-<th align="left">Meaning</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">H3</td>
-<td align="left">H3 family of histones</td>
-</tr>
-<tr>
-<td align="left">K</td>
-<td align="left">standard abbreviation for lysine</td>
-</tr>
-<tr>
-<td align="left">27</td>
-<td align="left">position of amino acid residue (counting from N-terminus)</td>
-</tr>
-<tr>
-<td align="left">me</td>
-<td align="left">methyl group</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">number of methyl groups added</td>
-</tr>
-</tbody></table>
+<h2 id="组蛋白修饰">组蛋白修饰</h2>
+<p>组蛋白在相关酶催化下发生甲基化、乙酰化、磷酸化、泛素化和ADP核糖基化等动态修饰的过程，它可通过招募效应蛋白来改变染色质的开放或凝聚的状态，进而调控基因的表达。<br>
+真核生物基因的转录主要分为转录起始（initiation）、暂停-释放（pausing-release）、延伸（elongation）和终止（termination）四个步骤，转录进程的顺利进行与DNA修饰、组蛋白修饰和RNA修饰等表观遗传修饰高度相关。</p>
 <ul>
-<li>H3K4me3<br>H3K4me3表示组蛋白H3亚基上赖氨酸4的三甲基化</li>
+<li>H3K4me3<br>
+H3K4me3表示组蛋白H3亚基上赖氨酸4的三甲基化。<br>
+H3K4me2/3在细胞内是通过维持暂停Pol II（paused Pol II）在近端启动子区的稳定而促进基因激活;而H3K4me2/3对转录起始没有明显的调控作用。</li>
 </ul>
 <table>
 <thead>
-<tr>
-<th align="left">Abbr.</th>
-<th align="left">Meaning</th>
+<tr class="header">
+<th style="text-align: left;">Abbr.</th>
+<th style="text-align: left;">Meaning</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">H3</td>
-<td align="left">H3 family of histones</td>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">H3</td>
+<td style="text-align: left;">H3 family of histones</td>
 </tr>
-<tr>
-<td align="left">K</td>
-<td align="left">standard abbreviation for lysine</td>
+<tr class="even">
+<td style="text-align: left;">K</td>
+<td style="text-align: left;">standard abbreviation for lysine</td>
 </tr>
-<tr>
-<td align="left">4</td>
-<td align="left">position of amino acid residue(counting from N-terminus)</td>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">position of amino acid residue(counting from N-terminus)</td>
 </tr>
-<tr>
-<td align="left">me</td>
-<td align="left">methyl group</td>
+<tr class="even">
+<td style="text-align: left;">me</td>
+<td style="text-align: left;">methyl group</td>
 </tr>
-<tr>
-<td align="left">3</td>
-<td align="left">number of methyl groups added</td>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">number of methyl groups added</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+<ul>
+<li>H3K27me3 H3K27me3表示组蛋白H3亚基上赖氨酸27的三甲基化。</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Abbr.</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">H3</td>
+<td style="text-align: left;">H3 family of histones</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">K</td>
+<td style="text-align: left;">standard abbreviation for lysine</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">position of amino acid residue (counting from N-terminus)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">me</td>
+<td style="text-align: left;">methyl group</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">number of methyl groups added</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       <categories>
         <category>biotech</category>
