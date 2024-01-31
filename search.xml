@@ -1957,4 +1957,17 @@ E.coli</p>
         <category>biotech</category>
       </categories>
   </entry>
+  <entry>
+    <title>Ribo-Seq核糖体印迹</title>
+    <url>/2024/01/31/Ribo-Seq%E6%A0%B8%E7%B3%96%E4%BD%93%E5%8D%B0%E8%BF%B9/</url>
+    <content><![CDATA[<h2 id="Ribo-Seq"><a href="#Ribo-Seq" class="headerlink" title="Ribo-Seq"></a>Ribo-Seq</h2><p>核糖体印迹测序，Ribo-Seq或Ribosome profiling，是一种可以实时检测细胞内转录本翻译的测序技术。<br>可以检测coding 和 non-coding的RNA的翻译实况。  </p>
+<ul>
+<li>large intergenic ncRNAs (lincRNAs)<br>lincRNAs被核糖体覆盖，但是却不具有翻译成蛋白质的能力。因为lincRNAs和经典的noncoding RNAs and 5′-UTRs具有相同的ribosome覆盖, 表明ribosome occupancy 单独不足以判断转录本具有蛋白编码能力。<br><img src="/2024/01/31/Ribo-Seq%E6%A0%B8%E7%B3%96%E4%BD%93%E5%8D%B0%E8%BF%B9/coding-non-coding.png" alt="ribo"></li>
+</ul>
+<p><a href="https://www.science.org/doi/10.1126/science.1168978">Genome-wide analysis in vivo of translation with nucleotide resolution using ribosome profiling</a><br><a href="https://www.cell.com/cell/fulltext/S0092-8674(13">Ribosome Profiling Provides Evidence that Large Noncoding RNAs Do Not Encode Proteins</a>00711-3?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867413007113%3Fshowall%3Dtrue)</p>
+]]></content>
+      <categories>
+        <category>sequencing</category>
+      </categories>
+  </entry>
 </search>
