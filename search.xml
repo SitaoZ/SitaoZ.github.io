@@ -2162,4 +2162,29 @@ H3K4me2/3在细胞内是通过维持暂停Pol II（paused Pol II）在近端启�
 </ol>
 ]]></content>
   </entry>
+  <entry>
+    <title>Single-Cell测序</title>
+    <url>/2024/02/01/Single-Cell%E6%B5%8B%E5%BA%8F/</url>
+    <content><![CDATA[<h2 id="单细胞测序">单细胞测序</h2>
+<p>源于异质性样本表达量精准检测的需求。传统的RNA-Seq分析的特定组织样本不同细胞类型的混样，称为 bulk RNA-Seq，衡量的基因在不用细胞类型中的平均表达量水平。 <img src="/2024/02/01/Single-Cell%E6%B5%8B%E5%BA%8F/bulk_vs_singlecell.jpeg" alt="Bulk vs Single-Cell"></p>
+<p>Single-Cell的由Azim Surani和Fuchou Tang开发，后面经过不用的机构的迭代，技术不断完善和发展。</p>
+<figure>
+<img src="/2024/02/01/Single-Cell%E6%B5%8B%E5%BA%8F/sc_history.png" alt="Single-Cell history"><figcaption>Single-Cell history</figcaption>
+</figure>
+<p>Single-Cell分析的一般步骤：</p>
+<figure>
+<img src="/2024/02/01/Single-Cell%E6%B5%8B%E5%BA%8F/singlecell_sequencing_workflow.png" alt="analysis-step"><figcaption>analysis-step</figcaption>
+</figure>
+<p>Single-Cell protocols</p>
+<figure>
+<img src="/2024/02/01/Single-Cell%E6%B5%8B%E5%BA%8F/singlecell_protocols.jpeg" alt="protocols"><figcaption>protocols</figcaption>
+</figure>
+<ol type="1">
+<li><a href="https://www.nature.com/articles/nmeth.1315">mRNA-Seq whole-transcriptome analysis of a single cell</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>sequencing</category>
+      </categories>
+  </entry>
 </search>
