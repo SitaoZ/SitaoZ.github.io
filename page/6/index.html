@@ -196,6 +196,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/23/normal-distribution/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="step by step">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/23/normal-distribution/" class="post-title-link" itemprop="url">Normal Distribution</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-23 12:21:13" itemprop="dateCreated datePublished" datetime="2021-01-23T12:21:13+08:00">2021-01-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-01-02 17:39:21" itemprop="dateModified" datetime="2024-01-02T17:39:21+08:00">2024-01-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="正态分布">正态分布</h1>
+<p><span class="math display">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^\frac{(x-\mu)^2}{2\sigma^2}\]</span></p>
+<h1 id="正太分布的推导">正太分布的推导</h1>
+<p>这里介绍高斯的推导方法，采用误差</p>
+<p><span class="math display">\[\begin{align*}
+L(\theta) &amp;= L(\theta;x_1,\cdots,x_n)=f(e_1)\cdots f(e_n) \\
+&amp; = f(x_1-\theta)\cdots f(x_n-\theta)
+\end{align*}\]</span></p>
+<p><span class="math inline">\(\frac{d \log L(\theta)}{d \theta} = 0\)</span></p>
+<p><span class="math inline">\(\sum_{i=1}^n \frac{f&#39;(x_i-\theta)}{f(x_i-\theta)} = 0\)</span></p>
+<p>令 <span class="math inline">\(g(x) = \frac{f&#39;(x)}{f(x)}\)</span></p>
+<p><span class="math inline">\(\sum_{i=1}^n g(x_i-\theta) = 0\)</span></p>
+<p><span class="math display">\[\begin{equation}
+\sum_{i=1}^n g(x_i-\bar{x}) = 0 \quad  (1)
+\end{equation}\]</span></p>
+<ol type="1">
+<li>式中取 <span class="math inline">\(n=2\)</span>, 有</li>
+</ol>
+<p><span class="math inline">\(g(x_1-\bar{x}) + g(x_2-\bar{x}) = 0\)</span></p>
+<p>由于此时有 <span class="math inline">\(x_1-\bar{x} = -(x_2-\bar{x})\)</span></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/22/KEGG%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8B%E8%BD%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -799,7 +883,7 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
