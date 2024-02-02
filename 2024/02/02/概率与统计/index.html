@@ -28,7 +28,7 @@
 <meta property="og:description" content="概率与统计 概率统计其实是两个不同的概念。 - 概率 probability 概率是已知模型和参数，计算模型产生的的结果。 - 统计 statistics 统计是有一堆数据，利用数据去推测模型和参数。 最大似然估计，最大后验估计、贝叶斯估计都是用来推测模型和参数的方法，属于统计。 概率函数和似然函数 概率和似然看起来是两个很相似的概念，但是在统计学中，概率函数和似然函数却是两个不同的概念。 对于函">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-02-02T06:55:45.000Z">
-<meta property="article:modified_time" content="2024-02-02T07:20:09.885Z">
+<meta property="article:modified_time" content="2024-02-02T07:26:17.264Z">
 <meta property="article:author" content="zhusitao">
 <meta property="article:tag" content="deep learning, bioinformatics, biology">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2024-02-02 14:55:45 / Modified: 15:20:09" itemprop="dateCreated datePublished" datetime="2024-02-02T14:55:45+08:00">2024-02-02</time>
+              <time title="Created: 2024-02-02 14:55:45 / Modified: 15:26:17" itemprop="dateCreated datePublished" datetime="2024-02-02T14:55:45+08:00">2024-02-02</time>
             </span>
 
           
@@ -440,6 +440,61 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
