@@ -2191,14 +2191,25 @@ H3K4me2/3在细胞内是通过维持暂停Pol II（paused Pol II）在近端启�
     <title>概率与统计</title>
     <url>/2024/02/02/%E6%A6%82%E7%8E%87%E4%B8%8E%E7%BB%9F%E8%AE%A1/</url>
     <content><![CDATA[<h2 id="概率与统计">概率与统计</h2>
-<p>概率统计其实是两个不同的概念。 - 概率 probability<br>
-概率是已知模型和参数，计算模型产生的的结果。 - 统计 statistics<br>
-统计是有一堆数据，利用数据去推测模型和参数。 最大似然估计，最大后验估计、贝叶斯估计都是用来推测模型和参数的方法，属于统计。</p>
+<p>概率统计其实是两个不同的概念。</p>
+<ul>
+<li><p>概率 probability<br>
+概率是已知模型和参数，计算模型产生的的结果。</p></li>
+<li><p>统计 statistics</p></li>
+</ul>
+<p>统计是有一堆数据，利用数据去推测模型和参数。 最大似然估计，最大后验估计、贝叶斯估计都是用来推测模型和参数的方法，属于统计。</p>
+<p>统计假设检验是参数未知，使用已知数据推断某种假设是否成立。假设检验的种类包括：t检验，Z检验，卡方检验，F检验等等。</p>
 <h2 id="概率函数和似然函数">概率函数和似然函数</h2>
 <p>概率和似然看起来是两个很相似的概念，但是在统计学中，概率函数和似然函数却是两个不同的概念。</p>
-<p>对于函数<span class="math inline">\(P(x|θ)\)</span>，输入有两个，<span class="math inline">\(x\)</span>表示一个具体的数据；<span class="math inline">\(θ\)</span>表示模型的参数。 - 概率函数<br>
-对于函数<span class="math inline">\(P(x|θ)\)</span>，如果<span class="math inline">\(θ\)</span>已知，<span class="math inline">\(x\)</span>未知，这个函数就叫概率函数(probability function)，它描述的是对于不同的样本点，其出现的概率是多少。 (相当于机器学习和深度学习的测试test过程，此时参数是训练好的，<span class="math inline">\(θ\)</span>是确定的) - 似然函数<br>
-对于函数<span class="math inline">\(P(x|θ)\)</span>，如果<span class="math inline">\(x\)</span>已知，<span class="math inline">\(θ\)</span>未知，这个函数就叫似然函数(likelihood function)，它描述的是对于不同的模型参数，出现这个x样本点的概率。 (相当于机器学习/深度学习模型的训练train过程，此时参数未确定，<span class="math inline">\(x\)</span>是确定的)</p>
+<p>对于函数<span class="math inline">\(P(x|θ)\)</span>，输入有两个，<span class="math inline">\(x\)</span>表示一个具体的数据；<span class="math inline">\(θ\)</span>表示模型的参数。</p>
+<ul>
+<li>概率函数</li>
+</ul>
+<p>对于函数<span class="math inline">\(P(x|θ)\)</span>，如果<span class="math inline">\(θ\)</span>已知，<span class="math inline">\(x\)</span>未知，这个函数就叫概率函数(probability function)，它描述的是对于不同的样本点，其出现的概率是多少。 (相当于机器学习和深度学习的测试test过程，此时参数是训练好的，<span class="math inline">\(θ\)</span>是确定的)</p>
+<ul>
+<li>似然函数</li>
+</ul>
+<p>对于函数<span class="math inline">\(P(x|θ)\)</span>，如果<span class="math inline">\(x\)</span>已知，<span class="math inline">\(θ\)</span>未知，这个函数就叫似然函数(likelihood function)，它描述的是对于不同的模型参数，出现这个x样本点的概率。 (相当于机器学习/深度学习模型的训练train过程，此时参数未确定，<span class="math inline">\(x\)</span>是确定的)</p>
 ]]></content>
   </entry>
 </search>
