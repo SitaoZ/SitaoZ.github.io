@@ -1947,6 +1947,10 @@ J(w,b) = -\sum_{i=1}^{m}y^{i}\log{\hat{y}^i} + (1-y^i)\log({1-\hat{y}^{i}})
 <li>来源<br>大肠杆菌 E.coli</li>
 </ul>
 <h2 id="核糖核酸酶R-RNase-R"><a href="#核糖核酸酶R-RNase-R" class="headerlink" title="核糖核酸酶R (RNase R)"></a>核糖核酸酶R (RNase R)</h2><p>Ribonuclease R，3’–&gt;5’ 外切酶活性，参与RNA降解。</p>
+<h2 id="MNase"><a href="#MNase" class="headerlink" title="MNase"></a>MNase</h2><p>微球菌核酸酶具有非特异性核酸内外切酶活性，可以结合和切割染色质上未结合蛋白质的DNA区域。<br>MNase-seq (micrococcal nuclease digestion with deep sequencing)主要用于对由组蛋白或其他染色质结合蛋白结合的DNA区域进行测序。<br>核小体核心由~146bp的DNA包裹着。  </p>
+<ul>
+<li>来源<br>1956年在金黄色葡萄球菌中发现。<br><a href="https://zh.wikipedia.org/wiki/MNase-seq">MNase-Seq</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>biotech</category>
