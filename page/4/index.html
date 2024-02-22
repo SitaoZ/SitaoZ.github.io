@@ -196,6 +196,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/01/GFF%E5%92%8CGTF%E4%B8%ADframe%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="step by step">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/01/GFF%E5%92%8CGTF%E4%B8%ADframe%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B/" class="post-title-link" itemprop="url">GFF和GTF中frame计算过程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-01 08:49:39 / Modified: 09:41:36" itemprop="dateCreated datePublished" datetime="2023-12-01T08:49:39+08:00">2023-12-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/file-format/" itemprop="url" rel="index"><span itemprop="name">file format</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>GFF/GTF是基因组注释中常用的文件格式，两者的主要差别在最后一列。 第八列中的frame，用来表示当前特征在CDS编码中的相关信息。</p>
+<h2 id="frame-可选值">1. frame 可选值</h2>
+<ul>
+<li>0, 0表示当前编码的CDS是从当前特征的第一个碱基开始解码，即该CDS的第一个碱基是完整密码子的第一个碱基。</li>
+<li>1, 1表示当前编码的CDS是从第二个碱基开始解码，即该CDS的第二个碱基是完整密码子的第一个碱基。</li>
+<li>2, 2表示当前编码的CDS是从第三个碱基开始解码，即该CDS的第三个碱基是完整密码子的第一个碱基。</li>
+</ul>
+<h2 id="frame-计算">2. frame 计算</h2>
+<h3 id="定义函数">定义函数</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">b</span>(<span class="params">length, frame</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;frame calculate formula</span></span><br><span class="line"><span class="string">    length - frame: 前面的CDS特征长度减去它自己的frame值，表示在前面CDS特征上的第一个完整的密码子开始的长度。</span></span><br><span class="line"><span class="string">    ((length-frame) % 3): 前面CDS特征3&#x27;端最后一个完整密码子之后剩下的碱基数。</span></span><br><span class="line"><span class="string">    (3- ((length-frame) % 3)): 是除去特征的3&#x27;端所代表的碱基后，密码子中剩余的碱基数目。</span></span><br><span class="line"><span class="string">    (3- ((length-frame) % 3)) % 3: 把3变成0，因为三个碱基组成一个完整的密码子，1和2保持不变。</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    params: </span></span><br><span class="line"><span class="string">      length: previous feature length (5&#x27;-&gt;3&#x27;)</span></span><br><span class="line"><span class="string">      frame: previous feature frame (5&#x27;-&gt;3&#x27;)</span></span><br><span class="line"><span class="string">    return: </span></span><br><span class="line"><span class="string">       next feature frame</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="number">3</span>- ((length-frame) % <span class="number">3</span>)) % <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cal_frame</span>(<span class="params">lengths, strand</span>):</span></span><br><span class="line">    <span class="keyword">if</span> strand == <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">        lengths = lengths[::-<span class="number">1</span>]</span><br><span class="line">    frames = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(lengths)):</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">            frames.append(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            frame = b(lengths[i-<span class="number">1</span>], frames[i-<span class="number">1</span>])</span><br><span class="line">            frames.append(frame)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> frames</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># + example</span></span><br><span class="line">    <span class="comment"># length_list = [169,101,123,186,222,154,150,89,204,108,135,132,133,93,126,126,144,129,161]</span></span><br><span class="line">    <span class="comment"># strand = &quot;+&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># - example</span></span><br><span class="line">    length_list = [<span class="number">278</span>,<span class="number">778</span>,<span class="number">231</span>]</span><br><span class="line">    strand = <span class="string">&#x27;-&#x27;</span></span><br><span class="line">    print(cal_frame(length_list, strand))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="对于正链">对于正链 +</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ cat Araport11_GFF3_genes_transposons.Mar92021.correct.gff | grep AT1G01950.1 | awk <span class="string">&#x27;$3~/CDS/&#x27;</span></span><br><span class="line">Chr1	Araport11	CDS	325473	325641	.	+	0	ID=AT1G01950:CDS:1;Parent=AT1G01950.1;Name=ARK2:CDS:1</span><br><span class="line">Chr1	Araport11	CDS	325913	326013	.	+	2	ID=AT1G01950:CDS:2;Parent=AT1G01950.1;Name=ARK2:CDS:2</span><br><span class="line">Chr1	Araport11	CDS	326106	326228	.	+	0	ID=AT1G01950:CDS:3;Parent=AT1G01950.1;Name=ARK2:CDS:3</span><br><span class="line">Chr1	Araport11	CDS	326332	326517	.	+	0	ID=AT1G01950:CDS:4;Parent=AT1G01950.1;Name=ARK2:CDS:4</span><br><span class="line">Chr1	Araport11	CDS	326594	326815	.	+	0	ID=AT1G01950:CDS:6;Parent=AT1G01950.1;Name=ARK2:CDS:6</span><br><span class="line">Chr1	Araport11	CDS	326931	327084	.	+	0	ID=AT1G01950:CDS:7;Parent=AT1G01950.1;Name=ARK2:CDS:7</span><br><span class="line">Chr1	Araport11	CDS	327237	327386	.	+	2	ID=AT1G01950:CDS:8;Parent=AT1G01950.1;Name=ARK2:CDS:8</span><br><span class="line">Chr1	Araport11	CDS	327488	327576	.	+	2	ID=AT1G01950:CDS:9;Parent=AT1G01950.1;Name=ARK2:CDS:9</span><br><span class="line">Chr1	Araport11	CDS	327663	327866	.	+	0	ID=AT1G01950:CDS:10;Parent=AT1G01950.1;Name=ARK2:CDS:10</span><br><span class="line">Chr1	Araport11	CDS	328000	328107	.	+	0	ID=AT1G01950:CDS:11;Parent=AT1G01950.1;Name=ARK2:CDS:11</span><br><span class="line">Chr1	Araport11	CDS	328188	328322	.	+	0	ID=AT1G01950:CDS:12;Parent=AT1G01950.1;Name=ARK2:CDS:12</span><br><span class="line">Chr1	Araport11	CDS	328424	328555	.	+	0	ID=AT1G01950:CDS:14;Parent=AT1G01950.1;Name=ARK2:CDS:14</span><br><span class="line">Chr1	Araport11	CDS	328898	329030	.	+	0	ID=AT1G01950:CDS:17;Parent=AT1G01950.1;Name=ARK2:CDS:17</span><br><span class="line">Chr1	Araport11	CDS	329119	329211	.	+	2	ID=AT1G01950:CDS:18;Parent=AT1G01950.1;Name=ARK2:CDS:18</span><br><span class="line">Chr1	Araport11	CDS	329311	329436	.	+	2	ID=AT1G01950:CDS:19;Parent=AT1G01950.1;Name=ARK2:CDS:19</span><br><span class="line">Chr1	Araport11	CDS	329573	329698	.	+	2	ID=AT1G01950:CDS:20;Parent=AT1G01950.1;Name=ARK2:CDS:20</span><br><span class="line">Chr1	Araport11	CDS	329781	329924	.	+	2	ID=AT1G01950:CDS:21;Parent=AT1G01950.1;Name=ARK2:CDS:21</span><br><span class="line">Chr1	Araport11	CDS	330027	330155	.	+	2	ID=AT1G01950:CDS:22;Parent=AT1G01950.1;Name=ARK2:CDS:22</span><br><span class="line">Chr1	Araport11	CDS	330243	330403	.	+	2	ID=AT1G01950:CDS:23;Parent=AT1G01950.1;Name=ARK2:CDS:23</span><br><span class="line"></span><br><span class="line">$ cat Araport11_GFF3_genes_transposons.Mar92021.correct.gff | grep AT1G01950.1 | awk <span class="string">&#x27;$3~/CDS/&#x27;</span> | awk <span class="string">&#x27;&#123;print$5-$4+1&#125;&#x27;</span> | xargs | sed <span class="string">&#x27;s/ /,/g&#x27;</span></span><br><span class="line"></span><br><span class="line">$ <span class="comment"># 169,101,123,186,222,154,150,89,204,108,135,132,133,93,126,126,144,129,161</span></span><br><span class="line">$ <span class="comment"># [0, 2, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2]</span></span><br></pre></td></tr></table></figure>
+<h3 id="对于负链--">对于负链 -</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ cat Araport11_GFF3_genes_transposons.Mar92021.correct.gff  | grep AT1G01090.1 | awk <span class="string">&#x27;$3~/CDS/&#x27;</span></span><br><span class="line">Chr1	Araport11	CDS	47705	47982	.	-	2	ID=AT1G01090:CDS:3;Parent=AT1G01090.1;Name=PDH-E1 ALPHA:CDS:3</span><br><span class="line">Chr1	Araport11	CDS	48075	48852	.	-	0	ID=AT1G01090:CDS:2;Parent=AT1G01090.1;Name=PDH-E1 ALPHA:CDS:2</span><br><span class="line">Chr1	Araport11	CDS	48936	49166	.	-	0	ID=AT1G01090:CDS:1;Parent=AT1G01090.1;Name=PDH-E1 ALPHA:CDS:1</span><br><span class="line"></span><br><span class="line">$ cat Araport11_GFF3_genes_transposons.Mar92021.correct.gff  | grep AT1G01090.1 | awk <span class="string">&#x27;$3~/CDS/&#x27;</span> | awk <span class="string">&#x27;&#123;print$5-$4+1&#125;&#x27;</span> | xargs | sed <span class="string">&#x27;s/ /,/g&#x27;</span></span><br><span class="line"></span><br><span class="line">$ <span class="comment"># 278,778,231</span></span><br><span class="line">$ <span class="comment"># [0, 0, 2]</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/17/python%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -980,73 +1061,6 @@ f(k;r;p) = {k+r-1 \choose (r-1)}\cdot p^r \cdot (1-p)^k
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="step by step">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/11/%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/" class="post-title-link" itemprop="url">几何分布</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-11 21:24:01 / Modified: 22:44:37" itemprop="dateCreated datePublished" datetime="2021-03-11T21:24:01+08:00">2021-03-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="几何分布">几何分布</h1>
-<p>时间A发生的概率为p的伯努利实验中，<span class="math inline">\(\xi\)</span>记为事件A首次出现的 实验次数，则称随机变量<span class="math inline">\(\xi\)</span>服从几何分布，</p>
-<p><span class="math display">\[
-g(k,p) = P(\xi=k) = q^{k-1}p, k= 1,2,...
-\]</span></p>
-<h1 id="几何分布的无记忆性">几何分布的无记忆性</h1>
-<p>在伯努利实验中，等待首次成功的时间<span class="math inline">\(\xi\)</span>服从几何分布。假定前m次都没有成功， 那么首次成功等待的时间为<span class="math inline">\(\xi^{&#39;}\)</span>,也是服从几何分布的。 证明： 根据条件概率的定义 <span class="math display">\[
-P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
-\]</span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1116,7 +1130,7 @@ P = \frac{q^{m+k+1}p}{q^m} = q^{k-1}p
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
