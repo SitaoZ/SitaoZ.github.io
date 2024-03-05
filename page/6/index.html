@@ -196,6 +196,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/binomial-distribution/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="step by step">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/25/binomial-distribution/" class="post-title-link" itemprop="url">Binomial Distribution</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-25 18:57:45" itemprop="dateCreated datePublished" datetime="2021-01-25T18:57:45+08:00">2021-01-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-01-02 20:21:41" itemprop="dateModified" datetime="2024-01-02T20:21:41+08:00">2024-01-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/probability/" itemprop="url" rel="index"><span itemprop="name">probability</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/probability/binomial/" itemprop="url" rel="index"><span itemprop="name">binomial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="二项分布binomial-distribution">1.二项分布(binomial distribution)</h3>
+<p>两点分布重复n次，就得到了二项分布，二项分布的概率质量函数(probability mass function, PMF): n为实验的总次数，k为实验成功的次数，p是成功的概率 <span class="math display">\[ P(X=k)=C_n^kp^k(1-p)^{n-k} \]</span> 服从二项分布的随机变量记为 <span class="math inline">\(X \sim B(n,p)\)</span></p>
+<h3 id="二项分布的期望">2.二项分布的期望</h3>
+<p>二项分布分布，事件发生的概率为p, 不发生的概率为q=1-p, 这里的 <span class="math inline">\(C_n^k\)</span> 称为二项系数，根据二项展开式的系数，可以反推二项分布的概率和为1. <span class="math display">\[ \sum_{k=0}^nP(X=k) = \sum_{k=0}^nC_n^kp^k(1-p)^{n-k} = (p+(1-p))^n=1 \]</span> 期望是离散型随机变量的特征之一，定义如下： 设<span class="math inline">\(\xi\)</span> 为离散型随机变量，它可以取值<span class="math inline">\(x_1,x_2,x_3,...\)</span>，对应的概率为<span class="math inline">\(p_1,p_2,p_3,...\)</span> 如果级数 <span class="math display">\[\sum_{i=1}^{\infty}x_ip_i\]</span> 绝对收敛，则把它称为<span class="math inline">\(\xi\)</span>的数学期望（mathematical expectation）,简称期望，期望值或均值（mean）,记为<span class="math inline">\(E\xi\)</span> 当<span class="math inline">\(\sum_{i=1}^{\infty}{\vert}x_i{\vert}p_i\)</span> 发散时，则<span class="math inline">\(\xi\)</span>的数学期望不存在。</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\sum_{k=0}^{n}kp_k &amp;= \sum_{k=1}{n}{n \choose k}p^kq^{n-k} \\
+&amp;= np \sum_{k=1}^{n}{n-1 \choose k-1}p^{k-1}q^{n-k} \\
+&amp;=np(p+q)^{n-1} \\
+&amp;=np
+\end{aligned}
+\end{equation}\]</span></p>
+<p>二项分布期望证明二:</p>
+<p>设<span class="math inline">\(\xi_1,\xi_2,...\xi_n\)</span> 是n个伯努利随机变量，以概率<span class="math inline">\(P\{\xi_i=1\} = p\)</span>和<span class="math inline">\(P\{\xi_i=0\} = q,p + q = 1\)</span>, 则对于： <span class="math display">\[S_n = \xi_1+\xi_2+...+\xi_n\]</span> 根据期望的基本性质，<span class="math inline">\(S_n\)</span>的数学期望为 <span class="math display">\[ES_n = E(\xi_1)+E(\xi_2) + ... + E(\xi_n) = np \]</span> 证明的过程比第一个证明要简单快捷。</p>
+<h3 id="二项分布的方差">3.二项分布的方差</h3>
+<p>随机变量<span class="math inline">\(\xi\)</span>,如果<span class="math inline">\(E(\xi-E\xi)^2\)</span>存在，则称它为随机变量<span class="math inline">\(\xi\)</span>的方差（variance）. 并记为<span class="math inline">\(D\xi\)</span>，而<span class="math inline">\(\sqrt{D\xi}\)</span>称为标准差（standard deviation），描述的是随机变量 对其数学期望的偏离程度（dispersion）。</p>
+<p><span class="math display">\[ E(X) = np\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+E(X^2) &amp;= \sum_{k=0}^{n} k^2 C_n^kp^kq^{n-k} \\
+&amp;=\sum_{k=1}^{n} [k(k-1)+k]\frac{n!}{k!(n-k)!}p^kq^{n-k} \\
+&amp;=\sum_{k=2}^{n} \frac{n!}{(k-2)!(n-k)!} + E(X) \\
+&amp;=n(n-1)p^2 \sum_{k=2}^{n} \frac{(n-2)!}{(k-2)![(n-2) - (k-2)]!} \cdot p^{k-2}q^{(n-2)-(k-2)} +E(X) \\
+&amp;=n(n-1)p^2 \sum_{k{&#39;}=0}^{n-2} C_{n-2}^k{&#39;}p^k{&#39;}q^{(n-2)-k{&#39;}} + E(X) \\
+&amp;=n(n-1)p^2 + np \\
+&amp;=n^2p^2 + np(1-p) \\
+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>由于方差恒等式<span class="math inline">\(D(X) = E(X^2) - [E(X)]^2\)</span>，所以 <span class="math inline">\(D(X) = np(1-p)\)</span></p>
+<p>二项分布方差证明二：</p>
+<p>设<span class="math inline">\(\xi\)</span>是伯努利随机变量，以概率<span class="math inline">\(P\{\xi_i=1\} = p\)</span>和<span class="math inline">\(P\{\xi_i=0\} = q,p + q = 1\)</span>, 根据方差的定义:</p>
+<p>伯努利期望<span class="math inline">\(E\xi = p\)</span>, <span class="math display">\[ D\xi = E(\xi - E\xi)^2 = E(\xi - p)^2=(1-p)^2p + (0-p)^q = pq \]</span> 由此可见，<span class="math inline">\(\xi_1,\xi_2,...\xi_n\)</span>是独立同分布的伯努利随机变量序列，且<span class="math inline">\(S_n = \xi_1+\xi_2+...+\xi_n\)</span> 则 <span class="math display">\[DS_n = npq\]</span> 这里参考了方差的性质：如果<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>独立，则和<span class="math inline">\(\xi+\eta\)</span>的方差等于方差之和。 <span class="math display">\[D(\xi+\eta) = D\xi + D\eta\]</span></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/bernoulli-distribution/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -972,7 +1083,7 @@ D(\xi) &amp;= \int_{-\infty}^{\infty}[\xi - E(\xi)]^2p(\xi)d\xi \\
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
