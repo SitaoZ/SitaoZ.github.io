@@ -196,6 +196,84 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/08/sigmoid%E6%B1%82%E5%AF%BC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhusitao">
+      <meta itemprop="description" content="step by step">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aibiology">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/08/sigmoid%E6%B1%82%E5%AF%BC/" class="post-title-link" itemprop="url">sigmoid求导</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-08 09:44:41 / Modified: 10:45:56" itemprop="dateCreated datePublished" datetime="2021-05-08T09:44:41+08:00">2021-05-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="sigmoid">sigmoid</h1>
+<p>sigmoid 函数是机器学习常用的一种激活函数，公式如下： <span class="math display">\[
+f(x) = \frac{1}{1+e^{-x}} 
+\]</span></p>
+<h1 id="求导">求导</h1>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+f(x)^{\prime} &amp;= ((1+e^{-x})^{-1})^{\prime} \\
+&amp;= (-1)\times(1+e^{-x})^{-2} \times e^{-x} \times (-1) \\
+&amp;= (1+e^{-x})^{-2} \times e^{-x} \\
+&amp;= \frac{e^{-x}}{(1+e^{-x})^2} \\
+&amp;= \frac{1+e^{-x}-1}{(1+e^{-x})^2} \\
+&amp;= \frac{1+e^{-x}}{(1+e^{-2})^2} - \frac{1}{(1+e^{-x})^2} \\
+&amp;= \frac{1}{1+e^{-x}} - \frac{1}{(1+e^{-x})^2} \\
+&amp;= \frac{1}{1+e^{-x}}(1-\frac{1}{1+e^{-x}}) \\
+&amp;= f(x)(1-f(x))
+
+\end{aligned}
+\end{equation}\]</span></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/12/%E5%B7%B4%E6%96%AF%E5%8D%A1%E5%88%86%E5%B8%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1243,141 +1321,6 @@ P(|X-a|\geq\varepsilon) &amp;= \int\limits_{\{x:|x-a|\geq\varepsilon\}} \quad p(
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zhusitao">
-      <meta itemprop="description" content="step by step">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aibiology">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/02/%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8%E5%8F%8A%E8%AF%81%E6%98%8E/" class="post-title-link" itemprop="url">期望和方差的性质及证明</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-02 13:15:28" itemprop="dateCreated datePublished" datetime="2021-02-02T13:15:28+08:00">2021-02-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-03 09:31:46" itemprop="dateModified" datetime="2021-02-03T09:31:46+08:00">2021-02-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="期望数学定义及性质证明">1.期望数学定义及性质证明</h3>
-<p>在n次独立重复的试验中观察随机变量<span class="math inline">\(\xi\)</span>的取值，则取<span class="math inline">\(x_i\)</span>的值大致 应该出现在<span class="math inline">\(np_i\)</span>次，根据n次试验结果计算该随机变量的平均值大致如下： <span class="math display">\[
-\frac{1}{n}[np_1x_1+np_2x_2+...+np_kx_k] = \sum_{i=1}^{k}p_ix_i
-\]</span> 定义：实数<span class="math inline">\(E\xi = \sum_{i=1}^{k}x_iP(A_i)\)</span>,称作随机变量<span class="math inline">\(\xi=\sum_{i=1}^{k}x_iI(A_i)\)</span> 的数学期望或平均值。 数学期望的基本性质</p>
-<ol type="1">
-<li>若<span class="math inline">\(\xi \ge 0\)</span>,则<span class="math inline">\(E\xi \ge 0\)</span>.</li>
-<li><span class="math inline">\(E(a\xi+b\eta) = aE\xi + bE\eta\)</span>,其中a,b为常数.</li>
-<li>若<span class="math inline">\(\xi \ge \eta\)</span>,则<span class="math inline">\(E\xi \ge E\eta\)</span>.</li>
-<li><span class="math inline">\(|E\xi| \le E|\xi|\)</span>.</li>
-<li>若<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>独立,则<span class="math inline">\(E\xi\eta=E\xi \cdot E\eta\)</span>.</li>
-<li><span class="math inline">\((E|\xi|)^2 \le E{\xi}^2 \cdot E{\eta}^2\)</span>,柯西-瓦尔茨不等式.</li>
-<li>若<span class="math inline">\(\xi = I(A)\)</span>,则<span class="math inline">\(E\xi = P(A)\)</span>.</li>
-</ol>
-<p>证明： 性质1显然成立 性质7，根据示性函数，由于 <span class="math display">\[
-\xi = I_A(\omega)= \begin{cases}
-1,  \omega \in A, \\
-0,  \omega \in A.
-\end{cases}
-\]</span> 由于伯努利试验只有0，1，所以根据随机变量期望的定义，性质7成立。</p>
-<p>性质2的证明： 设 <span class="math inline">\(\xi=\sum x_iI(A_i), \eta=\sum y_jI(B_j)\)</span>,</p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-a\xi+b\eta &amp;= a\sum_{i,j}x_i I(A_i \cap B_j) + b\sum_{i,j} y_j I(A_i \cap B_j) \\ 
-&amp;=\sum_{i,j}(a x_i+b y_j)I(A_i \cap B_j) \\
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-E(a\xi+b\eta) &amp;= \sum_{i,j}(a x_i+b y_i)P(A_i \cap B_j) \\ 
-&amp;=\sum_{i}a x_iP(A_i) + \sum_{j}b y_jP(B_j) \\ 
-&amp;=a\sum_{i}x_iP(A_i) + b\sum_{j}y_jP(B_j) \\ 
-&amp;=a\sum(\xi) + b\sum(\eta) \\
-\end{aligned}
-\end{equation}\]</span></p>
-<p>性质3 的证明： 由性质1，2可以证明3。</p>
-<p>性质4的证明： <span class="math display">\[
-|E\xi| = |\sum_{i}x_iP(A_i)| \le \sum_{i}|x_i|P(B_j)=E|\xi|
-\]</span></p>
-<p>性质5的证明： <span class="math display">\[\begin{equation}
-\begin{aligned}
-E\xi\eta &amp;= E(\sum_{i}x_i I(A_i))(\sum_{j}y_j I(B_j)) \\
-&amp;=E\sum_{i,j}x_iy_jI(A_i \cap B_j) \\ 
-&amp;=\sum_{i,j}x_i y_jP(A_i \cap B_j) \\
-&amp;=\sum x_j y_jP(A_i)P(B_j) \\
-&amp;=(\sum_{i}x_i P(A_i))(\sum_{j}y_i P(B_j)) \\
-&amp;=E\xi \cdot E\eta \\
-\end{aligned}
-\end{equation}\]</span> 证明过程中，对于独立的随机变量<span class="math inline">\(\xi\)</span> ,<span class="math inline">\(\eta\)</span>， 事件 <span class="math inline">\(A_i = {\omega:\xi(\omega)=x_i}\)</span> 和 <span class="math inline">\(B_j={\omega:\eta(\omega)=y_j}\)</span> 事件独立：<span class="math inline">\(P(A_i \cap B_j) = P(A_i)P(B_j)\)</span></p>
-<p>性质6 的证明： 已知 <span class="math display">\[ \xi^2 = \sum_{i=1}^{l}x_i^2 I(A_i), \eta^2 = \sum y_i^2 I(b_j)\]</span> <span class="math display">\[ E\xi^2 = \sum_{i=1}^l x_i^2 P(A_i), E\eta^2 = \sum_{j=1}^k y_i^2P(B_j) \]</span></p>
-<p>设 <span class="math inline">\(E\xi^2 &gt; 0\)</span> ;<span class="math inline">\(E\eta^2 &gt; 0\)</span>, 记 <span class="math inline">\(\widetilde{\xi} = \frac{\xi}{\sqrt{E\xi^2}}\)</span> ,<span class="math inline">\(\widetilde{\eta} = \frac{\eta}{\sqrt{E\eta^2}}\)</span></p>
-<p>由于 <span class="math inline">\(2|\widetilde{\xi} \widetilde{\eta}| \le {\widetilde{\xi}}^2 + {\widetilde{\eta}}^2\)</span> 可得 <span class="math inline">\(2E|\widetilde{\xi} \widetilde{\eta}| \le E{\widetilde{\xi}}^2 + E {\widetilde{\eta}}^2 = 1+1=2\)</span> 所以 <span class="math inline">\(E|\widetilde{\xi} \widetilde{\eta}| \le 1\)</span> <span class="math display">\[\begin{equation}
-\begin{aligned}
-(E|\xi\eta|)^2 = (E|\widetilde{\xi}\sqrt{E\xi^2} \widetilde{\eta}\sqrt{E\eta^2}|)^2 \\ 
-&amp;=(E|\sqrt{E\xi^2E\eta^2}\widetilde{\xi}\widetilde{\eta}|)^2 \\ 
-&amp;=E\xi^2 E\eta^2(E|\widetilde{\xi}\widetilde{\eta}|)^2 \\ 
-\end{aligned}
-\end{equation}\]</span> 由于 <span class="math inline">\(E|\widetilde{\xi} \widetilde{\eta}| \le 1\)</span> 所以 <span class="math inline">\((E|\widetilde{\xi} \widetilde{\eta}|)^2 \le 1\)</span> 因此 <span class="math inline">\((E|\xi\eta|)^2 = E\xi^2 E\eta^2(E|\widetilde{\xi}\widetilde{\eta}|)^2 \le E\xi^2 \times E\eta^2\)</span> 所以性质6 得证。</p>
-<p>因为设 <span class="math inline">\(E\xi &gt; 0\)</span>,所以还有一种特殊情况要证明。 假设 <span class="math inline">\(E\xi^2 = 0\)</span> , <span class="math inline">\(\sum_{i}x_i^2P(A_i) = 0\)</span> 因此0是<span class="math inline">\(\xi\)</span>的可能的值，且 <span class="math inline">\(P{\omega : \xi(\omega) = 0} = 1\)</span> 因为<span class="math inline">\(E\xi^2\)</span> 或者 <span class="math inline">\(E\eta^2=0\)</span> ,显然 <span class="math inline">\(E|\xi\eta| = 0\)</span> ,性质6依然成立。</p>
-<h3 id="方差的定义及性质证明">2.方差的定义及性质证明</h3>
-<p>方差是来描述数据分散程度的指标</p>
-<p><span class="math display">\[D\xi = E(\xi - E\xi)^2\]</span> <span class="math inline">\(D\xi\)</span>记为方差，<span class="math inline">\(\sigma = \sqrt{D\xi}\)</span>记为标准差。</p>
-<p>性质1 由于 <span class="math display">\[
-E(\xi-E\xi)^2 = E[\xi^2 - 2\xi E\xi + (E\xi)^2] = E(\xi^2) - (E\xi)^2
-\]</span> 所以 <span class="math display">\[D\xi = E\xi^2 - (E\xi)^2\]</span></p>
-<p>根据方差的定义，可知<span class="math inline">\(D\xi\ge0\)</span></p>
-<p>性质2 对于任意常数的a,b <span class="math inline">\(D(a+b\xi) = b^2D\xi\)</span> 当<span class="math inline">\(Da=0\)</span>,<span class="math inline">\(D(b\xi) = b^2D\xi\)</span></p>
-<p>性质3 对于二个随机变量<span class="math inline">\(\xi\)</span>,<span class="math inline">\(\eta\)</span></p>
-<p><span class="math display">\[D(\xi+\eta) = E[(\xi-E\xi)+(\eta - E\eta)]^2 = D\xi + D\eta +2E(\xi-E\xi)(\eta-E\eta)\]</span></p>
-<p>记： <span class="math display">\[
-cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
-\]</span> 称作随机变量<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>的协方差，如果<span class="math inline">\(D\xi \ge 0\)</span>, <span class="math inline">\(D\eta \ge 0\)</span>, 则 <span class="math inline">\(\rho(\xi,\eta) = \frac{cov(\xi,\eta)}{\sqrt{D\xi \times D\eta}}\)</span> 称作随机变量<span class="math inline">\(\xi\)</span>和<span class="math inline">\(\eta\)</span>的相关系数。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1447,7 +1390,7 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1487,7 +1430,7 @@ cov(\xi,\eta) = E(\xi-E\xi)(\eta-E\eta)
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
